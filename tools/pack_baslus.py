@@ -32,9 +32,19 @@ import tempfile
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
-TEMPLATE_MAX = REPO_ROOT / "madden-nfl-08.26380.max"
-SAVE_FOLDER = "BASLUS-21620LClass07"   # Madden NFL 08 USA, draft class slot
-INNER_FILENAME = SAVE_FOLDER            # same name as the folder by PS2 convention
+
+# Two save-type presets. Pick by file extension or --type flag.
+PRESETS = {
+    "draft-class": {
+        "template": REPO_ROOT / "madden-nfl-08.26380.max",
+        "save_folder": "BASLUS-21620LClass07",   # NCAA Football 08 USA, draft class export
+    },
+    "roster": {
+        "template": REPO_ROOT / "madden-nfl-08.16516.max",
+        "save_folder": "BASLUS-21638DRost5",     # Madden NFL 08 USA, roster save
+    },
+}
+DEFAULT_PRESET = "draft-class"
 
 
 def run(cmd: list[str | Path]) -> None:
@@ -43,17 +53,18 @@ def run(cmd: list[str | Path]) -> None:
     subprocess.run([str(c) for c in cmd], check=True, capture_output=True, text=True)
 
 
-def pack(compiled_bin: Path, output_path: Path) -> None:
+def pack(compiled_bin: Path, output_path: Path, save_type: str = DEFAULT_PRESET) -> None:
+    if save_type not in PRESETS:
+        raise ValueError(f"Unknown save type '{save_type}'. Valid: {list(PRESETS)}")
+    preset = PRESETS[save_type]
+    template_max: Path = preset["template"]
+    save_folder: str = preset["save_folder"]
+    inner_filename: str = save_folder
+
     if not compiled_bin.exists():
         raise FileNotFoundError(f"Compiled binary not found: {compiled_bin}")
-    if not TEMPLATE_MAX.exists():
-        raise FileNotFoundError(f"Template .max not found at {TEMPLATE_MAX}")
-
-    expected_size = 138_240
-    actual_size = compiled_bin.stat().st_size
-    if actual_size != expected_size:
-        print(f"  WARNING: compiled binary is {actual_size} bytes; "
-              f"NCAA 08 saves are normally {expected_size}", file=sys.stderr)
+    if not template_max.exists():
+        raise FileNotFoundError(f"Template .max not found at {template_max}")
 
     fmt_flag = "-m" if output_path.suffix.lower() == ".max" else "-p"
 
@@ -62,37 +73,39 @@ def pack(compiled_bin: Path, output_path: Path) -> None:
         card = tmp_dir / "card.ps2"
 
         # Stage the .bin under the exact inner filename so mymcplus adds it correctly.
-        staged_bin = tmp_dir / INNER_FILENAME
+        staged_bin = tmp_dir / inner_filename
         shutil.copy2(compiled_bin, staged_bin)
 
-        # 1. Empty card.
         run(["mymcplus", card, "format"])
-        # 2. Import template to get the BASLUS-21620LClass07 folder with icon.sys + view.ico.
-        run(["mymcplus", card, "import", TEMPLATE_MAX])
-        # 3. Drop the template's data file.
-        run(["mymcplus", card, "remove", f"{SAVE_FOLDER}/{INNER_FILENAME}"])
-        # 4. Add the freshly compiled data file.
-        run(["mymcplus", card, "add", "-d", SAVE_FOLDER, staged_bin])
-        # 5. Export the save as .max or .psu.
+        run(["mymcplus", card, "import", template_max])
+        run(["mymcplus", card, "remove", f"{save_folder}/{inner_filename}"])
+        run(["mymcplus", card, "add", "-d", save_folder, staged_bin])
         output_path.parent.mkdir(parents=True, exist_ok=True)
         run(["mymcplus", card, "export", fmt_flag,
-             "-o", output_path, "-f", SAVE_FOLDER])
+             "-o", output_path, "-f", save_folder])
 
 
 def main() -> int:
-    if len(sys.argv) != 3:
-        print(f"Usage: {sys.argv[0]} <compiled.bin> <output.max|psu>", file=sys.stderr)
-        return 2
+    import argparse
+    p = argparse.ArgumentParser()
+    p.add_argument("input", help="compiled .bin to wrap")
+    p.add_argument("output", help="output file (.max or .psu by extension)")
+    p.add_argument("--type", choices=list(PRESETS), default=DEFAULT_PRESET,
+                   help=f"save type (default: {DEFAULT_PRESET}). draft-class -> "
+                        f"BASLUS-21620 NCAA Football 08 draft class slot. roster -> "
+                        f"BASLUS-21638 Madden NFL 08 roster slot.")
+    args = p.parse_args()
 
-    compiled_bin = Path(sys.argv[1]).resolve()
-    output_path = Path(sys.argv[2]).resolve()
+    compiled_bin = Path(args.input).resolve()
+    output_path = Path(args.output).resolve()
     if output_path.suffix.lower() not in (".max", ".psu"):
         print(f"Output filename must end in .max or .psu (got {output_path.suffix})",
               file=sys.stderr)
         return 2
 
-    pack(compiled_bin, output_path)
-    print(f"Wrote {output_path} ({output_path.stat().st_size} bytes)", file=sys.stderr)
+    pack(compiled_bin, output_path, args.type)
+    print(f"Wrote {output_path} ({output_path.stat().st_size} bytes) "
+          f"as {args.type}", file=sys.stderr)
     return 0
 
 
