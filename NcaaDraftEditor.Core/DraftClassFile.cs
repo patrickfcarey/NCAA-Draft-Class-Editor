@@ -5,8 +5,12 @@ public sealed class DraftClassFile
     public static readonly byte[] MagicHeader = { 0x46, 0x00, 0x40, 0x06 };
     public const int FileHeaderSize = 4;
     public const int RecordSize = 86;
+    public const int MaxPlayers = 1600;
     public string? SourcePath { get; private set; }
     public List<PlayerRecord> Players { get; } = new();
+    // Any bytes after the last 86-byte record (e.g. sector-alignment zero padding).
+    // Real NCAA 08 files end with 636 zero bytes padding the file to a 512-byte boundary.
+    public byte[] Trailer { get; set; } = Array.Empty<byte>();
     public static DraftClassFile Load(string filePath)
     {
         var bytes = File.ReadAllBytes(filePath);
@@ -14,15 +18,18 @@ public sealed class DraftClassFile
             throw new InvalidDataException("File too small for a draft class.");
         var dc = new DraftClassFile { SourcePath = filePath };
         int offset = FileHeaderSize;
-        int playerCount = 0;
-        while (offset + RecordSize <= bytes.Length)
+        while (offset + RecordSize <= bytes.Length && dc.Players.Count < MaxPlayers)
         {
             var slice = new byte[RecordSize];
             Buffer.BlockCopy(bytes, offset, slice, 0, RecordSize);
             dc.Players.Add(new PlayerRecord(slice));
             offset += RecordSize;
-            playerCount++;
-            if (playerCount >= 1600) break; // Safety limit to prevent excessive memory usage
+        }
+        int trailerLen = bytes.Length - offset;
+        if (trailerLen > 0)
+        {
+            dc.Trailer = new byte[trailerLen];
+            Buffer.BlockCopy(bytes, offset, dc.Trailer, 0, trailerLen);
         }
         return dc;
     }
@@ -31,6 +38,7 @@ public sealed class DraftClassFile
         using var ms = new MemoryStream();
         ms.Write(MagicHeader, 0, MagicHeader.Length);
         foreach (var p in Players) ms.Write(p.Raw, 0, p.Raw.Length);
+        if (Trailer.Length > 0) ms.Write(Trailer, 0, Trailer.Length);
         File.WriteAllBytes(filePath, ms.ToArray());
         SourcePath = filePath;
     }
