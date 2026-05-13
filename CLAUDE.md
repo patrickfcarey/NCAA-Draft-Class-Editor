@@ -34,8 +34,8 @@ files via a PS2 memcard, and gets a franchise that mirrors NFL history.
 | 10 | Madden 12 PS2 (Deluxe-compatible) roster builder | ✅ M12 PS2 is bare TDB (MC02 wrapper is PS3/360/PC-only); PLAY field bit-layout shifted vs M08 (~74 of 110 fields) but metadata-driven compiler handles transparently; pack_baslus.py m12-roster preset (BASLUS-21946); fetch_m12_template.py auto-downloads Deluxe .psu; build_all_rosters.py --target m12; 2018 compile+pack verified end-to-end |
 | 11 | NCAA draft class import for M09 / M12 (vanilla + Deluxe) | ✅ Format identical to M08 NCAA binary (138,240 bytes). pack_baslus.py m09-draft-class (BASLUS-21769LClass08, for NCAA 09→M09) and m12-draft-class (BASLUS-21932LClass10, for NCAA 11→M12; NCAA 12 has no PS2 release). build_all_draft_classes.py --target m08\|m09\|m12\|all. PCSX2 verification of BASLUS suffix convention pending. |
 | 12 | Madden 08 franchise compiler (Phase 1: calendar + cap economy) | ✅ Verified in PCSX2 for 2018: franchise loads, salary cap shows $177M, player stats history shows 2018. MaddenTdb has preamble support (franchise saves prepend 02 00 00 00 before DB magic) AND CRC-32/MPEG-2 recomputation on Save (4 CRC fields: file-header, per-table priorCRC, per-table headerCRC, EOF CRC — PS2 stores LE, PS3/PC variant in bep713 stores BE). MaddenFranchiseCompiler writes SEAI.SEYR + SLRI.SCAD/SMAD/RFA1..4. data/raw/salary-caps/nfl-salary-caps.json carries real NFL cap + RFA tenders 2007–2026. CLI compile-franchise. pack_baslus.py m08-franchise preset. fetch_m08_franchise_template.py extracts template from user memcard. |
-| 13 | Phase 2: per-player contract synthesizer | ✅ ContractSynthesizer writes PCON / PSA0..6 / PSB0..6 / PCSA / PSBO per player based on POVR + PPOS + PAGE + league cap. Position-weight table calibrated so league total cap usage lands within ~17% of (cap × 32 teams). Top QB OVR 99 ~$17M, backup K OVR 60s near $700K floor. Default-on; opt out with `--no-contracts`. |
-| 14 | Phase 3: real contract data (Spotrac/OvertheCap import) | ⬜ Not started. |
+| 13 | Phase 2: per-player contract synthesizer | ✅ PCSX2-verified for 2018: ContractSynthesizer writes PCON / PSA0..6 / PSB0..6 / PCSA / PSBO per player. Free-agent asking prices reflect the era's economy correctly (e.g. 2018 starter OT asking ~$10M/yr). **Caveat:** Madden snapshots currently-signed players' contracts elsewhere (likely PLRS/PSTA, empty in fresh template) — in-place contracts stay 2007-era until natural turnover. Default-on; opt out with `--no-contracts`. |
+| 14 | Phase 3: real contract data + in-place contract overwrite | ⬜ Not started. Needs (a) Spotrac/OvertheCap historical contract scraper, (b) identification of the snapshot tables Madden uses for currently-signed contracts (PLRS / PSTA / SIOF — empty in our fresh-Week-1 template, may need a non-fresh template). |
 | 15 | M09 / M12 franchise compiler | ⬜ Not started. Templates not fetched; field schema not yet diffed against M08 franchise. Expected to share most table shape. |
 
 End-to-end works for one year (2018). User has loaded the compiled file in
@@ -528,6 +528,29 @@ contracts live only in franchise saves (`PSA0..6`, `PSB0..6`, `PCSA`, etc.,
 21 extra fields in the franchise PLAY table). When Madden 08 boots a fresh
 franchise from a roster, it generates contracts on the fly from a
 `f(rating, age, position, PCON)` model.
+
+### PLAY's PSA/PSB/PCSA drive future contracts, not in-place ones
+The contract fields we write into franchise PLAY records control:
+
+- **Free-agent asking price.** The market value of unsigned/free-agent
+  players. PCSX2-verified: writing PSA/PSB causes free agents to demand
+  the new amounts.
+- **Rookie / new-signing contracts.** When a player signs a new deal, the
+  engine uses these as the basis.
+
+But Madden snapshots a player's **currently-signed contract** elsewhere
+(likely in PLRS / PSTA / similar tables that were empty in our fresh-save
+template — they probably get populated when the franchise transitions to
+in-season state). Players already on a roster keep their snapshotted
+contract until it expires; only when they re-sign does the new
+PSA/PSB/PCSA take effect. So a 2018 franchise built from a 2007 template
+has 2018 *free agency* but 2007-era *in-place contracts* — the economy
+realigns over 1-3 seasons of natural turnover.
+
+Fixing this for-real would need to identify and populate the
+signed-contract snapshot tables, which is Phase 3 work and probably needs
+a non-fresh template (one that's already been through Week 1 so those
+tables are populated and we can mutate rather than synthesize).
 
 ### Franchise saves enforce 4 CRCs on load; roster saves don't
 Madden 08 PS2 franchise loading rejects with "error loading franchise" if
