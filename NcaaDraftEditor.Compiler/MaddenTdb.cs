@@ -73,7 +73,7 @@ public sealed class MaddenTdb
                 var rec = new TdbRecord();
                 foreach (var f in table.Fields)
                 {
-                    rec[f.Name] = f.Read(recSpan);
+                    rec[f.Name] = f.ReadValue(recSpan);
                 }
                 table.Records.Add(rec);
             }
@@ -262,7 +262,7 @@ public sealed class TdbField
         BinaryPrimitives.WriteUInt32LittleEndian(span[12..], Bits);
     }
 
-    public object? Read(ReadOnlySpan<byte> record) => Type switch
+    public object? ReadValue(ReadOnlySpan<byte> record) => Type switch
     {
         MaddenTdb.TypeString => ReadString(record),
         MaddenTdb.TypeBinary => ReadBinary(record),
