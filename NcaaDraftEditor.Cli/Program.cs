@@ -20,6 +20,7 @@ internal static class Program
                 "roundtrip" => Roundtrip(args[1..]),
                 "new" => NewTemplate(args[1..]),
                 "compile" => Compile(args[1..]),
+                "compile-roster" => CompileRoster(args[1..]),
                 "-h" or "--help" or "help" => Help(),
                 _ => Help($"Unknown command: {args[0]}"),
             };
@@ -54,6 +55,12 @@ internal static class Program
                                                    --lock-draft-order applies a pick-number-based
                                                    OVR floor (pick 1 -> 90, pick 256 -> 50) so the
                                                    in-game draft order matches the real one.
+              compile-roster <canonical-roster.json> <positions.json> <template.bin> <out.bin>
+                                                   Apply a canonical NFL roster onto a Madden 08
+                                                   roster template. Mutates PLAY records by TGID;
+                                                   leaves TEAM/DCHT/INJY tables untouched. Use
+                                                   tests/fixtures/madden08-roster-sample.bin as the
+                                                   template.
 
             Set NCAA_DRAFT_VERBOSE=1 to print full stack traces on errors.
             """);
@@ -146,6 +153,31 @@ internal static class Program
             $"(madden={(madden is null ? "none" : "loaded")}, " +
             $"filler={(filler is null ? "none" : $"loaded {filler.Players.Count} records")}, " +
             $"lock-draft-order={lockDraftOrder})");
+        return 0;
+    }
+
+    static int CompileRoster(string[] args)
+    {
+        if (args.Length != 4)
+            return Help("compile-roster requires <canonical-roster.json> <positions.json> <template.bin> <out.bin>");
+
+        var rosterJson = File.ReadAllText(args[0]);
+        var canonical = CanonicalJson.Deserialize<CanonicalRoster>(rosterJson);
+        var positions = PositionMapper.LoadFile(args[1]);
+        var template = MaddenTdb.LoadFile(args[2]);
+        var outPath = args[3];
+
+        var compiler = new MaddenRosterCompiler(positions);
+        compiler.Compile(canonical, template);
+        template.SaveFile(outPath);
+
+        var play = template.FindTable("PLAY");
+        int totalCanonicalPlayers = canonical.Teams.Sum(t => t.Players.Count);
+        int totalTemplateSlots = play?.Records.Count ?? 0;
+        Console.Error.WriteLine(
+            $"Wrote {outPath}: {canonical.Teams.Count} teams, " +
+            $"{totalCanonicalPlayers} canonical players supplied, " +
+            $"{totalTemplateSlots} template PLAY slots available");
         return 0;
     }
 
