@@ -1,0 +1,93 @@
+{
+  "schema": "ncaa-draft-class/v1",
+  "year": 2018,
+  "players": [
+    {
+      "name": { "first": "Baker", "last": "Mayfield" },
+      "position": "QB",
+      "college": "Oklahoma",
+      "collegeYear": "SR",
+      "redshirt": true,
+      "draft": { "round": 1, "pick": 1, "team": "CLE" },
+      "measurables": { "heightIn": 73, "weightLb": 215, "armIn": 30.875, "handIn": 9.25 },
+      "rookieMaddenRatings": {
+        "source": "approximate-for-sample",
+        "ovr": 76,
+        "spd": 80, "acc": 85, "agi": 84, "str": 60, "awr": 64,
+        "cth": 50, "car": 50,
+        "thp": 89, "tha": 76,
+        "jmp": 88, "inj": 90, "sta": 92
+      },
+      "combine": { "fortyYd": 4.84, "verticalIn": 29.0, "broadIn": 116 }
+    },
+    {
+      "name": { "first": "Saquon", "last": "Barkley" },
+      "position": "RB",
+      "college": "Penn State",
+      "collegeYear": "JR",
+      "redshirt": false,
+      "draft": { "round": 1, "pick": 2, "team": "NYG" },
+      "measurables": { "heightIn": 72, "weightLb": 233 },
+      "rookieMaddenRatings": {
+        "source": "approximate-for-sample",
+        "ovr": 84,
+        "spd": 92, "acc": 92, "agi": 91, "str": 78, "awr": 70,
+        "cth": 70, "car": 88,
+        "btk": 85,
+        "jmp": 92, "inj": 88, "sta": 94
+      },
+      "combine": { "fortyYd": 4.40, "bench": 29, "verticalIn": 41.0, "broadIn": 119 }
+    },
+    {
+      "name": { "first": "Bradley", "last": "Chubb" },
+      "position": "DE",
+      "college": "NC State",
+      "collegeYear": "SR",
+      "redshirt": true,
+      "draft": { "round": 1, "pick": 5, "team": "DEN" },
+      "measurables": { "heightIn": 76, "weightLb": 269 },
+      "rookieMaddenRatings": {
+        "source": "approximate-for-sample",
+        "ovr": 77,
+        "spd": 79, "acc": 83, "agi": 78, "str": 85, "awr": 72,
+        "tak": 78, "pow": 84,
+        "jmp": 80, "inj": 86, "sta": 90
+      },
+      "combine": { "fortyYd": 4.65, "bench": 24, "verticalIn": 36.0 }
+    },
+    {
+      "name": { "first": "Quenton", "last": "Nelson" },
+      "position": "OG",
+      "college": "Notre Dame",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": { "round": 1, "pick": 6, "team": "IND" },
+      "measurables": { "heightIn": 77, "weightLb": 325 },
+      "rookieMaddenRatings": {
+        "source": "approximate-for-sample",
+        "ovr": 81,
+        "spd": 60, "acc": 70, "agi": 60, "str": 92, "awr": 76,
+        "pbk": 82, "rbk": 86,
+        "jmp": 50, "inj": 88, "sta": 88
+      },
+      "combine": { "fortyYd": 5.36, "bench": 35 }
+    },
+    {
+      "name": { "first": "Tremaine", "last": "Edmunds" },
+      "position": "LB",
+      "college": "Virginia Tech",
+      "collegeYear": "JR",
+      "redshirt": false,
+      "draft": { "round": 1, "pick": 16, "team": "BUF" },
+      "measurables": { "heightIn": 77, "weightLb": 253, "armIn": 34.625 },
+      "rookieMaddenRatings": {
+        "source": "approximate-for-sample",
+        "ovr": 73,
+        "spd": 84, "acc": 86, "agi": 83, "str": 80, "awr": 65,
+        "tak": 75, "pow": 80,
+        "jmp": 84, "inj": 88, "sta": 92
+      },
+      "combine": { "fortyYd": 4.54, "bench": 19, "verticalIn": 34.0, "broadIn": 121 }
+    }
+  ]
+}

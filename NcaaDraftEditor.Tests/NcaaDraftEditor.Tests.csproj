@@ -16,9 +16,13 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NcaaDraftEditor.Core\NcaaDraftEditor.Core.csproj" />
+    <ProjectReference Include="..\NcaaDraftEditor.Canonical\NcaaDraftEditor.Canonical.csproj" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\tests\fixtures\sample.bin" Link="fixtures\sample.bin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\data\canonical\draft-class-2018-sample.json" Link="fixtures\draft-class-2018-sample.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
