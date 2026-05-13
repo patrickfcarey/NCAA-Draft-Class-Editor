@@ -6104,7 +6104,1450 @@
       "abbreviation": "CLE",
       "city": "Cleveland",
       "name": "Browns",
-      "players": []
+      "players": [
+        {
+          "name": {
+            "first": "Philip",
+            "last": "Dawson"
+          },
+          "position": "K",
+          "college": "Texas",
+          "jerseyNumber": 4,
+          "yearsPro": 13,
+          "measurables": {
+            "heightIn": 71,
+            "weightLb": 200
+          }
+        },
+        {
+          "name": {
+            "first": "Brad",
+            "last": "Maynard"
+          },
+          "position": "P",
+          "college": "",
+          "jerseyNumber": 7,
+          "yearsPro": 14,
+          "measurables": {
+            "heightIn": 73,
+            "weightLb": 188
+          },
+          "ratings": {
+            "ovr": 84,
+            "spd": 54,
+            "acc": 54,
+            "agi": 45,
+            "str": 31,
+            "awr": 93,
+            "car": 82,
+            "thp": 89,
+            "tha": 47,
+            "inj": 45,
+            "sta": 85
+          }
+        },
+        {
+          "name": {
+            "first": "Artis",
+            "last": "Hicks"
+          },
+          "position": "OG",
+          "college": "",
+          "jerseyNumber": 75,
+          "yearsPro": 9,
+          "measurables": {
+            "heightIn": 76,
+            "weightLb": 325
+          },
+          "ratings": {
+            "ovr": 77,
+            "spd": 53,
+            "acc": 69,
+            "agi": 55,
+            "str": 89,
+            "awr": 74,
+            "cth": 88,
+            "car": 67,
+            "btk": 86,
+            "jmp": 84,
+            "inj": 83,
+            "sta": 78
+          }
+        },
+        {
+          "name": {
+            "first": "Sheldon",
+            "last": "Brown"
+          },
+          "position": "CB",
+          "college": "",
+          "jerseyNumber": 24,
+          "yearsPro": 9,
+          "measurables": {
+            "heightIn": 70,
+            "weightLb": 200
+          },
+          "ratings": {
+            "ovr": 84,
+            "spd": 87,
+            "acc": 91,
+            "agi": 90,
+            "str": 56,
+            "awr": 86,
+            "car": 64,
+            "thp": 85,
+            "tha": 99,
+            "inj": 98,
+            "sta": 97
+          }
+        },
+        {
+          "name": {
+            "first": "Scott",
+            "last": "Fujita"
+          },
+          "position": "LB",
+          "college": "",
+          "jerseyNumber": 99,
+          "yearsPro": 9,
+          "measurables": {
+            "heightIn": 77,
+            "weightLb": 250
+          },
+          "ratings": {
+            "ovr": 82,
+            "spd": 77,
+            "acc": 83,
+            "agi": 77,
+            "str": 75,
+            "awr": 88,
+            "car": 85,
+            "thp": 77,
+            "tha": 89,
+            "inj": 85,
+            "sta": 70
+          }
+        },
+        {
+          "name": {
+            "first": "Seneca",
+            "last": "Wallace"
+          },
+          "position": "QB",
+          "college": "",
+          "jerseyNumber": 6,
+          "yearsPro": 8,
+          "measurables": {
+            "heightIn": 71,
+            "weightLb": 205
+          },
+          "ratings": {
+            "ovr": 73,
+            "spd": 84,
+            "acc": 85,
+            "agi": 87,
+            "str": 56,
+            "awr": 71,
+            "car": 73,
+            "thp": 78,
+            "tha": 74,
+            "inj": 84,
+            "sta": 90
+          }
+        },
+        {
+          "name": {
+            "first": "Ryan",
+            "last": "Pontbriand"
+          },
+          "position": "C",
+          "college": "",
+          "jerseyNumber": 64,
+          "yearsPro": 8,
+          "measurables": {
+            "heightIn": 74,
+            "weightLb": 255
+          },
+          "ratings": {
+            "ovr": 64,
+            "spd": 61,
+            "acc": 67,
+            "agi": 65,
+            "str": 75,
+            "awr": 75,
+            "car": 75,
+            "thp": 84,
+            "tha": 73,
+            "inj": 79,
+            "sta": 76
+          }
+        },
+        {
+          "name": {
+            "first": "Anthony",
+            "last": "Pashos"
+          },
+          "position": "OT",
+          "college": "",
+          "jerseyNumber": 79,
+          "yearsPro": 8,
+          "measurables": {
+            "heightIn": 78,
+            "weightLb": 325
+          }
+        },
+        {
+          "name": {
+            "first": "Michael",
+            "last": "Adams"
+          },
+          "position": "S",
+          "college": "Delaware",
+          "jerseyNumber": 20,
+          "yearsPro": 7,
+          "measurables": {
+            "heightIn": 71,
+            "weightLb": 200
+          },
+          "ratings": {
+            "ovr": 65,
+            "spd": 84,
+            "acc": 88,
+            "agi": 85,
+            "str": 52,
+            "awr": 68,
+            "car": 54,
+            "thp": 75,
+            "tha": 90,
+            "inj": 90,
+            "sta": 70
+          }
+        },
+        {
+          "name": {
+            "first": "Benjamin",
+            "last": "Watson"
+          },
+          "position": "TE",
+          "college": "Georgia",
+          "jerseyNumber": 82,
+          "yearsPro": 7,
+          "measurables": {
+            "heightIn": 75,
+            "weightLb": 255
+          }
+        },
+        {
+          "name": {
+            "first": "Joshua",
+            "last": "Cribbs"
+          },
+          "position": "WR",
+          "college": "",
+          "jerseyNumber": 16,
+          "yearsPro": 6,
+          "measurables": {
+            "heightIn": 73,
+            "weightLb": 215
+          },
+          "ratings": {
+            "ovr": 79,
+            "spd": 92,
+            "acc": 96,
+            "agi": 98,
+            "str": 64,
+            "awr": 86,
+            "car": 69,
+            "thp": 90,
+            "tha": 93,
+            "inj": 92,
+            "sta": 75
+          }
+        },
+        {
+          "name": {
+            "first": "Raymond",
+            "last": "Ventrone"
+          },
+          "position": "S",
+          "college": "",
+          "jerseyNumber": 41,
+          "yearsPro": 6,
+          "measurables": {
+            "heightIn": 70,
+            "weightLb": 200
+          }
+        },
+        {
+          "name": {
+            "first": "Edwin",
+            "last": "Smith"
+          },
+          "position": "TE",
+          "college": "Stanford",
+          "jerseyNumber": 81,
+          "yearsPro": 6,
+          "measurables": {
+            "heightIn": 76,
+            "weightLb": 258
+          }
+        },
+        {
+          "name": {
+            "first": "Dimitri",
+            "last": "Patterson"
+          },
+          "position": "CB",
+          "college": "",
+          "jerseyNumber": 21,
+          "yearsPro": 6,
+          "measurables": {
+            "heightIn": 70,
+            "weightLb": 200
+          },
+          "ratings": {
+            "ovr": 79,
+            "spd": 88,
+            "acc": 91,
+            "agi": 89,
+            "str": 52,
+            "awr": 73,
+            "car": 55,
+            "thp": 87,
+            "tha": 90,
+            "inj": 92,
+            "sta": 70
+          }
+        },
+        {
+          "name": {
+            "first": "Jayme",
+            "last": "Mitchell"
+          },
+          "position": "DE",
+          "college": "",
+          "jerseyNumber": 92,
+          "yearsPro": 5,
+          "measurables": {
+            "heightIn": 78,
+            "weightLb": 285
+          },
+          "ratings": {
+            "ovr": 66,
+            "spd": 66,
+            "acc": 77,
+            "agi": 66,
+            "str": 84,
+            "awr": 71,
+            "car": 77,
+            "thp": 66,
+            "tha": 85,
+            "inj": 72,
+            "sta": 75
+          }
+        },
+        {
+          "name": {
+            "first": "Scott",
+            "last": "Paxson"
+          },
+          "position": "DT",
+          "college": "",
+          "jerseyNumber": 69,
+          "yearsPro": 5,
+          "measurables": {
+            "heightIn": 76,
+            "weightLb": 290
+          },
+          "ratings": {
+            "ovr": 63,
+            "spd": 56,
+            "acc": 72,
+            "agi": 60,
+            "str": 86,
+            "awr": 66,
+            "car": 65,
+            "thp": 50,
+            "tha": 90,
+            "inj": 77,
+            "sta": 80
+          }
+        },
+        {
+          "name": {
+            "first": "D'Qwell",
+            "last": "Jackson"
+          },
+          "position": "LB",
+          "college": "Maryland",
+          "jerseyNumber": 52,
+          "yearsPro": 5,
+          "measurables": {
+            "heightIn": 72,
+            "weightLb": 240
+          },
+          "ratings": {
+            "ovr": 83,
+            "spd": 75,
+            "acc": 83,
+            "agi": 82,
+            "str": 77,
+            "awr": 84,
+            "car": 93,
+            "thp": 73,
+            "tha": 87,
+            "inj": 80,
+            "sta": 65
+          }
+        },
+        {
+          "name": {
+            "first": "Chris",
+            "last": "Gocong"
+          },
+          "position": "LB",
+          "college": "",
+          "jerseyNumber": 51,
+          "yearsPro": 5,
+          "measurables": {
+            "heightIn": 74,
+            "weightLb": 263
+          },
+          "ratings": {
+            "ovr": 79,
+            "spd": 78,
+            "acc": 86,
+            "agi": 75,
+            "str": 78,
+            "awr": 78,
+            "car": 87,
+            "thp": 90,
+            "tha": 85,
+            "inj": 87,
+            "sta": 76
+          }
+        },
+        {
+          "name": {
+            "first": "Joe",
+            "last": "Thomas"
+          },
+          "position": "OT",
+          "college": "Wisconsin",
+          "jerseyNumber": 73,
+          "yearsPro": 4,
+          "measurables": {
+            "heightIn": 78,
+            "weightLb": 312
+          },
+          "ratings": {
+            "ovr": 95,
+            "spd": 72,
+            "acc": 82,
+            "agi": 74,
+            "str": 92,
+            "awr": 88,
+            "car": 96,
+            "thp": 95,
+            "tha": 94,
+            "inj": 96,
+            "sta": 97
+          }
+        },
+        {
+          "name": {
+            "first": "Usama",
+            "last": "Young"
+          },
+          "position": "S",
+          "college": "",
+          "jerseyNumber": 28,
+          "yearsPro": 4,
+          "measurables": {
+            "heightIn": 72,
+            "weightLb": 200
+          },
+          "ratings": {
+            "ovr": 72,
+            "spd": 90,
+            "acc": 87,
+            "agi": 95,
+            "str": 48,
+            "awr": 69,
+            "car": 60,
+            "thp": 93,
+            "tha": 93,
+            "inj": 94,
+            "sta": 83
+          }
+        },
+        {
+          "name": {
+            "first": "Thomas",
+            "last": "Clayton"
+          },
+          "position": "RB",
+          "college": "",
+          "jerseyNumber": 33,
+          "yearsPro": 4,
+          "measurables": {
+            "heightIn": 71,
+            "weightLb": 222
+          },
+          "ratings": {
+            "ovr": 60,
+            "spd": 87,
+            "acc": 91,
+            "agi": 82,
+            "str": 68,
+            "awr": 54,
+            "car": 70,
+            "thp": 73,
+            "tha": 85,
+            "inj": 87,
+            "sta": 65
+          }
+        },
+        {
+          "name": {
+            "first": "Steve",
+            "last": "Vallos"
+          },
+          "position": "C",
+          "college": "",
+          "jerseyNumber": 60,
+          "yearsPro": 4,
+          "measurables": {
+            "heightIn": 75,
+            "weightLb": 310
+          },
+          "ratings": {
+            "ovr": 71,
+            "spd": 57,
+            "acc": 67,
+            "agi": 55,
+            "str": 87,
+            "awr": 68,
+            "car": 83,
+            "thp": 76,
+            "tha": 80,
+            "inj": 85,
+            "sta": 78
+          }
+        },
+        {
+          "name": {
+            "first": "Richmond",
+            "last": "McGee"
+          },
+          "position": "P",
+          "college": "",
+          "jerseyNumber": 8,
+          "yearsPro": 3,
+          "measurables": {
+            "heightIn": 76,
+            "weightLb": 203
+          },
+          "ratings": {
+            "ovr": 49,
+            "spd": 62,
+            "acc": 64,
+            "agi": 55,
+            "str": 39,
+            "awr": 56,
+            "car": 88,
+            "thp": 78,
+            "tha": 45,
+            "inj": 40,
+            "sta": 95
+          }
+        },
+        {
+          "name": {
+            "first": "Titus",
+            "last": "Brown"
+          },
+          "position": "LB",
+          "college": "",
+          "jerseyNumber": 59,
+          "yearsPro": 3,
+          "measurables": {
+            "heightIn": 75,
+            "weightLb": 250
+          },
+          "ratings": {
+            "ovr": 64,
+            "spd": 79,
+            "acc": 84,
+            "agi": 76,
+            "str": 72,
+            "awr": 63,
+            "car": 78,
+            "thp": 90,
+            "tha": 84,
+            "inj": 82,
+            "sta": 72
+          }
+        },
+        {
+          "name": {
+            "first": "Brian",
+            "last": "Schaefering"
+          },
+          "position": "DT",
+          "college": "",
+          "jerseyNumber": 91,
+          "yearsPro": 3,
+          "measurables": {
+            "heightIn": 76,
+            "weightLb": 295
+          },
+          "ratings": {
+            "ovr": 71,
+            "spd": 63,
+            "acc": 70,
+            "agi": 61,
+            "str": 82,
+            "awr": 75,
+            "car": 77,
+            "thp": 59,
+            "tha": 88,
+            "inj": 75,
+            "sta": 92
+          }
+        },
+        {
+          "name": {
+            "first": "Evan",
+            "last": "Moore"
+          },
+          "position": "TE",
+          "college": "",
+          "jerseyNumber": 89,
+          "yearsPro": 3,
+          "measurables": {
+            "heightIn": 78,
+            "weightLb": 250
+          },
+          "ratings": {
+            "ovr": 75,
+            "spd": 78,
+            "acc": 84,
+            "agi": 80,
+            "str": 66,
+            "awr": 69,
+            "car": 85,
+            "thp": 88,
+            "tha": 88,
+            "inj": 82,
+            "sta": 75
+          }
+        },
+        {
+          "name": {
+            "first": "John",
+            "last": "Greco"
+          },
+          "position": "OG",
+          "college": "Toledo",
+          "jerseyNumber": 77,
+          "yearsPro": 3,
+          "measurables": {
+            "heightIn": 76,
+            "weightLb": 315
+          },
+          "ratings": {
+            "ovr": 72,
+            "spd": 62,
+            "acc": 76,
+            "agi": 60,
+            "str": 83,
+            "awr": 64,
+            "car": 82,
+            "thp": 78,
+            "tha": 76,
+            "inj": 90,
+            "sta": 75
+          }
+        },
+        {
+          "name": {
+            "first": "Oniel",
+            "last": "Cousins"
+          },
+          "position": "OT",
+          "college": "",
+          "jerseyNumber": 72,
+          "yearsPro": 3,
+          "measurables": {
+            "heightIn": 76,
+            "weightLb": 315
+          },
+          "ratings": {
+            "ovr": 63,
+            "spd": 64,
+            "acc": 78,
+            "agi": 62,
+            "str": 91,
+            "awr": 44,
+            "car": 83,
+            "thp": 74,
+            "tha": 78,
+            "inj": 82,
+            "sta": 82
+          }
+        },
+        {
+          "name": {
+            "first": "Ahtyba",
+            "last": "Rubin"
+          },
+          "position": "DT",
+          "college": "Iowa State",
+          "jerseyNumber": 71,
+          "yearsPro": 3,
+          "measurables": {
+            "heightIn": 74,
+            "weightLb": 330
+          },
+          "ratings": {
+            "ovr": 81,
+            "spd": 58,
+            "acc": 75,
+            "agi": 56,
+            "str": 95,
+            "awr": 79,
+            "car": 88,
+            "thp": 60,
+            "tha": 93,
+            "inj": 80,
+            "sta": 90
+          }
+        },
+        {
+          "name": {
+            "first": "Peyton",
+            "last": "Hillis"
+          },
+          "position": "RB",
+          "college": "",
+          "jerseyNumber": 40,
+          "yearsPro": 3,
+          "measurables": {
+            "heightIn": 74,
+            "weightLb": 250
+          },
+          "ratings": {
+            "ovr": 91,
+            "spd": 87,
+            "acc": 91,
+            "agi": 86,
+            "str": 84,
+            "awr": 92,
+            "car": 79,
+            "thp": 85,
+            "tha": 75,
+            "inj": 88,
+            "sta": 87
+          }
+        },
+        {
+          "name": {
+            "first": "Jordan",
+            "last": "Norwood"
+          },
+          "position": "WR",
+          "college": "Penn State",
+          "jerseyNumber": 10,
+          "yearsPro": 2,
+          "measurables": {
+            "heightIn": 71,
+            "weightLb": 180
+          },
+          "ratings": {
+            "ovr": 60,
+            "spd": 86,
+            "acc": 94,
+            "agi": 92,
+            "str": 39,
+            "awr": 60,
+            "car": 72,
+            "thp": 79,
+            "tha": 87,
+            "inj": 85,
+            "sta": 55
+          }
+        },
+        {
+          "name": {
+            "first": "Marcus",
+            "last": "Benard"
+          },
+          "position": "DE",
+          "college": "",
+          "jerseyNumber": 58,
+          "yearsPro": 2,
+          "measurables": {
+            "heightIn": 74,
+            "weightLb": 256
+          },
+          "ratings": {
+            "ovr": 75,
+            "spd": 80,
+            "acc": 87,
+            "agi": 76,
+            "str": 72,
+            "awr": 65,
+            "car": 72,
+            "thp": 72,
+            "tha": 86,
+            "inj": 87,
+            "sta": 82
+          }
+        },
+        {
+          "name": {
+            "first": "Eddie",
+            "last": "Williams"
+          },
+          "position": "RB",
+          "college": "",
+          "jerseyNumber": 44,
+          "yearsPro": 2,
+          "measurables": {
+            "heightIn": 73,
+            "weightLb": 242
+          },
+          "ratings": {
+            "ovr": 50,
+            "spd": 77,
+            "acc": 81,
+            "agi": 76,
+            "str": 66,
+            "awr": 60,
+            "car": 68,
+            "thp": 73,
+            "tha": 72,
+            "inj": 76,
+            "sta": 80
+          }
+        },
+        {
+          "name": {
+            "first": "Alex",
+            "last": "Mack"
+          },
+          "position": "C",
+          "college": "California",
+          "jerseyNumber": 55,
+          "yearsPro": 2,
+          "measurables": {
+            "heightIn": 76,
+            "weightLb": 311
+          },
+          "ratings": {
+            "ovr": 88,
+            "spd": 66,
+            "acc": 84,
+            "agi": 62,
+            "str": 93,
+            "awr": 77,
+            "car": 93,
+            "thp": 90,
+            "tha": 87,
+            "inj": 88,
+            "sta": 93
+          }
+        },
+        {
+          "name": {
+            "first": "Brian",
+            "last": "Robiskie"
+          },
+          "position": "WR",
+          "college": "",
+          "jerseyNumber": 80,
+          "yearsPro": 2,
+          "measurables": {
+            "heightIn": 75,
+            "weightLb": 209
+          },
+          "ratings": {
+            "ovr": 70,
+            "spd": 89,
+            "acc": 86,
+            "agi": 85,
+            "str": 61,
+            "awr": 64,
+            "car": 85,
+            "thp": 85,
+            "tha": 94,
+            "inj": 89,
+            "sta": 85
+          }
+        },
+        {
+          "name": {
+            "first": "Mohamed",
+            "last": "Massaquoi"
+          },
+          "position": "WR",
+          "college": "",
+          "jerseyNumber": 11,
+          "yearsPro": 2,
+          "measurables": {
+            "heightIn": 74,
+            "weightLb": 207
+          },
+          "ratings": {
+            "ovr": 76,
+            "spd": 86,
+            "acc": 91,
+            "agi": 89,
+            "str": 67,
+            "awr": 68,
+            "car": 82,
+            "thp": 90,
+            "tha": 90,
+            "inj": 87,
+            "sta": 94
+          }
+        },
+        {
+          "name": {
+            "first": "Kaluka",
+            "last": "Maiava"
+          },
+          "position": "LB",
+          "college": "",
+          "jerseyNumber": 56,
+          "yearsPro": 2,
+          "measurables": {
+            "heightIn": 72,
+            "weightLb": 229
+          },
+          "ratings": {
+            "ovr": 69,
+            "spd": 80,
+            "acc": 85,
+            "agi": 83,
+            "str": 58,
+            "awr": 71,
+            "car": 81,
+            "thp": 91,
+            "tha": 94,
+            "inj": 88,
+            "sta": 52
+          }
+        },
+        {
+          "name": {
+            "first": "Christopher",
+            "last": "Ogbonnaya"
+          },
+          "position": "RB",
+          "college": "",
+          "jerseyNumber": 25,
+          "yearsPro": 2,
+          "measurables": {
+            "heightIn": 72,
+            "weightLb": 225
+          }
+        },
+        {
+          "name": {
+            "first": "Daniel",
+            "last": "Gronkowski"
+          },
+          "position": "TE",
+          "college": "",
+          "jerseyNumber": 87,
+          "yearsPro": 2,
+          "measurables": {
+            "heightIn": 77,
+            "weightLb": 255
+          }
+        },
+        {
+          "name": {
+            "first": "Emmanuel",
+            "last": "Stephens"
+          },
+          "position": "DE",
+          "college": "",
+          "jerseyNumber": 96,
+          "yearsPro": 1,
+          "measurables": {
+            "heightIn": 75,
+            "weightLb": 255
+          }
+        },
+        {
+          "name": {
+            "first": "Thaddeus",
+            "last": "Lewis"
+          },
+          "position": "QB",
+          "college": "Duke",
+          "jerseyNumber": 9,
+          "yearsPro": 1,
+          "measurables": {
+            "heightIn": 74,
+            "weightLb": 200
+          },
+          "ratings": {
+            "ovr": 56,
+            "spd": 65,
+            "acc": 70,
+            "agi": 73,
+            "str": 64,
+            "awr": 42,
+            "car": 65,
+            "thp": 86,
+            "tha": 69,
+            "inj": 92,
+            "sta": 86
+          }
+        },
+        {
+          "name": {
+            "first": "Auston",
+            "last": "English"
+          },
+          "position": "LB",
+          "college": "",
+          "jerseyNumber": 94,
+          "yearsPro": 1,
+          "measurables": {
+            "heightIn": 75,
+            "weightLb": 250
+          }
+        },
+        {
+          "name": {
+            "first": "Brian",
+            "last": "Sanford"
+          },
+          "position": "DE",
+          "college": "",
+          "jerseyNumber": 70,
+          "yearsPro": 1,
+          "measurables": {
+            "heightIn": 74,
+            "weightLb": 280
+          },
+          "ratings": {
+            "ovr": 55,
+            "spd": 68,
+            "acc": 82,
+            "agi": 65,
+            "str": 79,
+            "awr": 40,
+            "car": 73,
+            "thp": 67,
+            "tha": 90,
+            "inj": 69,
+            "sta": 74
+          }
+        },
+        {
+          "name": {
+            "first": "Terrell",
+            "last": "Ward"
+          },
+          "position": "S",
+          "college": "Oregon",
+          "jerseyNumber": 43,
+          "yearsPro": 1,
+          "measurables": {
+            "heightIn": 70,
+            "weightLb": 200
+          }
+        },
+        {
+          "name": {
+            "first": "Montario",
+            "last": "Hardesty"
+          },
+          "position": "RB",
+          "college": "",
+          "jerseyNumber": 31,
+          "yearsPro": 1,
+          "measurables": {
+            "heightIn": 72,
+            "weightLb": 225
+          },
+          "ratings": {
+            "ovr": 71,
+            "spd": 85,
+            "acc": 88,
+            "agi": 87,
+            "str": 69,
+            "awr": 44,
+            "car": 63,
+            "thp": 84,
+            "tha": 75,
+            "inj": 65,
+            "sta": 86
+          }
+        },
+        {
+          "name": {
+            "first": "Daniel",
+            "last": "McCoy"
+          },
+          "position": "QB",
+          "college": "Texas",
+          "jerseyNumber": 12,
+          "yearsPro": 1,
+          "measurables": {
+            "heightIn": 73,
+            "weightLb": 215
+          }
+        },
+        {
+          "name": {
+            "first": "Shawn",
+            "last": "Lauvao"
+          },
+          "position": "OG",
+          "college": "Arizona State",
+          "jerseyNumber": 66,
+          "yearsPro": 1,
+          "measurables": {
+            "heightIn": 75,
+            "weightLb": 315
+          },
+          "ratings": {
+            "ovr": 72,
+            "spd": 54,
+            "acc": 65,
+            "agi": 49,
+            "str": 89,
+            "awr": 65,
+            "car": 84,
+            "thp": 80,
+            "tha": 78,
+            "inj": 92,
+            "sta": 68
+          }
+        },
+        {
+          "name": {
+            "first": "Carlton",
+            "last": "Mitchell"
+          },
+          "position": "WR",
+          "college": "",
+          "jerseyNumber": 18,
+          "yearsPro": 1,
+          "measurables": {
+            "heightIn": 75,
+            "weightLb": 215
+          },
+          "ratings": {
+            "ovr": 61,
+            "spd": 90,
+            "acc": 82,
+            "agi": 84,
+            "str": 68,
+            "awr": 49,
+            "car": 74,
+            "thp": 84,
+            "tha": 88,
+            "inj": 78,
+            "sta": 89
+          }
+        },
+        {
+          "name": {
+            "first": "Joseph",
+            "last": "Haden"
+          },
+          "position": "CB",
+          "college": "Florida",
+          "jerseyNumber": 23,
+          "yearsPro": 1,
+          "measurables": {
+            "heightIn": 71,
+            "weightLb": 190
+          }
+        },
+        {
+          "name": {
+            "first": "Rod",
+            "last": "Windsor"
+          },
+          "position": "WR",
+          "college": "",
+          "jerseyNumber": 13,
+          "yearsPro": 1,
+          "measurables": {
+            "heightIn": 74,
+            "weightLb": 205
+          }
+        },
+        {
+          "name": {
+            "first": "Phillip",
+            "last": "Taylor"
+          },
+          "position": "DT",
+          "college": "Baylor",
+          "jerseyNumber": 98,
+          "measurables": {
+            "heightIn": 75,
+            "weightLb": 335
+          }
+        },
+        {
+          "name": {
+            "first": "Jabaal",
+            "last": "Sheard"
+          },
+          "position": "DE",
+          "college": "Pittsburgh",
+          "jerseyNumber": 97,
+          "measurables": {
+            "heightIn": 74,
+            "weightLb": 255
+          },
+          "ratings": {
+            "ovr": 72,
+            "spd": 82,
+            "acc": 87,
+            "agi": 74,
+            "str": 68,
+            "awr": 50,
+            "car": 81,
+            "thp": 81,
+            "tha": 87,
+            "inj": 84,
+            "sta": 97
+          }
+        },
+        {
+          "name": {
+            "first": "Gregory",
+            "last": "Little"
+          },
+          "position": "WR",
+          "college": "North Carolina",
+          "jerseyNumber": 15,
+          "measurables": {
+            "heightIn": 74,
+            "weightLb": 220
+          }
+        },
+        {
+          "name": {
+            "first": "Jordan",
+            "last": "Cameron"
+          },
+          "position": "TE",
+          "college": "USC",
+          "jerseyNumber": 84,
+          "measurables": {
+            "heightIn": 77,
+            "weightLb": 245
+          },
+          "ratings": {
+            "ovr": 61,
+            "spd": 84,
+            "acc": 88,
+            "agi": 86,
+            "str": 66,
+            "awr": 37,
+            "car": 74,
+            "thp": 91,
+            "tha": 90,
+            "inj": 77,
+            "sta": 65
+          }
+        },
+        {
+          "name": {
+            "first": "Owen",
+            "last": "Marecic"
+          },
+          "position": "FB",
+          "college": "",
+          "jerseyNumber": 48,
+          "measurables": {
+            "heightIn": 72,
+            "weightLb": 245
+          },
+          "ratings": {
+            "ovr": 67,
+            "spd": 73,
+            "acc": 77,
+            "agi": 69,
+            "str": 76,
+            "awr": 60,
+            "car": 45,
+            "thp": 74,
+            "tha": 65,
+            "inj": 94,
+            "sta": 97
+          }
+        },
+        {
+          "name": {
+            "first": "Darryl",
+            "last": "Skrine"
+          },
+          "position": "CB",
+          "college": "Chattanooga",
+          "jerseyNumber": 22,
+          "measurables": {
+            "heightIn": 69,
+            "weightLb": 185
+          }
+        },
+        {
+          "name": {
+            "first": "Jason",
+            "last": "Pinkston"
+          },
+          "position": "OG",
+          "college": "",
+          "jerseyNumber": 62,
+          "measurables": {
+            "heightIn": 75,
+            "weightLb": 305
+          },
+          "ratings": {
+            "ovr": 63,
+            "spd": 54,
+            "acc": 70,
+            "agi": 65,
+            "str": 91,
+            "awr": 36,
+            "car": 80,
+            "thp": 75,
+            "tha": 81,
+            "inj": 61,
+            "sta": 73
+          }
+        },
+        {
+          "name": {
+            "first": "Eric",
+            "last": "Hagg"
+          },
+          "position": "S",
+          "college": "",
+          "jerseyNumber": 27,
+          "measurables": {
+            "heightIn": 73,
+            "weightLb": 205
+          },
+          "ratings": {
+            "ovr": 57,
+            "spd": 79,
+            "acc": 87,
+            "agi": 81,
+            "str": 60,
+            "awr": 42,
+            "car": 67,
+            "thp": 88,
+            "tha": 92,
+            "inj": 88,
+            "sta": 70
+          }
+        },
+        {
+          "name": {
+            "first": "Christian",
+            "last": "Yount"
+          },
+          "position": "C",
+          "college": "",
+          "jerseyNumber": 57,
+          "measurables": {
+            "heightIn": 73,
+            "weightLb": 243
+          }
+        },
+        {
+          "name": {
+            "first": "Kiante",
+            "last": "Tripp"
+          },
+          "position": "DT",
+          "college": "",
+          "jerseyNumber": 67,
+          "measurables": {
+            "heightIn": 78,
+            "weightLb": 276
+          }
+        },
+        {
+          "name": {
+            "first": "Quinton",
+            "last": "Spears"
+          },
+          "position": "LB",
+          "college": "",
+          "jerseyNumber": 90,
+          "measurables": {
+            "heightIn": 76,
+            "weightLb": 234
+          }
+        },
+        {
+          "name": {
+            "first": "James",
+            "last": "Dockery"
+          },
+          "position": "CB",
+          "college": "",
+          "jerseyNumber": 34,
+          "measurables": {
+            "heightIn": 73,
+            "weightLb": 185
+          }
+        },
+        {
+          "name": {
+            "first": "Brian",
+            "last": "Smith"
+          },
+          "position": "LB",
+          "college": "",
+          "jerseyNumber": 53,
+          "measurables": {
+            "heightIn": 75,
+            "weightLb": 240
+          }
+        },
+        {
+          "name": {
+            "first": "Benjamin",
+            "last": "Jacobs"
+          },
+          "position": "LB",
+          "college": "Fresno State",
+          "jerseyNumber": 54,
+          "measurables": {
+            "heightIn": 76,
+            "weightLb": 243
+          }
+        },
+        {
+          "name": {
+            "first": "Armond",
+            "last": "Smith"
+          },
+          "position": "RB",
+          "college": "",
+          "jerseyNumber": 35,
+          "measurables": {
+            "heightIn": 69,
+            "weightLb": 194
+          }
+        }
+      ]
     },
     {
       "tgId": 6,
@@ -6161,6 +7604,7 @@
             "awr": 75,
             "cth": 83,
             "car": 52,
+            "btk": 93,
             "jmp": 77,
             "inj": 62,
             "sta": 78
@@ -7668,7 +9112,1414 @@
       "abbreviation": "ARI",
       "city": "Arizona",
       "name": "Cardinals",
-      "players": []
+      "players": [
+        {
+          "name": {
+            "first": "Dimetry",
+            "last": "Holliday"
+          },
+          "position": "DE",
+          "college": "",
+          "jerseyNumber": 91,
+          "yearsPro": 13,
+          "measurables": {
+            "heightIn": 77,
+            "weightLb": 288
+          }
+        },
+        {
+          "name": {
+            "first": "Joey",
+            "last": "Porter"
+          },
+          "position": "LB",
+          "college": "",
+          "jerseyNumber": 55,
+          "yearsPro": 12,
+          "measurables": {
+            "heightIn": 75,
+            "weightLb": 248
+          },
+          "ratings": {
+            "ovr": 81,
+            "spd": 76,
+            "acc": 82,
+            "agi": 73,
+            "str": 83,
+            "awr": 88,
+            "car": 82,
+            "thp": 91,
+            "tha": 84,
+            "inj": 98,
+            "sta": 87
+          }
+        },
+        {
+          "name": {
+            "first": "Paris",
+            "last": "Lenon"
+          },
+          "position": "LB",
+          "college": "",
+          "jerseyNumber": 51,
+          "yearsPro": 11,
+          "measurables": {
+            "heightIn": 74,
+            "weightLb": 240
+          },
+          "ratings": {
+            "ovr": 78,
+            "spd": 77,
+            "acc": 81,
+            "agi": 80,
+            "str": 74,
+            "awr": 79,
+            "car": 88,
+            "thp": 67,
+            "tha": 91,
+            "inj": 78,
+            "sta": 46
+          }
+        },
+        {
+          "name": {
+            "first": "Mike",
+            "last": "Leach"
+          },
+          "position": "C",
+          "college": "William & Mary",
+          "jerseyNumber": 82,
+          "yearsPro": 11,
+          "measurables": {
+            "heightIn": 74,
+            "weightLb": 235
+          },
+          "ratings": {
+            "ovr": 68,
+            "spd": 71,
+            "acc": 72,
+            "agi": 67,
+            "str": 69,
+            "awr": 84,
+            "car": 62,
+            "thp": 49,
+            "tha": 87,
+            "inj": 79,
+            "sta": 75
+          }
+        },
+        {
+          "name": {
+            "first": "Clark",
+            "last": "Haggans"
+          },
+          "position": "LB",
+          "college": "",
+          "jerseyNumber": 53,
+          "yearsPro": 11,
+          "measurables": {
+            "heightIn": 76,
+            "weightLb": 243
+          },
+          "ratings": {
+            "ovr": 78,
+            "spd": 72,
+            "acc": 82,
+            "agi": 72,
+            "str": 78,
+            "awr": 85,
+            "car": 84,
+            "thp": 83,
+            "tha": 88,
+            "inj": 77,
+            "sta": 79
+          }
+        },
+        {
+          "name": {
+            "first": "Thomas",
+            "last": "Feely"
+          },
+          "position": "K",
+          "college": "",
+          "jerseyNumber": 3,
+          "yearsPro": 10,
+          "measurables": {
+            "heightIn": 70,
+            "weightLb": 208
+          }
+        },
+        {
+          "name": {
+            "first": "Adrian",
+            "last": "Wilson"
+          },
+          "position": "S",
+          "college": "",
+          "jerseyNumber": 24,
+          "yearsPro": 10,
+          "measurables": {
+            "heightIn": 75,
+            "weightLb": 230
+          },
+          "ratings": {
+            "ovr": 92,
+            "spd": 85,
+            "acc": 87,
+            "agi": 86,
+            "str": 74,
+            "awr": 86,
+            "car": 85,
+            "thp": 94,
+            "tha": 91,
+            "inj": 90,
+            "sta": 85
+          }
+        },
+        {
+          "name": {
+            "first": "Todd",
+            "last": "Heap"
+          },
+          "position": "TE",
+          "college": "",
+          "jerseyNumber": 86,
+          "yearsPro": 10,
+          "measurables": {
+            "heightIn": 77,
+            "weightLb": 252
+          },
+          "ratings": {
+            "ovr": 84,
+            "spd": 82,
+            "acc": 81,
+            "agi": 83,
+            "str": 62,
+            "awr": 87,
+            "car": 89,
+            "thp": 88,
+            "tha": 72,
+            "inj": 90,
+            "sta": 65
+          }
+        },
+        {
+          "name": {
+            "first": "David",
+            "last": "Zastudil"
+          },
+          "position": "P",
+          "college": "",
+          "jerseyNumber": 9,
+          "yearsPro": 9,
+          "measurables": {
+            "heightIn": 75,
+            "weightLb": 220
+          }
+        },
+        {
+          "name": {
+            "first": "Chester",
+            "last": "Taylor"
+          },
+          "position": "RB",
+          "college": "",
+          "jerseyNumber": 29,
+          "yearsPro": 9,
+          "measurables": {
+            "heightIn": 71,
+            "weightLb": 213
+          },
+          "ratings": {
+            "ovr": 77,
+            "spd": 86,
+            "acc": 88,
+            "agi": 88,
+            "str": 66,
+            "awr": 83,
+            "car": 77,
+            "thp": 72,
+            "tha": 64,
+            "inj": 89,
+            "sta": 84
+          }
+        },
+        {
+          "name": {
+            "first": "Jeremy",
+            "last": "Bridges"
+          },
+          "position": "OT",
+          "college": "",
+          "jerseyNumber": 73,
+          "yearsPro": 8,
+          "measurables": {
+            "heightIn": 77,
+            "weightLb": 318
+          },
+          "ratings": {
+            "ovr": 74,
+            "spd": 54,
+            "acc": 60,
+            "agi": 55,
+            "str": 89,
+            "awr": 73,
+            "car": 84,
+            "thp": 75,
+            "tha": 75,
+            "inj": 79,
+            "sta": 74
+          }
+        },
+        {
+          "name": {
+            "first": "Nicholas",
+            "last": "Eason"
+          },
+          "position": "DT",
+          "college": "",
+          "jerseyNumber": 98,
+          "yearsPro": 8,
+          "measurables": {
+            "heightIn": 75,
+            "weightLb": 305
+          }
+        },
+        {
+          "name": {
+            "first": "Jonathan",
+            "last": "Hadnot"
+          },
+          "position": "OG",
+          "college": "",
+          "jerseyNumber": 70,
+          "yearsPro": 7,
+          "measurables": {
+            "heightIn": 74,
+            "weightLb": 310
+          }
+        },
+        {
+          "name": {
+            "first": "Larry",
+            "last": "Fitzgerald"
+          },
+          "position": "WR",
+          "college": "Pittsburgh",
+          "jerseyNumber": 11,
+          "yearsPro": 7,
+          "measurables": {
+            "heightIn": 75,
+            "weightLb": 218
+          },
+          "ratings": {
+            "ovr": 96,
+            "spd": 87,
+            "acc": 89,
+            "agi": 93,
+            "str": 76,
+            "awr": 95,
+            "car": 98,
+            "thp": 99,
+            "tha": 95,
+            "inj": 99,
+            "sta": 97
+          }
+        },
+        {
+          "name": {
+            "first": "Darnell",
+            "last": "Dockett"
+          },
+          "position": "DT",
+          "college": "",
+          "jerseyNumber": 90,
+          "yearsPro": 7,
+          "measurables": {
+            "heightIn": 76,
+            "weightLb": 290
+          },
+          "ratings": {
+            "ovr": 89,
+            "spd": 73,
+            "acc": 88,
+            "agi": 70,
+            "str": 89,
+            "awr": 79,
+            "car": 79,
+            "thp": 65,
+            "tha": 94,
+            "inj": 88,
+            "sta": 88
+          }
+        },
+        {
+          "name": {
+            "first": "Ben",
+            "last": "Graham"
+          },
+          "position": "P",
+          "college": "",
+          "jerseyNumber": 5,
+          "yearsPro": 6,
+          "measurables": {
+            "heightIn": 77,
+            "weightLb": 236
+          },
+          "ratings": {
+            "ovr": 74,
+            "spd": 66,
+            "acc": 66,
+            "agi": 58,
+            "str": 50,
+            "awr": 72,
+            "car": 91,
+            "thp": 88,
+            "tha": 45,
+            "inj": 50,
+            "sta": 87
+          }
+        },
+        {
+          "name": {
+            "first": "Sean",
+            "last": "Considine"
+          },
+          "position": "S",
+          "college": "",
+          "jerseyNumber": 37,
+          "yearsPro": 6,
+          "measurables": {
+            "heightIn": 72,
+            "weightLb": 212
+          },
+          "ratings": {
+            "ovr": 72,
+            "spd": 80,
+            "acc": 87,
+            "agi": 84,
+            "str": 64,
+            "awr": 72,
+            "car": 68,
+            "thp": 86,
+            "tha": 78,
+            "inj": 90,
+            "sta": 96
+          }
+        },
+        {
+          "name": {
+            "first": "Kerry",
+            "last": "Rhodes"
+          },
+          "position": "S",
+          "college": "",
+          "jerseyNumber": 25,
+          "yearsPro": 6,
+          "measurables": {
+            "heightIn": 75,
+            "weightLb": 212
+          },
+          "ratings": {
+            "ovr": 88,
+            "spd": 84,
+            "acc": 87,
+            "agi": 85,
+            "str": 64,
+            "awr": 87,
+            "car": 75,
+            "thp": 90,
+            "tha": 95,
+            "inj": 95,
+            "sta": 85
+          }
+        },
+        {
+          "name": {
+            "first": "Hamza",
+            "last": "Abdullah"
+          },
+          "position": "S",
+          "college": "",
+          "jerseyNumber": 23,
+          "yearsPro": 6,
+          "measurables": {
+            "heightIn": 74,
+            "weightLb": 216
+          },
+          "ratings": {
+            "ovr": 69,
+            "spd": 79,
+            "acc": 84,
+            "agi": 80,
+            "str": 68,
+            "awr": 62,
+            "car": 68,
+            "thp": 80,
+            "tha": 90,
+            "inj": 88,
+            "sta": 72
+          }
+        },
+        {
+          "name": {
+            "first": "Taitusi",
+            "last": "Lutui"
+          },
+          "position": "OG",
+          "college": "",
+          "jerseyNumber": 76,
+          "yearsPro": 5,
+          "measurables": {
+            "heightIn": 76,
+            "weightLb": 338
+          }
+        },
+        {
+          "name": {
+            "first": "Daryn",
+            "last": "Colledge"
+          },
+          "position": "OG",
+          "college": "",
+          "jerseyNumber": 71,
+          "yearsPro": 5,
+          "measurables": {
+            "heightIn": 76,
+            "weightLb": 308
+          },
+          "ratings": {
+            "ovr": 82,
+            "spd": 67,
+            "acc": 84,
+            "agi": 74,
+            "str": 82,
+            "awr": 77,
+            "car": 78,
+            "thp": 82,
+            "tha": 85,
+            "inj": 88,
+            "sta": 82
+          }
+        },
+        {
+          "name": {
+            "first": "Richard",
+            "last": "Marshall"
+          },
+          "position": "CB",
+          "college": "",
+          "jerseyNumber": 31,
+          "yearsPro": 5,
+          "measurables": {
+            "heightIn": 71,
+            "weightLb": 198
+          },
+          "ratings": {
+            "ovr": 81,
+            "spd": 93,
+            "acc": 91,
+            "agi": 92,
+            "str": 56,
+            "awr": 74,
+            "car": 64,
+            "thp": 93,
+            "tha": 94,
+            "inj": 95,
+            "sta": 75
+          }
+        },
+        {
+          "name": {
+            "first": "Jeffreey",
+            "last": "King"
+          },
+          "position": "TE",
+          "college": "",
+          "jerseyNumber": 87,
+          "yearsPro": 5,
+          "measurables": {
+            "heightIn": 75,
+            "weightLb": 260
+          }
+        },
+        {
+          "name": {
+            "first": "D'Anthony",
+            "last": "Batiste"
+          },
+          "position": "OT",
+          "college": "",
+          "jerseyNumber": 74,
+          "yearsPro": 5,
+          "measurables": {
+            "heightIn": 76,
+            "weightLb": 314
+          },
+          "ratings": {
+            "ovr": 60,
+            "spd": 48,
+            "acc": 55,
+            "agi": 48,
+            "str": 90,
+            "awr": 62,
+            "car": 84,
+            "thp": 65,
+            "tha": 78,
+            "inj": 75,
+            "sta": 62
+          }
+        },
+        {
+          "name": {
+            "first": "Levi",
+            "last": "Brown"
+          },
+          "position": "OT",
+          "college": "",
+          "jerseyNumber": 75,
+          "yearsPro": 4,
+          "measurables": {
+            "heightIn": 78,
+            "weightLb": 324
+          },
+          "ratings": {
+            "ovr": 70,
+            "spd": 63,
+            "acc": 80,
+            "agi": 57,
+            "str": 91,
+            "awr": 69,
+            "car": 86,
+            "thp": 70,
+            "tha": 77,
+            "inj": 84,
+            "sta": 85
+          }
+        },
+        {
+          "name": {
+            "first": "Kevin",
+            "last": "Kolb"
+          },
+          "position": "QB",
+          "college": "",
+          "jerseyNumber": 4,
+          "yearsPro": 4,
+          "measurables": {
+            "heightIn": 75,
+            "weightLb": 218
+          },
+          "ratings": {
+            "ovr": 84,
+            "spd": 72,
+            "acc": 76,
+            "agi": 73,
+            "str": 59,
+            "awr": 77,
+            "car": 70,
+            "thp": 88,
+            "tha": 80,
+            "inj": 89,
+            "sta": 90
+          }
+        },
+        {
+          "name": {
+            "first": "Stewart",
+            "last": "Bradley"
+          },
+          "position": "LB",
+          "college": "",
+          "jerseyNumber": 52,
+          "yearsPro": 4,
+          "measurables": {
+            "heightIn": 76,
+            "weightLb": 258
+          },
+          "ratings": {
+            "ovr": 81,
+            "spd": 75,
+            "acc": 83,
+            "agi": 78,
+            "str": 78,
+            "awr": 79,
+            "car": 87,
+            "thp": 85,
+            "tha": 92,
+            "inj": 80,
+            "sta": 78
+          }
+        },
+        {
+          "name": {
+            "first": "Reagan",
+            "last": "Maui'a"
+          },
+          "position": "FB",
+          "college": "",
+          "jerseyNumber": 45,
+          "yearsPro": 4,
+          "measurables": {
+            "heightIn": 72,
+            "weightLb": 265
+          }
+        },
+        {
+          "name": {
+            "first": "Chansi",
+            "last": "Stuckey"
+          },
+          "position": "WR",
+          "college": "",
+          "jerseyNumber": 17,
+          "yearsPro": 4,
+          "measurables": {
+            "heightIn": 72,
+            "weightLb": 196
+          },
+          "ratings": {
+            "ovr": 68,
+            "spd": 87,
+            "acc": 91,
+            "agi": 90,
+            "str": 49,
+            "awr": 65,
+            "car": 77,
+            "thp": 81,
+            "tha": 88,
+            "inj": 80,
+            "sta": 78
+          }
+        },
+        {
+          "name": {
+            "first": "Michael",
+            "last": "Adams"
+          },
+          "position": "CB",
+          "college": "",
+          "jerseyNumber": 27,
+          "yearsPro": 4,
+          "measurables": {
+            "heightIn": 68,
+            "weightLb": 181
+          },
+          "ratings": {
+            "ovr": 65,
+            "spd": 84,
+            "acc": 88,
+            "agi": 85,
+            "str": 52,
+            "awr": 68,
+            "car": 54,
+            "thp": 75,
+            "tha": 90,
+            "inj": 90,
+            "sta": 70
+          }
+        },
+        {
+          "name": {
+            "first": "Lyle",
+            "last": "Sendlein"
+          },
+          "position": "C",
+          "college": "Texas",
+          "jerseyNumber": 63,
+          "yearsPro": 4,
+          "measurables": {
+            "heightIn": 75,
+            "weightLb": 308
+          },
+          "ratings": {
+            "ovr": 71,
+            "spd": 56,
+            "acc": 66,
+            "agi": 56,
+            "str": 80,
+            "awr": 73,
+            "car": 81,
+            "thp": 75,
+            "tha": 85,
+            "inj": 74,
+            "sta": 76
+          }
+        },
+        {
+          "name": {
+            "first": "Richard",
+            "last": "Bartel"
+          },
+          "position": "QB",
+          "college": "",
+          "jerseyNumber": 2,
+          "yearsPro": 4,
+          "measurables": {
+            "heightIn": 76,
+            "weightLb": 230
+          },
+          "ratings": {
+            "ovr": 62,
+            "spd": 62,
+            "acc": 65,
+            "agi": 65,
+            "str": 64,
+            "awr": 54,
+            "car": 65,
+            "thp": 87,
+            "tha": 71,
+            "inj": 88,
+            "sta": 85
+          }
+        },
+        {
+          "name": {
+            "first": "Calais",
+            "last": "Campbell"
+          },
+          "position": "DE",
+          "college": "Miami",
+          "jerseyNumber": 93,
+          "yearsPro": 3,
+          "measurables": {
+            "heightIn": 80,
+            "weightLb": 300
+          },
+          "ratings": {
+            "ovr": 80,
+            "spd": 75,
+            "acc": 84,
+            "agi": 73,
+            "str": 82,
+            "awr": 76,
+            "car": 74,
+            "thp": 85,
+            "tha": 94,
+            "inj": 83,
+            "sta": 80
+          }
+        },
+        {
+          "name": {
+            "first": "Early",
+            "last": "Doucet"
+          },
+          "position": "WR",
+          "college": "",
+          "jerseyNumber": 85,
+          "yearsPro": 3,
+          "measurables": {
+            "heightIn": 72,
+            "weightLb": 212
+          },
+          "ratings": {
+            "ovr": 74,
+            "spd": 86,
+            "acc": 89,
+            "agi": 90,
+            "str": 60,
+            "awr": 67,
+            "car": 77,
+            "thp": 82,
+            "tha": 77,
+            "inj": 87,
+            "sta": 54
+          }
+        },
+        {
+          "name": {
+            "first": "Jaymar",
+            "last": "Johnson"
+          },
+          "position": "WR",
+          "college": "",
+          "jerseyNumber": 83,
+          "yearsPro": 3,
+          "measurables": {
+            "heightIn": 72,
+            "weightLb": 176
+          },
+          "ratings": {
+            "ovr": 58,
+            "spd": 90,
+            "acc": 94,
+            "agi": 84,
+            "str": 49,
+            "awr": 55,
+            "cth": 73,
+            "car": 89,
+            "btk": 79,
+            "jmp": 93,
+            "inj": 79,
+            "sta": 75
+          }
+        },
+        {
+          "name": {
+            "first": "Brandon",
+            "last": "Keith"
+          },
+          "position": "OT",
+          "college": "",
+          "jerseyNumber": 72,
+          "yearsPro": 3,
+          "measurables": {
+            "heightIn": 77,
+            "weightLb": 335
+          },
+          "ratings": {
+            "ovr": 77,
+            "spd": 66,
+            "acc": 78,
+            "agi": 63,
+            "str": 87,
+            "awr": 66,
+            "car": 83,
+            "thp": 55,
+            "tha": 80,
+            "inj": 70,
+            "sta": 80
+          }
+        },
+        {
+          "name": {
+            "first": "Reginald",
+            "last": "Walker"
+          },
+          "position": "LB",
+          "college": "",
+          "jerseyNumber": 56,
+          "yearsPro": 2,
+          "measurables": {
+            "heightIn": 72,
+            "weightLb": 244
+          }
+        },
+        {
+          "name": {
+            "first": "Ronald",
+            "last": "Talley"
+          },
+          "position": "DE",
+          "college": "",
+          "jerseyNumber": 96,
+          "yearsPro": 2,
+          "measurables": {
+            "heightIn": 75,
+            "weightLb": 286
+          }
+        },
+        {
+          "name": {
+            "first": "LaRod",
+            "last": "Stephens-Howling"
+          },
+          "position": "RB",
+          "college": "",
+          "jerseyNumber": 36,
+          "yearsPro": 2,
+          "measurables": {
+            "heightIn": 67,
+            "weightLb": 185
+          },
+          "ratings": {
+            "ovr": 72,
+            "spd": 93,
+            "acc": 95,
+            "agi": 94,
+            "str": 47,
+            "awr": 62,
+            "car": 77,
+            "thp": 73,
+            "tha": 74,
+            "inj": 86,
+            "sta": 78
+          }
+        },
+        {
+          "name": {
+            "first": "Christopher",
+            "last": "Wells"
+          },
+          "position": "RB",
+          "college": "",
+          "jerseyNumber": 26,
+          "yearsPro": 2,
+          "measurables": {
+            "heightIn": 74,
+            "weightLb": 229
+          }
+        },
+        {
+          "name": {
+            "first": "Julian",
+            "last": "Johnson"
+          },
+          "position": "S",
+          "college": "Alabama",
+          "jerseyNumber": 49,
+          "yearsPro": 2,
+          "measurables": {
+            "heightIn": 71,
+            "weightLb": 204
+          }
+        },
+        {
+          "name": {
+            "first": "Brandon",
+            "last": "Williams"
+          },
+          "position": "LB",
+          "college": "",
+          "jerseyNumber": 59,
+          "yearsPro": 2,
+          "measurables": {
+            "heightIn": 75,
+            "weightLb": 250
+          },
+          "ratings": {
+            "ovr": 57,
+            "spd": 74,
+            "acc": 82,
+            "agi": 72,
+            "str": 67,
+            "awr": 45,
+            "car": 70,
+            "thp": 74,
+            "tha": 82,
+            "inj": 68,
+            "sta": 65
+          }
+        },
+        {
+          "name": {
+            "first": "Alfonso",
+            "last": "Smith"
+          },
+          "position": "RB",
+          "college": "",
+          "jerseyNumber": 46,
+          "yearsPro": 1,
+          "measurables": {
+            "heightIn": 73,
+            "weightLb": 208
+          },
+          "ratings": {
+            "ovr": 58,
+            "spd": 94,
+            "acc": 87,
+            "agi": 85,
+            "str": 64,
+            "awr": 34,
+            "car": 56,
+            "thp": 69,
+            "tha": 77,
+            "inj": 86,
+            "sta": 82
+          }
+        },
+        {
+          "name": {
+            "first": "Stephen",
+            "last": "Williams"
+          },
+          "position": "WR",
+          "college": "",
+          "jerseyNumber": 18,
+          "yearsPro": 1,
+          "measurables": {
+            "heightIn": 77,
+            "weightLb": 208
+          },
+          "ratings": {
+            "ovr": 61,
+            "spd": 88,
+            "acc": 83,
+            "agi": 84,
+            "str": 58,
+            "awr": 52,
+            "car": 76,
+            "thp": 93,
+            "tha": 90,
+            "inj": 82,
+            "sta": 74
+          }
+        },
+        {
+          "name": {
+            "first": "Anthony",
+            "last": "Jefferson"
+          },
+          "position": "CB",
+          "college": "",
+          "jerseyNumber": 20,
+          "yearsPro": 1,
+          "measurables": {
+            "heightIn": 73,
+            "weightLb": 190
+          }
+        },
+        {
+          "name": {
+            "first": "Marcus",
+            "last": "Green"
+          },
+          "position": "CB",
+          "college": "",
+          "jerseyNumber": 30,
+          "yearsPro": 1,
+          "measurables": {
+            "heightIn": 70,
+            "weightLb": 175
+          }
+        },
+        {
+          "name": {
+            "first": "Andre",
+            "last": "Roberts"
+          },
+          "position": "WR",
+          "college": "Citadel",
+          "jerseyNumber": 12,
+          "yearsPro": 1,
+          "measurables": {
+            "heightIn": 71,
+            "weightLb": 195
+          },
+          "ratings": {
+            "ovr": 66,
+            "spd": 91,
+            "acc": 90,
+            "agi": 92,
+            "str": 45,
+            "awr": 51,
+            "car": 75,
+            "thp": 84,
+            "tha": 95,
+            "inj": 89,
+            "sta": 75
+          }
+        },
+        {
+          "name": {
+            "first": "O'Brien",
+            "last": "Schofield"
+          },
+          "position": "LB",
+          "college": "",
+          "jerseyNumber": 50,
+          "yearsPro": 1,
+          "measurables": {
+            "heightIn": 75,
+            "weightLb": 242
+          },
+          "ratings": {
+            "ovr": 70,
+            "spd": 79,
+            "acc": 87,
+            "agi": 75,
+            "str": 77,
+            "awr": 63,
+            "car": 79,
+            "thp": 69,
+            "tha": 84,
+            "inj": 80,
+            "sta": 68
+          }
+        },
+        {
+          "name": {
+            "first": "John",
+            "last": "Skelton"
+          },
+          "position": "QB",
+          "college": "",
+          "jerseyNumber": 19,
+          "yearsPro": 1,
+          "measurables": {
+            "heightIn": 78,
+            "weightLb": 244
+          },
+          "ratings": {
+            "ovr": 69,
+            "spd": 72,
+            "acc": 75,
+            "agi": 74,
+            "str": 68,
+            "awr": 58,
+            "car": 62,
+            "thp": 96,
+            "tha": 71,
+            "inj": 88,
+            "sta": 85
+          }
+        },
+        {
+          "name": {
+            "first": "Crezdon",
+            "last": "Butler"
+          },
+          "position": "CB",
+          "college": "Clemson",
+          "jerseyNumber": 22,
+          "yearsPro": 1,
+          "measurables": {
+            "heightIn": 72,
+            "weightLb": 191
+          },
+          "ratings": {
+            "ovr": 58,
+            "spd": 92,
+            "acc": 87,
+            "agi": 89,
+            "str": 44,
+            "awr": 41,
+            "car": 29,
+            "thp": 92,
+            "tha": 95,
+            "inj": 88,
+            "sta": 70
+          }
+        },
+        {
+          "name": {
+            "first": "Jim",
+            "last": "Dray"
+          },
+          "position": "TE",
+          "college": "Stanford",
+          "jerseyNumber": 81,
+          "yearsPro": 1,
+          "measurables": {
+            "heightIn": 77,
+            "weightLb": 255
+          },
+          "ratings": {
+            "ovr": 62,
+            "spd": 72,
+            "acc": 75,
+            "agi": 74,
+            "str": 70,
+            "awr": 62,
+            "car": 66,
+            "thp": 69,
+            "tha": 87,
+            "inj": 84,
+            "sta": 77
+          }
+        },
+        {
+          "name": {
+            "first": "Dan",
+            "last": "Williams"
+          },
+          "position": "DT",
+          "college": "Tennessee",
+          "jerseyNumber": 92,
+          "yearsPro": 1,
+          "measurables": {
+            "heightIn": 75,
+            "weightLb": 327
+          },
+          "ratings": {
+            "ovr": 74,
+            "spd": 60,
+            "acc": 70,
+            "agi": 58,
+            "str": 95,
+            "awr": 66,
+            "car": 88,
+            "thp": 62,
+            "tha": 90,
+            "inj": 74,
+            "sta": 88
+          }
+        },
+        {
+          "name": {
+            "first": "Daryl",
+            "last": "Washington"
+          },
+          "position": "LB",
+          "college": "Texas Christian",
+          "jerseyNumber": 58,
+          "yearsPro": 1,
+          "measurables": {
+            "heightIn": 74,
+            "weightLb": 230
+          },
+          "ratings": {
+            "ovr": 74,
+            "spd": 85,
+            "acc": 93,
+            "agi": 88,
+            "str": 67,
+            "awr": 66,
+            "car": 86,
+            "thp": 89,
+            "tha": 87,
+            "inj": 92,
+            "sta": 55
+          }
+        },
+        {
+          "name": {
+            "first": "Patrick",
+            "last": "Peterson"
+          },
+          "position": "CB",
+          "college": "Louisiana State",
+          "jerseyNumber": 21,
+          "measurables": {
+            "heightIn": 72,
+            "weightLb": 219
+          },
+          "ratings": {
+            "ovr": 82,
+            "spd": 97,
+            "acc": 93,
+            "agi": 96,
+            "str": 67,
+            "awr": 60,
+            "car": 67,
+            "thp": 93,
+            "tha": 97,
+            "inj": 97,
+            "sta": 82
+          }
+        },
+        {
+          "name": {
+            "first": "Robert",
+            "last": "Housler"
+          },
+          "position": "TE",
+          "college": "Florida Atlantic",
+          "jerseyNumber": 84,
+          "measurables": {
+            "heightIn": 77,
+            "weightLb": 250
+          }
+        },
+        {
+          "name": {
+            "first": "Samuel",
+            "last": "Acho"
+          },
+          "position": "LB",
+          "college": "Texas",
+          "jerseyNumber": 94,
+          "measurables": {
+            "heightIn": 74,
+            "weightLb": 257
+          }
+        },
+        {
+          "name": {
+            "first": "Anthony",
+            "last": "Sherman"
+          },
+          "position": "FB",
+          "college": "Connecticut",
+          "jerseyNumber": 35,
+          "measurables": {
+            "heightIn": 70,
+            "weightLb": 242
+          },
+          "ratings": {
+            "ovr": 69,
+            "spd": 80,
+            "acc": 75,
+            "agi": 72,
+            "str": 78,
+            "awr": 60,
+            "car": 73,
+            "thp": 67,
+            "tha": 65,
+            "inj": 92,
+            "sta": 87
+          }
+        },
+        {
+          "name": {
+            "first": "David",
+            "last": "Carter"
+          },
+          "position": "DT",
+          "college": "",
+          "jerseyNumber": 79,
+          "measurables": {
+            "heightIn": 77,
+            "weightLb": 300
+          },
+          "ratings": {
+            "ovr": 58,
+            "spd": 67,
+            "acc": 85,
+            "agi": 64,
+            "str": 80,
+            "awr": 40,
+            "car": 82,
+            "thp": 65,
+            "tha": 90,
+            "inj": 75,
+            "sta": 80
+          }
+        },
+        {
+          "name": {
+            "first": "Korey",
+            "last": "Lindsey"
+          },
+          "position": "CB",
+          "college": "",
+          "jerseyNumber": 32,
+          "measurables": {
+            "heightIn": 70,
+            "weightLb": 194
+          }
+        },
+        {
+          "name": {
+            "first": "DeMarco",
+            "last": "Sampson"
+          },
+          "position": "WR",
+          "college": "",
+          "jerseyNumber": 89,
+          "measurables": {
+            "heightIn": 74,
+            "weightLb": 204
+          },
+          "ratings": {
+            "ovr": 60,
+            "spd": 88,
+            "acc": 76,
+            "agi": 77,
+            "str": 69,
+            "awr": 40,
+            "car": 67,
+            "thp": 88,
+            "tha": 64,
+            "inj": 85,
+            "sta": 78
+          }
+        },
+        {
+          "name": {
+            "first": "Curtis",
+            "last": "Young"
+          },
+          "position": "OT",
+          "college": "",
+          "jerseyNumber": 67,
+          "measurables": {
+            "heightIn": 77,
+            "weightLb": 298
+          }
+        }
+      ]
     },
     {
       "tgId": 8,
@@ -9340,33 +12191,6 @@
           "measurables": {
             "heightIn": 78,
             "weightLb": 270
-          }
-        },
-        {
-          "name": {
-            "first": "Thomas",
-            "last": "Jones"
-          },
-          "position": "RB",
-          "college": "",
-          "jerseyNumber": 20,
-          "yearsPro": 11,
-          "measurables": {
-            "heightIn": 70,
-            "weightLb": 212
-          },
-          "ratings": {
-            "ovr": 84,
-            "spd": 86,
-            "acc": 85,
-            "agi": 85,
-            "str": 76,
-            "awr": 91,
-            "car": 60,
-            "thp": 93,
-            "tha": 79,
-            "inj": 84,
-            "sta": 80
           }
         },
         {
@@ -11814,6 +14638,7 @@
             "awr": 52,
             "cth": 84,
             "car": 77,
+            "btk": 75,
             "jmp": 68,
             "inj": 92,
             "sta": 72
@@ -14431,6 +17256,7 @@
             "awr": 67,
             "cth": 86,
             "car": 75,
+            "btk": 79,
             "jmp": 76,
             "inj": 88,
             "sta": 79
@@ -18474,6 +21300,7 @@
             "awr": 70,
             "cth": 63,
             "car": 87,
+            "btk": 55,
             "jmp": 80,
             "inj": 86,
             "sta": 82
@@ -18596,6 +21423,7 @@
             "awr": 76,
             "cth": 64,
             "car": 92,
+            "btk": 74,
             "jmp": 90,
             "inj": 95,
             "sta": 84
@@ -19880,6 +22708,7 @@
             "awr": 75,
             "cth": 77,
             "car": 53,
+            "btk": 85,
             "jmp": 78,
             "inj": 70,
             "sta": 81
@@ -25881,6 +28710,7 @@
             "awr": 52,
             "cth": 67,
             "car": 80,
+            "btk": 56,
             "jmp": 68,
             "inj": 92,
             "sta": 77
@@ -29208,6 +32038,7 @@
             "awr": 75,
             "cth": 83,
             "car": 52,
+            "btk": 93,
             "jmp": 77,
             "inj": 62,
             "sta": 78
@@ -30598,8 +33429,7 @@
           },
           "position": "CB",
           "college": "",
-          "jerseyNumber": 0,
-          "yearsPro": 37
+          "jerseyNumber": 0
         }
       ]
     },
@@ -31161,6 +33991,7 @@
             "awr": 76,
             "cth": 87,
             "car": 72,
+            "btk": 81,
             "jmp": 79,
             "inj": 70,
             "sta": 79
@@ -32151,14 +34982,3094 @@
       "abbreviation": "STL",
       "city": "St. Louis",
       "name": "Rams",
-      "players": []
+      "players": [
+        {
+          "name": {
+            "first": "Al",
+            "last": "Harris"
+          },
+          "position": "CB",
+          "college": "",
+          "jerseyNumber": 31,
+          "yearsPro": 14,
+          "measurables": {
+            "heightIn": 73,
+            "weightLb": 194
+          }
+        },
+        {
+          "name": {
+            "first": "James",
+            "last": "Hall"
+          },
+          "position": "DE",
+          "college": "",
+          "jerseyNumber": 96,
+          "yearsPro": 11,
+          "measurables": {
+            "heightIn": 74,
+            "weightLb": 265
+          },
+          "ratings": {
+            "ovr": 82,
+            "spd": 75,
+            "acc": 84,
+            "agi": 72,
+            "str": 79,
+            "awr": 85,
+            "car": 75,
+            "thp": 54,
+            "tha": 84,
+            "inj": 80,
+            "sta": 80
+          }
+        },
+        {
+          "name": {
+            "first": "Fred",
+            "last": "Robbins"
+          },
+          "position": "DT",
+          "college": "",
+          "jerseyNumber": 98,
+          "yearsPro": 11,
+          "measurables": {
+            "heightIn": 76,
+            "weightLb": 322
+          },
+          "ratings": {
+            "ovr": 82,
+            "spd": 54,
+            "acc": 77,
+            "agi": 52,
+            "str": 92,
+            "awr": 85,
+            "car": 85,
+            "thp": 44,
+            "tha": 92,
+            "inj": 78,
+            "sta": 89
+          }
+        },
+        {
+          "name": {
+            "first": "Adam",
+            "last": "Feeley"
+          },
+          "position": "QB",
+          "college": "",
+          "jerseyNumber": 4,
+          "yearsPro": 10,
+          "measurables": {
+            "heightIn": 75,
+            "weightLb": 216
+          }
+        },
+        {
+          "name": {
+            "first": "Tony",
+            "last": "Wragge"
+          },
+          "position": "C",
+          "college": "",
+          "jerseyNumber": 64,
+          "yearsPro": 9,
+          "measurables": {
+            "heightIn": 76,
+            "weightLb": 310
+          }
+        },
+        {
+          "name": {
+            "first": "Justin",
+            "last": "Bannan"
+          },
+          "position": "DT",
+          "college": "",
+          "jerseyNumber": 95,
+          "yearsPro": 9,
+          "measurables": {
+            "heightIn": 75,
+            "weightLb": 312
+          }
+        },
+        {
+          "name": {
+            "first": "Benjamin",
+            "last": "Leber"
+          },
+          "position": "LB",
+          "college": "",
+          "jerseyNumber": 59,
+          "yearsPro": 9,
+          "measurables": {
+            "heightIn": 75,
+            "weightLb": 245
+          }
+        },
+        {
+          "name": {
+            "first": "Roderick",
+            "last": "Hood"
+          },
+          "position": "CB",
+          "college": "",
+          "jerseyNumber": 26,
+          "yearsPro": 8,
+          "measurables": {
+            "heightIn": 71,
+            "weightLb": 201
+          }
+        },
+        {
+          "name": {
+            "first": "Quintin",
+            "last": "Mikell"
+          },
+          "position": "S",
+          "college": "",
+          "jerseyNumber": 27,
+          "yearsPro": 8,
+          "measurables": {
+            "heightIn": 70,
+            "weightLb": 204
+          },
+          "ratings": {
+            "ovr": 88,
+            "spd": 88,
+            "acc": 86,
+            "agi": 82,
+            "str": 65,
+            "awr": 82,
+            "car": 76,
+            "thp": 82,
+            "tha": 92,
+            "inj": 95,
+            "sta": 86
+          }
+        },
+        {
+          "name": {
+            "first": "Adam",
+            "last": "Goldberg"
+          },
+          "position": "OT",
+          "college": "",
+          "jerseyNumber": 73,
+          "yearsPro": 8,
+          "measurables": {
+            "heightIn": 79,
+            "weightLb": 305
+          }
+        },
+        {
+          "name": {
+            "first": "Josh",
+            "last": "Brown"
+          },
+          "position": "K",
+          "college": "",
+          "jerseyNumber": 3,
+          "yearsPro": 8,
+          "measurables": {
+            "heightIn": 72,
+            "weightLb": 202
+          },
+          "ratings": {
+            "ovr": 86,
+            "spd": 60,
+            "acc": 64,
+            "agi": 55,
+            "str": 25,
+            "awr": 83,
+            "car": 97,
+            "thp": 87,
+            "tha": 30,
+            "inj": 18,
+            "sta": 90
+          }
+        },
+        {
+          "name": {
+            "first": "Brandon",
+            "last": "Lloyd"
+          },
+          "position": "WR",
+          "college": "",
+          "jerseyNumber": 83,
+          "yearsPro": 8,
+          "measurables": {
+            "heightIn": 72,
+            "weightLb": 188
+          },
+          "ratings": {
+            "ovr": 88,
+            "spd": 92,
+            "acc": 93,
+            "agi": 95,
+            "str": 48,
+            "awr": 89,
+            "car": 95,
+            "thp": 92,
+            "tha": 82,
+            "inj": 90,
+            "sta": 65
+          }
+        },
+        {
+          "name": {
+            "first": "Donald",
+            "last": "Jones"
+          },
+          "position": "P",
+          "college": "LSU",
+          "jerseyNumber": 5,
+          "yearsPro": 7,
+          "measurables": {
+            "heightIn": 74,
+            "weightLb": 220
+          },
+          "ratings": {
+            "ovr": 59,
+            "spd": 89,
+            "acc": 92,
+            "agi": 88,
+            "str": 63,
+            "awr": 55,
+            "car": 69,
+            "thp": 92,
+            "tha": 88,
+            "inj": 84,
+            "sta": 68
+          }
+        },
+        {
+          "name": {
+            "first": "Steven",
+            "last": "Jackson"
+          },
+          "position": "RB",
+          "college": "Oregon State",
+          "jerseyNumber": 39,
+          "yearsPro": 7,
+          "measurables": {
+            "heightIn": 74,
+            "weightLb": 240
+          },
+          "ratings": {
+            "ovr": 94,
+            "spd": 87,
+            "acc": 90,
+            "agi": 87,
+            "str": 86,
+            "awr": 96,
+            "car": 81,
+            "thp": 95,
+            "tha": 74,
+            "inj": 92,
+            "sta": 98
+          }
+        },
+        {
+          "name": {
+            "first": "Jacob",
+            "last": "Bell"
+          },
+          "position": "OG",
+          "college": "",
+          "jerseyNumber": 63,
+          "yearsPro": 7,
+          "measurables": {
+            "heightIn": 77,
+            "weightLb": 304
+          },
+          "ratings": {
+            "ovr": 87,
+            "spd": 55,
+            "acc": 76,
+            "agi": 62,
+            "str": 86,
+            "awr": 84,
+            "car": 82,
+            "thp": 80,
+            "tha": 89,
+            "inj": 85,
+            "sta": 85
+          }
+        },
+        {
+          "name": {
+            "first": "James",
+            "last": "Butler"
+          },
+          "position": "S",
+          "college": "",
+          "jerseyNumber": 37,
+          "yearsPro": 6,
+          "measurables": {
+            "heightIn": 75,
+            "weightLb": 218
+          },
+          "ratings": {
+            "ovr": 77,
+            "spd": 80,
+            "acc": 85,
+            "agi": 86,
+            "str": 64,
+            "awr": 74,
+            "car": 67,
+            "thp": 96,
+            "tha": 91,
+            "inj": 85,
+            "sta": 78
+          }
+        },
+        {
+          "name": {
+            "first": "Stephen",
+            "last": "Spach"
+          },
+          "position": "TE",
+          "college": "",
+          "jerseyNumber": 81,
+          "yearsPro": 6,
+          "measurables": {
+            "heightIn": 76,
+            "weightLb": 260
+          },
+          "ratings": {
+            "ovr": 70,
+            "spd": 69,
+            "acc": 73,
+            "agi": 68,
+            "str": 73,
+            "awr": 77,
+            "car": 73,
+            "thp": 65,
+            "tha": 84,
+            "inj": 87,
+            "sta": 82
+          }
+        },
+        {
+          "name": {
+            "first": "Harvey",
+            "last": "Dahl"
+          },
+          "position": "OG",
+          "college": "",
+          "jerseyNumber": 62,
+          "yearsPro": 6,
+          "measurables": {
+            "heightIn": 77,
+            "weightLb": 308
+          },
+          "ratings": {
+            "ovr": 87,
+            "spd": 57,
+            "acc": 72,
+            "agi": 55,
+            "str": 91,
+            "awr": 76,
+            "car": 94,
+            "thp": 79,
+            "tha": 85,
+            "inj": 87,
+            "sta": 86
+          }
+        },
+        {
+          "name": {
+            "first": "Gary",
+            "last": "Gibson"
+          },
+          "position": "DT",
+          "college": "",
+          "jerseyNumber": 71,
+          "yearsPro": 6,
+          "measurables": {
+            "heightIn": 75,
+            "weightLb": 312
+          },
+          "ratings": {
+            "ovr": 75,
+            "spd": 65,
+            "acc": 80,
+            "agi": 55,
+            "str": 84,
+            "awr": 69,
+            "car": 76,
+            "thp": 55,
+            "tha": 84,
+            "inj": 78,
+            "sta": 80
+          }
+        },
+        {
+          "name": {
+            "first": "Carnell",
+            "last": "Williams"
+          },
+          "position": "RB",
+          "college": "",
+          "jerseyNumber": 33,
+          "yearsPro": 6,
+          "measurables": {
+            "heightIn": 71,
+            "weightLb": 218
+          },
+          "ratings": {
+            "ovr": 76,
+            "spd": 87,
+            "acc": 86,
+            "agi": 86,
+            "str": 68,
+            "awr": 80,
+            "car": 69,
+            "thp": 77,
+            "tha": 75,
+            "inj": 69,
+            "sta": 84
+          }
+        },
+        {
+          "name": {
+            "first": "Mark",
+            "last": "Clayton"
+          },
+          "position": "WR",
+          "college": "",
+          "jerseyNumber": 89,
+          "yearsPro": 6,
+          "measurables": {
+            "heightIn": 70,
+            "weightLb": 190
+          },
+          "ratings": {
+            "ovr": 78,
+            "spd": 86,
+            "acc": 92,
+            "agi": 92,
+            "str": 46,
+            "awr": 82,
+            "car": 83,
+            "thp": 87,
+            "tha": 82,
+            "inj": 93,
+            "sta": 87
+          }
+        },
+        {
+          "name": {
+            "first": "Ronald",
+            "last": "Bartell"
+          },
+          "position": "CB",
+          "college": "",
+          "jerseyNumber": 24,
+          "yearsPro": 6,
+          "measurables": {
+            "heightIn": 73,
+            "weightLb": 208
+          }
+        },
+        {
+          "name": {
+            "first": "Jason",
+            "last": "Brown"
+          },
+          "position": "C",
+          "college": "",
+          "jerseyNumber": 60,
+          "yearsPro": 6,
+          "measurables": {
+            "heightIn": 75,
+            "weightLb": 320
+          },
+          "ratings": {
+            "ovr": 86,
+            "spd": 57,
+            "acc": 72,
+            "agi": 62,
+            "str": 92,
+            "awr": 84,
+            "car": 91,
+            "thp": 90,
+            "tha": 82,
+            "inj": 87,
+            "sta": 93
+          }
+        },
+        {
+          "name": {
+            "first": "Brady",
+            "last": "Poppinga"
+          },
+          "position": "LB",
+          "college": "",
+          "jerseyNumber": 51,
+          "yearsPro": 6,
+          "measurables": {
+            "heightIn": 75,
+            "weightLb": 252
+          },
+          "ratings": {
+            "ovr": 70,
+            "spd": 70,
+            "acc": 83,
+            "agi": 74,
+            "str": 76,
+            "awr": 75,
+            "car": 82,
+            "thp": 93,
+            "tha": 81,
+            "inj": 88,
+            "sta": 76
+          }
+        },
+        {
+          "name": {
+            "first": "William",
+            "last": "Bajema"
+          },
+          "position": "TE",
+          "college": "",
+          "jerseyNumber": 47,
+          "yearsPro": 6,
+          "measurables": {
+            "heightIn": 76,
+            "weightLb": 259
+          }
+        },
+        {
+          "name": {
+            "first": "Mark",
+            "last": "LeVoir"
+          },
+          "position": "OT",
+          "college": "",
+          "jerseyNumber": 79,
+          "yearsPro": 5,
+          "measurables": {
+            "heightIn": 79,
+            "weightLb": 310
+          },
+          "ratings": {
+            "ovr": 60,
+            "spd": 45,
+            "acc": 58,
+            "agi": 42,
+            "str": 84,
+            "awr": 55,
+            "car": 87,
+            "thp": 61,
+            "tha": 83,
+            "inj": 93,
+            "sta": 74
+          }
+        },
+        {
+          "name": {
+            "first": "Kellen",
+            "last": "Clemens"
+          },
+          "position": "QB",
+          "college": "Oregon",
+          "jerseyNumber": 10,
+          "yearsPro": 5,
+          "measurables": {
+            "heightIn": 74,
+            "weightLb": 220
+          },
+          "ratings": {
+            "ovr": 70,
+            "spd": 66,
+            "acc": 68,
+            "agi": 68,
+            "str": 58,
+            "awr": 69,
+            "car": 65,
+            "thp": 88,
+            "tha": 74,
+            "inj": 85,
+            "sta": 92
+          }
+        },
+        {
+          "name": {
+            "first": "Jerious",
+            "last": "Norwood"
+          },
+          "position": "RB",
+          "college": "",
+          "jerseyNumber": 34,
+          "yearsPro": 5,
+          "measurables": {
+            "heightIn": 71,
+            "weightLb": 205
+          },
+          "ratings": {
+            "ovr": 61,
+            "spd": 95,
+            "acc": 93,
+            "agi": 48,
+            "str": 59,
+            "awr": 70,
+            "car": 75,
+            "thp": 68,
+            "tha": 77,
+            "inj": 64,
+            "sta": 84
+          }
+        },
+        {
+          "name": {
+            "first": "Craig",
+            "last": "Dahl"
+          },
+          "position": "S",
+          "college": "North Dakota State",
+          "jerseyNumber": 43,
+          "yearsPro": 4,
+          "measurables": {
+            "heightIn": 73,
+            "weightLb": 212
+          },
+          "ratings": {
+            "ovr": 79,
+            "spd": 86,
+            "acc": 88,
+            "agi": 87,
+            "str": 62,
+            "awr": 75,
+            "car": 76,
+            "thp": 87,
+            "tha": 90,
+            "inj": 89,
+            "sta": 90
+          }
+        },
+        {
+          "name": {
+            "first": "Mike",
+            "last": "Sims-Walker"
+          },
+          "position": "WR",
+          "college": "",
+          "jerseyNumber": 10,
+          "yearsPro": 4,
+          "measurables": {
+            "heightIn": 74,
+            "weightLb": 212
+          },
+          "ratings": {
+            "ovr": 80,
+            "spd": 90,
+            "acc": 86,
+            "agi": 91,
+            "str": 65,
+            "awr": 76,
+            "car": 84,
+            "thp": 91,
+            "tha": 79,
+            "inj": 90,
+            "sta": 74
+          }
+        },
+        {
+          "name": {
+            "first": "C.J.",
+            "last": "Ah You"
+          },
+          "position": "DE",
+          "college": "",
+          "jerseyNumber": 99,
+          "yearsPro": 4,
+          "measurables": {
+            "heightIn": 76,
+            "weightLb": 265
+          },
+          "ratings": {
+            "ovr": 62,
+            "spd": 74,
+            "acc": 80,
+            "agi": 69,
+            "str": 75,
+            "awr": 54,
+            "car": 68,
+            "thp": 66,
+            "tha": 85,
+            "inj": 75,
+            "sta": 74
+          }
+        },
+        {
+          "name": {
+            "first": "Bryan",
+            "last": "Mattison"
+          },
+          "position": "C",
+          "college": "",
+          "jerseyNumber": 67,
+          "yearsPro": 3,
+          "measurables": {
+            "heightIn": 75,
+            "weightLb": 310
+          },
+          "ratings": {
+            "ovr": 65,
+            "spd": 60,
+            "acc": 74,
+            "agi": 60,
+            "str": 79,
+            "awr": 53,
+            "car": 76,
+            "thp": 78,
+            "tha": 73,
+            "inj": 75,
+            "sta": 81
+          }
+        },
+        {
+          "name": {
+            "first": "Daniel",
+            "last": "Amendola"
+          },
+          "position": "WR",
+          "college": "Texas Tech",
+          "jerseyNumber": 16,
+          "yearsPro": 3,
+          "measurables": {
+            "heightIn": 71,
+            "weightLb": 188
+          }
+        },
+        {
+          "name": {
+            "first": "Christopher",
+            "last": "Long"
+          },
+          "position": "DE",
+          "college": "Virginia",
+          "jerseyNumber": 91,
+          "yearsPro": 3,
+          "measurables": {
+            "heightIn": 75,
+            "weightLb": 270
+          }
+        },
+        {
+          "name": {
+            "first": "Justin",
+            "last": "King"
+          },
+          "position": "CB",
+          "college": "",
+          "jerseyNumber": 21,
+          "yearsPro": 3,
+          "measurables": {
+            "heightIn": 71,
+            "weightLb": 197
+          },
+          "ratings": {
+            "ovr": 68,
+            "spd": 95,
+            "acc": 96,
+            "agi": 91,
+            "str": 45,
+            "awr": 65,
+            "car": 40,
+            "thp": 92,
+            "tha": 52,
+            "inj": 87,
+            "sta": 52
+          }
+        },
+        {
+          "name": {
+            "first": "Bryan",
+            "last": "Kehl"
+          },
+          "position": "LB",
+          "college": "",
+          "jerseyNumber": 50,
+          "yearsPro": 3,
+          "measurables": {
+            "heightIn": 74,
+            "weightLb": 244
+          },
+          "ratings": {
+            "ovr": 67,
+            "spd": 73,
+            "acc": 84,
+            "agi": 84,
+            "str": 75,
+            "awr": 68,
+            "car": 75,
+            "thp": 93,
+            "tha": 76,
+            "inj": 84,
+            "sta": 60
+          }
+        },
+        {
+          "name": {
+            "first": "Christopher",
+            "last": "Chamberlain"
+          },
+          "position": "LB",
+          "college": "",
+          "jerseyNumber": 57,
+          "yearsPro": 3,
+          "measurables": {
+            "heightIn": 73,
+            "weightLb": 238
+          }
+        },
+        {
+          "name": {
+            "first": "Drew",
+            "last": "Miller"
+          },
+          "position": "OG",
+          "college": "",
+          "jerseyNumber": 67,
+          "yearsPro": 3,
+          "measurables": {
+            "heightIn": 77,
+            "weightLb": 303
+          },
+          "ratings": {
+            "ovr": 63,
+            "spd": 63,
+            "acc": 76,
+            "agi": 63,
+            "str": 84,
+            "awr": 50,
+            "car": 75,
+            "thp": 78,
+            "tha": 77,
+            "inj": 85,
+            "sta": 72
+          }
+        },
+        {
+          "name": {
+            "first": "Nick",
+            "last": "Miller"
+          },
+          "position": "WR",
+          "college": "",
+          "jerseyNumber": 17,
+          "yearsPro": 2,
+          "measurables": {
+            "heightIn": 69,
+            "weightLb": 180
+          },
+          "ratings": {
+            "ovr": 48,
+            "spd": 94,
+            "acc": 91,
+            "agi": 90,
+            "str": 43,
+            "awr": 46,
+            "car": 65,
+            "thp": 85,
+            "tha": 84,
+            "inj": 65,
+            "sta": 55
+          }
+        },
+        {
+          "name": {
+            "first": "Brit",
+            "last": "Miller"
+          },
+          "position": "FB",
+          "college": "",
+          "jerseyNumber": 49,
+          "yearsPro": 2,
+          "measurables": {
+            "heightIn": 73,
+            "weightLb": 253
+          },
+          "ratings": {
+            "ovr": 71,
+            "spd": 76,
+            "acc": 75,
+            "agi": 69,
+            "str": 75,
+            "awr": 65,
+            "car": 60,
+            "thp": 75,
+            "tha": 57,
+            "inj": 91,
+            "sta": 84
+          }
+        },
+        {
+          "name": {
+            "first": "Nathrain",
+            "last": "Ness"
+          },
+          "position": "CB",
+          "college": "",
+          "jerseyNumber": 30,
+          "yearsPro": 2,
+          "measurables": {
+            "heightIn": 73,
+            "weightLb": 190
+          }
+        },
+        {
+          "name": {
+            "first": "David",
+            "last": "Nixon"
+          },
+          "position": "LB",
+          "college": "",
+          "jerseyNumber": 53,
+          "yearsPro": 2,
+          "measurables": {
+            "heightIn": 75,
+            "weightLb": 225
+          },
+          "ratings": {
+            "ovr": 61,
+            "spd": 75,
+            "acc": 79,
+            "agi": 73,
+            "str": 74,
+            "awr": 62,
+            "car": 73,
+            "thp": 87,
+            "tha": 86,
+            "inj": 82,
+            "sta": 55
+          }
+        },
+        {
+          "name": {
+            "first": "Brandon",
+            "last": "Gibson"
+          },
+          "position": "WR",
+          "college": "Washington State",
+          "jerseyNumber": 11,
+          "yearsPro": 2,
+          "measurables": {
+            "heightIn": 72,
+            "weightLb": 205
+          },
+          "ratings": {
+            "ovr": 74,
+            "spd": 87,
+            "acc": 88,
+            "agi": 91,
+            "str": 63,
+            "awr": 68,
+            "car": 76,
+            "thp": 86,
+            "tha": 88,
+            "inj": 85,
+            "sta": 75
+          }
+        },
+        {
+          "name": {
+            "first": "Jason",
+            "last": "Smith"
+          },
+          "position": "OT",
+          "college": "",
+          "jerseyNumber": 77,
+          "yearsPro": 2,
+          "measurables": {
+            "heightIn": 77,
+            "weightLb": 308
+          },
+          "ratings": {
+            "ovr": 87,
+            "spd": 67,
+            "acc": 84,
+            "agi": 72,
+            "str": 91,
+            "awr": 72,
+            "car": 91,
+            "thp": 85,
+            "tha": 86,
+            "inj": 75,
+            "sta": 87
+          }
+        },
+        {
+          "name": {
+            "first": "James",
+            "last": "Laurinaitis"
+          },
+          "position": "LB",
+          "college": "",
+          "jerseyNumber": 55,
+          "yearsPro": 2,
+          "measurables": {
+            "heightIn": 74,
+            "weightLb": 250
+          },
+          "ratings": {
+            "ovr": 87,
+            "spd": 76,
+            "acc": 86,
+            "agi": 82,
+            "str": 76,
+            "awr": 82,
+            "car": 95,
+            "thp": 98,
+            "tha": 97,
+            "inj": 93,
+            "sta": 58
+          }
+        },
+        {
+          "name": {
+            "first": "Bradley",
+            "last": "Fletcher"
+          },
+          "position": "CB",
+          "college": "Iowa",
+          "jerseyNumber": 32,
+          "yearsPro": 2,
+          "measurables": {
+            "heightIn": 72,
+            "weightLb": 200
+          },
+          "ratings": {
+            "ovr": 76,
+            "spd": 86,
+            "acc": 92,
+            "agi": 87,
+            "str": 58,
+            "awr": 68,
+            "car": 65,
+            "thp": 91,
+            "tha": 88,
+            "inj": 93,
+            "sta": 88
+          }
+        },
+        {
+          "name": {
+            "first": "Darell",
+            "last": "Scott"
+          },
+          "position": "DT",
+          "college": "",
+          "jerseyNumber": 97,
+          "yearsPro": 2,
+          "measurables": {
+            "heightIn": 75,
+            "weightLb": 317
+          },
+          "ratings": {
+            "ovr": 63,
+            "spd": 53,
+            "acc": 74,
+            "agi": 51,
+            "str": 88,
+            "awr": 55,
+            "car": 78,
+            "thp": 40,
+            "tha": 90,
+            "inj": 75,
+            "sta": 80
+          }
+        },
+        {
+          "name": {
+            "first": "Thomas",
+            "last": "Brandstater"
+          },
+          "position": "QB",
+          "college": "",
+          "jerseyNumber": 12,
+          "yearsPro": 2,
+          "measurables": {
+            "heightIn": 77,
+            "weightLb": 223
+          }
+        },
+        {
+          "name": {
+            "first": "Darian",
+            "last": "Stewart"
+          },
+          "position": "S",
+          "college": "South Carolina",
+          "jerseyNumber": 20,
+          "yearsPro": 1,
+          "measurables": {
+            "heightIn": 71,
+            "weightLb": 214
+          },
+          "ratings": {
+            "ovr": 66,
+            "spd": 86,
+            "acc": 87,
+            "agi": 93,
+            "str": 63,
+            "awr": 42,
+            "car": 50,
+            "thp": 83,
+            "tha": 89,
+            "inj": 86,
+            "sta": 91
+          }
+        },
+        {
+          "name": {
+            "first": "Justin",
+            "last": "Cole"
+          },
+          "position": "LB",
+          "college": "",
+          "jerseyNumber": 52,
+          "yearsPro": 1,
+          "measurables": {
+            "heightIn": 75,
+            "weightLb": 242
+          },
+          "ratings": {
+            "ovr": 52,
+            "spd": 72,
+            "acc": 69,
+            "agi": 75,
+            "str": 78,
+            "awr": 60,
+            "car": 75,
+            "thp": 90,
+            "tha": 84,
+            "inj": 85,
+            "sta": 82
+          }
+        },
+        {
+          "name": {
+            "first": "Brian",
+            "last": "Jackson"
+          },
+          "position": "CB",
+          "college": "",
+          "jerseyNumber": 22,
+          "yearsPro": 1,
+          "measurables": {
+            "heightIn": 72,
+            "weightLb": 212
+          },
+          "ratings": {
+            "ovr": 62,
+            "spd": 87,
+            "acc": 85,
+            "agi": 90,
+            "str": 64,
+            "awr": 35,
+            "car": 63,
+            "thp": 87,
+            "tha": 89,
+            "inj": 85,
+            "sta": 65
+          }
+        },
+        {
+          "name": {
+            "first": "Quinn",
+            "last": "Porter"
+          },
+          "position": "RB",
+          "college": "",
+          "jerseyNumber": 35,
+          "yearsPro": 1,
+          "measurables": {
+            "heightIn": 72,
+            "weightLb": 205
+          },
+          "ratings": {
+            "ovr": 60,
+            "spd": 86,
+            "acc": 89,
+            "agi": 87,
+            "str": 63,
+            "awr": 33,
+            "car": 67,
+            "thp": 73,
+            "tha": 75,
+            "inj": 92,
+            "sta": 82
+          }
+        },
+        {
+          "name": {
+            "first": "Joshua",
+            "last": "Gordy"
+          },
+          "position": "CB",
+          "college": "",
+          "jerseyNumber": 38,
+          "yearsPro": 1,
+          "measurables": {
+            "heightIn": 71,
+            "weightLb": 195
+          }
+        },
+        {
+          "name": {
+            "first": "Dominique",
+            "last": "Curry"
+          },
+          "position": "WR",
+          "college": "",
+          "jerseyNumber": 15,
+          "yearsPro": 1,
+          "measurables": {
+            "heightIn": 74,
+            "weightLb": 223
+          },
+          "ratings": {
+            "ovr": 50,
+            "spd": 86,
+            "acc": 87,
+            "agi": 85,
+            "str": 66,
+            "awr": 37,
+            "car": 69,
+            "thp": 91,
+            "tha": 90,
+            "inj": 78,
+            "sta": 68
+          }
+        },
+        {
+          "name": {
+            "first": "Rodger",
+            "last": "Saffold"
+          },
+          "position": "OT",
+          "college": "Indiana",
+          "jerseyNumber": 76,
+          "yearsPro": 1,
+          "measurables": {
+            "heightIn": 77,
+            "weightLb": 314
+          },
+          "ratings": {
+            "ovr": 83,
+            "spd": 65,
+            "acc": 82,
+            "agi": 70,
+            "str": 86,
+            "awr": 73,
+            "car": 79,
+            "thp": 86,
+            "tha": 91,
+            "inj": 55,
+            "sta": 88
+          }
+        },
+        {
+          "name": {
+            "first": "Michael",
+            "last": "Hoomanawanui"
+          },
+          "position": "TE",
+          "college": "Illinois",
+          "jerseyNumber": 86,
+          "yearsPro": 1,
+          "measurables": {
+            "heightIn": 76,
+            "weightLb": 263
+          },
+          "ratings": {
+            "ovr": 67,
+            "spd": 67,
+            "acc": 74,
+            "agi": 68,
+            "str": 83,
+            "awr": 68,
+            "car": 68,
+            "thp": 60,
+            "tha": 67,
+            "inj": 78,
+            "sta": 90
+          }
+        },
+        {
+          "name": {
+            "first": "Eugene",
+            "last": "Sims"
+          },
+          "position": "DE",
+          "college": "West Texas A&M",
+          "jerseyNumber": 92,
+          "yearsPro": 1,
+          "measurables": {
+            "heightIn": 78,
+            "weightLb": 265
+          },
+          "ratings": {
+            "ovr": 57,
+            "spd": 73,
+            "acc": 86,
+            "agi": 76,
+            "str": 75,
+            "awr": 35,
+            "car": 65,
+            "thp": 80,
+            "tha": 88,
+            "inj": 69,
+            "sta": 66
+          }
+        },
+        {
+          "name": {
+            "first": "Dwayne",
+            "last": "Welch"
+          },
+          "position": "OT",
+          "college": "",
+          "jerseyNumber": 72,
+          "yearsPro": 1,
+          "measurables": {
+            "heightIn": 78,
+            "weightLb": 300
+          }
+        },
+        {
+          "name": {
+            "first": "Marquis",
+            "last": "Johnson"
+          },
+          "position": "CB",
+          "college": "",
+          "jerseyNumber": 25,
+          "yearsPro": 1,
+          "measurables": {
+            "heightIn": 71,
+            "weightLb": 205
+          },
+          "ratings": {
+            "ovr": 64,
+            "spd": 84,
+            "acc": 88,
+            "agi": 86,
+            "str": 57,
+            "awr": 49,
+            "car": 56,
+            "thp": 86,
+            "tha": 92,
+            "inj": 88,
+            "sta": 78
+          }
+        },
+        {
+          "name": {
+            "first": "Joshua",
+            "last": "Hull"
+          },
+          "position": "LB",
+          "college": "",
+          "jerseyNumber": 56,
+          "yearsPro": 1,
+          "measurables": {
+            "heightIn": 75,
+            "weightLb": 245
+          }
+        },
+        {
+          "name": {
+            "first": "Samuel",
+            "last": "Bradford"
+          },
+          "position": "QB",
+          "college": "Oklahoma",
+          "jerseyNumber": 8,
+          "yearsPro": 1,
+          "measurables": {
+            "heightIn": 76,
+            "weightLb": 224
+          }
+        },
+        {
+          "name": {
+            "first": "Danario",
+            "last": "Alexander"
+          },
+          "position": "WR",
+          "college": "",
+          "jerseyNumber": 84,
+          "yearsPro": 1,
+          "measurables": {
+            "heightIn": 77,
+            "weightLb": 217
+          },
+          "ratings": {
+            "ovr": 69,
+            "spd": 87,
+            "acc": 83,
+            "agi": 90,
+            "str": 68,
+            "awr": 57,
+            "car": 78,
+            "thp": 97,
+            "tha": 71,
+            "inj": 84,
+            "sta": 85
+          }
+        },
+        {
+          "name": {
+            "first": "Robert",
+            "last": "Quinn"
+          },
+          "position": "DE",
+          "college": "North Carolina",
+          "jerseyNumber": 94,
+          "measurables": {
+            "heightIn": 76,
+            "weightLb": 264
+          },
+          "ratings": {
+            "ovr": 78,
+            "spd": 83,
+            "acc": 94,
+            "agi": 85,
+            "str": 78,
+            "awr": 49,
+            "car": 69,
+            "thp": 82,
+            "tha": 92,
+            "inj": 78,
+            "sta": 78
+          }
+        },
+        {
+          "name": {
+            "first": "Lance",
+            "last": "Kendricks"
+          },
+          "position": "TE",
+          "college": "Wisconsin",
+          "jerseyNumber": 88,
+          "measurables": {
+            "heightIn": 75,
+            "weightLb": 247
+          },
+          "ratings": {
+            "ovr": 71,
+            "spd": 76,
+            "acc": 87,
+            "agi": 85,
+            "str": 65,
+            "awr": 56,
+            "car": 81,
+            "thp": 86,
+            "tha": 94,
+            "inj": 90,
+            "sta": 79
+          }
+        },
+        {
+          "name": {
+            "first": "Austin",
+            "last": "Pettis"
+          },
+          "position": "WR",
+          "college": "",
+          "jerseyNumber": 18,
+          "measurables": {
+            "heightIn": 75,
+            "weightLb": 207
+          },
+          "ratings": {
+            "ovr": 65,
+            "spd": 83,
+            "acc": 86,
+            "agi": 88,
+            "str": 67,
+            "awr": 49,
+            "car": 82,
+            "thp": 88,
+            "tha": 90,
+            "inj": 87,
+            "sta": 75
+          }
+        },
+        {
+          "name": {
+            "first": "Gregory",
+            "last": "Salas"
+          },
+          "position": "WR",
+          "college": "",
+          "jerseyNumber": 87,
+          "measurables": {
+            "heightIn": 73,
+            "weightLb": 209
+          }
+        },
+        {
+          "name": {
+            "first": "Jermale",
+            "last": "Hines"
+          },
+          "position": "S",
+          "college": "",
+          "jerseyNumber": 22,
+          "measurables": {
+            "heightIn": 73,
+            "weightLb": 218
+          },
+          "ratings": {
+            "ovr": 60,
+            "spd": 81,
+            "acc": 74,
+            "agi": 73,
+            "str": 73,
+            "awr": 39,
+            "car": 70,
+            "thp": 82,
+            "tha": 87,
+            "inj": 85,
+            "sta": 90
+          }
+        },
+        {
+          "name": {
+            "first": "Jabara",
+            "last": "Williams"
+          },
+          "position": "LB",
+          "college": "",
+          "jerseyNumber": 52,
+          "measurables": {
+            "heightIn": 74,
+            "weightLb": 238
+          },
+          "ratings": {
+            "ovr": 52,
+            "spd": 81,
+            "acc": 86,
+            "agi": 84,
+            "str": 62,
+            "awr": 32,
+            "car": 75,
+            "thp": 88,
+            "tha": 84,
+            "inj": 72,
+            "sta": 70
+          }
+        },
+        {
+          "name": {
+            "first": "Christopher",
+            "last": "Smith"
+          },
+          "position": "CB",
+          "college": "",
+          "jerseyNumber": 36,
+          "measurables": {
+            "heightIn": 70,
+            "weightLb": 186
+          }
+        },
+        {
+          "name": {
+            "first": "Benjamin",
+            "last": "Guidugli"
+          },
+          "position": "TE",
+          "college": "",
+          "jerseyNumber": 41,
+          "measurables": {
+            "heightIn": 73,
+            "weightLb": 230
+          }
+        },
+        {
+          "name": {
+            "first": "Kevin",
+            "last": "Hughes"
+          },
+          "position": "OG",
+          "college": "",
+          "jerseyNumber": 70,
+          "measurables": {
+            "heightIn": 76,
+            "weightLb": 302
+          }
+        },
+        {
+          "name": {
+            "first": "Jacob",
+            "last": "McQuaide"
+          },
+          "position": "C",
+          "college": "Ohio State",
+          "jerseyNumber": 44,
+          "measurables": {
+            "heightIn": 74,
+            "weightLb": 247
+          }
+        },
+        {
+          "name": {
+            "first": "Timothy",
+            "last": "Atchison"
+          },
+          "position": "CB",
+          "college": "",
+          "jerseyNumber": 36,
+          "measurables": {
+            "heightIn": 73,
+            "weightLb": 200
+          }
+        },
+        {
+          "name": {
+            "first": "Michael",
+            "last": "McNeill"
+          },
+          "position": "TE",
+          "college": "",
+          "jerseyNumber": 82,
+          "measurables": {
+            "heightIn": 76,
+            "weightLb": 235
+          }
+        }
+      ]
     },
     {
       "tgId": 25,
       "abbreviation": "BAL",
       "city": "Baltimore",
       "name": "Ravens",
-      "players": []
+      "players": [
+        {
+          "name": {
+            "first": "Brendon",
+            "last": "Ayanbadejo"
+          },
+          "position": "LB",
+          "college": "",
+          "jerseyNumber": 51,
+          "yearsPro": 12,
+          "measurables": {
+            "heightIn": 73,
+            "weightLb": 225
+          },
+          "ratings": {
+            "ovr": 63,
+            "spd": 79,
+            "acc": 78,
+            "agi": 74,
+            "str": 69,
+            "awr": 72,
+            "car": 80,
+            "thp": 92,
+            "tha": 84,
+            "inj": 88,
+            "sta": 55
+          }
+        },
+        {
+          "name": {
+            "first": "Matt",
+            "last": "Birk"
+          },
+          "position": "C",
+          "college": "",
+          "jerseyNumber": 77,
+          "yearsPro": 13,
+          "measurables": {
+            "heightIn": 76,
+            "weightLb": 310
+          },
+          "ratings": {
+            "ovr": 91,
+            "spd": 54,
+            "acc": 75,
+            "agi": 60,
+            "str": 86,
+            "awr": 99,
+            "car": 92,
+            "thp": 84,
+            "tha": 88,
+            "inj": 92,
+            "sta": 87
+          }
+        },
+        {
+          "name": {
+            "first": "Ray",
+            "last": "Lewis"
+          },
+          "position": "LB",
+          "college": "",
+          "jerseyNumber": 52,
+          "yearsPro": 15,
+          "measurables": {
+            "heightIn": 73,
+            "weightLb": 250
+          },
+          "ratings": {
+            "ovr": 95,
+            "spd": 83,
+            "acc": 86,
+            "agi": 83,
+            "str": 91,
+            "awr": 95,
+            "car": 94,
+            "thp": 84,
+            "tha": 95,
+            "inj": 99,
+            "sta": 75
+          }
+        },
+        {
+          "name": {
+            "first": "Errick",
+            "last": "Williams"
+          },
+          "position": "RB",
+          "college": "",
+          "jerseyNumber": 34,
+          "yearsPro": 12,
+          "measurables": {
+            "heightIn": 70,
+            "weightLb": 230
+          }
+        },
+        {
+          "name": {
+            "first": "Shayne",
+            "last": "Graham"
+          },
+          "position": "K",
+          "college": "",
+          "jerseyNumber": 12,
+          "yearsPro": 11,
+          "measurables": {
+            "heightIn": 72,
+            "weightLb": 214
+          }
+        },
+        {
+          "name": {
+            "first": "William",
+            "last": "Cundiff"
+          },
+          "position": "K",
+          "college": "Drake",
+          "jerseyNumber": 7,
+          "yearsPro": 9,
+          "measurables": {
+            "heightIn": 73,
+            "weightLb": 212
+          }
+        },
+        {
+          "name": {
+            "first": "Edward",
+            "last": "Reed"
+          },
+          "position": "S",
+          "college": "",
+          "jerseyNumber": 20,
+          "yearsPro": 9,
+          "measurables": {
+            "heightIn": 71,
+            "weightLb": 200
+          }
+        },
+        {
+          "name": {
+            "first": "Bryant",
+            "last": "McKinnie"
+          },
+          "position": "OT",
+          "college": "",
+          "jerseyNumber": 78,
+          "yearsPro": 9,
+          "measurables": {
+            "heightIn": 80,
+            "weightLb": 360
+          },
+          "ratings": {
+            "ovr": 85,
+            "spd": 54,
+            "acc": 71,
+            "agi": 54,
+            "str": 96,
+            "awr": 89,
+            "cth": 96,
+            "car": 78,
+            "btk": 92,
+            "jmp": 86,
+            "inj": 80,
+            "sta": 85
+          }
+        },
+        {
+          "name": {
+            "first": "Andre",
+            "last": "Gurode"
+          },
+          "position": "C",
+          "college": "",
+          "jerseyNumber": 65,
+          "yearsPro": 9,
+          "measurables": {
+            "heightIn": 76,
+            "weightLb": 318
+          },
+          "ratings": {
+            "ovr": 87,
+            "spd": 55,
+            "acc": 79,
+            "agi": 52,
+            "str": 94,
+            "awr": 91,
+            "car": 93,
+            "thp": 78,
+            "tha": 85,
+            "inj": 77,
+            "sta": 85
+          }
+        },
+        {
+          "name": {
+            "first": "Cory",
+            "last": "Redding"
+          },
+          "position": "DE",
+          "college": "Texas",
+          "jerseyNumber": 93,
+          "yearsPro": 8,
+          "measurables": {
+            "heightIn": 76,
+            "weightLb": 298
+          },
+          "ratings": {
+            "ovr": 82,
+            "spd": 69,
+            "acc": 85,
+            "agi": 69,
+            "str": 87,
+            "awr": 78,
+            "car": 78,
+            "thp": 60,
+            "tha": 92,
+            "inj": 78,
+            "sta": 82
+          }
+        },
+        {
+          "name": {
+            "first": "Anquan",
+            "last": "Boldin"
+          },
+          "position": "WR",
+          "college": "Florida State",
+          "jerseyNumber": 81,
+          "yearsPro": 8,
+          "measurables": {
+            "heightIn": 73,
+            "weightLb": 223
+          },
+          "ratings": {
+            "ovr": 87,
+            "spd": 86,
+            "acc": 85,
+            "agi": 85,
+            "str": 79,
+            "awr": 87,
+            "car": 88,
+            "thp": 86,
+            "tha": 80,
+            "inj": 90,
+            "sta": 99
+          }
+        },
+        {
+          "name": {
+            "first": "Jarret",
+            "last": "Johnson"
+          },
+          "position": "LB",
+          "college": "",
+          "jerseyNumber": 95,
+          "yearsPro": 8,
+          "measurables": {
+            "heightIn": 75,
+            "weightLb": 260
+          },
+          "ratings": {
+            "ovr": 81,
+            "spd": 72,
+            "acc": 84,
+            "agi": 68,
+            "str": 85,
+            "awr": 82,
+            "car": 85,
+            "thp": 90,
+            "tha": 80,
+            "inj": 80,
+            "sta": 89
+          }
+        },
+        {
+          "name": {
+            "first": "Terrell",
+            "last": "Suggs"
+          },
+          "position": "LB",
+          "college": "Arizona State",
+          "jerseyNumber": 55,
+          "yearsPro": 8,
+          "measurables": {
+            "heightIn": 75,
+            "weightLb": 260
+          },
+          "ratings": {
+            "ovr": 94,
+            "spd": 85,
+            "acc": 95,
+            "agi": 79,
+            "str": 89,
+            "awr": 88,
+            "car": 87,
+            "thp": 87,
+            "tha": 88,
+            "inj": 85,
+            "sta": 92
+          }
+        },
+        {
+          "name": {
+            "first": "Terzell",
+            "last": "Leach"
+          },
+          "position": "FB",
+          "college": "",
+          "jerseyNumber": 44,
+          "yearsPro": 7,
+          "measurables": {
+            "heightIn": 72,
+            "weightLb": 260
+          }
+        },
+        {
+          "name": {
+            "first": "Kris",
+            "last": "Wilson"
+          },
+          "position": "TE",
+          "college": "",
+          "jerseyNumber": 87,
+          "yearsPro": 7,
+          "measurables": {
+            "heightIn": 74,
+            "weightLb": 245
+          },
+          "ratings": {
+            "ovr": 72,
+            "spd": 72,
+            "acc": 80,
+            "agi": 74,
+            "str": 64,
+            "awr": 67,
+            "car": 76,
+            "thp": 85,
+            "tha": 90,
+            "inj": 79,
+            "sta": 80
+          }
+        },
+        {
+          "name": {
+            "first": "Lee",
+            "last": "Evans"
+          },
+          "position": "WR",
+          "college": "",
+          "jerseyNumber": 83,
+          "yearsPro": 7,
+          "measurables": {
+            "heightIn": 70,
+            "weightLb": 197
+          },
+          "ratings": {
+            "ovr": 81,
+            "spd": 96,
+            "acc": 92,
+            "agi": 87,
+            "str": 51,
+            "awr": 87,
+            "car": 86,
+            "thp": 85,
+            "tha": 88,
+            "inj": 87,
+            "sta": 85
+          }
+        },
+        {
+          "name": {
+            "first": "Charles",
+            "last": "Carr"
+          },
+          "position": "CB",
+          "college": "",
+          "jerseyNumber": 25,
+          "yearsPro": 6,
+          "measurables": {
+            "heightIn": 70,
+            "weightLb": 182
+          }
+        },
+        {
+          "name": {
+            "first": "Domonique",
+            "last": "Foxworth"
+          },
+          "position": "CB",
+          "college": "",
+          "jerseyNumber": 24,
+          "yearsPro": 6,
+          "measurables": {
+            "heightIn": 71,
+            "weightLb": 180
+          },
+          "ratings": {
+            "ovr": 81,
+            "spd": 92,
+            "acc": 93,
+            "agi": 94,
+            "str": 54,
+            "awr": 80,
+            "car": 52,
+            "thp": 88,
+            "tha": 75,
+            "inj": 90,
+            "sta": 69
+          }
+        },
+        {
+          "name": {
+            "first": "Mark",
+            "last": "LeVoir"
+          },
+          "position": "OT",
+          "college": "",
+          "jerseyNumber": 71,
+          "yearsPro": 5,
+          "measurables": {
+            "heightIn": 79,
+            "weightLb": 310
+          },
+          "ratings": {
+            "ovr": 60,
+            "spd": 45,
+            "acc": 58,
+            "agi": 42,
+            "str": 84,
+            "awr": 55,
+            "car": 87,
+            "thp": 61,
+            "tha": 83,
+            "inj": 93,
+            "sta": 74
+          }
+        },
+        {
+          "name": {
+            "first": "Brandon",
+            "last": "McKinney"
+          },
+          "position": "DT",
+          "college": "",
+          "jerseyNumber": 91,
+          "yearsPro": 5,
+          "measurables": {
+            "heightIn": 74,
+            "weightLb": 345
+          },
+          "ratings": {
+            "ovr": 71,
+            "spd": 57,
+            "acc": 74,
+            "agi": 54,
+            "str": 89,
+            "awr": 70,
+            "car": 82,
+            "thp": 55,
+            "tha": 85,
+            "inj": 72,
+            "sta": 86
+          }
+        },
+        {
+          "name": {
+            "first": "Etuini",
+            "last": "Ngata"
+          },
+          "position": "DT",
+          "college": "Oregon",
+          "jerseyNumber": 92,
+          "yearsPro": 5,
+          "measurables": {
+            "heightIn": 76,
+            "weightLb": 330
+          }
+        },
+        {
+          "name": {
+            "first": "Bernard",
+            "last": "Pollard"
+          },
+          "position": "S",
+          "college": "",
+          "jerseyNumber": 31,
+          "yearsPro": 5,
+          "measurables": {
+            "heightIn": 73,
+            "weightLb": 224
+          }
+        },
+        {
+          "name": {
+            "first": "Sam",
+            "last": "Koch"
+          },
+          "position": "P",
+          "college": "Nebraska",
+          "jerseyNumber": 4,
+          "yearsPro": 5,
+          "measurables": {
+            "heightIn": 73,
+            "weightLb": 220
+          },
+          "ratings": {
+            "ovr": 96,
+            "spd": 58,
+            "acc": 60,
+            "agi": 55,
+            "str": 50,
+            "awr": 86,
+            "car": 91,
+            "thp": 99,
+            "tha": 40,
+            "inj": 45,
+            "sta": 85
+          }
+        },
+        {
+          "name": {
+            "first": "Edgar",
+            "last": "Jones"
+          },
+          "position": "TE",
+          "college": "",
+          "jerseyNumber": 56,
+          "yearsPro": 4,
+          "measurables": {
+            "heightIn": 75,
+            "weightLb": 262
+          },
+          "ratings": {
+            "ovr": 60,
+            "spd": 78,
+            "acc": 84,
+            "agi": 74,
+            "str": 72,
+            "awr": 58,
+            "cth": 71,
+            "car": 88,
+            "btk": 72,
+            "jmp": 84,
+            "inj": 75,
+            "sta": 60
+          }
+        },
+        {
+          "name": {
+            "first": "Ben",
+            "last": "Grubbs"
+          },
+          "position": "OG",
+          "college": "Auburn",
+          "jerseyNumber": 66,
+          "yearsPro": 4,
+          "measurables": {
+            "heightIn": 75,
+            "weightLb": 310
+          },
+          "ratings": {
+            "ovr": 95,
+            "spd": 62,
+            "acc": 75,
+            "agi": 65,
+            "str": 94,
+            "awr": 84,
+            "car": 94,
+            "thp": 80,
+            "tha": 87,
+            "inj": 90,
+            "sta": 92
+          }
+        },
+        {
+          "name": {
+            "first": "Marshal",
+            "last": "Yanda"
+          },
+          "position": "OG",
+          "college": "Iowa",
+          "jerseyNumber": 73,
+          "yearsPro": 4,
+          "measurables": {
+            "heightIn": 75,
+            "weightLb": 315
+          },
+          "ratings": {
+            "ovr": 85,
+            "spd": 60,
+            "acc": 78,
+            "agi": 68,
+            "str": 86,
+            "awr": 75,
+            "car": 86,
+            "thp": 85,
+            "tha": 85,
+            "inj": 80,
+            "sta": 87
+          }
+        },
+        {
+          "name": {
+            "first": "Prescott",
+            "last": "Burgess"
+          },
+          "position": "LB",
+          "college": "",
+          "jerseyNumber": 54,
+          "yearsPro": 4,
+          "measurables": {
+            "heightIn": 75,
+            "weightLb": 253
+          },
+          "ratings": {
+            "ovr": 58,
+            "spd": 73,
+            "acc": 83,
+            "agi": 75,
+            "str": 66,
+            "awr": 65,
+            "car": 66,
+            "thp": 91,
+            "tha": 78,
+            "inj": 80,
+            "sta": 52
+          }
+        },
+        {
+          "name": {
+            "first": "Bryan",
+            "last": "Mattison"
+          },
+          "position": "C",
+          "college": "",
+          "jerseyNumber": 72,
+          "yearsPro": 3,
+          "measurables": {
+            "heightIn": 75,
+            "weightLb": 310
+          },
+          "ratings": {
+            "ovr": 65,
+            "spd": 60,
+            "acc": 74,
+            "agi": 60,
+            "str": 79,
+            "awr": 53,
+            "car": 76,
+            "thp": 78,
+            "tha": 73,
+            "inj": 75,
+            "sta": 81
+          }
+        },
+        {
+          "name": {
+            "first": "Joseph",
+            "last": "Flacco"
+          },
+          "position": "QB",
+          "college": "Delaware",
+          "jerseyNumber": 5,
+          "yearsPro": 3,
+          "measurables": {
+            "heightIn": 78,
+            "weightLb": 245
+          }
+        },
+        {
+          "name": {
+            "first": "Raymell",
+            "last": "Rice"
+          },
+          "position": "RB",
+          "college": "",
+          "jerseyNumber": 27,
+          "yearsPro": 3,
+          "measurables": {
+            "heightIn": 68,
+            "weightLb": 212
+          }
+        },
+        {
+          "name": {
+            "first": "Thomas",
+            "last": "Zbikowski"
+          },
+          "position": "S",
+          "college": "",
+          "jerseyNumber": 28,
+          "yearsPro": 3,
+          "measurables": {
+            "heightIn": 71,
+            "weightLb": 200
+          }
+        },
+        {
+          "name": {
+            "first": "Haruki",
+            "last": "Nakamura"
+          },
+          "position": "S",
+          "college": "",
+          "jerseyNumber": 43,
+          "yearsPro": 3,
+          "measurables": {
+            "heightIn": 70,
+            "weightLb": 200
+          },
+          "ratings": {
+            "ovr": 66,
+            "spd": 84,
+            "acc": 87,
+            "agi": 79,
+            "str": 70,
+            "awr": 56,
+            "car": 74,
+            "thp": 80,
+            "tha": 93,
+            "inj": 95,
+            "sta": 90
+          }
+        },
+        {
+          "name": {
+            "first": "Cary",
+            "last": "Williams"
+          },
+          "position": "CB",
+          "college": "Washburn",
+          "jerseyNumber": 29,
+          "yearsPro": 3,
+          "measurables": {
+            "heightIn": 73,
+            "weightLb": 190
+          },
+          "ratings": {
+            "ovr": 60,
+            "spd": 90,
+            "acc": 88,
+            "agi": 91,
+            "str": 49,
+            "awr": 64,
+            "car": 43,
+            "thp": 88,
+            "tha": 87,
+            "inj": 85,
+            "sta": 68
+          }
+        },
+        {
+          "name": {
+            "first": "Jameel",
+            "last": "McClain"
+          },
+          "position": "LB",
+          "college": "",
+          "jerseyNumber": 53,
+          "yearsPro": 3,
+          "measurables": {
+            "heightIn": 73,
+            "weightLb": 245
+          },
+          "ratings": {
+            "ovr": 79,
+            "spd": 81,
+            "acc": 83,
+            "agi": 72,
+            "str": 77,
+            "awr": 75,
+            "car": 89,
+            "thp": 92,
+            "tha": 88,
+            "inj": 85,
+            "sta": 78
+          }
+        },
+        {
+          "name": {
+            "first": "Emanuel",
+            "last": "Cook"
+          },
+          "position": "S",
+          "college": "",
+          "jerseyNumber": 37,
+          "yearsPro": 2,
+          "measurables": {
+            "heightIn": 70,
+            "weightLb": 202
+          },
+          "ratings": {
+            "ovr": 64,
+            "spd": 82,
+            "acc": 90,
+            "agi": 87,
+            "str": 68,
+            "awr": 38,
+            "car": 64,
+            "thp": 87,
+            "tha": 94,
+            "inj": 87,
+            "sta": 80
+          }
+        },
+        {
+          "name": {
+            "first": "Danny",
+            "last": "Gorrer"
+          },
+          "position": "CB",
+          "college": "",
+          "jerseyNumber": 36,
+          "yearsPro": 2,
+          "measurables": {
+            "heightIn": 72,
+            "weightLb": 185
+          },
+          "ratings": {
+            "ovr": 56,
+            "spd": 87,
+            "acc": 91,
+            "agi": 85,
+            "str": 46,
+            "awr": 53,
+            "car": 45,
+            "thp": 84,
+            "tha": 88,
+            "inj": 84,
+            "sta": 65
+          }
+        },
+        {
+          "name": {
+            "first": "Dannell",
+            "last": "Ellerbe"
+          },
+          "position": "LB",
+          "college": "Georgia",
+          "jerseyNumber": 59,
+          "yearsPro": 2,
+          "measurables": {
+            "heightIn": 73,
+            "weightLb": 240
+          },
+          "ratings": {
+            "ovr": 72,
+            "spd": 83,
+            "acc": 88,
+            "agi": 85,
+            "str": 69,
+            "awr": 69,
+            "car": 85,
+            "thp": 85,
+            "tha": 89,
+            "inj": 90,
+            "sta": 45
+          }
+        },
+        {
+          "name": {
+            "first": "Jason",
+            "last": "Phillips"
+          },
+          "position": "LB",
+          "college": "",
+          "jerseyNumber": 58,
+          "yearsPro": 2,
+          "measurables": {
+            "heightIn": 73,
+            "weightLb": 242
+          },
+          "ratings": {
+            "ovr": 64,
+            "spd": 76,
+            "acc": 71,
+            "agi": 70,
+            "str": 74,
+            "awr": 62,
+            "car": 83,
+            "thp": 79,
+            "tha": 86,
+            "inj": 89,
+            "sta": 52
+          }
+        },
+        {
+          "name": {
+            "first": "Michael",
+            "last": "Oher"
+          },
+          "position": "OT",
+          "college": "Mississippi",
+          "jerseyNumber": 74,
+          "yearsPro": 2,
+          "measurables": {
+            "heightIn": 76,
+            "weightLb": 315
+          },
+          "ratings": {
+            "ovr": 82,
+            "spd": 61,
+            "acc": 83,
+            "agi": 65,
+            "str": 98,
+            "awr": 69,
+            "car": 95,
+            "thp": 82,
+            "tha": 84,
+            "inj": 95,
+            "sta": 88
+          }
+        },
+        {
+          "name": {
+            "first": "Paul",
+            "last": "Kruger"
+          },
+          "position": "LB",
+          "college": "Utah",
+          "jerseyNumber": 99,
+          "yearsPro": 2,
+          "measurables": {
+            "heightIn": 76,
+            "weightLb": 265
+          },
+          "ratings": {
+            "ovr": 78,
+            "spd": 74,
+            "acc": 79,
+            "agi": 72,
+            "str": 79,
+            "awr": 65,
+            "car": 79,
+            "thp": 62,
+            "tha": 94,
+            "inj": 82,
+            "sta": 95
+          }
+        },
+        {
+          "name": {
+            "first": "Lardarius",
+            "last": "Webb"
+          },
+          "position": "CB",
+          "college": "Nicholls State",
+          "jerseyNumber": 21,
+          "yearsPro": 2,
+          "measurables": {
+            "heightIn": 70,
+            "weightLb": 182
+          },
+          "ratings": {
+            "ovr": 75,
+            "spd": 93,
+            "acc": 95,
+            "agi": 95,
+            "str": 54,
+            "awr": 60,
+            "car": 60,
+            "thp": 93,
+            "tha": 82,
+            "inj": 88,
+            "sta": 76
+          }
+        },
+        {
+          "name": {
+            "first": "Bryan",
+            "last": "McCann"
+          },
+          "position": "CB",
+          "college": "",
+          "jerseyNumber": 37,
+          "yearsPro": 1,
+          "measurables": {
+            "heightIn": 70,
+            "weightLb": 186
+          },
+          "ratings": {
+            "ovr": 63,
+            "spd": 96,
+            "acc": 98,
+            "agi": 92,
+            "str": 44,
+            "awr": 52,
+            "car": 44,
+            "thp": 96,
+            "tha": 89,
+            "inj": 88,
+            "sta": 49
+          }
+        },
+        {
+          "name": {
+            "first": "Charles",
+            "last": "Cox"
+          },
+          "position": "C",
+          "college": "Tennessee",
+          "jerseyNumber": 46,
+          "yearsPro": 1,
+          "measurables": {
+            "heightIn": 76,
+            "weightLb": 241
+          }
+        },
+        {
+          "name": {
+            "first": "Albert",
+            "last": "McClellan"
+          },
+          "position": "LB",
+          "college": "Marshall",
+          "jerseyNumber": 50,
+          "yearsPro": 1,
+          "measurables": {
+            "heightIn": 74,
+            "weightLb": 255
+          }
+        },
+        {
+          "name": {
+            "first": "Terrence",
+            "last": "Cody"
+          },
+          "position": "DT",
+          "college": "",
+          "jerseyNumber": 62,
+          "yearsPro": 1,
+          "measurables": {
+            "heightIn": 76,
+            "weightLb": 349
+          },
+          "ratings": {
+            "ovr": 71,
+            "spd": 42,
+            "acc": 70,
+            "agi": 52,
+            "str": 97,
+            "awr": 56,
+            "car": 92,
+            "thp": 55,
+            "tha": 87,
+            "inj": 49,
+            "sta": 82
+          }
+        },
+        {
+          "name": {
+            "first": "Edward",
+            "last": "Dickson"
+          },
+          "position": "TE",
+          "college": "Oregon",
+          "jerseyNumber": 84,
+          "yearsPro": 1,
+          "measurables": {
+            "heightIn": 76,
+            "weightLb": 255
+          }
+        },
+        {
+          "name": {
+            "first": "Dennis",
+            "last": "Pitta"
+          },
+          "position": "TE",
+          "college": "Brigham Young",
+          "jerseyNumber": 88,
+          "yearsPro": 1,
+          "measurables": {
+            "heightIn": 76,
+            "weightLb": 245
+          },
+          "ratings": {
+            "ovr": 65,
+            "spd": 81,
+            "acc": 72,
+            "agi": 79,
+            "str": 55,
+            "awr": 60,
+            "car": 82,
+            "thp": 84,
+            "tha": 88,
+            "inj": 87,
+            "sta": 67
+          }
+        },
+        {
+          "name": {
+            "first": "Brandon",
+            "last": "Reed"
+          },
+          "position": "WR",
+          "college": "",
+          "jerseyNumber": 16,
+          "yearsPro": 1,
+          "measurables": {
+            "heightIn": 72,
+            "weightLb": 190
+          }
+        },
+        {
+          "name": {
+            "first": "Arthur",
+            "last": "Jones"
+          },
+          "position": "DT",
+          "college": "Syracuse",
+          "jerseyNumber": 97,
+          "yearsPro": 1,
+          "measurables": {
+            "heightIn": 75,
+            "weightLb": 313
+          },
+          "ratings": {
+            "ovr": 55,
+            "spd": 55,
+            "acc": 67,
+            "agi": 66,
+            "str": 88,
+            "awr": 45,
+            "car": 81,
+            "thp": 65,
+            "tha": 74,
+            "inj": 67,
+            "sta": 80
+          }
+        },
+        {
+          "name": {
+            "first": "Sergio",
+            "last": "Kindle"
+          },
+          "position": "LB",
+          "college": "",
+          "jerseyNumber": 94,
+          "yearsPro": 1,
+          "measurables": {
+            "heightIn": 75,
+            "weightLb": 250
+          },
+          "ratings": {
+            "ovr": 70,
+            "spd": 82,
+            "acc": 93,
+            "agi": 80,
+            "str": 69,
+            "awr": 45,
+            "car": 75,
+            "thp": 66,
+            "tha": 93,
+            "inj": 95,
+            "sta": 76
+          }
+        },
+        {
+          "name": {
+            "first": "James",
+            "last": "Smith"
+          },
+          "position": "CB",
+          "college": "Colorado",
+          "jerseyNumber": 22,
+          "measurables": {
+            "heightIn": 74,
+            "weightLb": 210
+          }
+        },
+        {
+          "name": {
+            "first": "James",
+            "last": "Smith"
+          },
+          "position": "WR",
+          "college": "Maryland",
+          "jerseyNumber": 82,
+          "measurables": {
+            "heightIn": 73,
+            "weightLb": 205
+          }
+        },
+        {
+          "name": {
+            "first": "Jah",
+            "last": "Reid"
+          },
+          "position": "OT",
+          "college": "Central Florida",
+          "jerseyNumber": 76,
+          "measurables": {
+            "heightIn": 79,
+            "weightLb": 335
+          }
+        },
+        {
+          "name": {
+            "first": "Tandon",
+            "last": "Doss"
+          },
+          "position": "WR",
+          "college": "",
+          "jerseyNumber": 17,
+          "measurables": {
+            "heightIn": 74,
+            "weightLb": 205
+          },
+          "ratings": {
+            "ovr": 65,
+            "spd": 83,
+            "acc": 86,
+            "agi": 84,
+            "str": 68,
+            "awr": 55,
+            "car": 88,
+            "thp": 87,
+            "tha": 87,
+            "inj": 91,
+            "sta": 80
+          }
+        },
+        {
+          "name": {
+            "first": "Chykie",
+            "last": "Brown"
+          },
+          "position": "CB",
+          "college": "Texas",
+          "jerseyNumber": 23,
+          "measurables": {
+            "heightIn": 71,
+            "weightLb": 190
+          },
+          "ratings": {
+            "ovr": 63,
+            "spd": 89,
+            "acc": 93,
+            "agi": 92,
+            "str": 45,
+            "awr": 45,
+            "car": 47,
+            "thp": 93,
+            "tha": 83,
+            "inj": 89,
+            "sta": 74
+          }
+        },
+        {
+          "name": {
+            "first": "Pernell",
+            "last": "McPhee"
+          },
+          "position": "DE",
+          "college": "Mississippi State",
+          "jerseyNumber": 90,
+          "measurables": {
+            "heightIn": 75,
+            "weightLb": 280
+          },
+          "ratings": {
+            "ovr": 63,
+            "spd": 72,
+            "acc": 76,
+            "agi": 69,
+            "str": 91,
+            "awr": 44,
+            "car": 76,
+            "thp": 67,
+            "tha": 95,
+            "inj": 78,
+            "sta": 87
+          }
+        },
+        {
+          "name": {
+            "first": "Tyrod",
+            "last": "Taylor"
+          },
+          "position": "QB",
+          "college": "Virginia Tech",
+          "jerseyNumber": 2,
+          "measurables": {
+            "heightIn": 73,
+            "weightLb": 215
+          },
+          "ratings": {
+            "ovr": 62,
+            "spd": 87,
+            "acc": 91,
+            "agi": 88,
+            "str": 58,
+            "awr": 36,
+            "car": 72,
+            "thp": 92,
+            "tha": 65,
+            "inj": 87,
+            "sta": 88
+          }
+        },
+        {
+          "name": {
+            "first": "Anthony",
+            "last": "Allen"
+          },
+          "position": "RB",
+          "college": "",
+          "jerseyNumber": 35,
+          "measurables": {
+            "heightIn": 72,
+            "weightLb": 230
+          },
+          "ratings": {
+            "ovr": 60,
+            "spd": 84,
+            "acc": 81,
+            "agi": 79,
+            "str": 77,
+            "awr": 33,
+            "car": 60,
+            "thp": 90,
+            "tha": 69,
+            "inj": 93,
+            "sta": 84
+          }
+        },
+        {
+          "name": {
+            "first": "Justin",
+            "last": "Boren"
+          },
+          "position": "OG",
+          "college": "",
+          "jerseyNumber": 67,
+          "measurables": {
+            "heightIn": 74,
+            "weightLb": 325
+          }
+        },
+        {
+          "name": {
+            "first": "Joshua",
+            "last": "Bynes"
+          },
+          "position": "LB",
+          "college": "Auburn",
+          "jerseyNumber": 49,
+          "measurables": {
+            "heightIn": 73,
+            "weightLb": 240
+          }
+        },
+        {
+          "name": {
+            "first": "Chavis",
+            "last": "Williams"
+          },
+          "position": "LB",
+          "college": "",
+          "jerseyNumber": 47,
+          "measurables": {
+            "heightIn": 75,
+            "weightLb": 220
+          }
+        },
+        {
+          "name": {
+            "first": "LaQuan",
+            "last": "Williams"
+          },
+          "position": "WR",
+          "college": "",
+          "jerseyNumber": 15,
+          "measurables": {
+            "heightIn": 72,
+            "weightLb": 200
+          }
+        },
+        {
+          "name": {
+            "first": "David",
+            "last": "Jones"
+          },
+          "position": "OT",
+          "college": "",
+          "jerseyNumber": 71,
+          "measurables": {
+            "heightIn": 77,
+            "weightLb": 310
+          },
+          "ratings": {
+            "ovr": 67,
+            "spd": 87,
+            "acc": 93,
+            "agi": 89,
+            "str": 50,
+            "awr": 65,
+            "car": 48,
+            "thp": 85,
+            "tha": 93,
+            "inj": 91,
+            "sta": 78
+          }
+        },
+        {
+          "name": {
+            "first": "Michael",
+            "last": "McAdoo"
+          },
+          "position": "LB",
+          "college": "",
+          "jerseyNumber": 54,
+          "measurables": {
+            "heightIn": 79,
+            "weightLb": 245
+          }
+        }
+      ]
     },
     {
       "tgId": 26,
@@ -32216,6 +38127,7 @@
             "awr": 88,
             "cth": 88,
             "car": 87,
+            "btk": 97,
             "jmp": 81,
             "inj": 92,
             "sta": 70
@@ -32285,6 +38197,7 @@
             "awr": 76,
             "cth": 55,
             "car": 90,
+            "btk": 83,
             "jmp": 79,
             "inj": 70,
             "sta": 90
@@ -32326,6 +38239,7 @@
             "awr": 87,
             "cth": 87,
             "car": 85,
+            "btk": 77,
             "jmp": 87,
             "inj": 97,
             "sta": 78
@@ -32394,6 +38308,7 @@
             "awr": 82,
             "cth": 60,
             "car": 94,
+            "btk": 66,
             "jmp": 94,
             "inj": 92,
             "sta": 87
@@ -32421,6 +38336,7 @@
             "awr": 78,
             "cth": 83,
             "car": 90,
+            "btk": 78,
             "jmp": 81,
             "inj": 85,
             "sta": 84
@@ -32462,6 +38378,7 @@
             "awr": 85,
             "cth": 71,
             "car": 89,
+            "btk": 89,
             "jmp": 94,
             "inj": 95,
             "sta": 80
@@ -32598,6 +38515,7 @@
             "awr": 74,
             "cth": 83,
             "car": 76,
+            "btk": 77,
             "jmp": 93,
             "inj": 90,
             "sta": 87
@@ -32625,6 +38543,7 @@
             "awr": 75,
             "cth": 85,
             "car": 49,
+            "btk": 82,
             "jmp": 87,
             "inj": 69,
             "sta": 82
@@ -32652,6 +38571,7 @@
             "awr": 66,
             "cth": 80,
             "car": 70,
+            "btk": 71,
             "jmp": 80,
             "inj": 68,
             "sta": 77
@@ -32720,6 +38640,7 @@
             "awr": 76,
             "cth": 88,
             "car": 95,
+            "btk": 70,
             "jmp": 97,
             "inj": 96,
             "sta": 88
@@ -32747,6 +38668,7 @@
             "awr": 74,
             "cth": 82,
             "car": 65,
+            "btk": 78,
             "jmp": 87,
             "inj": 83,
             "sta": 89
@@ -32774,6 +38696,7 @@
             "awr": 70,
             "cth": 65,
             "car": 78,
+            "btk": 85,
             "jmp": 80,
             "inj": 85,
             "sta": 90
@@ -32828,6 +38751,7 @@
             "awr": 59,
             "cth": 46,
             "car": 84,
+            "btk": 45,
             "jmp": 85,
             "inj": 82,
             "sta": 81
@@ -32923,6 +38847,7 @@
             "awr": 64,
             "cth": 84,
             "car": 80,
+            "btk": 75,
             "jmp": 76,
             "inj": 92,
             "sta": 84
@@ -32977,6 +38902,7 @@
             "awr": 75,
             "cth": 65,
             "car": 92,
+            "btk": 64,
             "jmp": 80,
             "inj": 45,
             "sta": 68
@@ -33032,6 +38958,7 @@
             "awr": 68,
             "cth": 82,
             "car": 93,
+            "btk": 88,
             "jmp": 90,
             "inj": 87,
             "sta": 78
@@ -33115,6 +39042,7 @@
             "awr": 52,
             "cth": 66,
             "car": 83,
+            "btk": 45,
             "jmp": 65,
             "inj": 90,
             "sta": 79
@@ -33169,6 +39097,7 @@
             "awr": 76,
             "cth": 88,
             "car": 96,
+            "btk": 97,
             "jmp": 87,
             "inj": 85,
             "sta": 98
@@ -33223,6 +39152,7 @@
             "awr": 62,
             "cth": 67,
             "car": 86,
+            "btk": 56,
             "jmp": 93,
             "inj": 88,
             "sta": 88
@@ -33250,6 +39180,7 @@
             "awr": 60,
             "cth": 68,
             "car": 67,
+            "btk": 65,
             "jmp": 89,
             "inj": 87,
             "sta": 82
@@ -33291,6 +39222,7 @@
             "awr": 37,
             "cth": 85,
             "car": 89,
+            "btk": 72,
             "jmp": 79,
             "inj": 92,
             "sta": 68
@@ -33318,6 +39250,7 @@
             "awr": 49,
             "cth": 69,
             "car": 87,
+            "btk": 85,
             "jmp": 90,
             "inj": 80,
             "sta": 66
@@ -33345,6 +39278,7 @@
             "awr": 55,
             "cth": 83,
             "car": 74,
+            "btk": 73,
             "jmp": 67,
             "inj": 78,
             "sta": 64
@@ -33386,6 +39320,7 @@
             "awr": 69,
             "cth": 88,
             "car": 65,
+            "btk": 88,
             "jmp": 86,
             "inj": 70,
             "sta": 87
@@ -33425,6 +39360,7 @@
             "awr": 51,
             "cth": 81,
             "car": 90,
+            "btk": 85,
             "jmp": 94,
             "inj": 90,
             "sta": 75
@@ -33451,6 +39387,7 @@
             "awr": 35,
             "cth": 69,
             "car": 81,
+            "btk": 76,
             "jmp": 78,
             "inj": 79,
             "sta": 85
@@ -33477,6 +39414,7 @@
             "awr": 42,
             "cth": 78,
             "car": 80,
+            "btk": 65,
             "jmp": 92,
             "inj": 86,
             "sta": 94
@@ -33503,6 +39441,7 @@
             "awr": 43,
             "cth": 71,
             "car": 83,
+            "btk": 82,
             "jmp": 93,
             "inj": 88,
             "sta": 74
@@ -33529,6 +39468,7 @@
             "awr": 40,
             "cth": 69,
             "car": 85,
+            "btk": 47,
             "jmp": 72,
             "inj": 95,
             "sta": 77
@@ -33555,6 +39495,7 @@
             "awr": 44,
             "cth": 77,
             "car": 87,
+            "btk": 88,
             "jmp": 94,
             "inj": 88,
             "sta": 65
@@ -33581,6 +39522,7 @@
             "awr": 44,
             "cth": 46,
             "car": 88,
+            "btk": 40,
             "jmp": 92,
             "inj": 88,
             "sta": 55
@@ -33607,6 +39549,7 @@
             "awr": 40,
             "cth": 80,
             "car": 73,
+            "btk": 84,
             "jmp": 69,
             "inj": 82,
             "sta": 76
@@ -33633,6 +39576,7 @@
             "awr": 39,
             "cth": 69,
             "car": 88,
+            "btk": 85,
             "jmp": 72,
             "inj": 70,
             "sta": 63
@@ -35325,6 +41269,7 @@
             "awr": 74,
             "cth": 80,
             "car": 88,
+            "btk": 88,
             "jmp": 82,
             "inj": 76,
             "sta": 59
@@ -35487,6 +41432,7 @@
             "awr": 65,
             "cth": 70,
             "car": 94,
+            "btk": 72,
             "jmp": 70,
             "inj": 81,
             "sta": 90
@@ -35718,6 +41664,7 @@
             "awr": 80,
             "cth": 87,
             "car": 96,
+            "btk": 86,
             "jmp": 65,
             "inj": 89,
             "sta": 85
@@ -38203,7 +44150,1598 @@
       "abbreviation": "HOU",
       "city": "Houston",
       "name": "Texans",
-      "players": []
+      "players": [
+        {
+          "name": {
+            "first": "Jake",
+            "last": "Delhomme"
+          },
+          "position": "QB",
+          "college": "",
+          "jerseyNumber": 17,
+          "yearsPro": 14,
+          "measurables": {
+            "heightIn": 74,
+            "weightLb": 215
+          },
+          "ratings": {
+            "ovr": 73,
+            "spd": 64,
+            "acc": 63,
+            "agi": 64,
+            "str": 53,
+            "awr": 76,
+            "car": 56,
+            "thp": 84,
+            "tha": 75,
+            "inj": 80,
+            "sta": 92
+          }
+        },
+        {
+          "name": {
+            "first": "Jeff",
+            "last": "Garcia"
+          },
+          "position": "QB",
+          "college": "",
+          "jerseyNumber": 7,
+          "yearsPro": 12,
+          "measurables": {
+            "heightIn": 73,
+            "weightLb": 205
+          }
+        },
+        {
+          "name": {
+            "first": "Derrick",
+            "last": "Mason"
+          },
+          "position": "WR",
+          "college": "",
+          "jerseyNumber": 82,
+          "yearsPro": 14,
+          "measurables": {
+            "heightIn": 70,
+            "weightLb": 197
+          },
+          "ratings": {
+            "ovr": 86,
+            "spd": 86,
+            "acc": 90,
+            "agi": 88,
+            "str": 42,
+            "awr": 97,
+            "car": 91,
+            "thp": 85,
+            "tha": 93,
+            "inj": 99,
+            "sta": 92
+          }
+        },
+        {
+          "name": {
+            "first": "Matt",
+            "last": "Turk"
+          },
+          "position": "P",
+          "college": "",
+          "jerseyNumber": 1,
+          "yearsPro": 18,
+          "measurables": {
+            "heightIn": 77,
+            "weightLb": 251
+          },
+          "ratings": {
+            "ovr": 81,
+            "spd": 56,
+            "acc": 52,
+            "agi": 37,
+            "str": 21,
+            "awr": 95,
+            "car": 79,
+            "thp": 87,
+            "tha": 39,
+            "inj": 39,
+            "sta": 66
+          }
+        },
+        {
+          "name": {
+            "first": "Neil",
+            "last": "Rackers"
+          },
+          "position": "K",
+          "college": "",
+          "jerseyNumber": 4,
+          "yearsPro": 11,
+          "measurables": {
+            "heightIn": 73,
+            "weightLb": 202
+          },
+          "ratings": {
+            "ovr": 83,
+            "spd": 66,
+            "acc": 67,
+            "agi": 63,
+            "str": 60,
+            "awr": 80,
+            "car": 94,
+            "thp": 87,
+            "tha": 22,
+            "inj": 15,
+            "sta": 80
+          }
+        },
+        {
+          "name": {
+            "first": "Kevin",
+            "last": "Walter"
+          },
+          "position": "WR",
+          "college": "",
+          "jerseyNumber": 83,
+          "yearsPro": 8,
+          "measurables": {
+            "heightIn": 75,
+            "weightLb": 217
+          },
+          "ratings": {
+            "ovr": 78,
+            "spd": 83,
+            "acc": 84,
+            "agi": 83,
+            "str": 65,
+            "awr": 84,
+            "car": 87,
+            "thp": 84,
+            "tha": 93,
+            "inj": 86,
+            "sta": 78
+          }
+        },
+        {
+          "name": {
+            "first": "Andre",
+            "last": "Johnson"
+          },
+          "position": "WR",
+          "college": "",
+          "jerseyNumber": 80,
+          "yearsPro": 8,
+          "measurables": {
+            "heightIn": 75,
+            "weightLb": 226
+          },
+          "ratings": {
+            "ovr": 97,
+            "spd": 94,
+            "acc": 94,
+            "agi": 93,
+            "str": 80,
+            "awr": 92,
+            "car": 96,
+            "thp": 93,
+            "tha": 88,
+            "inj": 99,
+            "sta": 98
+          }
+        },
+        {
+          "name": {
+            "first": "Wade",
+            "last": "Smith"
+          },
+          "position": "OG",
+          "college": "",
+          "jerseyNumber": 74,
+          "yearsPro": 8,
+          "measurables": {
+            "heightIn": 76,
+            "weightLb": 310
+          },
+          "ratings": {
+            "ovr": 86,
+            "spd": 57,
+            "acc": 76,
+            "agi": 55,
+            "str": 89,
+            "awr": 82,
+            "car": 90,
+            "thp": 78,
+            "tha": 82,
+            "inj": 87,
+            "sta": 88
+          }
+        },
+        {
+          "name": {
+            "first": "Bryant",
+            "last": "Johnson"
+          },
+          "position": "WR",
+          "college": "",
+          "jerseyNumber": 89,
+          "yearsPro": 8,
+          "measurables": {
+            "heightIn": 75,
+            "weightLb": 212
+          },
+          "ratings": {
+            "ovr": 68,
+            "spd": 87,
+            "acc": 86,
+            "agi": 85,
+            "str": 59,
+            "awr": 75,
+            "car": 76,
+            "thp": 87,
+            "tha": 85,
+            "inj": 84,
+            "sta": 72
+          }
+        },
+        {
+          "name": {
+            "first": "Derrick",
+            "last": "Ward"
+          },
+          "position": "RB",
+          "college": "",
+          "jerseyNumber": 32,
+          "yearsPro": 7,
+          "measurables": {
+            "heightIn": 71,
+            "weightLb": 240
+          },
+          "ratings": {
+            "ovr": 73,
+            "spd": 86,
+            "acc": 87,
+            "agi": 79,
+            "str": 70,
+            "awr": 75,
+            "car": 78,
+            "thp": 81,
+            "tha": 59,
+            "inj": 82,
+            "sta": 81
+          }
+        },
+        {
+          "name": {
+            "first": "Matt",
+            "last": "Schaub"
+          },
+          "position": "QB",
+          "college": "Virginia",
+          "jerseyNumber": 8,
+          "yearsPro": 7,
+          "measurables": {
+            "heightIn": 77,
+            "weightLb": 241
+          },
+          "ratings": {
+            "ovr": 88,
+            "spd": 62,
+            "acc": 58,
+            "agi": 57,
+            "str": 64,
+            "awr": 87,
+            "car": 42,
+            "thp": 88,
+            "tha": 90,
+            "inj": 78,
+            "sta": 90
+          }
+        },
+        {
+          "name": {
+            "first": "Antonio",
+            "last": "Smith"
+          },
+          "position": "DE",
+          "college": "Oklahoma State",
+          "jerseyNumber": 94,
+          "yearsPro": 7,
+          "measurables": {
+            "heightIn": 76,
+            "weightLb": 280
+          },
+          "ratings": {
+            "ovr": 85,
+            "spd": 73,
+            "acc": 82,
+            "agi": 69,
+            "str": 83,
+            "awr": 84,
+            "car": 88,
+            "thp": 67,
+            "tha": 92,
+            "inj": 87,
+            "sta": 84
+          }
+        },
+        {
+          "name": {
+            "first": "Tim",
+            "last": "Bulman"
+          },
+          "position": "DE",
+          "college": "",
+          "jerseyNumber": 93,
+          "yearsPro": 6,
+          "measurables": {
+            "heightIn": 76,
+            "weightLb": 281
+          },
+          "ratings": {
+            "ovr": 65,
+            "spd": 69,
+            "acc": 80,
+            "agi": 56,
+            "str": 86,
+            "awr": 67,
+            "car": 73,
+            "thp": 60,
+            "tha": 88,
+            "inj": 82,
+            "sta": 85
+          }
+        },
+        {
+          "name": {
+            "first": "Shaun",
+            "last": "Cody"
+          },
+          "position": "DT",
+          "college": "",
+          "jerseyNumber": 95,
+          "yearsPro": 6,
+          "measurables": {
+            "heightIn": 76,
+            "weightLb": 301
+          },
+          "ratings": {
+            "ovr": 75,
+            "spd": 59,
+            "acc": 82,
+            "agi": 65,
+            "str": 84,
+            "awr": 75,
+            "car": 86,
+            "thp": 66,
+            "tha": 88,
+            "inj": 74,
+            "sta": 85
+          }
+        },
+        {
+          "name": {
+            "first": "Joel",
+            "last": "Dreessen"
+          },
+          "position": "TE",
+          "college": "",
+          "jerseyNumber": 85,
+          "yearsPro": 6,
+          "measurables": {
+            "heightIn": 76,
+            "weightLb": 245
+          },
+          "ratings": {
+            "ovr": 70,
+            "spd": 75,
+            "acc": 82,
+            "agi": 74,
+            "str": 72,
+            "awr": 74,
+            "car": 82,
+            "thp": 73,
+            "tha": 85,
+            "inj": 85,
+            "sta": 86
+          }
+        },
+        {
+          "name": {
+            "first": "Christopher",
+            "last": "Myers"
+          },
+          "position": "C",
+          "college": "",
+          "jerseyNumber": 55,
+          "yearsPro": 6,
+          "measurables": {
+            "heightIn": 76,
+            "weightLb": 289
+          }
+        },
+        {
+          "name": {
+            "first": "Mario",
+            "last": "Williams"
+          },
+          "position": "LB",
+          "college": "North Carolina State",
+          "jerseyNumber": 90,
+          "yearsPro": 5,
+          "measurables": {
+            "heightIn": 78,
+            "weightLb": 283
+          },
+          "ratings": {
+            "ovr": 88,
+            "spd": 84,
+            "acc": 94,
+            "agi": 86,
+            "str": 87,
+            "awr": 86,
+            "car": 83,
+            "thp": 95,
+            "tha": 98,
+            "inj": 95,
+            "sta": 86
+          }
+        },
+        {
+          "name": {
+            "first": "Mike",
+            "last": "Brisiel"
+          },
+          "position": "OG",
+          "college": "",
+          "jerseyNumber": 65,
+          "yearsPro": 5,
+          "measurables": {
+            "heightIn": 77,
+            "weightLb": 300
+          },
+          "ratings": {
+            "ovr": 75,
+            "spd": 54,
+            "acc": 68,
+            "agi": 54,
+            "str": 87,
+            "awr": 70,
+            "car": 82,
+            "thp": 75,
+            "tha": 78,
+            "inj": 85,
+            "sta": 77
+          }
+        },
+        {
+          "name": {
+            "first": "Matt",
+            "last": "Leinart"
+          },
+          "position": "QB",
+          "college": "",
+          "jerseyNumber": 11,
+          "yearsPro": 5,
+          "measurables": {
+            "heightIn": 77,
+            "weightLb": 227
+          },
+          "ratings": {
+            "ovr": 72,
+            "spd": 54,
+            "acc": 62,
+            "agi": 61,
+            "str": 61,
+            "awr": 69,
+            "car": 65,
+            "thp": 85,
+            "tha": 77,
+            "inj": 87,
+            "sta": 92
+          }
+        },
+        {
+          "name": {
+            "first": "Jason",
+            "last": "Allen"
+          },
+          "position": "CB",
+          "college": "",
+          "jerseyNumber": 30,
+          "yearsPro": 5,
+          "measurables": {
+            "heightIn": 73,
+            "weightLb": 204
+          },
+          "ratings": {
+            "ovr": 75,
+            "spd": 90,
+            "acc": 91,
+            "agi": 91,
+            "str": 66,
+            "awr": 70,
+            "car": 65,
+            "thp": 93,
+            "tha": 82,
+            "inj": 93,
+            "sta": 75
+          }
+        },
+        {
+          "name": {
+            "first": "Johnathan",
+            "last": "Joseph"
+          },
+          "position": "CB",
+          "college": "South Carolina",
+          "jerseyNumber": 24,
+          "yearsPro": 5,
+          "measurables": {
+            "heightIn": 71,
+            "weightLb": 191
+          }
+        },
+        {
+          "name": {
+            "first": "DeMeco",
+            "last": "Ryans"
+          },
+          "position": "LB",
+          "college": "Alabama",
+          "jerseyNumber": 59,
+          "yearsPro": 5,
+          "measurables": {
+            "heightIn": 73,
+            "weightLb": 247
+          },
+          "ratings": {
+            "ovr": 89,
+            "spd": 76,
+            "acc": 86,
+            "agi": 85,
+            "str": 73,
+            "awr": 90,
+            "car": 96,
+            "thp": 97,
+            "tha": 98,
+            "inj": 90,
+            "sta": 62
+          }
+        },
+        {
+          "name": {
+            "first": "Danieal",
+            "last": "Manning"
+          },
+          "position": "S",
+          "college": "",
+          "jerseyNumber": 38,
+          "yearsPro": 5,
+          "measurables": {
+            "heightIn": 71,
+            "weightLb": 209
+          },
+          "ratings": {
+            "ovr": 74,
+            "spd": 96,
+            "acc": 96,
+            "agi": 93,
+            "str": 61,
+            "awr": 68,
+            "car": 65,
+            "thp": 93,
+            "tha": 93,
+            "inj": 90,
+            "sta": 86
+          }
+        },
+        {
+          "name": {
+            "first": "Kellen",
+            "last": "Clemens"
+          },
+          "position": "QB",
+          "college": "Oregon",
+          "jerseyNumber": 1,
+          "yearsPro": 5,
+          "measurables": {
+            "heightIn": 74,
+            "weightLb": 220
+          },
+          "ratings": {
+            "ovr": 70,
+            "spd": 66,
+            "acc": 68,
+            "agi": 68,
+            "str": 58,
+            "awr": 69,
+            "car": 65,
+            "thp": 88,
+            "tha": 74,
+            "inj": 85,
+            "sta": 92
+          }
+        },
+        {
+          "name": {
+            "first": "Eric",
+            "last": "Winston"
+          },
+          "position": "OT",
+          "college": "Miami (Fla.)",
+          "jerseyNumber": 73,
+          "yearsPro": 5,
+          "measurables": {
+            "heightIn": 79,
+            "weightLb": 302
+          },
+          "ratings": {
+            "ovr": 90,
+            "spd": 68,
+            "acc": 85,
+            "agi": 67,
+            "str": 85,
+            "awr": 82,
+            "car": 86,
+            "thp": 80,
+            "tha": 91,
+            "inj": 82,
+            "sta": 90
+          }
+        },
+        {
+          "name": {
+            "first": "Rashad",
+            "last": "Butler"
+          },
+          "position": "OT",
+          "college": "",
+          "jerseyNumber": 78,
+          "yearsPro": 5,
+          "measurables": {
+            "heightIn": 76,
+            "weightLb": 317
+          },
+          "ratings": {
+            "ovr": 63,
+            "spd": 62,
+            "acc": 79,
+            "agi": 60,
+            "str": 83,
+            "awr": 60,
+            "car": 78,
+            "thp": 75,
+            "tha": 81,
+            "inj": 70,
+            "sta": 74
+          }
+        },
+        {
+          "name": {
+            "first": "Owen",
+            "last": "Daniels"
+          },
+          "position": "TE",
+          "college": "Wisconsin",
+          "jerseyNumber": 81,
+          "yearsPro": 5,
+          "measurables": {
+            "heightIn": 75,
+            "weightLb": 247
+          },
+          "ratings": {
+            "ovr": 86,
+            "spd": 83,
+            "acc": 82,
+            "agi": 84,
+            "str": 65,
+            "awr": 85,
+            "car": 88,
+            "thp": 82,
+            "tha": 78,
+            "inj": 94,
+            "sta": 80
+          }
+        },
+        {
+          "name": {
+            "first": "Tim",
+            "last": "Dobbins"
+          },
+          "position": "LB",
+          "college": "",
+          "jerseyNumber": 52,
+          "yearsPro": 5,
+          "measurables": {
+            "heightIn": 73,
+            "weightLb": 245
+          },
+          "ratings": {
+            "ovr": 67,
+            "spd": 78,
+            "acc": 80,
+            "agi": 73,
+            "str": 79,
+            "awr": 66,
+            "car": 79,
+            "thp": 87,
+            "tha": 84,
+            "inj": 91,
+            "sta": 65
+          }
+        },
+        {
+          "name": {
+            "first": "Lawrence",
+            "last": "Vickers"
+          },
+          "position": "FB",
+          "college": "",
+          "jerseyNumber": 47,
+          "yearsPro": 5,
+          "measurables": {
+            "heightIn": 72,
+            "weightLb": 250
+          },
+          "ratings": {
+            "ovr": 90,
+            "spd": 73,
+            "acc": 80,
+            "agi": 74,
+            "str": 82,
+            "awr": 74,
+            "car": 66,
+            "thp": 83,
+            "tha": 68,
+            "inj": 85,
+            "sta": 88
+          }
+        },
+        {
+          "name": {
+            "first": "David",
+            "last": "Anderson"
+          },
+          "position": "WR",
+          "college": "",
+          "jerseyNumber": 17,
+          "yearsPro": 5,
+          "measurables": {
+            "heightIn": 70,
+            "weightLb": 193
+          },
+          "ratings": {
+            "ovr": 61,
+            "spd": 84,
+            "acc": 87,
+            "agi": 86,
+            "str": 55,
+            "awr": 65,
+            "car": 79,
+            "thp": 77,
+            "tha": 90,
+            "inj": 83,
+            "sta": 84
+          }
+        },
+        {
+          "name": {
+            "first": "Jacoby",
+            "last": "Jones"
+          },
+          "position": "WR",
+          "college": "Lane",
+          "jerseyNumber": 12,
+          "yearsPro": 4,
+          "measurables": {
+            "heightIn": 74,
+            "weightLb": 212
+          },
+          "ratings": {
+            "ovr": 74,
+            "spd": 93,
+            "acc": 88,
+            "agi": 92,
+            "str": 64,
+            "awr": 71,
+            "car": 78,
+            "thp": 88,
+            "tha": 87,
+            "inj": 88,
+            "sta": 78
+          }
+        },
+        {
+          "name": {
+            "first": "Duane",
+            "last": "Brown"
+          },
+          "position": "OT",
+          "college": "Virginia Tech",
+          "jerseyNumber": 76,
+          "yearsPro": 3,
+          "measurables": {
+            "heightIn": 76,
+            "weightLb": 320
+          },
+          "ratings": {
+            "ovr": 80,
+            "spd": 69,
+            "acc": 86,
+            "agi": 65,
+            "str": 90,
+            "awr": 76,
+            "car": 87,
+            "thp": 78,
+            "tha": 82,
+            "inj": 80,
+            "sta": 82
+          }
+        },
+        {
+          "name": {
+            "first": "Steven",
+            "last": "Slaton"
+          },
+          "position": "RB",
+          "college": "",
+          "jerseyNumber": 20,
+          "yearsPro": 3,
+          "measurables": {
+            "heightIn": 69,
+            "weightLb": 209
+          }
+        },
+        {
+          "name": {
+            "first": "Quintin",
+            "last": "Demps"
+          },
+          "position": "S",
+          "college": "Texas-El Paso",
+          "jerseyNumber": 27,
+          "yearsPro": 3,
+          "measurables": {
+            "heightIn": 71,
+            "weightLb": 206
+          },
+          "ratings": {
+            "ovr": 69,
+            "spd": 89,
+            "acc": 93,
+            "agi": 88,
+            "str": 58,
+            "awr": 59,
+            "car": 58,
+            "thp": 87,
+            "tha": 90,
+            "inj": 91,
+            "sta": 78
+          }
+        },
+        {
+          "name": {
+            "first": "Dominique",
+            "last": "Barber"
+          },
+          "position": "S",
+          "college": "",
+          "jerseyNumber": 34,
+          "yearsPro": 3,
+          "measurables": {
+            "heightIn": 72,
+            "weightLb": 210
+          },
+          "ratings": {
+            "ovr": 69,
+            "spd": 80,
+            "acc": 84,
+            "agi": 81,
+            "str": 69,
+            "awr": 64,
+            "car": 75,
+            "thp": 82,
+            "tha": 92,
+            "inj": 88,
+            "sta": 78
+          }
+        },
+        {
+          "name": {
+            "first": "Jesse",
+            "last": "Nading"
+          },
+          "position": "DE",
+          "college": "",
+          "jerseyNumber": 57,
+          "yearsPro": 3,
+          "measurables": {
+            "heightIn": 77,
+            "weightLb": 261
+          },
+          "ratings": {
+            "ovr": 67,
+            "spd": 70,
+            "acc": 78,
+            "agi": 65,
+            "str": 76,
+            "awr": 74,
+            "car": 78,
+            "thp": 91,
+            "tha": 83,
+            "inj": 82,
+            "sta": 79
+          }
+        },
+        {
+          "name": {
+            "first": "Arian",
+            "last": "Foster"
+          },
+          "position": "RB",
+          "college": "",
+          "jerseyNumber": 23,
+          "yearsPro": 2,
+          "measurables": {
+            "heightIn": 73,
+            "weightLb": 229
+          },
+          "ratings": {
+            "ovr": 92,
+            "spd": 91,
+            "acc": 93,
+            "agi": 91,
+            "str": 77,
+            "awr": 78,
+            "car": 69,
+            "thp": 92,
+            "tha": 68,
+            "inj": 87,
+            "sta": 92
+          }
+        },
+        {
+          "name": {
+            "first": "Timothy",
+            "last": "Jamison"
+          },
+          "position": "DE",
+          "college": "",
+          "jerseyNumber": 96,
+          "yearsPro": 2,
+          "measurables": {
+            "heightIn": 75,
+            "weightLb": 285
+          }
+        },
+        {
+          "name": {
+            "first": "Andrew",
+            "last": "Gardner"
+          },
+          "position": "OT",
+          "college": "Georgia Tech",
+          "jerseyNumber": 66,
+          "yearsPro": 2,
+          "measurables": {
+            "heightIn": 78,
+            "weightLb": 305
+          },
+          "ratings": {
+            "ovr": 61,
+            "spd": 56,
+            "acc": 66,
+            "agi": 55,
+            "str": 87,
+            "awr": 55,
+            "car": 84,
+            "thp": 75,
+            "tha": 73,
+            "inj": 68,
+            "sta": 68
+          }
+        },
+        {
+          "name": {
+            "first": "Brice",
+            "last": "McCain"
+          },
+          "position": "CB",
+          "college": "Utah",
+          "jerseyNumber": 21,
+          "yearsPro": 2,
+          "measurables": {
+            "heightIn": 69,
+            "weightLb": 180
+          },
+          "ratings": {
+            "ovr": 69,
+            "spd": 95,
+            "acc": 94,
+            "agi": 88,
+            "str": 39,
+            "awr": 55,
+            "car": 49,
+            "thp": 88,
+            "tha": 86,
+            "inj": 91,
+            "sta": 71
+          }
+        },
+        {
+          "name": {
+            "first": "Troy",
+            "last": "Nolan"
+          },
+          "position": "S",
+          "college": "",
+          "jerseyNumber": 33,
+          "yearsPro": 2,
+          "measurables": {
+            "heightIn": 74,
+            "weightLb": 202
+          },
+          "ratings": {
+            "ovr": 71,
+            "spd": 87,
+            "acc": 90,
+            "agi": 87,
+            "str": 63,
+            "awr": 52,
+            "car": 64,
+            "thp": 87,
+            "tha": 92,
+            "inj": 87,
+            "sta": 76
+          }
+        },
+        {
+          "name": {
+            "first": "Brian",
+            "last": "Cushing"
+          },
+          "position": "LB",
+          "college": "USC",
+          "jerseyNumber": 56,
+          "yearsPro": 2,
+          "measurables": {
+            "heightIn": 75,
+            "weightLb": 248
+          },
+          "ratings": {
+            "ovr": 86,
+            "spd": 84,
+            "acc": 88,
+            "agi": 84,
+            "str": 83,
+            "awr": 79,
+            "car": 91,
+            "thp": 94,
+            "tha": 95,
+            "inj": 78,
+            "sta": 74
+          }
+        },
+        {
+          "name": {
+            "first": "Connor",
+            "last": "Barwin"
+          },
+          "position": "LB",
+          "college": "Cincinnati",
+          "jerseyNumber": 98,
+          "yearsPro": 2,
+          "measurables": {
+            "heightIn": 76,
+            "weightLb": 264
+          },
+          "ratings": {
+            "ovr": 73,
+            "spd": 84,
+            "acc": 87,
+            "agi": 75,
+            "str": 74,
+            "awr": 72,
+            "car": 79,
+            "thp": 92,
+            "tha": 78,
+            "inj": 90,
+            "sta": 90
+          }
+        },
+        {
+          "name": {
+            "first": "Antoine",
+            "last": "Caldwell"
+          },
+          "position": "OG",
+          "college": "",
+          "jerseyNumber": 62,
+          "yearsPro": 2,
+          "measurables": {
+            "heightIn": 75,
+            "weightLb": 311
+          },
+          "ratings": {
+            "ovr": 73,
+            "spd": 60,
+            "acc": 84,
+            "agi": 62,
+            "str": 82,
+            "awr": 58,
+            "car": 84,
+            "thp": 85,
+            "tha": 72,
+            "inj": 93,
+            "sta": 85
+          }
+        },
+        {
+          "name": {
+            "first": "Glover",
+            "last": "Quin"
+          },
+          "position": "S",
+          "college": "New Mexico",
+          "jerseyNumber": 29,
+          "yearsPro": 2,
+          "measurables": {
+            "heightIn": 72,
+            "weightLb": 209
+          }
+        },
+        {
+          "name": {
+            "first": "James",
+            "last": "Casey"
+          },
+          "position": "FB",
+          "college": "Rice",
+          "jerseyNumber": 86,
+          "yearsPro": 2,
+          "measurables": {
+            "heightIn": 75,
+            "weightLb": 243
+          },
+          "ratings": {
+            "ovr": 61,
+            "spd": 82,
+            "acc": 86,
+            "agi": 80,
+            "str": 64,
+            "awr": 66,
+            "car": 80,
+            "thp": 66,
+            "tha": 72,
+            "inj": 93,
+            "sta": 86
+          }
+        },
+        {
+          "name": {
+            "first": "Christopher",
+            "last": "Ogbonnaya"
+          },
+          "position": "RB",
+          "college": "",
+          "jerseyNumber": 27,
+          "yearsPro": 2,
+          "measurables": {
+            "heightIn": 72,
+            "weightLb": 225
+          }
+        },
+        {
+          "name": {
+            "first": "Jonathan",
+            "last": "Weeks"
+          },
+          "position": "C",
+          "college": "Baylor",
+          "jerseyNumber": 46,
+          "yearsPro": 1,
+          "measurables": {
+            "heightIn": 70,
+            "weightLb": 242
+          }
+        },
+        {
+          "name": {
+            "first": "Thomas",
+            "last": "Austin"
+          },
+          "position": "OG",
+          "college": "",
+          "jerseyNumber": 61,
+          "yearsPro": 1,
+          "measurables": {
+            "heightIn": 76,
+            "weightLb": 303
+          },
+          "ratings": {
+            "ovr": 59,
+            "spd": 59,
+            "acc": 66,
+            "agi": 47,
+            "str": 78,
+            "awr": 38,
+            "car": 75,
+            "thp": 78,
+            "tha": 79,
+            "inj": 75,
+            "sta": 62
+          }
+        },
+        {
+          "name": {
+            "first": "Trindon",
+            "last": "Holliday"
+          },
+          "position": "KR",
+          "college": "",
+          "jerseyNumber": 16,
+          "yearsPro": 1,
+          "measurables": {
+            "heightIn": 65,
+            "weightLb": 169
+          },
+          "ratings": {
+            "ovr": 50,
+            "spd": 97,
+            "acc": 96,
+            "agi": 87,
+            "str": 32,
+            "awr": 31,
+            "car": 66,
+            "thp": 88,
+            "tha": 80,
+            "inj": 85,
+            "sta": 40
+          }
+        },
+        {
+          "name": {
+            "first": "Earl",
+            "last": "Mitchell"
+          },
+          "position": "DT",
+          "college": "Arizona",
+          "jerseyNumber": 92,
+          "yearsPro": 1,
+          "measurables": {
+            "heightIn": 75,
+            "weightLb": 289
+          },
+          "ratings": {
+            "ovr": 68,
+            "spd": 76,
+            "acc": 87,
+            "agi": 74,
+            "str": 74,
+            "awr": 62,
+            "car": 68,
+            "thp": 82,
+            "tha": 90,
+            "inj": 74,
+            "sta": 75
+          }
+        },
+        {
+          "name": {
+            "first": "Darryl",
+            "last": "Sharpton"
+          },
+          "position": "LB",
+          "college": "",
+          "jerseyNumber": 51,
+          "yearsPro": 1,
+          "measurables": {
+            "heightIn": 71,
+            "weightLb": 230
+          },
+          "ratings": {
+            "ovr": 68,
+            "spd": 76,
+            "acc": 87,
+            "agi": 78,
+            "str": 73,
+            "awr": 65,
+            "car": 78,
+            "thp": 85,
+            "tha": 89,
+            "inj": 97,
+            "sta": 71
+          }
+        },
+        {
+          "name": {
+            "first": "Garrett",
+            "last": "Graham"
+          },
+          "position": "TE",
+          "college": "",
+          "jerseyNumber": 88,
+          "yearsPro": 1,
+          "measurables": {
+            "heightIn": 75,
+            "weightLb": 240
+          },
+          "ratings": {
+            "ovr": 67,
+            "spd": 73,
+            "acc": 75,
+            "agi": 77,
+            "str": 60,
+            "awr": 62,
+            "car": 80,
+            "thp": 86,
+            "tha": 87,
+            "inj": 85,
+            "sta": 60
+          }
+        },
+        {
+          "name": {
+            "first": "Sherrick",
+            "last": "McManis"
+          },
+          "position": "CB",
+          "college": "Northwestern",
+          "jerseyNumber": 22,
+          "yearsPro": 1,
+          "measurables": {
+            "heightIn": 73,
+            "weightLb": 193
+          },
+          "ratings": {
+            "ovr": 62,
+            "spd": 89,
+            "acc": 86,
+            "agi": 85,
+            "str": 55,
+            "awr": 44,
+            "car": 60,
+            "thp": 94,
+            "tha": 72,
+            "inj": 94,
+            "sta": 75
+          }
+        },
+        {
+          "name": {
+            "first": "Kareem",
+            "last": "Jackson"
+          },
+          "position": "CB",
+          "college": "Alabama",
+          "jerseyNumber": 25,
+          "yearsPro": 1,
+          "measurables": {
+            "heightIn": 70,
+            "weightLb": 188
+          },
+          "ratings": {
+            "ovr": 75,
+            "spd": 90,
+            "acc": 85,
+            "agi": 86,
+            "str": 58,
+            "awr": 69,
+            "car": 64,
+            "thp": 86,
+            "tha": 95,
+            "inj": 89,
+            "sta": 72
+          }
+        },
+        {
+          "name": {
+            "first": "Benjamin",
+            "last": "Tate"
+          },
+          "position": "RB",
+          "college": "",
+          "jerseyNumber": 44,
+          "yearsPro": 1,
+          "measurables": {
+            "heightIn": 71,
+            "weightLb": 214
+          }
+        },
+        {
+          "name": {
+            "first": "Justin",
+            "last": "Watt"
+          },
+          "position": "DE",
+          "college": "Wisconsin",
+          "jerseyNumber": 99,
+          "measurables": {
+            "heightIn": 77,
+            "weightLb": 288
+          }
+        },
+        {
+          "name": {
+            "first": "Brooks",
+            "last": "Reed"
+          },
+          "position": "LB",
+          "college": "Arizona",
+          "jerseyNumber": 58,
+          "measurables": {
+            "heightIn": 75,
+            "weightLb": 260
+          },
+          "ratings": {
+            "ovr": 69,
+            "spd": 81,
+            "acc": 87,
+            "agi": 73,
+            "str": 69,
+            "awr": 55,
+            "car": 83,
+            "thp": 92,
+            "tha": 83,
+            "inj": 88,
+            "sta": 85
+          }
+        },
+        {
+          "name": {
+            "first": "Brandon",
+            "last": "Harris"
+          },
+          "position": "CB",
+          "college": "",
+          "jerseyNumber": 26,
+          "measurables": {
+            "heightIn": 70,
+            "weightLb": 195
+          },
+          "ratings": {
+            "ovr": 70,
+            "spd": 88,
+            "acc": 90,
+            "agi": 88,
+            "str": 54,
+            "awr": 52,
+            "car": 61,
+            "thp": 87,
+            "tha": 92,
+            "inj": 88,
+            "sta": 95
+          }
+        },
+        {
+          "name": {
+            "first": "Rashad",
+            "last": "Carmichael"
+          },
+          "position": "CB",
+          "college": "",
+          "jerseyNumber": 36,
+          "measurables": {
+            "heightIn": 70,
+            "weightLb": 184
+          }
+        },
+        {
+          "name": {
+            "first": "Shiloh",
+            "last": "Keo"
+          },
+          "position": "CB",
+          "college": "Idaho",
+          "jerseyNumber": 31,
+          "measurables": {
+            "heightIn": 71,
+            "weightLb": 219
+          },
+          "ratings": {
+            "ovr": 65,
+            "spd": 74,
+            "acc": 77,
+            "agi": 75,
+            "str": 72,
+            "awr": 38,
+            "car": 81,
+            "thp": 78,
+            "tha": 90,
+            "inj": 91,
+            "sta": 95
+          }
+        },
+        {
+          "name": {
+            "first": "Taylor",
+            "last": "Yates"
+          },
+          "position": "QB",
+          "college": "North Carolina",
+          "jerseyNumber": 13,
+          "measurables": {
+            "heightIn": 76,
+            "weightLb": 220
+          }
+        },
+        {
+          "name": {
+            "first": "Derek",
+            "last": "Newton"
+          },
+          "position": "OT",
+          "college": "Arkansas State",
+          "jerseyNumber": 75,
+          "measurables": {
+            "heightIn": 78,
+            "weightLb": 307
+          },
+          "ratings": {
+            "ovr": 62,
+            "spd": 68,
+            "acc": 80,
+            "agi": 70,
+            "str": 79,
+            "awr": 51,
+            "car": 74,
+            "thp": 74,
+            "tha": 79,
+            "inj": 92,
+            "sta": 82
+          }
+        },
+        {
+          "name": {
+            "first": "Mister",
+            "last": "Alexander"
+          },
+          "position": "LB",
+          "college": "",
+          "jerseyNumber": 54,
+          "measurables": {
+            "heightIn": 75,
+            "weightLb": 227
+          }
+        },
+        {
+          "name": {
+            "first": "Bryan",
+            "last": "Braman"
+          },
+          "position": "LB",
+          "college": "West Texas A&M",
+          "jerseyNumber": 50,
+          "measurables": {
+            "heightIn": 77,
+            "weightLb": 246
+          }
+        },
+        {
+          "name": {
+            "first": "Brett",
+            "last": "Hartmann"
+          },
+          "position": "P",
+          "college": "",
+          "jerseyNumber": 2,
+          "measurables": {
+            "heightIn": 74,
+            "weightLb": 227
+          }
+        },
+        {
+          "name": {
+            "first": "Jeff",
+            "last": "Maehl"
+          },
+          "position": "WR",
+          "college": "",
+          "jerseyNumber": 15,
+          "measurables": {
+            "heightIn": 72,
+            "weightLb": 190
+          }
+        }
+      ]
     },
     {
       "tgId": 31,
@@ -39591,6 +47129,7 @@
             "awr": 82,
             "cth": 69,
             "car": 94,
+            "btk": 71,
             "jmp": 76,
             "inj": 82,
             "sta": 87
@@ -39618,6 +47157,7 @@
             "awr": 96,
             "cth": 82,
             "car": 87,
+            "btk": 96,
             "jmp": 81,
             "inj": 96,
             "sta": 98
@@ -39686,6 +47226,7 @@
             "awr": 81,
             "cth": 84,
             "car": 86,
+            "btk": 67,
             "jmp": 88,
             "inj": 87,
             "sta": 84
@@ -39754,6 +47295,7 @@
             "awr": 73,
             "cth": 86,
             "car": 75,
+            "btk": 82,
             "jmp": 74,
             "inj": 88,
             "sta": 75
@@ -39795,6 +47337,7 @@
             "awr": 79,
             "cth": 60,
             "car": 61,
+            "btk": 40,
             "jmp": 90,
             "inj": 80,
             "sta": 77
@@ -39822,6 +47365,7 @@
             "awr": 90,
             "cth": 75,
             "car": 71,
+            "btk": 82,
             "jmp": 94,
             "inj": 93,
             "sta": 88
@@ -39876,6 +47420,7 @@
             "awr": 80,
             "cth": 77,
             "car": 88,
+            "btk": 90,
             "jmp": 79,
             "inj": 86,
             "sta": 69
@@ -39958,6 +47503,7 @@
             "awr": 71,
             "cth": 83,
             "car": 82,
+            "btk": 63,
             "jmp": 88,
             "inj": 91,
             "sta": 87
@@ -40026,6 +47572,7 @@
             "awr": 86,
             "cth": 94,
             "car": 88,
+            "btk": 95,
             "jmp": 93,
             "inj": 89,
             "sta": 74
@@ -40053,6 +47600,7 @@
             "awr": 78,
             "cth": 69,
             "car": 86,
+            "btk": 75,
             "jmp": 66,
             "inj": 93,
             "sta": 87
@@ -40107,6 +47655,7 @@
             "awr": 65,
             "cth": 78,
             "car": 59,
+            "btk": 79,
             "jmp": 86,
             "inj": 66,
             "sta": 75
@@ -40188,6 +47737,7 @@
             "awr": 87,
             "cth": 60,
             "car": 81,
+            "btk": 97,
             "jmp": 85,
             "inj": 85,
             "sta": 96
@@ -40215,6 +47765,7 @@
             "awr": 65,
             "cth": 74,
             "car": 64,
+            "btk": 87,
             "jmp": 89,
             "inj": 78,
             "sta": 72
@@ -40242,6 +47793,7 @@
             "awr": 66,
             "cth": 70,
             "car": 88,
+            "btk": 66,
             "jmp": 94,
             "inj": 79,
             "sta": 82
@@ -40269,6 +47821,7 @@
             "awr": 55,
             "cth": 69,
             "car": 84,
+            "btk": 48,
             "jmp": 90,
             "inj": 93,
             "sta": 74
@@ -40296,6 +47849,7 @@
             "awr": 70,
             "cth": 75,
             "car": 86,
+            "btk": 56,
             "jmp": 90,
             "inj": 92,
             "sta": 80
@@ -40323,6 +47877,7 @@
             "awr": 54,
             "cth": 67,
             "car": 88,
+            "btk": 85,
             "jmp": 84,
             "inj": 88,
             "sta": 60
@@ -40391,6 +47946,7 @@
             "awr": 59,
             "cth": 71,
             "car": 60,
+            "btk": 74,
             "jmp": 88,
             "inj": 69,
             "sta": 84
@@ -40418,6 +47974,7 @@
             "awr": 76,
             "cth": 82,
             "car": 79,
+            "btk": 74,
             "jmp": 75,
             "inj": 90,
             "sta": 78
@@ -40445,6 +48002,7 @@
             "awr": 54,
             "cth": 69,
             "car": 87,
+            "btk": 78,
             "jmp": 79,
             "inj": 75,
             "sta": 45
@@ -40472,6 +48030,7 @@
             "awr": 60,
             "cth": 77,
             "car": 75,
+            "btk": 72,
             "jmp": 73,
             "inj": 75,
             "sta": 81
@@ -40499,6 +48058,7 @@
             "awr": 55,
             "cth": 80,
             "car": 78,
+            "btk": 84,
             "jmp": 74,
             "inj": 85,
             "sta": 64
@@ -40526,6 +48086,7 @@
             "awr": 65,
             "cth": 74,
             "car": 82,
+            "btk": 68,
             "jmp": 92,
             "inj": 87,
             "sta": 90
@@ -40567,6 +48128,7 @@
             "awr": 69,
             "cth": 92,
             "car": 88,
+            "btk": 83,
             "jmp": 75,
             "inj": 94,
             "sta": 75
@@ -40594,6 +48156,7 @@
             "awr": 59,
             "cth": 58,
             "car": 85,
+            "btk": 62,
             "jmp": 92,
             "inj": 87,
             "sta": 70
@@ -40635,6 +48198,7 @@
             "awr": 60,
             "cth": 46,
             "car": 65,
+            "btk": 15,
             "jmp": 67,
             "inj": 78,
             "sta": 83
@@ -40676,6 +48240,7 @@
             "awr": 49,
             "cth": 70,
             "car": 69,
+            "btk": 83,
             "jmp": 88,
             "inj": 73,
             "sta": 65
@@ -40744,6 +48309,7 @@
             "awr": 69,
             "cth": 55,
             "car": 77,
+            "btk": 52,
             "jmp": 72,
             "inj": 87,
             "sta": 91
@@ -40811,6 +48377,7 @@
             "awr": 50,
             "cth": 66,
             "car": 84,
+            "btk": 91,
             "jmp": 84,
             "inj": 74,
             "sta": 95
@@ -40837,6 +48404,7 @@
             "awr": 54,
             "cth": 84,
             "car": 84,
+            "btk": 72,
             "jmp": 78,
             "inj": 90,
             "sta": 90
@@ -40863,6 +48431,7 @@
             "awr": 42,
             "cth": 72,
             "car": 70,
+            "btk": 72,
             "jmp": 89,
             "inj": 78,
             "sta": 70
@@ -40889,6 +48458,7 @@
             "awr": 36,
             "cth": 65,
             "car": 89,
+            "btk": 58,
             "jmp": 88,
             "inj": 90,
             "sta": 80
@@ -40915,6 +48485,7 @@
             "awr": 35,
             "cth": 80,
             "car": 75,
+            "btk": 85,
             "jmp": 77,
             "inj": 97,
             "sta": 78
@@ -40954,6 +48525,7 @@
             "awr": 44,
             "cth": 81,
             "car": 76,
+            "btk": 86,
             "jmp": 79,
             "inj": 74,
             "sta": 86
@@ -41006,6 +48578,7 @@
             "awr": 40,
             "cth": 78,
             "car": 65,
+            "btk": 64,
             "jmp": 88,
             "inj": 77,
             "sta": 75
@@ -41032,6 +48605,7 @@
             "awr": 35,
             "cth": 67,
             "car": 88,
+            "btk": 74,
             "jmp": 92,
             "inj": 85,
             "sta": 85

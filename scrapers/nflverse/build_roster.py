@@ -99,14 +99,21 @@ TEAM_TABLE = [
     (32, "MIN", "Minnesota", "Vikings"),
 ]
 
-# Modern team-abbreviation aliases that nflverse uses for relocated teams.
-# Map them back to Madden 08's 2007 codes so the join works.
+# Team-abbreviation aliases that nflverse uses across eras. Map back to
+# Madden 08's 2007 codes so the join works.
 ABBREV_ALIASES = {
+    # Relocations (post-2015)
     "LA": "STL",       # LA Rams (2016+) -> St. Louis Rams in M08
     "LAR": "STL",
     "LAC": "SD",       # LA Chargers (2017+) -> San Diego in M08
     "LV": "OAK",       # LV Raiders (2020+) -> Oakland in M08
     "WSH": "WAS",      # nflverse variant
+    # Older-era nflverse codes (2008-2015 used different abbreviations)
+    "ARZ": "ARI",
+    "BLT": "BAL",
+    "CLV": "CLE",
+    "HST": "HOU",
+    "SL":  "STL",
 }
 
 # NFL position label -> canonical position (matches positions.json + Madden's PPOS)
@@ -176,10 +183,26 @@ def split_name(full: str, first: str, last: str) -> tuple[str, str]:
     return parts[0], " ".join(parts[1:])
 
 
+FIRST_NAME_ALIASES = (
+    "FIRSTNAME", "FIRST NAME", "First Name", "First", "FirstName", "first_name")
+LAST_NAME_ALIASES = (
+    "LASTNAME", "LAST NAME", "Last Name", "Last", "LastName", "last_name")
+FULL_NAME_ALIASES = ("Name", "Full Name", "FullName", "Player Name")
+
+
+def _clean_str(value) -> str:
+    """Strip whitespace + the non-breaking-space chars that appear in some
+    Madden XLSX exports (e.g. M10 'Sendlein\\xa0\\xa0')."""
+    if value is None:
+        return ""
+    s = str(value).strip()
+    return s.replace("\xa0", "").strip()
+
+
 def load_madden_ratings_index(season: int) -> dict[tuple[str, str], dict]:
     """Build a name-key -> player-record index from the Madden file for the
-    season (if we have one). Key is (first_lower, last_lower)."""
-    # Find the Madden file for this season
+    season (if we have one). Key is (first_lower, last_lower). Madden XLSX
+    schemas vary wildly by year so we try a long list of column-name aliases."""
     candidates = list(MADDEN_DIR.glob(f"madden*-{season}.json"))
     if not candidates:
         return {}
@@ -189,54 +212,83 @@ def load_madden_ratings_index(season: int) -> dict[tuple[str, str], dict]:
     index: dict[tuple[str, str], dict] = {}
     for team_slug, players in data.get("teams", {}).items():
         for p in players:
-            # Schema varies by year - try common field names
-            first = (p.get("FIRSTNAME") or p.get("First Name") or "").strip()
-            last = (p.get("LASTNAME") or p.get("Last Name") or "").strip()
-            if not first and p.get("Name"):
-                name = str(p["Name"]).strip()
-                parts = name.split(" ", 1)
-                first = parts[0]
-                last = parts[1] if len(parts) > 1 else ""
+            if not isinstance(p, dict):
+                continue
+            first = ""
+            for k in FIRST_NAME_ALIASES:
+                if k in p:
+                    first = _clean_str(p[k])
+                    if first:
+                        break
+            last = ""
+            for k in LAST_NAME_ALIASES:
+                if k in p:
+                    last = _clean_str(p[k])
+                    if last:
+                        break
+            if not (first and last):
+                for k in FULL_NAME_ALIASES:
+                    if k in p:
+                        full = _clean_str(p[k])
+                        if not full:
+                            continue
+                        parts = full.split(" ", 1)
+                        first = first or parts[0]
+                        last = last or (parts[1] if len(parts) > 1 else "")
+                        if first and last:
+                            break
+            if not (first and last):
+                continue
+            # Skip header-row leakage (e.g. M21's Pro Bowl table has a row where
+            # the first/last fields contain "Position"/"Name" rather than real names)
+            if first in ("Position", "Name") and last in ("Name", "Overall Rating"):
+                continue
             key = (first.lower(), last.lower())
-            if first and last and key not in index:
+            if key not in index:
                 index[key] = p
     return index
 
 
 def extract_ratings(madden_rec: dict) -> dict[str, int]:
-    """Pull a normalized rating block out of a Madden player record."""
+    """Pull a normalized rating block out of a Madden player record. Each
+    rating is named differently across Madden years - long alias lists."""
     out: dict[str, int] = {}
     field_aliases = [
-        ("ovr", ["Overall", "OVERALL"]),
-        ("spd", ["Speed", "SPEED"]),
-        ("acc", ["Acceleration", "ACCELERATION"]),
-        ("agi", ["Agility", "AGILITY"]),
-        ("str", ["Strength", "STRENGTH"]),
-        ("awr", ["Awareness", "AWARENESS"]),
-        ("cth", ["Catch", "Catching", "CATCHING"]),
-        ("car", ["Carrying", "CARRYING"]),
-        ("thp", ["Throw Power", "THROWPOWER"]),
-        ("tha", ["Throw Accuracy", "THROWACCURACY"]),
-        ("kpw", ["Kick Power", "KICKPOWER"]),
-        ("kac", ["Kick Accuracy", "KICKACCURACY"]),
-        ("btk", ["Break Tackle", "BREAKTACKLE"]),
-        ("tak", ["Tackle", "TACKLE"]),
-        ("pow", ["Hit Power", "HITPOWER", "POW"]),
-        ("pbk", ["Pass Block", "PASSBLOCK"]),
-        ("rbk", ["Run Block", "RUNBLOCK"]),
-        ("jmp", ["Jumping", "JUMPING"]),
-        ("inj", ["Injury", "INJURY"]),
-        ("sta", ["Stamina", "STAMINA"]),
+        ("ovr", ["Overall", "OVERALL", "OVR", "OverallRating", "Overall Rating"]),
+        ("spd", ["Speed", "SPEED", "SPD", "SpeedRating"]),
+        ("acc", ["Acceleration", "ACCELERATION", "ACC", "AccelerationRating"]),
+        ("agi", ["Agility", "AGILITY", "AGI", "AgilityRating"]),
+        ("str", ["Strength", "STRENGTH", "STR", "StrengthRating"]),
+        ("awr", ["Awareness", "AWARENESS", "AWR", "AwarenessRating"]),
+        ("cth", ["Catch", "Catching", "CATCHING", "CTH", "CatchingRating"]),
+        ("car", ["Carrying", "CARRYING", "CAR", "CarryingRating"]),
+        ("thp", ["Throw Power", "THROWPOWER", "THP", "ThrowPowerRating"]),
+        ("tha", ["Throw Accuracy", "THROWACCURACY", "THA", "ThrowAccuracyRating",
+                 "Throw Accuracy Short", "ThrowAccuracyShortRating"]),
+        ("kpw", ["Kick Power", "KICKPOWER", "KPW", "KickPowerRating"]),
+        ("kac", ["Kick Accuracy", "KICKACCURACY", "KAC", "KickAccuracyRating"]),
+        ("btk", ["Break Tackle", "BREAKTACKLE", "BTK", "BreakTackleRating",
+                 "Elusiveness", "ELUSIVENESS"]),
+        ("tak", ["Tackle", "TACKLE", "TAK", "TackleRating"]),
+        ("pow", ["Hit Power", "HITPOWER", "POW", "HitPowerRating"]),
+        ("pbk", ["Pass Block", "PASSBLOCK", "PBK", "PassBlockRating"]),
+        ("rbk", ["Run Block", "RUNBLOCK", "RBK", "RunBlockRating"]),
+        ("jmp", ["Jumping", "JUMPING", "JMP", "JumpingRating"]),
+        ("inj", ["Injury", "INJURY", "INJ", "InjuryRating"]),
+        ("sta", ["Stamina", "STAMINA", "STA", "StaminaRating"]),
     ]
     for out_key, src_keys in field_aliases:
         for k in src_keys:
             if k in madden_rec:
                 v = madden_rec[k]
                 try:
-                    out[out_key] = int(float(v))
-                    break
+                    val = int(float(v))
                 except (TypeError, ValueError):
                     continue
+                # Clamp to valid 0-99 range (M22 etc. occasionally has 100 for
+                # superstars; cap at 99 since that's NCAA-side max too).
+                out[out_key] = max(0, min(99, val))
+                break
     return out
 
 
@@ -270,21 +322,23 @@ def build(season: int) -> dict[str, Any]:
                 "college": row.get("college", "").strip(),
             }
             jn = to_int(row.get("jersey_number", ""))
-            if jn is not None:
+            if jn is not None and 0 <= jn <= 99:
                 player["jerseyNumber"] = jn
             age = to_int(row.get("age", ""))
-            if age is not None:
+            if age is not None and 18 <= age <= 50:
                 player["age"] = age
             yp = to_int(row.get("years_exp", "")) or to_int(row.get("years_pro", ""))
-            if yp is not None:
+            # NFL careers cap around 25 yrs (Tom Brady's full career was 23).
+            # Anything higher is bad source data.
+            if yp is not None and 0 <= yp <= 25:
                 player["yearsPro"] = yp
 
             measurables = {}
             h = parse_height(row.get("height", ""))
             w = to_int(row.get("weight", ""))
-            if h is not None:
+            if h is not None and 60 <= h <= 90:
                 measurables["heightIn"] = h
-            if w is not None:
+            if w is not None and 140 <= w <= 400:
                 measurables["weightLb"] = w
             if measurables:
                 player["measurables"] = measurables
@@ -296,7 +350,20 @@ def build(season: int) -> dict[str, Any]:
                 if ratings:
                     player["ratings"] = ratings
 
-            by_team.setdefault(team_code, []).append(player)
+            # Deduplicate: nflverse sometimes lists a player twice on the same
+            # team (e.g. Correll Buckhalter on PHI 2008 has 2 identical rows).
+            # Skip when an identical (first, last, jersey, position) already
+            # exists for this team. Different real players with the same name
+            # (e.g. two Roy Williams on DAL 2008 - WR + S) survive because
+            # their positions differ.
+            team_list = by_team.setdefault(team_code, [])
+            dupe_key = (first.lower(), last.lower(),
+                        player.get("jerseyNumber"), canonical_pos)
+            if any((p["name"]["first"].lower(), p["name"]["last"].lower(),
+                    p.get("jerseyNumber"), p["position"]) == dupe_key
+                   for p in team_list):
+                continue
+            team_list.append(player)
 
     # Assemble teams in TGID order
     teams_out: list[dict[str, Any]] = []
