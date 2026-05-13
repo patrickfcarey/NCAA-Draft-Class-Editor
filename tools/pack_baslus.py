@@ -33,7 +33,7 @@ from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 
-# Two save-type presets. Pick by file extension or --type flag.
+# Save-type presets. Pick by --type flag.
 PRESETS = {
     "draft-class": {
         "template": REPO_ROOT / "madden-nfl-08.26380.max",
@@ -42,6 +42,21 @@ PRESETS = {
     "roster": {
         "template": REPO_ROOT / "madden-nfl-08.16516.max",
         "save_folder": "BASLUS-21638DRost5",     # Madden NFL 08 USA, roster save
+    },
+    "m09-roster": {
+        # Madden NFL 09 PS2 uses an identical TDB schema to M08. Template is
+        # the Deluxe community .psu (fetched by tools/fetch_m09_template.py)
+        # because there's no vanilla M09 save checked into the repo.
+        "template": REPO_ROOT / "out" / "templates" / "madden-nfl-09-template.psu",
+        "save_folder": "BASLUS-21770DRost1",     # Madden NFL 09 USA, roster save
+    },
+    "m12-roster": {
+        # Madden NFL 12 PS2. Same bare-TDB format as M08/M09 (the MC02 wrapper
+        # only applies to PS3/360/PC). PLAY field bit-layout reshuffled vs M08
+        # but the compiler is metadata-driven so it handles this transparently.
+        # Template fetched by tools/fetch_m12_template.py.
+        "template": REPO_ROOT / "out" / "templates" / "madden-nfl-12-template.psu",
+        "save_folder": "BASLUS-21946DRost1",     # Madden NFL 12 USA, roster save
     },
 }
 DEFAULT_PRESET = "draft-class"
@@ -64,7 +79,13 @@ def pack(compiled_bin: Path, output_path: Path, save_type: str = DEFAULT_PRESET)
     if not compiled_bin.exists():
         raise FileNotFoundError(f"Compiled binary not found: {compiled_bin}")
     if not template_max.exists():
-        raise FileNotFoundError(f"Template .max not found at {template_max}")
+        hint = ""
+        if save_type == "m09-roster":
+            hint = " Run: python tools/fetch_m09_template.py"
+        elif save_type == "m12-roster":
+            hint = " Run: python tools/fetch_m12_template.py"
+        raise FileNotFoundError(
+            f"Template not found at {template_max}.{hint}")
 
     fmt_flag = "-m" if output_path.suffix.lower() == ".max" else "-p"
 
@@ -93,7 +114,9 @@ def main() -> int:
     p.add_argument("--type", choices=list(PRESETS), default=DEFAULT_PRESET,
                    help=f"save type (default: {DEFAULT_PRESET}). draft-class -> "
                         f"BASLUS-21620 NCAA Football 08 draft class slot. roster -> "
-                        f"BASLUS-21638 Madden NFL 08 roster slot.")
+                        f"BASLUS-21638 Madden NFL 08 roster slot. m09-roster -> "
+                        f"BASLUS-21770 Madden NFL 09 roster slot. m12-roster -> "
+                        f"BASLUS-21946 Madden NFL 12 roster slot.")
     args = p.parse_args()
 
     compiled_bin = Path(args.input).resolve()

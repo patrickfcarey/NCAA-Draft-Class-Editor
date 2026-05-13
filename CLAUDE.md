@@ -30,6 +30,8 @@ files via a PS2 memcard, and gets a franchise that mirrors NFL history.
 | 6 | Madden 08 PS2 roster builder | ✅ TDB read/write (Python + C#, byte-exact roundtrip); CanonicalRoster schema; MaddenRosterCompiler; nflverse roster scraper; CLI compile-roster; 18 canonical rosters generated; pack_baslus.py extended to --type roster; build_all_rosters.py loop ready |
 | 7 | Pipeline + releases (one-shot build all 38 artifacts) | ⬜ Not started |
 | 8 | PCSX2 verification | ✅ 2018 verified; other years pending Tier 7 |
+| 9 | Madden 09 PS2 (Deluxe-compatible) roster builder | ✅ M09 TDB schema confirmed byte-identical to M08; pack_baslus.py m09-roster preset (BASLUS-21770); fetch_m09_template.py auto-downloads Deluxe .psu; build_all_rosters.py --target m09; 2018 compile+pack verified end-to-end |
+| 10 | Madden 12 PS2 (Deluxe-compatible) roster builder | ✅ M12 PS2 is bare TDB (MC02 wrapper is PS3/360/PC-only); PLAY field bit-layout shifted vs M08 (~74 of 110 fields) but metadata-driven compiler handles transparently; pack_baslus.py m12-roster preset (BASLUS-21946); fetch_m12_template.py auto-downloads Deluxe .psu; build_all_rosters.py --target m12; 2018 compile+pack verified end-to-end |
 
 End-to-end works for one year (2018). User has loaded the compiled file in
 Madden 08 on PCSX2 and seen Mayfield/Barkley/etc. in the draft pool.
@@ -264,19 +266,56 @@ If the memcard is uninitialized (all 0xFF), `mymcplus` rejects with "Not
 a PS2 memory card image". Delete the file and run `mymcplus … format`
 first to write a Sony PS2 memcard signature.
 
-### Madden 08 roster (Tier 6, not built)
+### Madden 08 roster (Tier 6, built)
 
 ```
 nflverse rosters CSV + weebly Madden ratings
-                ↓ [normalizer, TBD]
+                ↓ scrapers/nflverse/build_roster.py + normalization
 data/canonical/roster-{year}.json
-                ↓ [MaddenRosterCompiler, TBD]
-out/roster-{year}.bin                     (BASLUS-21638DRost5, TDB format)
-                ↓ tools/pack_baslus.py    (will need to extend for BASLUS-21638)
+                ↓ MaddenRosterCompiler (CLI: compile-roster)
+out/roster-{year}.bin                     (BASLUS-21638DRost5, TDB format, 246,784 bytes)
+                ↓ tools/pack_baslus.py --type roster
 out/roster-{year}.max
                 ↓ mymcplus import
 PCSX2 memcard
 ```
+
+### Madden 09 / Madden 12 rosters (Tier 9–10, built — Deluxe-compatible)
+
+Both M09 and M12 PS2 use **the same bare TDB format as M08** — no MC02
+wrapper (that's the PS3/360/PC variant). Table structure is identical to
+M08 across all three games:
+- M09: PLAY field bit-layout matches M08 exactly. Drop-in compatible.
+- M12: same 110 PLAY fields but ~74 of them shifted in bit position
+  (e.g. PCMT widened from 10 to 11 bits). Our compiler is
+  metadata-driven — it reads each field's offset from the file's own
+  field directory — so this drift is transparent.
+
+```
+data/canonical/roster-{year}.json
+                ↓ MaddenRosterCompiler (same code path for all targets)
+out/{m09,m12}/roster-{year}-{target}.bin     (BASLUS-21770 or 21946, 246,784 / 246,783 bytes)
+                ↓ tools/pack_baslus.py --type {m09-roster,m12-roster}
+out/{m09,m12}/roster-{year}.psu
+                ↓ mymcplus import (with corresponding Deluxe ISO patched)
+PCSX2 memcard
+```
+
+Bulk build:
+```
+python tools/build_all_rosters.py --target m09      # M09 only
+python tools/build_all_rosters.py --target m12      # M12 only
+python tools/build_all_rosters.py --target all      # M08 + M09 + M12
+```
+
+On first run for m09/m12 the script auto-invokes
+`tools/fetch_{m09,m12}_template.py`, which downloads the corresponding
+Deluxe community .psu from GitHub and caches it at
+`out/templates/madden-nfl-{09,12}-template.{psu,bin}`. The template
+provides (a) icon.sys + view.ico for the PS2 dashboard, and (b) the
+inner TDB the compiler mutates — Deluxe-side TEAM/DCHT data (extra
+uniform slots, depth chart) passes through unchanged, which is what
+users running the Deluxe ISO patch expect.
 
 ## Data sources
 
