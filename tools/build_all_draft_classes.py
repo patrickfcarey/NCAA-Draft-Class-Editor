@@ -1,0 +1,137 @@
+#!/usr/bin/env python3
+"""
+Build every NCAA draft class .max file we have canonical data for.
+
+Loops 2008..2026:
+  1. dotnet run --project NcaaDraftEditor.Cli -- compile <canonical>
+     <positions> <colleges> <out.bin> [--madden <madden>] --filler <sample>
+     --lock-draft-order
+  2. python tools/pack_baslus.py <out.bin> <out.max>
+
+Madden launch-ratings file is paired by NFL season year:
+  2008 -> madden09-2008.json   (Madden NFL 09 has the 2008 rookies)
+  2009 -> madden10-2009.json
+  ...
+  2013 -> madden25-2013.json   (anniversary edition)
+  ...
+  2023 -> madden24-2023.json
+
+2024, 2025, 2026 don't have Madden launch ratings on weebly yet, so the
+compile is run without --madden (rookies get default ratings, anchored
+via --lock-draft-order so the auto-draft order still matches reality).
+
+Run on Windows where the .NET SDK is installed:
+    python tools/build_all_draft_classes.py
+
+All outputs land in out/. Pass --year YYYY to build just one.
+"""
+from __future__ import annotations
+
+import argparse
+import shutil
+import subprocess
+import sys
+from pathlib import Path
+
+REPO_ROOT = Path(__file__).resolve().parent.parent
+OUT_DIR = REPO_ROOT / "out"
+
+CANONICAL = REPO_ROOT / "data" / "canonical"
+POSITIONS = REPO_ROOT / "data" / "mappings" / "positions.json"
+COLLEGES = REPO_ROOT / "data" / "mappings" / "colleges.json"
+FILLER = REPO_ROOT / "tests" / "fixtures" / "sample.bin"
+MADDEN_DIR = REPO_ROOT / "data" / "raw" / "madden-ratings"
+
+SEASON_TO_MADDEN_VERSION = {
+    2008: "09", 2009: "10", 2010: "11", 2011: "12", 2012: "13",
+    2013: "25",   # anniversary edition
+    2014: "15", 2015: "16", 2016: "17", 2017: "18", 2018: "19",
+    2019: "20", 2020: "21", 2021: "22", 2022: "23", 2023: "24",
+}
+
+YEARS = list(range(2008, 2027))   # 2008..2026 inclusive
+
+
+def find_dotnet() -> str:
+    """Locate the dotnet executable, preferring PATH but falling back to the
+    common Windows install path so this script works in a vanilla shell."""
+    candidate = shutil.which("dotnet")
+    if candidate:
+        return candidate
+    win = Path("C:/Program Files/dotnet/dotnet.exe")
+    if win.exists():
+        return str(win)
+    raise RuntimeError("dotnet not found; install the .NET 8 SDK or add it to PATH")
+
+
+def compile_year(year: int, dotnet: str) -> Path:
+    canonical = CANONICAL / f"draft-class-{year}.json"
+    if not canonical.exists():
+        raise FileNotFoundError(f"Missing canonical draft class for {year}: {canonical}")
+    out_bin = OUT_DIR / f"draft-class-{year}.bin"
+    OUT_DIR.mkdir(parents=True, exist_ok=True)
+
+    cmd = [
+        dotnet, "run", "--project", str(REPO_ROOT / "NcaaDraftEditor.Cli"),
+        "--", "compile", str(canonical), str(POSITIONS), str(COLLEGES), str(out_bin),
+        "--filler", str(FILLER), "--lock-draft-order",
+    ]
+    madden_version = SEASON_TO_MADDEN_VERSION.get(year)
+    if madden_version is not None:
+        madden_path = MADDEN_DIR / f"madden{madden_version}-{year}.json"
+        if madden_path.exists():
+            cmd.extend(["--madden", str(madden_path)])
+        else:
+            print(f"  WARNING: expected Madden file {madden_path.name} not found; "
+                  f"using defaults for {year}", file=sys.stderr)
+    else:
+        print(f"  (no Madden launch ratings available for {year}; using defaults + "
+              "draft-order anchoring)", file=sys.stderr)
+
+    print(f"  $ {' '.join(cmd)}", file=sys.stderr)
+    subprocess.run(cmd, check=True)
+    return out_bin
+
+
+def pack_year(year: int, bin_path: Path) -> Path:
+    out_max = OUT_DIR / f"draft-class-{year}.max"
+    cmd = [sys.executable, str(REPO_ROOT / "tools" / "pack_baslus.py"),
+           str(bin_path), str(out_max)]
+    print(f"  $ {' '.join(cmd)}", file=sys.stderr)
+    subprocess.run(cmd, check=True)
+    return out_max
+
+
+def main() -> int:
+    p = argparse.ArgumentParser()
+    p.add_argument("--year", type=int, help="Build only this year")
+    p.add_argument("--skip-pack", action="store_true",
+                   help="Compile .bin only; skip the .max packaging step")
+    args = p.parse_args()
+
+    years = [args.year] if args.year else YEARS
+    dotnet = find_dotnet()
+
+    summary = []
+    for year in years:
+        print(f"\n=== {year} ===", file=sys.stderr)
+        try:
+            bin_path = compile_year(year, dotnet)
+            if args.skip_pack:
+                summary.append((year, "compiled", bin_path.name, "-"))
+            else:
+                max_path = pack_year(year, bin_path)
+                summary.append((year, "compiled+packed", bin_path.name, max_path.name))
+        except Exception as e:
+            summary.append((year, f"FAILED: {e}", "-", "-"))
+            print(f"  ERROR: {e}", file=sys.stderr)
+
+    print("\n=== Summary ===")
+    print(f"{'Year':<6}{'Status':<22}{'.bin':<32}.max")
+    for y, s, b, m in summary:
+        print(f"{y:<6}{s:<22}{b:<32}{m}")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
