@@ -32,5 +32,8 @@
     <None Include="..\data\mappings\colleges.json" Link="fixtures\colleges.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="..\data\raw\madden-ratings\madden19-2018.json" Link="fixtures\madden19-2018.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 </Project>
