@@ -166,6 +166,14 @@ public sealed class MaddenTdb
         foreach (var (start, body) in tableBlocks)
             body.CopyTo(outBuf, start);
 
+        // Recompute and write CRCs. EA TDB protects integrity via four kinds
+        // of CRCs (all CRC-32/MPEG-2: poly 0x04C11DB7, init 0xFFFFFFFF, no
+        // reflection, no xorout). PS2 stores them in little-endian; PS3/PC
+        // bep713 implementation stores them in big-endian (and we mirror the
+        // algorithm from there). Madden 08 franchise loading enforces these;
+        // without them the save is rejected with "error loading franchise".
+        WriteCrcs(outBuf);
+
         if (Preamble.Length == 0) return outBuf;
         // Prepend preamble for franchise saves (and any future format that
         // wraps the TDB with leading metadata bytes).
@@ -173,6 +181,77 @@ public sealed class MaddenTdb
         Preamble.CopyTo(withPreamble, 0);
         outBuf.CopyTo(withPreamble, Preamble.Length);
         return withPreamble;
+    }
+
+    /// <summary>
+    /// CRC-32/MPEG-2: poly 0x04C11DB7, init 0xFFFFFFFF, no reflection, no
+    /// xorout. Compatible with bep713's crc32_be implementation.
+    /// </summary>
+    public static uint Crc32Mpeg2(ReadOnlySpan<byte> data)
+    {
+        uint crc = 0xFFFFFFFF;
+        for (int i = 0; i < data.Length; i++)
+        {
+            crc ^= (uint)data[i] << 24;
+            for (int b = 0; b < 8; b++)
+            {
+                if ((crc & 0x80000000u) != 0)
+                    crc = (crc << 1) ^ 0x04C11DB7;
+                else
+                    crc <<= 1;
+            }
+        }
+        return crc;
+    }
+
+    /// <summary>
+    /// Compute and write all four kinds of CRCs into <paramref name="buf"/>
+    /// (which is the TDB bytes, no preamble). Buf is mutated in place.
+    ///   - File header CRC: bytes [0..20), written LE at offset 20.
+    ///   - Per-table priorCRC: CRC of previous table's data (or of the table
+    ///     directory for the first table), written LE at bytes 0..3 of each
+    ///     table header.
+    ///   - Per-table headerCRC: CRC of bytes 4..36 of the table header,
+    ///     written LE at bytes 36..39.
+    ///   - EOF CRC: CRC of the last table's data block, written LE at
+    ///     dbSize - 4.
+    /// </summary>
+    private void WriteCrcs(byte[] buf)
+    {
+        int dataOrigin = FileHeaderSize + Tables.Count * TableDefinitionSize;
+
+        // File header CRC = CRC of first 20 bytes.
+        uint fileCrc = Crc32Mpeg2(buf.AsSpan(0, 20));
+        BinaryPrimitives.WriteUInt32LittleEndian(buf.AsSpan(20, 4), fileCrc);
+
+        // priorCRC starts at the CRC of the table directory.
+        uint priorCrc = Crc32Mpeg2(buf.AsSpan(FileHeaderSize, Tables.Count * TableDefinitionSize));
+
+        for (int i = 0; i < Tables.Count; i++)
+        {
+            int tableStart = dataOrigin + (int)Tables[i].Offset;
+
+            // Header CRC covers bytes [4..36) of this table's header.
+            uint headerCrc = Crc32Mpeg2(buf.AsSpan(tableStart + 4, TableHeaderSize - 8));
+
+            // Write priorCRC (CRC of the previous table's data, or table
+            // directory for i==0) into this table's header at bytes 0..3.
+            BinaryPrimitives.WriteUInt32LittleEndian(buf.AsSpan(tableStart, 4), priorCrc);
+            // Write this table's headerCRC at bytes 36..39.
+            BinaryPrimitives.WriteUInt32LittleEndian(buf.AsSpan(tableStart + TableHeaderSize - 4, 4), headerCrc);
+
+            // Update priorCRC to the CRC of this table's data block.
+            int dataStart = tableStart + TableHeaderSize;
+            int dataEnd = i + 1 < Tables.Count
+                ? dataOrigin + (int)Tables[i + 1].Offset
+                : (int)Header.DbSize - 4;
+            priorCrc = Crc32Mpeg2(buf.AsSpan(dataStart, dataEnd - dataStart));
+        }
+
+        // EOF CRC = CRC of the last table's data block (i.e. the same value
+        // we just computed as priorCrc after the loop). Written at dbSize-4.
+        if (Header.DbSize >= 4 && Header.DbSize <= buf.Length)
+            BinaryPrimitives.WriteUInt32LittleEndian(buf.AsSpan((int)Header.DbSize - 4, 4), priorCrc);
     }
 
     public void SaveFile(string path) => File.WriteAllBytes(path, Save());
@@ -329,7 +408,11 @@ public sealed class TdbField
         var raw = record.Slice(byteOffset, width);
         int end = raw.IndexOf((byte)0);
         if (end >= 0) raw = raw[..end];
-        return Encoding.ASCII.GetString(raw);
+        // ISO-8859-1 (Latin-1) preserves every byte 0..255 1:1 to the same
+        // Unicode codepoint, so STRING fields with high bytes (e.g. STAD.SNAM
+        // stadium names with accented characters) round-trip byte-exact.
+        // ASCII would corrupt anything ≥ 0x80 into the '?' replacement char.
+        return Encoding.Latin1.GetString(raw);
     }
 
     private void WriteString(Span<byte> record, string value)
@@ -337,10 +420,15 @@ public sealed class TdbField
         int byteOffset = (int)(OffsetBits / 8);
         int width = (int)(Bits / 8);
         var dest = record.Slice(byteOffset, width);
-        dest.Clear();
-        var encoded = Encoding.ASCII.GetBytes(value);
+        // Don't pre-clear the field. Save() already seeded recSpan from the
+        // original bytes; we only want to overwrite the value + one null
+        // terminator, leaving whatever bytes followed the original null
+        // intact. (Some TDBs carry non-zero trailing bytes after STRING
+        // terminators; clearing them breaks byte-exact roundtrip.)
+        var encoded = Encoding.Latin1.GetBytes(value);
         var copyLen = Math.Min(encoded.Length, width);
         encoded.AsSpan(0, copyLen).CopyTo(dest);
+        if (copyLen < width) dest[copyLen] = 0;  // null terminator
     }
 
     private byte[] ReadBinary(ReadOnlySpan<byte> record)
