@@ -1,0 +1,6316 @@
+{
+  "schema": "ncaa-draft-class/v1",
+  "year": 2022,
+  "players": [
+    {
+      "name": {
+        "first": "Yury",
+        "last": "Walker"
+      },
+      "position": "LB",
+      "college": "Georgia",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 1,
+        "pick": 1,
+        "team": "JAX"
+      },
+      "measurables": {
+        "heightIn": 77,
+        "weightLb": 272
+      },
+      "combine": {
+        "fortyYd": 4.51,
+        "verticalIn": 35.5,
+        "broadIn": 123,
+        "shuttle": 4.32,
+        "threeCone": 6.89
+      },
+      "birthDate": "2000-12-18"
+    },
+    {
+      "name": {
+        "first": "Aidan",
+        "last": "Hutchinson"
+      },
+      "position": "DE",
+      "college": "Michigan",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 1,
+        "pick": 2,
+        "team": "DET"
+      },
+      "measurables": {
+        "heightIn": 79,
+        "weightLb": 268
+      },
+      "combine": {
+        "fortyYd": 4.74,
+        "verticalIn": 36.0,
+        "broadIn": 117,
+        "shuttle": 4.15,
+        "threeCone": 6.73
+      },
+      "birthDate": "2000-08-09"
+    },
+    {
+      "name": {
+        "first": "Derek",
+        "last": "Stingley"
+      },
+      "position": "CB",
+      "college": "LSU",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 1,
+        "pick": 3,
+        "team": "HOU"
+      },
+      "measurables": {
+        "heightIn": 73,
+        "weightLb": 195
+      },
+      "birthDate": "2001-06-20"
+    },
+    {
+      "name": {
+        "first": "Ahmad",
+        "last": "Gardner"
+      },
+      "position": "CB",
+      "college": "Cincinnati",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 1,
+        "pick": 4,
+        "team": "NYJ"
+      },
+      "measurables": {
+        "heightIn": 75,
+        "weightLb": 190
+      },
+      "combine": {
+        "fortyYd": 4.41
+      },
+      "birthDate": "2001-08-31"
+    },
+    {
+      "name": {
+        "first": "Kayvon",
+        "last": "Thibodeaux"
+      },
+      "position": "LB",
+      "college": "Oregon",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 1,
+        "pick": 5,
+        "team": "NYG"
+      },
+      "measurables": {
+        "heightIn": 77,
+        "weightLb": 258
+      },
+      "combine": {
+        "fortyYd": 4.58,
+        "bench": 27
+      },
+      "birthDate": "2000-12-15"
+    },
+    {
+      "name": {
+        "first": "Ikemefuna",
+        "last": "Ekwonu"
+      },
+      "position": "OT",
+      "college": "N.C. State",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 1,
+        "pick": 6,
+        "team": "CAR"
+      },
+      "measurables": {
+        "heightIn": 76,
+        "weightLb": 320
+      },
+      "combine": {
+        "fortyYd": 4.93,
+        "verticalIn": 29.0,
+        "broadIn": 108,
+        "shuttle": 4.73,
+        "threeCone": 7.82
+      },
+      "birthDate": "2000-10-31"
+    },
+    {
+      "name": {
+        "first": "Evan",
+        "last": "Neal"
+      },
+      "position": "OT",
+      "college": "Alabama",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 1,
+        "pick": 7,
+        "team": "NYG"
+      },
+      "measurables": {
+        "heightIn": 79,
+        "weightLb": 340
+      },
+      "birthDate": "2000-09-19"
+    },
+    {
+      "name": {
+        "first": "Drake",
+        "last": "London"
+      },
+      "position": "WR",
+      "college": "USC",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 1,
+        "pick": 8,
+        "team": "ATL"
+      },
+      "measurables": {
+        "heightIn": 76,
+        "weightLb": 215
+      },
+      "birthDate": "2001-07-24"
+    },
+    {
+      "name": {
+        "first": "Charles",
+        "last": "Cross"
+      },
+      "position": "OT",
+      "college": "Mississippi State",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 1,
+        "pick": 9,
+        "team": "SEA"
+      },
+      "measurables": {
+        "heightIn": 77,
+        "weightLb": 317
+      },
+      "combine": {
+        "fortyYd": 4.95,
+        "verticalIn": 26.0,
+        "broadIn": 112,
+        "shuttle": 4.61,
+        "threeCone": 7.88
+      },
+      "birthDate": "2000-11-25"
+    },
+    {
+      "name": {
+        "first": "Garrett",
+        "last": "Wilson"
+      },
+      "position": "WR",
+      "college": "Ohio State",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 1,
+        "pick": 10,
+        "team": "NYJ"
+      },
+      "measurables": {
+        "heightIn": 72,
+        "weightLb": 183
+      },
+      "combine": {
+        "fortyYd": 4.38,
+        "verticalIn": 36.0,
+        "broadIn": 123,
+        "shuttle": 4.36
+      },
+      "birthDate": "2000-07-22"
+    },
+    {
+      "name": {
+        "first": "Chris",
+        "last": "Olave"
+      },
+      "position": "WR",
+      "college": "Ohio State",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 1,
+        "pick": 11,
+        "team": "NO"
+      },
+      "measurables": {
+        "heightIn": 72,
+        "weightLb": 187
+      },
+      "combine": {
+        "fortyYd": 4.39,
+        "verticalIn": 32.0,
+        "broadIn": 124
+      },
+      "birthDate": "2000-06-27"
+    },
+    {
+      "name": {
+        "first": "Jameson",
+        "last": "Williams"
+      },
+      "position": "WR",
+      "college": "Alabama",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 1,
+        "pick": 12,
+        "team": "DET"
+      },
+      "measurables": {
+        "heightIn": 73,
+        "weightLb": 180
+      },
+      "birthDate": "2001-03-26"
+    },
+    {
+      "name": {
+        "first": "Jordan",
+        "last": "Davis"
+      },
+      "position": "DT",
+      "college": "Georgia",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 1,
+        "pick": 13,
+        "team": "PHI"
+      },
+      "measurables": {
+        "heightIn": 78,
+        "weightLb": 336
+      },
+      "combine": {
+        "fortyYd": 4.78,
+        "verticalIn": 32.0,
+        "broadIn": 123
+      },
+      "birthDate": "2000-01-12"
+    },
+    {
+      "name": {
+        "first": "Kyle",
+        "last": "Hamilton"
+      },
+      "position": "S",
+      "college": "Notre Dame",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 1,
+        "pick": 14,
+        "team": "BAL"
+      },
+      "measurables": {
+        "heightIn": 76,
+        "weightLb": 218
+      },
+      "combine": {
+        "fortyYd": 4.59,
+        "verticalIn": 38.0,
+        "broadIn": 131,
+        "shuttle": 4.32,
+        "threeCone": 6.9
+      },
+      "birthDate": "2001-03-16"
+    },
+    {
+      "name": {
+        "first": "Kenyon",
+        "last": "Green"
+      },
+      "position": "OG",
+      "college": "Texas A&M",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 1,
+        "pick": 15,
+        "team": "HOU"
+      },
+      "measurables": {
+        "heightIn": 76,
+        "weightLb": 325
+      },
+      "combine": {
+        "fortyYd": 5.24,
+        "bench": 20,
+        "verticalIn": 26.0,
+        "broadIn": 102,
+        "shuttle": 5.12
+      },
+      "birthDate": "2001-03-15"
+    },
+    {
+      "name": {
+        "first": "Jahan",
+        "last": "Dotson"
+      },
+      "position": "WR",
+      "college": "Penn State",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 1,
+        "pick": 16,
+        "team": "WAS"
+      },
+      "measurables": {
+        "heightIn": 71,
+        "weightLb": 184
+      },
+      "combine": {
+        "fortyYd": 4.43,
+        "verticalIn": 36.0,
+        "broadIn": 121,
+        "threeCone": 7.28
+      },
+      "birthDate": "2000-03-22"
+    },
+    {
+      "name": {
+        "first": "Zion",
+        "last": "Johnson"
+      },
+      "position": "OG",
+      "college": "Boston College",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 1,
+        "pick": 17,
+        "team": "LAC"
+      },
+      "measurables": {
+        "heightIn": 75,
+        "weightLb": 316
+      },
+      "combine": {
+        "fortyYd": 5.18,
+        "bench": 32,
+        "verticalIn": 32.0,
+        "broadIn": 112,
+        "shuttle": 4.46,
+        "threeCone": 7.38
+      },
+      "birthDate": "1999-11-18"
+    },
+    {
+      "name": {
+        "first": "Treylon",
+        "last": "Burks"
+      },
+      "position": "WR",
+      "college": "Arkansas",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 1,
+        "pick": 18,
+        "team": "TEN"
+      },
+      "measurables": {
+        "heightIn": 74,
+        "weightLb": 225
+      },
+      "combine": {
+        "fortyYd": 4.55,
+        "verticalIn": 33.0,
+        "broadIn": 122,
+        "threeCone": 7.28
+      },
+      "birthDate": "2000-03-23"
+    },
+    {
+      "name": {
+        "first": "Trevor",
+        "last": "Penning"
+      },
+      "position": "OT",
+      "college": "Northern Iowa",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 1,
+        "pick": 19,
+        "team": "NO"
+      },
+      "measurables": {
+        "heightIn": 79,
+        "weightLb": 325
+      },
+      "combine": {
+        "fortyYd": 4.89,
+        "verticalIn": 28.0,
+        "broadIn": 111,
+        "shuttle": 4.62,
+        "threeCone": 7.25
+      },
+      "birthDate": "1999-05-15"
+    },
+    {
+      "name": {
+        "first": "Kenneth",
+        "last": "Pickett"
+      },
+      "position": "QB",
+      "college": "Pittsburgh",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 1,
+        "pick": 20,
+        "team": "PIT"
+      },
+      "measurables": {
+        "heightIn": 75,
+        "weightLb": 220
+      },
+      "combine": {
+        "fortyYd": 4.73,
+        "verticalIn": 33.5,
+        "broadIn": 121,
+        "shuttle": 4.29
+      },
+      "birthDate": "1998-06-06"
+    },
+    {
+      "name": {
+        "first": "Trent",
+        "last": "McDuffie"
+      },
+      "position": "CB",
+      "college": "Washington",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 1,
+        "pick": 21,
+        "team": "KC"
+      },
+      "measurables": {
+        "heightIn": 71,
+        "weightLb": 193
+      },
+      "combine": {
+        "fortyYd": 4.44
+      },
+      "birthDate": "2000-09-13"
+    },
+    {
+      "name": {
+        "first": "Jaquavian",
+        "last": "Walker"
+      },
+      "position": "LB",
+      "college": "Georgia",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 1,
+        "pick": 22,
+        "team": "GB"
+      },
+      "measurables": {
+        "heightIn": 76,
+        "weightLb": 240
+      },
+      "combine": {
+        "fortyYd": 4.52,
+        "verticalIn": 32.0,
+        "broadIn": 122
+      },
+      "birthDate": "2000-05-08"
+    },
+    {
+      "name": {
+        "first": "Kaiir",
+        "last": "Elam"
+      },
+      "position": "CB",
+      "college": "Florida",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 1,
+        "pick": 23,
+        "team": "BUF"
+      },
+      "measurables": {
+        "heightIn": 73,
+        "weightLb": 191
+      },
+      "combine": {
+        "fortyYd": 4.39
+      },
+      "birthDate": "2001-05-05"
+    },
+    {
+      "name": {
+        "first": "Tyler",
+        "last": "Smith"
+      },
+      "position": "OT",
+      "college": "Tulsa",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 1,
+        "pick": 24,
+        "team": "DAL"
+      },
+      "measurables": {
+        "heightIn": 77,
+        "weightLb": 332
+      },
+      "combine": {
+        "fortyYd": 5.02,
+        "verticalIn": 27.5,
+        "broadIn": 105,
+        "shuttle": 4.65,
+        "threeCone": 7.78
+      },
+      "birthDate": "2001-04-03"
+    },
+    {
+      "name": {
+        "first": "Tyler",
+        "last": "Linderbaum"
+      },
+      "position": "C",
+      "college": "Iowa",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 1,
+        "pick": 25,
+        "team": "BAL"
+      },
+      "measurables": {
+        "heightIn": 74,
+        "weightLb": 305
+      },
+      "birthDate": "2000-04-07"
+    },
+    {
+      "name": {
+        "first": "Jermaine",
+        "last": "Johnson"
+      },
+      "position": "DE",
+      "college": "Florida State",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 1,
+        "pick": 26,
+        "team": "NYJ"
+      },
+      "measurables": {
+        "heightIn": 77,
+        "weightLb": 254
+      },
+      "combine": {
+        "fortyYd": 4.58,
+        "verticalIn": 32.0,
+        "broadIn": 125
+      },
+      "birthDate": "1999-01-08"
+    },
+    {
+      "name": {
+        "first": "Devin",
+        "last": "Lloyd"
+      },
+      "position": "LB",
+      "college": "Utah",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 1,
+        "pick": 27,
+        "team": "JAX"
+      },
+      "measurables": {
+        "heightIn": 75,
+        "weightLb": 235
+      },
+      "combine": {
+        "fortyYd": 4.66,
+        "bench": 25,
+        "verticalIn": 35.0,
+        "broadIn": 126
+      },
+      "birthDate": "1998-09-30"
+    },
+    {
+      "name": {
+        "first": "Devonte",
+        "last": "Wyatt"
+      },
+      "position": "DT",
+      "college": "Georgia",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 1,
+        "pick": 28,
+        "team": "GB"
+      },
+      "measurables": {
+        "heightIn": 75,
+        "weightLb": 304
+      },
+      "combine": {
+        "fortyYd": 4.77,
+        "verticalIn": 29.0,
+        "broadIn": 111
+      },
+      "birthDate": "1998-03-31"
+    },
+    {
+      "name": {
+        "first": "Devin",
+        "last": "Strange"
+      },
+      "position": "OG",
+      "college": "Tennessee-Chattanooga",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 1,
+        "pick": 29,
+        "team": "NE"
+      },
+      "measurables": {
+        "heightIn": 77,
+        "weightLb": 310
+      },
+      "combine": {
+        "fortyYd": 5.03,
+        "bench": 31,
+        "verticalIn": 28.0,
+        "broadIn": 120,
+        "shuttle": 4.5,
+        "threeCone": 7.44
+      },
+      "birthDate": "1998-07-31"
+    },
+    {
+      "name": {
+        "first": "Yoros",
+        "last": "Karlaftis"
+      },
+      "position": "DE",
+      "college": "Purdue",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 1,
+        "pick": 30,
+        "team": "KC"
+      },
+      "measurables": {
+        "heightIn": 76,
+        "weightLb": 263
+      },
+      "combine": {
+        "bench": 21,
+        "verticalIn": 38.0,
+        "broadIn": 121,
+        "shuttle": 4.36
+      },
+      "birthDate": "2001-04-03"
+    },
+    {
+      "name": {
+        "first": "Daxton",
+        "last": "Hill"
+      },
+      "position": "CB",
+      "college": "Michigan",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 1,
+        "pick": 31,
+        "team": "CIN"
+      },
+      "measurables": {
+        "heightIn": 72,
+        "weightLb": 195
+      },
+      "combine": {
+        "fortyYd": 4.38,
+        "verticalIn": 33.5,
+        "broadIn": 121,
+        "shuttle": 4.06,
+        "threeCone": 6.57
+      },
+      "birthDate": "2000-09-29"
+    },
+    {
+      "name": {
+        "first": "Lewis",
+        "last": "Cine"
+      },
+      "position": "S",
+      "college": "Georgia",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 1,
+        "pick": 32,
+        "team": "MIN"
+      },
+      "measurables": {
+        "heightIn": 74,
+        "weightLb": 199
+      },
+      "combine": {
+        "fortyYd": 4.37,
+        "verticalIn": 36.5,
+        "broadIn": 133
+      },
+      "birthDate": "1999-10-05"
+    },
+    {
+      "name": {
+        "first": "Logan",
+        "last": "Hall"
+      },
+      "position": "DE",
+      "college": "Houston",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 2,
+        "pick": 33,
+        "team": "TB"
+      },
+      "measurables": {
+        "heightIn": 78,
+        "weightLb": 283
+      },
+      "combine": {
+        "fortyYd": 4.88,
+        "verticalIn": 30.0,
+        "shuttle": 4.44,
+        "threeCone": 7.25
+      },
+      "birthDate": "2000-04-22"
+    },
+    {
+      "name": {
+        "first": "Christian",
+        "last": "Watson"
+      },
+      "position": "WR",
+      "college": "North Dakota State",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 2,
+        "pick": 34,
+        "team": "GB"
+      },
+      "measurables": {
+        "heightIn": 76,
+        "weightLb": 208
+      },
+      "combine": {
+        "fortyYd": 4.36,
+        "verticalIn": 38.5,
+        "broadIn": 136
+      },
+      "birthDate": "1999-05-12"
+    },
+    {
+      "name": {
+        "first": "Roger",
+        "last": "McCreary"
+      },
+      "position": "CB",
+      "college": "Auburn",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 2,
+        "pick": 35,
+        "team": "TEN"
+      },
+      "measurables": {
+        "heightIn": 71,
+        "weightLb": 190
+      },
+      "combine": {
+        "fortyYd": 4.5
+      },
+      "birthDate": "2000-02-10"
+    },
+    {
+      "name": {
+        "first": "Breece",
+        "last": "Hall"
+      },
+      "position": "RB",
+      "college": "Iowa State",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 2,
+        "pick": 36,
+        "team": "NYJ"
+      },
+      "measurables": {
+        "heightIn": 71,
+        "weightLb": 217
+      },
+      "combine": {
+        "fortyYd": 4.39,
+        "verticalIn": 40.0,
+        "broadIn": 126
+      },
+      "birthDate": "2001-05-31"
+    },
+    {
+      "name": {
+        "first": "Jalen",
+        "last": "Pitre"
+      },
+      "position": "S",
+      "college": "Baylor",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 2,
+        "pick": 37,
+        "team": "HOU"
+      },
+      "measurables": {
+        "heightIn": 72,
+        "weightLb": 200
+      },
+      "combine": {
+        "bench": 16,
+        "verticalIn": 35.0,
+        "shuttle": 4.18,
+        "threeCone": 6.74
+      },
+      "birthDate": "1999-06-03"
+    },
+    {
+      "name": {
+        "first": "Arnold",
+        "last": "Ebiketie"
+      },
+      "position": "LB",
+      "college": "Penn State",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 2,
+        "pick": 38,
+        "team": "ATL"
+      },
+      "measurables": {
+        "heightIn": 75,
+        "weightLb": 256
+      },
+      "combine": {
+        "bench": 21,
+        "verticalIn": 38.0,
+        "broadIn": 128
+      },
+      "birthDate": "1999-01-23"
+    },
+    {
+      "name": {
+        "first": "Kyler",
+        "last": "Gordon"
+      },
+      "position": "CB",
+      "college": "Washington",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 2,
+        "pick": 39,
+        "team": "CHI"
+      },
+      "measurables": {
+        "heightIn": 71,
+        "weightLb": 200
+      },
+      "combine": {
+        "fortyYd": 4.52
+      },
+      "birthDate": "1999-12-17"
+    },
+    {
+      "name": {
+        "first": "Boye",
+        "last": "Mafe"
+      },
+      "position": "LB",
+      "college": "Minnesota",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 2,
+        "pick": 40,
+        "team": "SEA"
+      },
+      "measurables": {
+        "heightIn": 76,
+        "weightLb": 261
+      },
+      "combine": {
+        "fortyYd": 4.53,
+        "verticalIn": 38.0,
+        "broadIn": 125
+      },
+      "birthDate": "1998-11-30"
+    },
+    {
+      "name": {
+        "first": "Kenneth",
+        "last": "Walker"
+      },
+      "position": "RB",
+      "college": "Michigan State",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 2,
+        "pick": 41,
+        "team": "SEA"
+      },
+      "measurables": {
+        "heightIn": 69,
+        "weightLb": 211
+      },
+      "combine": {
+        "fortyYd": 4.38,
+        "verticalIn": 34.0,
+        "broadIn": 122
+      },
+      "birthDate": "2000-10-20"
+    },
+    {
+      "name": {
+        "first": "Andrew",
+        "last": "Booth"
+      },
+      "position": "CB",
+      "college": "Clemson",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 2,
+        "pick": 42,
+        "team": "MIN"
+      },
+      "measurables": {
+        "heightIn": 72,
+        "weightLb": 194
+      },
+      "birthDate": "2000-09-28"
+    },
+    {
+      "name": {
+        "first": "Wan'Dale",
+        "last": "Robinson"
+      },
+      "position": "WR",
+      "college": "Kentucky",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 2,
+        "pick": 43,
+        "team": "NYG"
+      },
+      "measurables": {
+        "heightIn": 68,
+        "weightLb": 185
+      },
+      "combine": {
+        "fortyYd": 4.44,
+        "verticalIn": 34.5,
+        "broadIn": 118
+      },
+      "birthDate": "2001-01-05"
+    },
+    {
+      "name": {
+        "first": "John",
+        "last": "Metchie"
+      },
+      "position": "WR",
+      "college": "Alabama",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 2,
+        "pick": 44,
+        "team": "HOU"
+      },
+      "measurables": {
+        "heightIn": 72,
+        "weightLb": 195
+      },
+      "birthDate": "2000-07-18"
+    },
+    {
+      "name": {
+        "first": "David",
+        "last": "Ojabo"
+      },
+      "position": "LB",
+      "college": "Michigan",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 2,
+        "pick": 45,
+        "team": "BAL"
+      },
+      "measurables": {
+        "heightIn": 76,
+        "weightLb": 252
+      },
+      "combine": {
+        "fortyYd": 4.55,
+        "verticalIn": 35.0,
+        "broadIn": 122,
+        "shuttle": 4.45
+      },
+      "birthDate": "2000-05-17"
+    },
+    {
+      "name": {
+        "first": "Joshua",
+        "last": "Paschal"
+      },
+      "position": "DE",
+      "college": "Kentucky",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 2,
+        "pick": 46,
+        "team": "DET"
+      },
+      "measurables": {
+        "heightIn": 75,
+        "weightLb": 275
+      },
+      "combine": {
+        "fortyYd": 4.77,
+        "verticalIn": 37.5,
+        "broadIn": 123
+      },
+      "birthDate": "1999-12-17"
+    },
+    {
+      "name": {
+        "first": "Phidarian",
+        "last": "Mathis"
+      },
+      "position": "DT",
+      "college": "Alabama",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 2,
+        "pick": 47,
+        "team": "WAS"
+      },
+      "measurables": {
+        "heightIn": 76,
+        "weightLb": 312
+      },
+      "combine": {
+        "verticalIn": 23.5,
+        "broadIn": 109,
+        "shuttle": 4.91
+      },
+      "birthDate": "1998-04-26"
+    },
+    {
+      "name": {
+        "first": "Jaquan",
+        "last": "Brisker"
+      },
+      "position": "S",
+      "college": "Penn State",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 2,
+        "pick": 48,
+        "team": "CHI"
+      },
+      "measurables": {
+        "heightIn": 73,
+        "weightLb": 204
+      },
+      "combine": {
+        "fortyYd": 4.49,
+        "bench": 22,
+        "verticalIn": 34.5,
+        "broadIn": 124
+      },
+      "birthDate": "1999-04-20"
+    },
+    {
+      "name": {
+        "first": "Alontae",
+        "last": "Taylor"
+      },
+      "position": "CB",
+      "college": "Tennessee",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 2,
+        "pick": 49,
+        "team": "NO"
+      },
+      "measurables": {
+        "heightIn": 73,
+        "weightLb": 199
+      },
+      "combine": {
+        "fortyYd": 4.36,
+        "verticalIn": 34.5,
+        "broadIn": 128
+      },
+      "birthDate": "1998-12-03"
+    },
+    {
+      "name": {
+        "first": "Tyquan",
+        "last": "Thornton"
+      },
+      "position": "WR",
+      "college": "Baylor",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 2,
+        "pick": 50,
+        "team": "NE"
+      },
+      "measurables": {
+        "heightIn": 74,
+        "weightLb": 185
+      },
+      "combine": {
+        "fortyYd": 4.28,
+        "verticalIn": 36.5,
+        "broadIn": 130
+      },
+      "birthDate": "2000-08-07"
+    },
+    {
+      "name": {
+        "first": "Cameron",
+        "last": "Jurgens"
+      },
+      "position": "C",
+      "college": "Nebraska",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 2,
+        "pick": 51,
+        "team": "PHI"
+      },
+      "measurables": {
+        "heightIn": 75,
+        "weightLb": 303
+      },
+      "combine": {
+        "fortyYd": 4.92,
+        "bench": 25
+      },
+      "birthDate": "1999-08-21"
+    },
+    {
+      "name": {
+        "first": "George",
+        "last": "Pickens"
+      },
+      "position": "WR",
+      "college": "Georgia",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 2,
+        "pick": 52,
+        "team": "PIT"
+      },
+      "measurables": {
+        "heightIn": 75,
+        "weightLb": 200
+      },
+      "combine": {
+        "fortyYd": 4.47,
+        "verticalIn": 33.0,
+        "broadIn": 125
+      },
+      "birthDate": "2001-03-04"
+    },
+    {
+      "name": {
+        "first": "Alec",
+        "last": "Pierce"
+      },
+      "position": "WR",
+      "college": "Cincinnati",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 2,
+        "pick": 53,
+        "team": "IND"
+      },
+      "measurables": {
+        "heightIn": 75,
+        "weightLb": 211
+      },
+      "combine": {
+        "fortyYd": 4.41,
+        "verticalIn": 40.5,
+        "broadIn": 129,
+        "shuttle": 4.28,
+        "threeCone": 7.13
+      },
+      "birthDate": "2000-05-02"
+    },
+    {
+      "name": {
+        "first": "Skyy",
+        "last": "Moore"
+      },
+      "position": "WR",
+      "college": "Western Michigan",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 2,
+        "pick": 54,
+        "team": "KC"
+      },
+      "measurables": {
+        "heightIn": 70,
+        "weightLb": 195
+      },
+      "combine": {
+        "fortyYd": 4.41,
+        "verticalIn": 34.5,
+        "broadIn": 125,
+        "shuttle": 4.32,
+        "threeCone": 7.13
+      },
+      "birthDate": "2000-09-10"
+    },
+    {
+      "name": {
+        "first": "Trey",
+        "last": "McBride"
+      },
+      "position": "TE",
+      "college": "Colorado State",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 2,
+        "pick": 55,
+        "team": "ARI"
+      },
+      "measurables": {
+        "heightIn": 76,
+        "weightLb": 246
+      },
+      "combine": {
+        "bench": 18,
+        "verticalIn": 33.0,
+        "broadIn": 117
+      },
+      "birthDate": "1999-11-22"
+    },
+    {
+      "name": {
+        "first": "Samuel",
+        "last": "Williams"
+      },
+      "position": "DE",
+      "college": "Mississippi",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 2,
+        "pick": 56,
+        "team": "DAL"
+      },
+      "measurables": {
+        "heightIn": 76,
+        "weightLb": 261
+      },
+      "combine": {
+        "fortyYd": 4.46,
+        "verticalIn": 32.5,
+        "broadIn": 123
+      },
+      "birthDate": "1999-03-31"
+    },
+    {
+      "name": {
+        "first": "Luke",
+        "last": "Goedeke"
+      },
+      "position": "OT",
+      "college": "Central Michigan",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 2,
+        "pick": 57,
+        "team": "TB"
+      },
+      "measurables": {
+        "heightIn": 77,
+        "weightLb": 312
+      },
+      "combine": {
+        "bench": 26
+      },
+      "birthDate": "1998-11-21"
+    },
+    {
+      "name": {
+        "first": "Troy",
+        "last": "Andersen"
+      },
+      "position": "LB",
+      "college": "Montana State",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 2,
+        "pick": 58,
+        "team": "ATL"
+      },
+      "measurables": {
+        "heightIn": 76,
+        "weightLb": 245
+      },
+      "combine": {
+        "fortyYd": 4.42,
+        "verticalIn": 36.0,
+        "broadIn": 128
+      },
+      "birthDate": "1999-04-23"
+    },
+    {
+      "name": {
+        "first": "Edward",
+        "last": "Ingram"
+      },
+      "position": "OG",
+      "college": "LSU",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 2,
+        "pick": 59,
+        "team": "MIN"
+      },
+      "measurables": {
+        "heightIn": 75,
+        "weightLb": 307
+      },
+      "combine": {
+        "fortyYd": 5.02,
+        "verticalIn": 20.5,
+        "broadIn": 102,
+        "shuttle": 4.76,
+        "threeCone": 7.81
+      },
+      "birthDate": "1999-02-11"
+    },
+    {
+      "name": {
+        "first": "Cam",
+        "last": "Taylor-Britt"
+      },
+      "position": "CB",
+      "college": "Nebraska",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 2,
+        "pick": 60,
+        "team": "CIN"
+      },
+      "measurables": {
+        "heightIn": 71,
+        "weightLb": 200
+      },
+      "combine": {
+        "fortyYd": 4.38
+      },
+      "birthDate": "1999-10-15"
+    },
+    {
+      "name": {
+        "first": "Drake",
+        "last": "Jackson"
+      },
+      "position": "DE",
+      "college": "USC",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 2,
+        "pick": 61,
+        "team": "SF"
+      },
+      "measurables": {
+        "heightIn": 76,
+        "weightLb": 273
+      },
+      "combine": {
+        "verticalIn": 36.5,
+        "broadIn": 127
+      },
+      "birthDate": "2001-04-12"
+    },
+    {
+      "name": {
+        "first": "Bryan",
+        "last": "Cook"
+      },
+      "position": "S",
+      "college": "Cincinnati",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 2,
+        "pick": 62,
+        "team": "KC"
+      },
+      "measurables": {
+        "heightIn": 73,
+        "weightLb": 206
+      },
+      "birthDate": "1999-09-07"
+    },
+    {
+      "name": {
+        "first": "James",
+        "last": "Cook"
+      },
+      "position": "RB",
+      "college": "Georgia",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 2,
+        "pick": 63,
+        "team": "BUF"
+      },
+      "measurables": {
+        "heightIn": 71,
+        "weightLb": 190
+      },
+      "combine": {
+        "fortyYd": 4.42,
+        "verticalIn": 33.0,
+        "broadIn": 124
+      },
+      "birthDate": "1999-09-25"
+    },
+    {
+      "name": {
+        "first": "Nik",
+        "last": "Bonitto"
+      },
+      "position": "LB",
+      "college": "Oklahoma",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 2,
+        "pick": 64,
+        "team": "DEN"
+      },
+      "measurables": {
+        "heightIn": 75,
+        "weightLb": 240
+      },
+      "combine": {
+        "fortyYd": 4.54,
+        "verticalIn": 35.5,
+        "broadIn": 120,
+        "shuttle": 4.23,
+        "threeCone": 7.07
+      },
+      "birthDate": "1999-09-26"
+    },
+    {
+      "name": {
+        "first": "Luke",
+        "last": "Fortner"
+      },
+      "position": "C",
+      "college": "Kentucky",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 3,
+        "pick": 65,
+        "team": "JAX"
+      },
+      "measurables": {
+        "heightIn": 76,
+        "weightLb": 307
+      },
+      "combine": {
+        "fortyYd": 5.21,
+        "verticalIn": 24.0,
+        "broadIn": 102,
+        "shuttle": 4.95,
+        "threeCone": 7.75
+      },
+      "birthDate": "1998-05-15"
+    },
+    {
+      "name": {
+        "first": "Brian",
+        "last": "Asamoah"
+      },
+      "position": "LB",
+      "college": "Oklahoma",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 3,
+        "pick": 66,
+        "team": "MIN"
+      },
+      "measurables": {
+        "heightIn": 72,
+        "weightLb": 226
+      },
+      "combine": {
+        "fortyYd": 4.56,
+        "verticalIn": 36.5,
+        "broadIn": 124
+      },
+      "birthDate": "2000-03-29"
+    },
+    {
+      "name": {
+        "first": "Jamuike-Tomisin",
+        "last": "Ezeudu"
+      },
+      "position": "OG",
+      "college": "North Carolina",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 3,
+        "pick": 67,
+        "team": "NYG"
+      },
+      "measurables": {
+        "heightIn": 76,
+        "weightLb": 310
+      },
+      "combine": {
+        "fortyYd": 5.19,
+        "verticalIn": 28.5,
+        "broadIn": 105,
+        "shuttle": 4.56,
+        "threeCone": 7.83
+      },
+      "birthDate": "1999-09-19"
+    },
+    {
+      "name": {
+        "first": "Martin",
+        "last": "Emerson"
+      },
+      "position": "CB",
+      "college": "Mississippi State",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 3,
+        "pick": 68,
+        "team": "CLE"
+      },
+      "measurables": {
+        "heightIn": 74,
+        "weightLb": 200
+      },
+      "combine": {
+        "fortyYd": 4.53
+      },
+      "birthDate": "2000-09-27"
+    },
+    {
+      "name": {
+        "first": "Nicholas",
+        "last": "Petit-Frere"
+      },
+      "position": "OT",
+      "college": "Ohio State",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 3,
+        "pick": 69,
+        "team": "TEN"
+      },
+      "measurables": {
+        "heightIn": 77,
+        "weightLb": 315
+      },
+      "combine": {
+        "fortyYd": 5.14,
+        "verticalIn": 24.5,
+        "broadIn": 103
+      },
+      "birthDate": "1999-09-15"
+    },
+    {
+      "name": {
+        "first": "Chad",
+        "last": "Muma"
+      },
+      "position": "LB",
+      "college": "Wyoming",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 3,
+        "pick": 70,
+        "team": "JAX"
+      },
+      "measurables": {
+        "heightIn": 75,
+        "weightLb": 239
+      },
+      "combine": {
+        "fortyYd": 4.63,
+        "bench": 27,
+        "verticalIn": 40.0,
+        "broadIn": 129,
+        "shuttle": 4.28,
+        "threeCone": 7.06
+      },
+      "birthDate": "1999-08-18"
+    },
+    {
+      "name": {
+        "first": "Velus",
+        "last": "Jones"
+      },
+      "position": "WR",
+      "college": "Tennessee",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 3,
+        "pick": 71,
+        "team": "CHI"
+      },
+      "measurables": {
+        "heightIn": 72,
+        "weightLb": 204
+      },
+      "combine": {
+        "fortyYd": 4.31,
+        "verticalIn": 33.0,
+        "broadIn": 121
+      },
+      "birthDate": "1997-05-11"
+    },
+    {
+      "name": {
+        "first": "Abraham",
+        "last": "Lucas"
+      },
+      "position": "OT",
+      "college": "Washington State",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 3,
+        "pick": 72,
+        "team": "SEA"
+      },
+      "measurables": {
+        "heightIn": 78,
+        "weightLb": 322
+      },
+      "combine": {
+        "fortyYd": 4.92,
+        "bench": 24,
+        "verticalIn": 27.0,
+        "broadIn": 107,
+        "shuttle": 4.4,
+        "threeCone": 7.25
+      },
+      "birthDate": "1998-10-15"
+    },
+    {
+      "name": {
+        "first": "Jelani",
+        "last": "Woods"
+      },
+      "position": "TE",
+      "college": "Virginia",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 3,
+        "pick": 73,
+        "team": "IND"
+      },
+      "measurables": {
+        "heightIn": 79,
+        "weightLb": 253
+      },
+      "combine": {
+        "fortyYd": 4.61,
+        "bench": 24
+      },
+      "birthDate": "1998-10-09"
+    },
+    {
+      "name": {
+        "first": "Desmond",
+        "last": "Ridder"
+      },
+      "position": "QB",
+      "college": "Cincinnati",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 3,
+        "pick": 74,
+        "team": "ATL"
+      },
+      "measurables": {
+        "heightIn": 75,
+        "weightLb": 207
+      },
+      "combine": {
+        "fortyYd": 4.52,
+        "verticalIn": 36.0,
+        "broadIn": 127,
+        "shuttle": 4.29,
+        "threeCone": 7.15
+      },
+      "birthDate": "1999-08-31"
+    },
+    {
+      "name": {
+        "first": "Christian",
+        "last": "Harris"
+      },
+      "position": "LB",
+      "college": "Alabama",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 3,
+        "pick": 75,
+        "team": "HOU"
+      },
+      "measurables": {
+        "heightIn": 74,
+        "weightLb": 232
+      },
+      "combine": {
+        "fortyYd": 4.44,
+        "verticalIn": 34.5,
+        "broadIn": 132
+      },
+      "birthDate": "2001-01-16"
+    },
+    {
+      "name": {
+        "first": "Travis",
+        "last": "Jones"
+      },
+      "position": "DT",
+      "college": "Connecticut",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 3,
+        "pick": 76,
+        "team": "BAL"
+      },
+      "measurables": {
+        "heightIn": 76,
+        "weightLb": 341
+      },
+      "combine": {
+        "fortyYd": 4.92,
+        "verticalIn": 28.5,
+        "broadIn": 110,
+        "shuttle": 4.58,
+        "threeCone": 7.33
+      },
+      "birthDate": "1999-10-15"
+    },
+    {
+      "name": {
+        "first": "Bernhard",
+        "last": "Raimann"
+      },
+      "position": "OT",
+      "college": "Central Michigan",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 3,
+        "pick": 77,
+        "team": "IND"
+      },
+      "measurables": {
+        "heightIn": 78,
+        "weightLb": 303
+      },
+      "combine": {
+        "fortyYd": 5.05,
+        "bench": 30,
+        "verticalIn": 30.5,
+        "broadIn": 117,
+        "shuttle": 4.49,
+        "threeCone": 7.46
+      },
+      "birthDate": "1997-09-23"
+    },
+    {
+      "name": {
+        "first": "Alexander",
+        "last": "Wright"
+      },
+      "position": "DE",
+      "college": "UAB",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 3,
+        "pick": 78,
+        "team": "CLE"
+      },
+      "measurables": {
+        "heightIn": 77,
+        "weightLb": 267
+      },
+      "combine": {
+        "bench": 15
+      },
+      "birthDate": "2000-09-05"
+    },
+    {
+      "name": {
+        "first": "Jalen",
+        "last": "Woods"
+      },
+      "position": "S",
+      "college": "Baylor",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 3,
+        "pick": 79,
+        "team": "LAC"
+      },
+      "measurables": {
+        "heightIn": 74,
+        "weightLb": 195
+      },
+      "combine": {
+        "fortyYd": 4.36,
+        "verticalIn": 39.5,
+        "broadIn": 128
+      },
+      "birthDate": "2000-06-10"
+    },
+    {
+      "name": {
+        "first": "Gregory",
+        "last": "Dulcich"
+      },
+      "position": "TE",
+      "college": "UCLA",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 3,
+        "pick": 80,
+        "team": "DEN"
+      },
+      "measurables": {
+        "heightIn": 76,
+        "weightLb": 245
+      },
+      "combine": {
+        "fortyYd": 4.69,
+        "bench": 16,
+        "verticalIn": 34.0,
+        "broadIn": 122,
+        "shuttle": 4.37,
+        "threeCone": 7.05
+      },
+      "birthDate": "2000-03-26"
+    },
+    {
+      "name": {
+        "first": "Cordale",
+        "last": "Flott"
+      },
+      "position": "CB",
+      "college": "LSU",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 3,
+        "pick": 81,
+        "team": "NYG"
+      },
+      "measurables": {
+        "heightIn": 73,
+        "weightLb": 175
+      },
+      "birthDate": "2001-08-24"
+    },
+    {
+      "name": {
+        "first": "DeAngelo",
+        "last": "Malone"
+      },
+      "position": "LB",
+      "college": "Western Kentucky",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 3,
+        "pick": 82,
+        "team": "ATL"
+      },
+      "measurables": {
+        "heightIn": 75,
+        "weightLb": 235
+      },
+      "combine": {
+        "bench": 23
+      },
+      "birthDate": "1999-07-12"
+    },
+    {
+      "name": {
+        "first": "Nakobe",
+        "last": "Dean"
+      },
+      "position": "LB",
+      "college": "Georgia",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 3,
+        "pick": 83,
+        "team": "PHI"
+      },
+      "measurables": {
+        "heightIn": 71,
+        "weightLb": 231
+      },
+      "birthDate": "2000-12-13"
+    },
+    {
+      "name": {
+        "first": "DeMarvin",
+        "last": "Leal"
+      },
+      "position": "LB",
+      "college": "Texas A&M",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 3,
+        "pick": 84,
+        "team": "PIT"
+      },
+      "measurables": {
+        "heightIn": 76,
+        "weightLb": 290
+      },
+      "combine": {
+        "fortyYd": 5.0,
+        "verticalIn": 27.5,
+        "broadIn": 106,
+        "shuttle": 4.49
+      },
+      "birthDate": "2000-07-01"
+    },
+    {
+      "name": {
+        "first": "Marcus",
+        "last": "Jones"
+      },
+      "position": "CB",
+      "college": "Houston",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 3,
+        "pick": 85,
+        "team": "NE"
+      },
+      "measurables": {
+        "heightIn": 68,
+        "weightLb": 188
+      },
+      "birthDate": "1998-10-22"
+    },
+    {
+      "name": {
+        "first": "Malik",
+        "last": "Willis"
+      },
+      "position": "QB",
+      "college": "Liberty",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 3,
+        "pick": 86,
+        "team": "TEN"
+      },
+      "measurables": {
+        "heightIn": 73,
+        "weightLb": 225
+      },
+      "birthDate": "1999-05-25"
+    },
+    {
+      "name": {
+        "first": "Cameron",
+        "last": "Thomas"
+      },
+      "position": "DE",
+      "college": "San Diego State",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 3,
+        "pick": 87,
+        "team": "ARI"
+      },
+      "measurables": {
+        "heightIn": 76,
+        "weightLb": 265
+      },
+      "combine": {
+        "bench": 24
+      },
+      "birthDate": "2000-07-01"
+    },
+    {
+      "name": {
+        "first": "Jalen",
+        "last": "Tolbert"
+      },
+      "position": "WR",
+      "college": "South Alabama",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 3,
+        "pick": 88,
+        "team": "DAL"
+      },
+      "measurables": {
+        "heightIn": 73,
+        "weightLb": 195
+      },
+      "combine": {
+        "fortyYd": 4.49,
+        "verticalIn": 36.0,
+        "broadIn": 123,
+        "threeCone": 7.08
+      },
+      "birthDate": "1999-02-27"
+    },
+    {
+      "name": {
+        "first": "Terrel",
+        "last": "Bernard"
+      },
+      "position": "LB",
+      "college": "Baylor",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 3,
+        "pick": 89,
+        "team": "BUF"
+      },
+      "measurables": {
+        "heightIn": 73,
+        "weightLb": 224
+      },
+      "combine": {
+        "bench": 22,
+        "verticalIn": 35.5,
+        "broadIn": 123,
+        "shuttle": 4.25,
+        "threeCone": 7.03
+      },
+      "birthDate": "1999-05-07"
+    },
+    {
+      "name": {
+        "first": "Dylan",
+        "last": "Parham"
+      },
+      "position": "OG",
+      "college": "Memphis",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 3,
+        "pick": 90,
+        "team": "LV"
+      },
+      "measurables": {
+        "heightIn": 74,
+        "weightLb": 332
+      },
+      "combine": {
+        "fortyYd": 4.93,
+        "verticalIn": 26.5,
+        "broadIn": 108,
+        "shuttle": 4.7,
+        "threeCone": 7.78
+      },
+      "birthDate": "1999-08-24"
+    },
+    {
+      "name": {
+        "first": "Rachaad",
+        "last": "White"
+      },
+      "position": "RB",
+      "college": "Arizona State",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 3,
+        "pick": 91,
+        "team": "TB"
+      },
+      "measurables": {
+        "heightIn": 72,
+        "weightLb": 214
+      },
+      "combine": {
+        "fortyYd": 4.48,
+        "verticalIn": 38.0,
+        "broadIn": 125
+      },
+      "birthDate": "1999-01-12"
+    },
+    {
+      "name": {
+        "first": "Sean",
+        "last": "Rhyan"
+      },
+      "position": "OT",
+      "college": "UCLA",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 3,
+        "pick": 92,
+        "team": "GB"
+      },
+      "measurables": {
+        "heightIn": 77,
+        "weightLb": 320
+      },
+      "combine": {
+        "fortyYd": 5.25,
+        "verticalIn": 33.5,
+        "broadIn": 110,
+        "shuttle": 4.81,
+        "threeCone": 7.55
+      },
+      "birthDate": "2000-09-15"
+    },
+    {
+      "name": {
+        "first": "Tyrion",
+        "last": "Davis-Price"
+      },
+      "position": "RB",
+      "college": "LSU",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 3,
+        "pick": 93,
+        "team": "SF"
+      },
+      "measurables": {
+        "heightIn": 73,
+        "weightLb": 219
+      },
+      "combine": {
+        "fortyYd": 4.48,
+        "verticalIn": 30.0,
+        "broadIn": 117
+      },
+      "birthDate": "2000-10-23"
+    },
+    {
+      "name": {
+        "first": "Matthew",
+        "last": "Corral"
+      },
+      "position": "QB",
+      "college": "Mississippi",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 3,
+        "pick": 94,
+        "team": "CAR"
+      },
+      "measurables": {
+        "heightIn": 74,
+        "weightLb": 205
+      },
+      "birthDate": "1999-01-31"
+    },
+    {
+      "name": {
+        "first": "Zachary",
+        "last": "Carter"
+      },
+      "position": "DT",
+      "college": "Florida",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 3,
+        "pick": 95,
+        "team": "CIN"
+      },
+      "measurables": {
+        "heightIn": 76,
+        "weightLb": 290
+      },
+      "combine": {
+        "fortyYd": 4.99,
+        "bench": 19,
+        "verticalIn": 27.5,
+        "broadIn": 110
+      },
+      "birthDate": "1999-04-07"
+    },
+    {
+      "name": {
+        "first": "Nicolas",
+        "last": "Cross"
+      },
+      "position": "CB",
+      "college": "Maryland",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 3,
+        "pick": 96,
+        "team": "IND"
+      },
+      "measurables": {
+        "heightIn": 72,
+        "weightLb": 212
+      },
+      "combine": {
+        "fortyYd": 4.34,
+        "verticalIn": 37.0,
+        "broadIn": 130
+      },
+      "birthDate": "2001-09-10"
+    },
+    {
+      "name": {
+        "first": "Kerby",
+        "last": "Joseph"
+      },
+      "position": "CB",
+      "college": "Illinois",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 3,
+        "pick": 97,
+        "team": "DET"
+      },
+      "measurables": {
+        "heightIn": 72,
+        "weightLb": 210
+      },
+      "combine": {
+        "bench": 18,
+        "verticalIn": 38.5,
+        "broadIn": 123
+      },
+      "birthDate": "2000-11-14"
+    },
+    {
+      "name": {
+        "first": "Brian",
+        "last": "Robinson"
+      },
+      "position": "RB",
+      "college": "Alabama",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 3,
+        "pick": 98,
+        "team": "WAS"
+      },
+      "measurables": {
+        "heightIn": 73,
+        "weightLb": 225
+      },
+      "combine": {
+        "fortyYd": 4.53,
+        "verticalIn": 30.0,
+        "broadIn": 119
+      },
+      "birthDate": "1999-03-22"
+    },
+    {
+      "name": {
+        "first": "David",
+        "last": "Bell"
+      },
+      "position": "WR",
+      "college": "Purdue",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 3,
+        "pick": 99,
+        "team": "CLE"
+      },
+      "measurables": {
+        "heightIn": 73,
+        "weightLb": 212
+      },
+      "combine": {
+        "fortyYd": 4.65,
+        "verticalIn": 33.0,
+        "broadIn": 118,
+        "shuttle": 4.57,
+        "threeCone": 7.14
+      },
+      "birthDate": "2000-12-14"
+    },
+    {
+      "name": {
+        "first": "Myjai",
+        "last": "Sanders"
+      },
+      "position": "LB",
+      "college": "Cincinnati",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 3,
+        "pick": 100,
+        "team": "ARI"
+      },
+      "measurables": {
+        "heightIn": 77,
+        "weightLb": 248
+      },
+      "combine": {
+        "fortyYd": 4.67,
+        "verticalIn": 33.0,
+        "broadIn": 120,
+        "shuttle": 4.37
+      },
+      "birthDate": "1998-07-12"
+    },
+    {
+      "name": {
+        "first": "Jeremy",
+        "last": "Ruckert"
+      },
+      "position": "TE",
+      "college": "Ohio State",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 3,
+        "pick": 101,
+        "team": "NYJ"
+      },
+      "measurables": {
+        "heightIn": 77,
+        "weightLb": 250
+      },
+      "combine": {
+        "bench": 19
+      },
+      "birthDate": "2000-08-11"
+    },
+    {
+      "name": {
+        "first": "Channing",
+        "last": "Tindall"
+      },
+      "position": "LB",
+      "college": "Georgia",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 3,
+        "pick": 102,
+        "team": "MIA"
+      },
+      "measurables": {
+        "heightIn": 74,
+        "weightLb": 236
+      },
+      "combine": {
+        "fortyYd": 4.47,
+        "verticalIn": 42.0,
+        "broadIn": 129
+      },
+      "birthDate": "2000-03-28"
+    },
+    {
+      "name": {
+        "first": "Leo",
+        "last": "Chenal"
+      },
+      "position": "LB",
+      "college": "Wisconsin",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 3,
+        "pick": 103,
+        "team": "KC"
+      },
+      "measurables": {
+        "heightIn": 75,
+        "weightLb": 250
+      },
+      "combine": {
+        "fortyYd": 4.53,
+        "verticalIn": 40.5,
+        "broadIn": 128
+      },
+      "birthDate": "2000-10-26"
+    },
+    {
+      "name": {
+        "first": "Logan",
+        "last": "Bruss"
+      },
+      "position": "OG",
+      "college": "Wisconsin",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 3,
+        "pick": 104,
+        "team": "LA"
+      },
+      "measurables": {
+        "heightIn": 77,
+        "weightLb": 317
+      },
+      "combine": {
+        "fortyYd": 5.32,
+        "verticalIn": 31.0,
+        "broadIn": 112,
+        "shuttle": 4.55,
+        "threeCone": 7.57
+      },
+      "birthDate": "1998-10-06"
+    },
+    {
+      "name": {
+        "first": "Danny",
+        "last": "Gray"
+      },
+      "position": "WR",
+      "college": "SMU",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 3,
+        "pick": 105,
+        "team": "SF"
+      },
+      "measurables": {
+        "heightIn": 72,
+        "weightLb": 200
+      },
+      "combine": {
+        "fortyYd": 4.33,
+        "verticalIn": 34.0,
+        "broadIn": 126
+      },
+      "birthDate": "1999-04-01"
+    },
+    {
+      "name": {
+        "first": "Cade",
+        "last": "Otton"
+      },
+      "position": "TE",
+      "college": "Washington",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 4,
+        "pick": 106,
+        "team": "TB"
+      },
+      "measurables": {
+        "heightIn": 77,
+        "weightLb": 247
+      },
+      "birthDate": "1999-04-15"
+    },
+    {
+      "name": {
+        "first": "Dameon",
+        "last": "Pierce"
+      },
+      "position": "RB",
+      "college": "Florida",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 4,
+        "pick": 107,
+        "team": "HOU"
+      },
+      "measurables": {
+        "heightIn": 70,
+        "weightLb": 218
+      },
+      "combine": {
+        "fortyYd": 4.59,
+        "bench": 21,
+        "verticalIn": 34.5,
+        "broadIn": 119
+      },
+      "birthDate": "2000-02-19"
+    },
+    {
+      "name": {
+        "first": "Perrion",
+        "last": "Winfrey"
+      },
+      "position": "DT",
+      "college": "Oklahoma",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 4,
+        "pick": 108,
+        "team": "CLE"
+      },
+      "measurables": {
+        "heightIn": 76,
+        "weightLb": 290
+      },
+      "combine": {
+        "fortyYd": 4.89
+      },
+      "birthDate": "2000-08-15"
+    },
+    {
+      "name": {
+        "first": "Coby",
+        "last": "Bryant"
+      },
+      "position": "CB",
+      "college": "Cincinnati",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 4,
+        "pick": 109,
+        "team": "SEA"
+      },
+      "measurables": {
+        "heightIn": 73,
+        "weightLb": 193
+      },
+      "combine": {
+        "fortyYd": 4.54,
+        "bench": 17
+      },
+      "birthDate": "1999-03-29"
+    },
+    {
+      "name": {
+        "first": "Daniel",
+        "last": "Faalele"
+      },
+      "position": "OG",
+      "college": "Minnesota",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 4,
+        "pick": 110,
+        "team": "BAL"
+      },
+      "measurables": {
+        "heightIn": 80,
+        "weightLb": 370
+      },
+      "combine": {
+        "bench": 24
+      },
+      "birthDate": "1999-11-09"
+    },
+    {
+      "name": {
+        "first": "Max",
+        "last": "Mitchell"
+      },
+      "position": "OT",
+      "college": "Louisiana-Lafayette",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 4,
+        "pick": 111,
+        "team": "NYJ"
+      },
+      "measurables": {
+        "heightIn": 78,
+        "weightLb": 307
+      },
+      "combine": {
+        "fortyYd": 5.32,
+        "verticalIn": 25.0,
+        "broadIn": 106,
+        "shuttle": 4.65,
+        "threeCone": 8.09
+      },
+      "birthDate": "1999-10-12"
+    },
+    {
+      "name": {
+        "first": "Daniel",
+        "last": "Bellinger"
+      },
+      "position": "TE",
+      "college": "San Diego State",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 4,
+        "pick": 112,
+        "team": "NYG"
+      },
+      "measurables": {
+        "heightIn": 78,
+        "weightLb": 255
+      },
+      "combine": {
+        "fortyYd": 4.63,
+        "bench": 22,
+        "verticalIn": 34.5,
+        "broadIn": 125,
+        "shuttle": 4.47,
+        "threeCone": 7.05
+      },
+      "birthDate": "2000-09-22"
+    },
+    {
+      "name": {
+        "first": "Percy",
+        "last": "Butler"
+      },
+      "position": "S",
+      "college": "Louisiana-Lafayette",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 4,
+        "pick": 113,
+        "team": "WAS"
+      },
+      "measurables": {
+        "heightIn": 72,
+        "weightLb": 191
+      },
+      "combine": {
+        "fortyYd": 4.36,
+        "verticalIn": 31.5,
+        "broadIn": 123
+      },
+      "birthDate": "2000-05-05"
+    },
+    {
+      "name": {
+        "first": "Dane",
+        "last": "Belton"
+      },
+      "position": "S",
+      "college": "Iowa",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 4,
+        "pick": 114,
+        "team": "NYG"
+      },
+      "measurables": {
+        "heightIn": 73,
+        "weightLb": 190
+      },
+      "combine": {
+        "fortyYd": 4.43,
+        "verticalIn": 36.5,
+        "broadIn": 123,
+        "shuttle": 4.24,
+        "threeCone": 7.01
+      },
+      "birthDate": "2000-12-07"
+    },
+    {
+      "name": {
+        "first": "Damarri",
+        "last": "Mathis"
+      },
+      "position": "CB",
+      "college": "Pittsburgh",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 4,
+        "pick": 115,
+        "team": "DEN"
+      },
+      "measurables": {
+        "heightIn": 71,
+        "weightLb": 195
+      },
+      "combine": {
+        "fortyYd": 4.39
+      },
+      "birthDate": "1999-04-12"
+    },
+    {
+      "name": {
+        "first": "Eyioma",
+        "last": "Uwazurike"
+      },
+      "position": "DT",
+      "college": "Iowa State",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 4,
+        "pick": 116,
+        "team": "DEN"
+      },
+      "measurables": {
+        "heightIn": 78,
+        "weightLb": 320
+      },
+      "combine": {
+        "verticalIn": 33.0,
+        "broadIn": 107
+      },
+      "birthDate": "1998-05-06"
+    },
+    {
+      "name": {
+        "first": "Micheal",
+        "last": "Clemons"
+      },
+      "position": "DE",
+      "college": "Texas A&M",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 4,
+        "pick": 117,
+        "team": "NYJ"
+      },
+      "measurables": {
+        "heightIn": 77,
+        "weightLb": 263
+      },
+      "combine": {
+        "bench": 24,
+        "broadIn": 116
+      },
+      "birthDate": "1997-08-21"
+    },
+    {
+      "name": {
+        "first": "Akayleb",
+        "last": "Evans"
+      },
+      "position": "CB",
+      "college": "Missouri",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 4,
+        "pick": 118,
+        "team": "MIN"
+      },
+      "measurables": {
+        "heightIn": 74,
+        "weightLb": 198
+      },
+      "combine": {
+        "fortyYd": 4.46,
+        "verticalIn": 36.0,
+        "broadIn": 129
+      },
+      "birthDate": "1999-06-22"
+    },
+    {
+      "name": {
+        "first": "Jalyn",
+        "last": "Armour-Davis"
+      },
+      "position": "CB",
+      "college": "Alabama",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 4,
+        "pick": 119,
+        "team": "BAL"
+      },
+      "measurables": {
+        "heightIn": 73,
+        "weightLb": 200
+      },
+      "combine": {
+        "fortyYd": 4.39,
+        "bench": 14,
+        "verticalIn": 34.5
+      },
+      "birthDate": "1999-09-03"
+    },
+    {
+      "name": {
+        "first": "Brandon",
+        "last": "Smith"
+      },
+      "position": "LB",
+      "college": "Penn State",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 4,
+        "pick": 120,
+        "team": "CAR"
+      },
+      "measurables": {
+        "heightIn": 75,
+        "weightLb": 241
+      },
+      "combine": {
+        "fortyYd": 4.52,
+        "verticalIn": 37.5,
+        "broadIn": 128
+      },
+      "birthDate": "2001-04-12"
+    },
+    {
+      "name": {
+        "first": "Jack",
+        "last": "Jones"
+      },
+      "position": "CB",
+      "college": "Arizona State",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 4,
+        "pick": 121,
+        "team": "NE"
+      },
+      "measurables": {
+        "heightIn": 71,
+        "weightLb": 175
+      },
+      "combine": {
+        "fortyYd": 4.51
+      },
+      "birthDate": "1997-12-20"
+    },
+    {
+      "name": {
+        "first": "Zamir",
+        "last": "White"
+      },
+      "position": "RB",
+      "college": "Georgia",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 4,
+        "pick": 122,
+        "team": "LV"
+      },
+      "measurables": {
+        "heightIn": 71,
+        "weightLb": 227
+      },
+      "combine": {
+        "fortyYd": 4.4,
+        "verticalIn": 33.5,
+        "broadIn": 128
+      },
+      "birthDate": "1999-09-18"
+    },
+    {
+      "name": {
+        "first": "Isaiah",
+        "last": "Spiller"
+      },
+      "position": "RB",
+      "college": "Texas A&M",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 4,
+        "pick": 123,
+        "team": "LAC"
+      },
+      "measurables": {
+        "heightIn": 73,
+        "weightLb": 215
+      },
+      "combine": {
+        "verticalIn": 30.0,
+        "broadIn": 114
+      },
+      "birthDate": "2001-08-09"
+    },
+    {
+      "name": {
+        "first": "Cade",
+        "last": "York"
+      },
+      "position": "K",
+      "college": "LSU",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 4,
+        "pick": 124,
+        "team": "CLE"
+      },
+      "measurables": {
+        "heightIn": 73,
+        "weightLb": 206
+      },
+      "combine": {
+        "bench": 12
+      },
+      "birthDate": "2001-01-27"
+    },
+    {
+      "name": {
+        "first": "Chukwuerika",
+        "last": "Ezukanma"
+      },
+      "position": "WR",
+      "college": "Texas Tech",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 4,
+        "pick": 125,
+        "team": "MIA"
+      },
+      "measurables": {
+        "heightIn": 74,
+        "weightLb": 210
+      },
+      "combine": {
+        "verticalIn": 36.5,
+        "broadIn": 126,
+        "shuttle": 4.38
+      },
+      "birthDate": "2000-01-25"
+    },
+    {
+      "name": {
+        "first": "Neil",
+        "last": "Farrell"
+      },
+      "position": "DE",
+      "college": "LSU",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 4,
+        "pick": 126,
+        "team": "LV"
+      },
+      "measurables": {
+        "heightIn": 76,
+        "weightLb": 325
+      },
+      "combine": {
+        "fortyYd": 5.41,
+        "verticalIn": 21.5,
+        "threeCone": 8.41
+      },
+      "birthDate": "1998-09-09"
+    },
+    {
+      "name": {
+        "first": "Pierre",
+        "last": "Strong"
+      },
+      "position": "RB",
+      "college": "South Dakota State",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 4,
+        "pick": 127,
+        "team": "NE"
+      },
+      "measurables": {
+        "heightIn": 71,
+        "weightLb": 207
+      },
+      "combine": {
+        "fortyYd": 4.37,
+        "verticalIn": 36.0,
+        "broadIn": 124
+      },
+      "birthDate": "1998-12-10"
+    },
+    {
+      "name": {
+        "first": "Charlie",
+        "last": "Kolar"
+      },
+      "position": "TE",
+      "college": "Iowa State",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 4,
+        "pick": 128,
+        "team": "BAL"
+      },
+      "measurables": {
+        "heightIn": 78,
+        "weightLb": 265
+      },
+      "birthDate": "1999-02-10"
+    },
+    {
+      "name": {
+        "first": "Jake",
+        "last": "Ferguson"
+      },
+      "position": "TE",
+      "college": "Wisconsin",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 4,
+        "pick": 129,
+        "team": "DAL"
+      },
+      "measurables": {
+        "heightIn": 77,
+        "weightLb": 244
+      },
+      "combine": {
+        "fortyYd": 4.81,
+        "bench": 15,
+        "verticalIn": 31.5,
+        "broadIn": 118,
+        "shuttle": 4.48,
+        "threeCone": 7.03
+      },
+      "birthDate": "1999-01-18"
+    },
+    {
+      "name": {
+        "first": "Jordan",
+        "last": "Stout"
+      },
+      "position": "P",
+      "college": "Penn State",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 4,
+        "pick": 130,
+        "team": "BAL"
+      },
+      "measurables": {
+        "heightIn": 75,
+        "weightLb": 209
+      },
+      "combine": {
+        "fortyYd": 4.65
+      },
+      "birthDate": "1998-08-04"
+    },
+    {
+      "name": {
+        "first": "Hassan",
+        "last": "Haskins"
+      },
+      "position": "RB",
+      "college": "Michigan",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 4,
+        "pick": 131,
+        "team": "TEN"
+      },
+      "measurables": {
+        "heightIn": 74,
+        "weightLb": 228
+      },
+      "combine": {
+        "bench": 27
+      },
+      "birthDate": "1999-11-26"
+    },
+    {
+      "name": {
+        "first": "Romeo",
+        "last": "Doubs"
+      },
+      "position": "WR",
+      "college": "Nevada",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 4,
+        "pick": 132,
+        "team": "GB"
+      },
+      "measurables": {
+        "heightIn": 74,
+        "weightLb": 204
+      },
+      "birthDate": "2000-04-13"
+    },
+    {
+      "name": {
+        "first": "Jack",
+        "last": "Camarda"
+      },
+      "position": "P",
+      "college": "Georgia",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 4,
+        "pick": 133,
+        "team": "TB"
+      },
+      "measurables": {
+        "heightIn": 73,
+        "weightLb": 193
+      },
+      "combine": {
+        "fortyYd": 4.56
+      },
+      "birthDate": "1999-04-20"
+    },
+    {
+      "name": {
+        "first": "Spencer",
+        "last": "Burford"
+      },
+      "position": "OG",
+      "college": "Texas-San Antonio",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 4,
+        "pick": 134,
+        "team": "SF"
+      },
+      "measurables": {
+        "heightIn": 76,
+        "weightLb": 300
+      },
+      "combine": {
+        "fortyYd": 5.19,
+        "verticalIn": 27.5,
+        "broadIn": 105,
+        "shuttle": 4.73
+      },
+      "birthDate": "2000-07-19"
+    },
+    {
+      "name": {
+        "first": "Joshua",
+        "last": "Williams"
+      },
+      "position": "CB",
+      "college": "Fayetteville State University",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 4,
+        "pick": 135,
+        "team": "KC"
+      },
+      "measurables": {
+        "heightIn": 75,
+        "weightLb": 193
+      },
+      "combine": {
+        "fortyYd": 4.53,
+        "verticalIn": 36.0,
+        "broadIn": 124
+      },
+      "birthDate": "1999-10-17"
+    },
+    {
+      "name": {
+        "first": "Cordell",
+        "last": "Volson"
+      },
+      "position": "OG",
+      "college": "North Dakota State",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 4,
+        "pick": 136,
+        "team": "CIN"
+      },
+      "measurables": {
+        "heightIn": 78,
+        "weightLb": 315
+      },
+      "combine": {
+        "fortyYd": 5.27,
+        "bench": 25,
+        "verticalIn": 25.0,
+        "broadIn": 104,
+        "shuttle": 4.93,
+        "threeCone": 8.31
+      },
+      "birthDate": "1998-07-20"
+    },
+    {
+      "name": {
+        "first": "Bailey",
+        "last": "Zappe"
+      },
+      "position": "QB",
+      "college": "Western Kentucky",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 4,
+        "pick": 137,
+        "team": "NE"
+      },
+      "measurables": {
+        "heightIn": 73,
+        "weightLb": 215
+      },
+      "combine": {
+        "fortyYd": 4.88,
+        "verticalIn": 30.0,
+        "broadIn": 109,
+        "shuttle": 4.4,
+        "threeCone": 7.19
+      },
+      "birthDate": "1999-04-26"
+    },
+    {
+      "name": {
+        "first": "Calvin",
+        "last": "Austin"
+      },
+      "position": "WR",
+      "college": "Memphis",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 4,
+        "pick": 138,
+        "team": "PIT"
+      },
+      "measurables": {
+        "heightIn": 69,
+        "weightLb": 162
+      },
+      "combine": {
+        "fortyYd": 4.32,
+        "verticalIn": 39.0,
+        "broadIn": 135,
+        "shuttle": 4.07,
+        "threeCone": 6.65
+      },
+      "birthDate": "1999-03-24"
+    },
+    {
+      "name": {
+        "first": "Isaiah",
+        "last": "Likely"
+      },
+      "position": "TE",
+      "college": "Coastal Carolina",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 4,
+        "pick": 139,
+        "team": "BAL"
+      },
+      "measurables": {
+        "heightIn": 76,
+        "weightLb": 245
+      },
+      "combine": {
+        "verticalIn": 36.0,
+        "shuttle": 4.57
+      },
+      "birthDate": "2000-04-18"
+    },
+    {
+      "name": {
+        "first": "Zach",
+        "last": "Tom"
+      },
+      "position": "OG",
+      "college": "Wake Forest",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 4,
+        "pick": 140,
+        "team": "GB"
+      },
+      "measurables": {
+        "heightIn": 76,
+        "weightLb": 304
+      },
+      "combine": {
+        "fortyYd": 4.94,
+        "verticalIn": 33.0,
+        "broadIn": 118,
+        "shuttle": 4.47,
+        "threeCone": 7.32
+      },
+      "birthDate": "1999-03-26"
+    },
+    {
+      "name": {
+        "first": "Damarion",
+        "last": "Williams"
+      },
+      "position": "CB",
+      "college": "Houston",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 4,
+        "pick": 141,
+        "team": "BAL"
+      },
+      "measurables": {
+        "heightIn": 70,
+        "weightLb": 183
+      },
+      "combine": {
+        "bench": 17,
+        "verticalIn": 34.5,
+        "broadIn": 118
+      },
+      "birthDate": "1998-07-15"
+    },
+    {
+      "name": {
+        "first": "Decobie",
+        "last": "Durant"
+      },
+      "position": "CB",
+      "college": "South Carolina State",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 4,
+        "pick": 142,
+        "team": "LA"
+      },
+      "measurables": {
+        "heightIn": 71,
+        "weightLb": 182
+      },
+      "combine": {
+        "fortyYd": 4.38
+      },
+      "birthDate": "1998-02-09"
+    },
+    {
+      "name": {
+        "first": "Chigoziem",
+        "last": "Okonkwo"
+      },
+      "position": "TE",
+      "college": "Maryland",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 4,
+        "pick": 143,
+        "team": "TEN"
+      },
+      "measurables": {
+        "heightIn": 75,
+        "weightLb": 238
+      },
+      "combine": {
+        "fortyYd": 4.52,
+        "verticalIn": 35.5
+      },
+      "birthDate": "1999-09-08"
+    },
+    {
+      "name": {
+        "first": "Sam",
+        "last": "Howell"
+      },
+      "position": "QB",
+      "college": "North Carolina",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 5,
+        "pick": 144,
+        "team": "WAS"
+      },
+      "measurables": {
+        "heightIn": 73,
+        "weightLb": 220
+      },
+      "birthDate": "2000-09-16"
+    },
+    {
+      "name": {
+        "first": "Darian",
+        "last": "Kinnard"
+      },
+      "position": "OG",
+      "college": "Kentucky",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 5,
+        "pick": 145,
+        "team": "KC"
+      },
+      "measurables": {
+        "heightIn": 77,
+        "weightLb": 322
+      },
+      "combine": {
+        "fortyYd": 5.31,
+        "verticalIn": 25.0,
+        "broadIn": 99,
+        "shuttle": 4.96,
+        "threeCone": 8.11
+      },
+      "birthDate": "1999-12-29"
+    },
+    {
+      "name": {
+        "first": "Micah",
+        "last": "McFadden"
+      },
+      "position": "LB",
+      "college": "Indiana",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 5,
+        "pick": 146,
+        "team": "NYG"
+      },
+      "measurables": {
+        "heightIn": 74,
+        "weightLb": 232
+      },
+      "combine": {
+        "bench": 21
+      },
+      "birthDate": "2000-01-03"
+    },
+    {
+      "name": {
+        "first": "DeVonta",
+        "last": "Davidson"
+      },
+      "position": "DT",
+      "college": "Arizona State",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 5,
+        "pick": 147,
+        "team": "NYG"
+      },
+      "measurables": {
+        "heightIn": 77,
+        "weightLb": 320
+      },
+      "combine": {
+        "bench": 23,
+        "verticalIn": 28.0,
+        "shuttle": 4.72,
+        "threeCone": 7.85
+      },
+      "birthDate": "1999-09-19"
+    },
+    {
+      "name": {
+        "first": "Khalil",
+        "last": "Shakir"
+      },
+      "position": "WR",
+      "college": "Boise State",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 5,
+        "pick": 148,
+        "team": "BUF"
+      },
+      "measurables": {
+        "heightIn": 72,
+        "weightLb": 190
+      },
+      "combine": {
+        "fortyYd": 4.43,
+        "verticalIn": 34.5,
+        "broadIn": 124,
+        "shuttle": 4.21,
+        "threeCone": 7.28
+      },
+      "birthDate": "2000-02-03"
+    },
+    {
+      "name": {
+        "first": "Nicolas",
+        "last": "Turner"
+      },
+      "position": "TE",
+      "college": "Nevada",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 5,
+        "pick": 149,
+        "team": "WAS"
+      },
+      "measurables": {
+        "heightIn": 78,
+        "weightLb": 240
+      },
+      "combine": {
+        "fortyYd": 4.76,
+        "bench": 17,
+        "verticalIn": 27.0,
+        "broadIn": 120,
+        "shuttle": 4.41,
+        "threeCone": 7.06
+      },
+      "birthDate": "2000-03-16"
+    },
+    {
+      "name": {
+        "first": "Earl",
+        "last": "Booker"
+      },
+      "position": "DT",
+      "college": "Stanford",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 5,
+        "pick": 150,
+        "team": "HOU"
+      },
+      "measurables": {
+        "heightIn": 75,
+        "weightLb": 301
+      },
+      "combine": {
+        "fortyYd": 4.94,
+        "broadIn": 110,
+        "shuttle": 4.41,
+        "threeCone": 7.33
+      },
+      "birthDate": "1999-11-11"
+    },
+    {
+      "name": {
+        "first": "Tyler",
+        "last": "Allgeier"
+      },
+      "position": "RB",
+      "college": "BYU",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 5,
+        "pick": 151,
+        "team": "ATL"
+      },
+      "measurables": {
+        "heightIn": 70,
+        "weightLb": 220
+      },
+      "combine": {
+        "fortyYd": 4.6,
+        "verticalIn": 33.0,
+        "broadIn": 120
+      },
+      "birthDate": "2000-04-15"
+    },
+    {
+      "name": {
+        "first": "Delarrin",
+        "last": "Turner-Yell"
+      },
+      "position": "S",
+      "college": "Oklahoma",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 5,
+        "pick": 152,
+        "team": "DEN"
+      },
+      "measurables": {
+        "heightIn": 71,
+        "weightLb": 200
+      },
+      "combine": {
+        "fortyYd": 4.47,
+        "broadIn": 122
+      },
+      "birthDate": "1999-12-16"
+    },
+    {
+      "name": {
+        "first": "Tariq",
+        "last": "Woolen"
+      },
+      "position": "CB",
+      "college": "Texas-San Antonio",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 5,
+        "pick": 153,
+        "team": "SEA"
+      },
+      "measurables": {
+        "heightIn": 76,
+        "weightLb": 210
+      },
+      "combine": {
+        "fortyYd": 4.26,
+        "verticalIn": 42.0
+      },
+      "birthDate": "1999-05-02"
+    },
+    {
+      "name": {
+        "first": "Jarod",
+        "last": "Conner"
+      },
+      "position": "RB",
+      "college": "Mississippi",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 5,
+        "pick": 154,
+        "team": "JAX"
+      },
+      "measurables": {
+        "heightIn": 70,
+        "weightLb": 222
+      },
+      "combine": {
+        "fortyYd": 4.59,
+        "bench": 25,
+        "verticalIn": 29.5,
+        "broadIn": 118
+      },
+      "birthDate": "2000-08-01"
+    },
+    {
+      "name": {
+        "first": "Matthew",
+        "last": "Waletzko"
+      },
+      "position": "OT",
+      "college": "North Dakota",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 5,
+        "pick": 155,
+        "team": "DAL"
+      },
+      "measurables": {
+        "heightIn": 80,
+        "weightLb": 305
+      },
+      "combine": {
+        "fortyYd": 5.03,
+        "verticalIn": 30.0,
+        "broadIn": 113
+      },
+      "birthDate": "1999-12-15"
+    },
+    {
+      "name": {
+        "first": "Jerome",
+        "last": "Ford"
+      },
+      "position": "RB",
+      "college": "Cincinnati",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 5,
+        "pick": 156,
+        "team": "CLE"
+      },
+      "measurables": {
+        "heightIn": 70,
+        "weightLb": 210
+      },
+      "combine": {
+        "fortyYd": 4.46,
+        "verticalIn": 31.0,
+        "broadIn": 118
+      },
+      "birthDate": "1999-09-12"
+    },
+    {
+      "name": {
+        "first": "Zyon",
+        "last": "McCollum"
+      },
+      "position": "CB",
+      "college": "Sam Houston State",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 5,
+        "pick": 157,
+        "team": "TB"
+      },
+      "measurables": {
+        "heightIn": 74,
+        "weightLb": 199
+      },
+      "combine": {
+        "fortyYd": 4.33,
+        "verticalIn": 39.5,
+        "broadIn": 132,
+        "shuttle": 3.94,
+        "threeCone": 6.48
+      },
+      "birthDate": "1999-05-03"
+    },
+    {
+      "name": {
+        "first": "Tyreke",
+        "last": "Smith"
+      },
+      "position": "DE",
+      "college": "Ohio State",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 5,
+        "pick": 158,
+        "team": "SEA"
+      },
+      "measurables": {
+        "heightIn": 75,
+        "weightLb": 255
+      },
+      "combine": {
+        "fortyYd": 4.86,
+        "verticalIn": 34.0,
+        "broadIn": 117
+      },
+      "birthDate": "2000-02-14"
+    },
+    {
+      "name": {
+        "first": "Eric",
+        "last": "Johnson"
+      },
+      "position": "DT",
+      "college": "Missouri State",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 5,
+        "pick": 159,
+        "team": "IND"
+      },
+      "measurables": {
+        "heightIn": 76,
+        "weightLb": 320
+      },
+      "birthDate": "1998-07-16"
+    },
+    {
+      "name": {
+        "first": "Otito",
+        "last": "Ogbonnia"
+      },
+      "position": "DT",
+      "college": "UCLA",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 5,
+        "pick": 160,
+        "team": "LAC"
+      },
+      "measurables": {
+        "heightIn": 76,
+        "weightLb": 320
+      },
+      "combine": {
+        "bench": 29
+      },
+      "birthDate": "2000-08-25"
+    },
+    {
+      "name": {
+        "first": "D'Marco",
+        "last": "Jackson"
+      },
+      "position": "LB",
+      "college": "Appalachian State",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 5,
+        "pick": 161,
+        "team": "NO"
+      },
+      "measurables": {
+        "heightIn": 73,
+        "weightLb": 233
+      },
+      "combine": {
+        "fortyYd": 4.55,
+        "verticalIn": 33.0,
+        "broadIn": 125
+      },
+      "birthDate": "1998-07-20"
+    },
+    {
+      "name": {
+        "first": "Montrell",
+        "last": "Washington"
+      },
+      "position": "WR",
+      "college": "Samford",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 5,
+        "pick": 162,
+        "team": "DEN"
+      },
+      "measurables": {
+        "heightIn": 70,
+        "weightLb": 170
+      },
+      "birthDate": "1999-03-14"
+    },
+    {
+      "name": {
+        "first": "Kyle",
+        "last": "Philips"
+      },
+      "position": "WR",
+      "college": "UCLA",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 5,
+        "pick": 163,
+        "team": "TEN"
+      },
+      "measurables": {
+        "heightIn": 71,
+        "weightLb": 189
+      },
+      "combine": {
+        "fortyYd": 4.58,
+        "verticalIn": 33.5,
+        "broadIn": 124
+      },
+      "birthDate": "1999-06-17"
+    },
+    {
+      "name": {
+        "first": "Kyren",
+        "last": "Williams"
+      },
+      "position": "RB",
+      "college": "Notre Dame",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 5,
+        "pick": 164,
+        "team": "LA"
+      },
+      "measurables": {
+        "heightIn": 69,
+        "weightLb": 202
+      },
+      "combine": {
+        "fortyYd": 4.65,
+        "verticalIn": 32.0,
+        "broadIn": 116
+      },
+      "birthDate": "2000-08-26"
+    },
+    {
+      "name": {
+        "first": "Esezi",
+        "last": "Otomewo"
+      },
+      "position": "DE",
+      "college": "Minnesota",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 5,
+        "pick": 165,
+        "team": "MIN"
+      },
+      "measurables": {
+        "heightIn": 77,
+        "weightLb": 282
+      },
+      "birthDate": "1999-03-09"
+    },
+    {
+      "name": {
+        "first": "Tycen",
+        "last": "Anderson"
+      },
+      "position": "S",
+      "college": "Toledo",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 5,
+        "pick": 166,
+        "team": "CIN"
+      },
+      "measurables": {
+        "heightIn": 74,
+        "weightLb": 205
+      },
+      "combine": {
+        "fortyYd": 4.36,
+        "verticalIn": 35.5,
+        "broadIn": 123,
+        "shuttle": 4.28,
+        "threeCone": 6.64
+      },
+      "birthDate": "1999-06-13"
+    },
+    {
+      "name": {
+        "first": "DaRon",
+        "last": "Bland"
+      },
+      "position": "CB",
+      "college": "Fresno State",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 5,
+        "pick": 167,
+        "team": "DAL"
+      },
+      "measurables": {
+        "heightIn": 72,
+        "weightLb": 197
+      },
+      "birthDate": "1999-07-12"
+    },
+    {
+      "name": {
+        "first": "Braxton",
+        "last": "Jones"
+      },
+      "position": "OT",
+      "college": "Southern Utah State",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 5,
+        "pick": 168,
+        "team": "CHI"
+      },
+      "measurables": {
+        "heightIn": 77,
+        "weightLb": 303
+      },
+      "combine": {
+        "fortyYd": 4.97,
+        "verticalIn": 25.5,
+        "broadIn": 108,
+        "shuttle": 4.84
+      },
+      "birthDate": "1999-03-27"
+    },
+    {
+      "name": {
+        "first": "Tykevious",
+        "last": "Chandler"
+      },
+      "position": "RB",
+      "college": "North Carolina",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 5,
+        "pick": 169,
+        "team": "MIN"
+      },
+      "measurables": {
+        "heightIn": 71,
+        "weightLb": 204
+      },
+      "combine": {
+        "fortyYd": 4.38,
+        "verticalIn": 31.0,
+        "broadIn": 121
+      },
+      "birthDate": "1998-05-12"
+    },
+    {
+      "name": {
+        "first": "Teagan",
+        "last": "Quitoriano"
+      },
+      "position": "TE",
+      "college": "Oregon State",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 5,
+        "pick": 170,
+        "team": "HOU"
+      },
+      "measurables": {
+        "heightIn": 78,
+        "weightLb": 259
+      },
+      "combine": {
+        "bench": 22
+      },
+      "birthDate": "2000-03-15"
+    },
+    {
+      "name": {
+        "first": "Luke",
+        "last": "Wattenberg"
+      },
+      "position": "C",
+      "college": "Washington",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 5,
+        "pick": 171,
+        "team": "DEN"
+      },
+      "measurables": {
+        "heightIn": 77,
+        "weightLb": 300
+      },
+      "combine": {
+        "fortyYd": 5.2,
+        "verticalIn": 29.5,
+        "broadIn": 113,
+        "shuttle": 4.57,
+        "threeCone": 7.45
+      },
+      "birthDate": "1997-09-10"
+    },
+    {
+      "name": {
+        "first": "Samuel",
+        "last": "Womack"
+      },
+      "position": "CB",
+      "college": "Toledo",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 5,
+        "pick": 172,
+        "team": "SF"
+      },
+      "measurables": {
+        "heightIn": 70,
+        "weightLb": 189
+      },
+      "birthDate": "1999-07-07"
+    },
+    {
+      "name": {
+        "first": "Marcus",
+        "last": "McKethan"
+      },
+      "position": "OG",
+      "college": "North Carolina",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 5,
+        "pick": 173,
+        "team": "NYG"
+      },
+      "measurables": {
+        "heightIn": 79,
+        "weightLb": 335
+      },
+      "combine": {
+        "fortyYd": 5.31,
+        "bench": 27,
+        "verticalIn": 27.5,
+        "broadIn": 110,
+        "shuttle": 4.99,
+        "threeCone": 7.81
+      },
+      "birthDate": "2000-05-19"
+    },
+    {
+      "name": {
+        "first": "Dominique",
+        "last": "Robinson"
+      },
+      "position": "DE",
+      "college": "Miami (Ohio)",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 5,
+        "pick": 174,
+        "team": "CHI"
+      },
+      "measurables": {
+        "heightIn": 77,
+        "weightLb": 275
+      },
+      "combine": {
+        "fortyYd": 4.72,
+        "bench": 25,
+        "verticalIn": 41.0,
+        "broadIn": 121
+      },
+      "birthDate": "1998-07-02"
+    },
+    {
+      "name": {
+        "first": "Matthew",
+        "last": "Butler"
+      },
+      "position": "DT",
+      "college": "Tennessee",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 5,
+        "pick": 175,
+        "team": "LV"
+      },
+      "measurables": {
+        "heightIn": 75,
+        "weightLb": 305
+      },
+      "combine": {
+        "fortyYd": 5.0,
+        "bench": 17,
+        "verticalIn": 32.0,
+        "broadIn": 112,
+        "shuttle": 4.81,
+        "threeCone": 7.89
+      },
+      "birthDate": "1999-06-10"
+    },
+    {
+      "name": {
+        "first": "Damone",
+        "last": "Clark"
+      },
+      "position": "LB",
+      "college": "LSU",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 5,
+        "pick": 176,
+        "team": "DAL"
+      },
+      "measurables": {
+        "heightIn": 74,
+        "weightLb": 240
+      },
+      "combine": {
+        "fortyYd": 4.57,
+        "verticalIn": 36.5,
+        "broadIn": 127,
+        "threeCone": 7.12
+      },
+      "birthDate": "2000-06-28"
+    },
+    {
+      "name": {
+        "first": "James",
+        "last": "Mitchell"
+      },
+      "position": "TE",
+      "college": "Virginia Tech",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 5,
+        "pick": 177,
+        "team": "DET"
+      },
+      "measurables": {
+        "heightIn": 76,
+        "weightLb": 249
+      },
+      "birthDate": "1999-08-11"
+    },
+    {
+      "name": {
+        "first": "John",
+        "last": "Ridgeway"
+      },
+      "position": "DT",
+      "college": "Arkansas",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 5,
+        "pick": 178,
+        "team": "DAL"
+      },
+      "measurables": {
+        "heightIn": 77,
+        "weightLb": 321
+      },
+      "combine": {
+        "fortyYd": 5.3,
+        "broadIn": 101,
+        "shuttle": 4.73
+      },
+      "birthDate": "1999-05-07"
+    },
+    {
+      "name": {
+        "first": "Kingsley",
+        "last": "Enagbare"
+      },
+      "position": "DE",
+      "college": "South Carolina",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 5,
+        "pick": 179,
+        "team": "GB"
+      },
+      "measurables": {
+        "heightIn": 76,
+        "weightLb": 258
+      },
+      "combine": {
+        "fortyYd": 4.87,
+        "verticalIn": 36.5,
+        "broadIn": 117
+      },
+      "birthDate": "2000-01-18"
+    },
+    {
+      "name": {
+        "first": "Matt",
+        "last": "Araiza"
+      },
+      "position": "P",
+      "college": "San Diego State",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 6,
+        "pick": 180,
+        "team": "BUF"
+      },
+      "measurables": {
+        "heightIn": 74,
+        "weightLb": 200
+      },
+      "combine": {
+        "fortyYd": 4.68,
+        "verticalIn": 32.0,
+        "broadIn": 121
+      },
+      "birthDate": "2000-05-16"
+    },
+    {
+      "name": {
+        "first": "Kyron",
+        "last": "Johnson"
+      },
+      "position": "LB",
+      "college": "Kansas",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 6,
+        "pick": 181,
+        "team": "PHI"
+      },
+      "measurables": {
+        "heightIn": 72,
+        "weightLb": 235
+      },
+      "birthDate": "1998-07-24"
+    },
+    {
+      "name": {
+        "first": "Darrian",
+        "last": "Beavers"
+      },
+      "position": "LB",
+      "college": "Cincinnati",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 6,
+        "pick": 182,
+        "team": "NYG"
+      },
+      "measurables": {
+        "heightIn": 76,
+        "weightLb": 255
+      },
+      "combine": {
+        "verticalIn": 36.5,
+        "broadIn": 125,
+        "threeCone": 6.91
+      },
+      "birthDate": "1999-07-05"
+    },
+    {
+      "name": {
+        "first": "Kevin",
+        "last": "Harris"
+      },
+      "position": "RB",
+      "college": "South Carolina",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 6,
+        "pick": 183,
+        "team": "NE"
+      },
+      "measurables": {
+        "heightIn": 70,
+        "weightLb": 225
+      },
+      "combine": {
+        "bench": 21,
+        "verticalIn": 38.5,
+        "broadIn": 126
+      },
+      "birthDate": "2000-11-17"
+    },
+    {
+      "name": {
+        "first": "Vederian",
+        "last": "Lowe"
+      },
+      "position": "OT",
+      "college": "Illinois",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 6,
+        "pick": 184,
+        "team": "MIN"
+      },
+      "measurables": {
+        "heightIn": 77,
+        "weightLb": 315
+      },
+      "combine": {
+        "fortyYd": 5.22,
+        "verticalIn": 25.5,
+        "broadIn": 99,
+        "shuttle": 4.71,
+        "threeCone": 7.83
+      },
+      "birthDate": "1999-04-17"
+    },
+    {
+      "name": {
+        "first": "Christian",
+        "last": "Benford"
+      },
+      "position": "CB",
+      "college": "Villanova",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 6,
+        "pick": 185,
+        "team": "BUF"
+      },
+      "measurables": {
+        "heightIn": 73,
+        "weightLb": 205
+      },
+      "birthDate": "2000-09-21"
+    },
+    {
+      "name": {
+        "first": "Zachary",
+        "last": "Thomas"
+      },
+      "position": "OT",
+      "college": "San Diego State",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 6,
+        "pick": 186,
+        "team": "CHI"
+      },
+      "measurables": {
+        "heightIn": 77,
+        "weightLb": 305
+      },
+      "birthDate": "1998-05-26"
+    },
+    {
+      "name": {
+        "first": "Nicholas",
+        "last": "Zakelj"
+      },
+      "position": "OT",
+      "college": "Fordham",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 6,
+        "pick": 187,
+        "team": "SF"
+      },
+      "measurables": {
+        "heightIn": 78,
+        "weightLb": 316
+      },
+      "combine": {
+        "fortyYd": 5.13,
+        "bench": 27,
+        "verticalIn": 28.5,
+        "broadIn": 110,
+        "shuttle": 4.71,
+        "threeCone": 7.75
+      },
+      "birthDate": "1999-06-22"
+    },
+    {
+      "name": {
+        "first": "Malcolm",
+        "last": "Rodriguez"
+      },
+      "position": "LB",
+      "college": "Oklahoma State",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 6,
+        "pick": 188,
+        "team": "DET"
+      },
+      "measurables": {
+        "heightIn": 71,
+        "weightLb": 230
+      },
+      "combine": {
+        "fortyYd": 4.52,
+        "verticalIn": 39.5,
+        "broadIn": 120
+      },
+      "birthDate": "1999-03-29"
+    },
+    {
+      "name": {
+        "first": "Amare",
+        "last": "Barno"
+      },
+      "position": "LB",
+      "college": "Virginia Tech",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 6,
+        "pick": 189,
+        "team": "CAR"
+      },
+      "measurables": {
+        "heightIn": 78,
+        "weightLb": 245
+      },
+      "combine": {
+        "fortyYd": 4.36,
+        "verticalIn": 37.0,
+        "broadIn": 131,
+        "shuttle": 4.45
+      },
+      "birthDate": "1999-04-26"
+    },
+    {
+      "name": {
+        "first": "Justin",
+        "last": "Shaffer"
+      },
+      "position": "OG",
+      "college": "Georgia",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 6,
+        "pick": 190,
+        "team": "ATL"
+      },
+      "measurables": {
+        "heightIn": 76,
+        "weightLb": 317
+      },
+      "combine": {
+        "fortyYd": 5.14,
+        "verticalIn": 25.5,
+        "broadIn": 107
+      },
+      "birthDate": "1998-06-20"
+    },
+    {
+      "name": {
+        "first": "Jalen",
+        "last": "Nailor"
+      },
+      "position": "WR",
+      "college": "Michigan State",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 6,
+        "pick": 191,
+        "team": "MIN"
+      },
+      "measurables": {
+        "heightIn": 72,
+        "weightLb": 190
+      },
+      "combine": {
+        "fortyYd": 4.5,
+        "verticalIn": 38.0,
+        "broadIn": 128,
+        "shuttle": 4.28,
+        "threeCone": 7.03
+      },
+      "birthDate": "1999-03-02"
+    },
+    {
+      "name": {
+        "first": "Andrew",
+        "last": "Ogletree"
+      },
+      "position": "TE",
+      "college": "Youngstown State",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 6,
+        "pick": 192,
+        "team": "IND"
+      },
+      "measurables": {
+        "heightIn": 77,
+        "weightLb": 260
+      },
+      "birthDate": "1998-07-28"
+    },
+    {
+      "name": {
+        "first": "Devin",
+        "last": "Harper"
+      },
+      "position": "LB",
+      "college": "Oklahoma State",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 6,
+        "pick": 193,
+        "team": "DAL"
+      },
+      "measurables": {
+        "heightIn": 72,
+        "weightLb": 238
+      },
+      "birthDate": "1998-05-13"
+    },
+    {
+      "name": {
+        "first": "Jordan",
+        "last": "Jackson"
+      },
+      "position": "DT",
+      "college": "Air Force",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 6,
+        "pick": 194,
+        "team": "NO"
+      },
+      "measurables": {
+        "heightIn": 77,
+        "weightLb": 294
+      },
+      "birthDate": "1998-01-30"
+    },
+    {
+      "name": {
+        "first": "Jamaree",
+        "last": "Salyer"
+      },
+      "position": "OG",
+      "college": "Georgia",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 6,
+        "pick": 195,
+        "team": "LAC"
+      },
+      "measurables": {
+        "heightIn": 76,
+        "weightLb": 325
+      },
+      "combine": {
+        "bench": 31
+      },
+      "birthDate": "2000-07-13"
+    },
+    {
+      "name": {
+        "first": "Tyler",
+        "last": "Badie"
+      },
+      "position": "RB",
+      "college": "Missouri",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 6,
+        "pick": 196,
+        "team": "BAL"
+      },
+      "measurables": {
+        "heightIn": 68,
+        "weightLb": 197
+      },
+      "combine": {
+        "fortyYd": 4.45,
+        "verticalIn": 33.5,
+        "broadIn": 121
+      },
+      "birthDate": "1999-02-07"
+    },
+    {
+      "name": {
+        "first": "Gregory",
+        "last": "Junior"
+      },
+      "position": "CB",
+      "college": "Ouachita Baptist University",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 6,
+        "pick": 197,
+        "team": "JAX"
+      },
+      "measurables": {
+        "heightIn": 72,
+        "weightLb": 190
+      },
+      "birthDate": "1999-06-21"
+    },
+    {
+      "name": {
+        "first": "Grant",
+        "last": "Calcaterra"
+      },
+      "position": "TE",
+      "college": "SMU",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 6,
+        "pick": 198,
+        "team": "PHI"
+      },
+      "measurables": {
+        "heightIn": 76,
+        "weightLb": 240
+      },
+      "combine": {
+        "fortyYd": 4.62,
+        "bench": 20
+      },
+      "birthDate": "1998-12-04"
+    },
+    {
+      "name": {
+        "first": "Cade",
+        "last": "Mays"
+      },
+      "position": "OG",
+      "college": "Tennessee",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 6,
+        "pick": 199,
+        "team": "CAR"
+      },
+      "measurables": {
+        "heightIn": 78,
+        "weightLb": 325
+      },
+      "combine": {
+        "fortyYd": 5.24,
+        "verticalIn": 26.0,
+        "broadIn": 102,
+        "shuttle": 4.71,
+        "threeCone": 7.57
+      },
+      "birthDate": "1999-04-26"
+    },
+    {
+      "name": {
+        "first": "Sam",
+        "last": "Roberts"
+      },
+      "position": "DT",
+      "college": "NW Missouri State University",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 6,
+        "pick": 200,
+        "team": "NE"
+      },
+      "measurables": {
+        "heightIn": 77,
+        "weightLb": 295
+      },
+      "birthDate": "1998-04-14"
+    },
+    {
+      "name": {
+        "first": "Keaontay",
+        "last": "Ingram"
+      },
+      "position": "RB",
+      "college": "USC",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 6,
+        "pick": 201,
+        "team": "ARI"
+      },
+      "measurables": {
+        "heightIn": 72,
+        "weightLb": 221
+      },
+      "combine": {
+        "fortyYd": 4.53,
+        "verticalIn": 34.5,
+        "broadIn": 122
+      },
+      "birthDate": "1999-10-26"
+    },
+    {
+      "name": {
+        "first": "Miuchael",
+        "last": "Woods"
+      },
+      "position": "WR",
+      "college": "Oklahoma",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 6,
+        "pick": 202,
+        "team": "CLE"
+      },
+      "measurables": {
+        "heightIn": 73,
+        "weightLb": 204
+      },
+      "combine": {
+        "fortyYd": 4.55,
+        "verticalIn": 34.5,
+        "broadIn": 125
+      },
+      "birthDate": "2000-03-19"
+    },
+    {
+      "name": {
+        "first": "Trestan",
+        "last": "Ebner"
+      },
+      "position": "RB",
+      "college": "Baylor",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 6,
+        "pick": 203,
+        "team": "CHI"
+      },
+      "measurables": {
+        "heightIn": 71,
+        "weightLb": 206
+      },
+      "combine": {
+        "fortyYd": 4.43,
+        "verticalIn": 30.0
+      },
+      "birthDate": "1999-01-02"
+    },
+    {
+      "name": {
+        "first": "Thedarrius",
+        "last": "Jackson"
+      },
+      "position": "CB",
+      "college": "Tennessee",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 6,
+        "pick": 204,
+        "team": "TEN"
+      },
+      "measurables": {
+        "heightIn": 73,
+        "weightLb": 205
+      },
+      "birthDate": "1998-10-02"
+    },
+    {
+      "name": {
+        "first": "Austin",
+        "last": "Deculus"
+      },
+      "position": "OT",
+      "college": "LSU",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 6,
+        "pick": 205,
+        "team": "HOU"
+      },
+      "measurables": {
+        "heightIn": 77,
+        "weightLb": 321
+      },
+      "combine": {
+        "fortyYd": 5.08,
+        "verticalIn": 28.5,
+        "broadIn": 109,
+        "shuttle": 4.99
+      },
+      "birthDate": "1999-03-12"
+    },
+    {
+      "name": {
+        "first": "Matt",
+        "last": "Henningsen"
+      },
+      "position": "DT",
+      "college": "Wisconsin",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 6,
+        "pick": 206,
+        "team": "DEN"
+      },
+      "measurables": {
+        "heightIn": 75,
+        "weightLb": 291
+      },
+      "birthDate": "1999-07-09"
+    },
+    {
+      "name": {
+        "first": "Doug",
+        "last": "Kramer"
+      },
+      "position": "C",
+      "college": "Illinois",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 6,
+        "pick": 207,
+        "team": "CHI"
+      },
+      "measurables": {
+        "heightIn": 74,
+        "weightLb": 300
+      },
+      "birthDate": "1998-06-04"
+    },
+    {
+      "name": {
+        "first": "Connor",
+        "last": "Heyward"
+      },
+      "position": "FB",
+      "college": "Michigan State",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 6,
+        "pick": 208,
+        "team": "PIT"
+      },
+      "measurables": {
+        "heightIn": 72,
+        "weightLb": 230
+      },
+      "combine": {
+        "fortyYd": 4.72,
+        "verticalIn": 32.5
+      },
+      "birthDate": "1999-01-22"
+    },
+    {
+      "name": {
+        "first": "Luke",
+        "last": "Tenuta"
+      },
+      "position": "OT",
+      "college": "Virginia Tech",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 6,
+        "pick": 209,
+        "team": "BUF"
+      },
+      "measurables": {
+        "heightIn": 80,
+        "weightLb": 315
+      },
+      "combine": {
+        "fortyYd": 5.41,
+        "verticalIn": 26.0,
+        "broadIn": 104,
+        "shuttle": 4.77
+      },
+      "birthDate": "1999-09-01"
+    },
+    {
+      "name": {
+        "first": "Chasen",
+        "last": "Hines"
+      },
+      "position": "OG",
+      "college": "LSU",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 6,
+        "pick": 210,
+        "team": "NE"
+      },
+      "measurables": {
+        "heightIn": 75,
+        "weightLb": 335
+      },
+      "combine": {
+        "fortyYd": 5.22,
+        "verticalIn": 30.5,
+        "broadIn": 108
+      },
+      "birthDate": "2000-04-03"
+    },
+    {
+      "name": {
+        "first": "Quentin",
+        "last": "Lake"
+      },
+      "position": "S",
+      "college": "UCLA",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 6,
+        "pick": 211,
+        "team": "LA"
+      },
+      "measurables": {
+        "heightIn": 73,
+        "weightLb": 196
+      },
+      "combine": {
+        "fortyYd": 4.59
+      },
+      "birthDate": "1999-01-29"
+    },
+    {
+      "name": {
+        "first": "Derion",
+        "last": "Kendrick"
+      },
+      "position": "CB",
+      "college": "Georgia",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 6,
+        "pick": 212,
+        "team": "LA"
+      },
+      "measurables": {
+        "heightIn": 72,
+        "weightLb": 190
+      },
+      "birthDate": "2000-08-24"
+    },
+    {
+      "name": {
+        "first": "John",
+        "last": "FitzPatrick"
+      },
+      "position": "TE",
+      "college": "Georgia",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 6,
+        "pick": 213,
+        "team": "ATL"
+      },
+      "measurables": {
+        "heightIn": 79,
+        "weightLb": 262
+      },
+      "birthDate": "2000-03-09"
+    },
+    {
+      "name": {
+        "first": "Ja'Sir",
+        "last": "Taylor"
+      },
+      "position": "CB",
+      "college": "Wake Forest",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 6,
+        "pick": 214,
+        "team": "LAC"
+      },
+      "measurables": {
+        "heightIn": 70,
+        "weightLb": 185
+      },
+      "birthDate": "1999-01-08"
+    },
+    {
+      "name": {
+        "first": "Lecitus",
+        "last": "Smith"
+      },
+      "position": "OG",
+      "college": "Virginia Tech",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 6,
+        "pick": 215,
+        "team": "ARI"
+      },
+      "measurables": {
+        "heightIn": 75,
+        "weightLb": 314
+      },
+      "combine": {
+        "fortyYd": 5.18,
+        "bench": 23,
+        "broadIn": 99,
+        "shuttle": 4.78,
+        "threeCone": 7.88
+      },
+      "birthDate": "1998-07-13"
+    },
+    {
+      "name": {
+        "first": "Curtis",
+        "last": "Brooks"
+      },
+      "position": "DT",
+      "college": "Cincinnati",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 6,
+        "pick": 216,
+        "team": "IND"
+      },
+      "measurables": {
+        "heightIn": 74,
+        "weightLb": 287
+      },
+      "birthDate": "1998-02-06"
+    },
+    {
+      "name": {
+        "first": "James",
+        "last": "Houston"
+      },
+      "position": "DE",
+      "college": "Jackson State University",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 6,
+        "pick": 217,
+        "team": "DET"
+      },
+      "measurables": {
+        "heightIn": 73,
+        "weightLb": 241
+      },
+      "birthDate": "1998-11-16"
+    },
+    {
+      "name": {
+        "first": "Ko",
+        "last": "Kieft"
+      },
+      "position": "TE",
+      "college": "Minnesota",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 6,
+        "pick": 218,
+        "team": "TB"
+      },
+      "measurables": {
+        "heightIn": 77,
+        "weightLb": 265
+      },
+      "birthDate": "1998-01-20"
+    },
+    {
+      "name": {
+        "first": "Chance",
+        "last": "Campbell"
+      },
+      "position": "LB",
+      "college": "Mississippi",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 6,
+        "pick": 219,
+        "team": "TEN"
+      },
+      "measurables": {
+        "heightIn": 74,
+        "weightLb": 232
+      },
+      "combine": {
+        "fortyYd": 4.57,
+        "verticalIn": 39.5,
+        "broadIn": 127
+      },
+      "birthDate": "1999-10-08"
+    },
+    {
+      "name": {
+        "first": "Kalia",
+        "last": "Davis"
+      },
+      "position": "DT",
+      "college": "UCF",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 6,
+        "pick": 220,
+        "team": "SF"
+      },
+      "measurables": {
+        "heightIn": 74,
+        "weightLb": 310
+      },
+      "birthDate": "1998-10-02"
+    },
+    {
+      "name": {
+        "first": "Tariq",
+        "last": "Castro-Fields"
+      },
+      "position": "CB",
+      "college": "Penn State",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 6,
+        "pick": 221,
+        "team": "SF"
+      },
+      "measurables": {
+        "heightIn": 73,
+        "weightLb": 197
+      },
+      "combine": {
+        "fortyYd": 4.38
+      },
+      "birthDate": "1999-01-14"
+    },
+    {
+      "name": {
+        "first": "Montaric",
+        "last": "Brown"
+      },
+      "position": "CB",
+      "college": "Arkansas",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 7,
+        "pick": 222,
+        "team": "JAX"
+      },
+      "measurables": {
+        "heightIn": 72,
+        "weightLb": 190
+      },
+      "combine": {
+        "fortyYd": 4.55
+      },
+      "birthDate": "1999-08-24"
+    },
+    {
+      "name": {
+        "first": "Isaiah",
+        "last": "Thomas"
+      },
+      "position": "DE",
+      "college": "Oklahoma",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 7,
+        "pick": 223,
+        "team": "CLE"
+      },
+      "measurables": {
+        "heightIn": 77,
+        "weightLb": 272
+      },
+      "combine": {
+        "fortyYd": 4.7,
+        "verticalIn": 31.5,
+        "broadIn": 117
+      },
+      "birthDate": "1998-12-03"
+    },
+    {
+      "name": {
+        "first": "Cameron",
+        "last": "Goode"
+      },
+      "position": "LB",
+      "college": "California",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 7,
+        "pick": 224,
+        "team": "MIA"
+      },
+      "measurables": {
+        "heightIn": 75,
+        "weightLb": 245
+      },
+      "birthDate": "1998-04-15"
+    },
+    {
+      "name": {
+        "first": "Mark",
+        "last": "Robinson"
+      },
+      "position": "LB",
+      "college": "Mississippi",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 7,
+        "pick": 225,
+        "team": "PIT"
+      },
+      "measurables": {
+        "heightIn": 71,
+        "weightLb": 235
+      },
+      "birthDate": "1999-08-14"
+    },
+    {
+      "name": {
+        "first": "Ja'Tyre",
+        "last": "Carter"
+      },
+      "position": "OG",
+      "college": "Southern",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 7,
+        "pick": 226,
+        "team": "CHI"
+      },
+      "measurables": {
+        "heightIn": 75,
+        "weightLb": 311
+      },
+      "combine": {
+        "fortyYd": 5.13,
+        "verticalIn": 30.0,
+        "broadIn": 108,
+        "shuttle": 4.9,
+        "threeCone": 7.84
+      },
+      "birthDate": "1999-01-15"
+    },
+    {
+      "name": {
+        "first": "Nicholas",
+        "last": "Muse"
+      },
+      "position": "TE",
+      "college": "South Carolina",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 7,
+        "pick": 227,
+        "team": "MIN"
+      },
+      "measurables": {
+        "heightIn": 77,
+        "weightLb": 252
+      },
+      "birthDate": "1998-11-25"
+    },
+    {
+      "name": {
+        "first": "Tariq",
+        "last": "Carpenter"
+      },
+      "position": "S",
+      "college": "Georgia Tech",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 7,
+        "pick": 228,
+        "team": "GB"
+      },
+      "measurables": {
+        "heightIn": 75,
+        "weightLb": 230
+      },
+      "birthDate": "1998-12-28"
+    },
+    {
+      "name": {
+        "first": "Miles",
+        "last": "Melton"
+      },
+      "position": "CB",
+      "college": "Rutgers",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 7,
+        "pick": 229,
+        "team": "SEA"
+      },
+      "measurables": {
+        "heightIn": 71,
+        "weightLb": 189
+      },
+      "combine": {
+        "fortyYd": 4.34,
+        "verticalIn": 38.0,
+        "broadIn": 121,
+        "threeCone": 6.98
+      },
+      "birthDate": "1999-05-18"
+    },
+    {
+      "name": {
+        "first": "Chris",
+        "last": "Paul"
+      },
+      "position": "OG",
+      "college": "Tulsa",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 7,
+        "pick": 230,
+        "team": "WAS"
+      },
+      "measurables": {
+        "heightIn": 76,
+        "weightLb": 324
+      },
+      "combine": {
+        "fortyYd": 4.89,
+        "verticalIn": 27.0,
+        "broadIn": 109,
+        "shuttle": 4.83,
+        "threeCone": 7.74
+      },
+      "birthDate": "1998-11-19"
+    },
+    {
+      "name": {
+        "first": "Baylon",
+        "last": "Spector"
+      },
+      "position": "LB",
+      "college": "Clemson",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 7,
+        "pick": 231,
+        "team": "BUF"
+      },
+      "measurables": {
+        "heightIn": 72,
+        "weightLb": 233
+      },
+      "combine": {
+        "fortyYd": 4.6,
+        "verticalIn": 36.0,
+        "broadIn": 122
+      },
+      "birthDate": "1998-10-20"
+    },
+    {
+      "name": {
+        "first": "Faion",
+        "last": "Hicks"
+      },
+      "position": "CB",
+      "college": "Wisconsin",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 7,
+        "pick": 232,
+        "team": "DEN"
+      },
+      "measurables": {
+        "heightIn": 70,
+        "weightLb": 192
+      },
+      "birthDate": "1998-09-02"
+    },
+    {
+      "name": {
+        "first": "Dareke",
+        "last": "Young"
+      },
+      "position": "WR",
+      "college": "Lenoir Rhyne",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 7,
+        "pick": 233,
+        "team": "SEA"
+      },
+      "measurables": {
+        "heightIn": 74,
+        "weightLb": 224
+      },
+      "birthDate": "1999-06-04"
+    },
+    {
+      "name": {
+        "first": "Jonathan",
+        "last": "Ford"
+      },
+      "position": "DT",
+      "college": "Miami",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 7,
+        "pick": 234,
+        "team": "GB"
+      },
+      "measurables": {
+        "heightIn": 77,
+        "weightLb": 338
+      },
+      "combine": {
+        "verticalIn": 29.0,
+        "broadIn": 102
+      },
+      "birthDate": "1998-09-29"
+    },
+    {
+      "name": {
+        "first": "Daniel",
+        "last": "Hardy"
+      },
+      "position": "LB",
+      "college": "Montana State",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 7,
+        "pick": 235,
+        "team": "LA"
+      },
+      "measurables": {
+        "heightIn": 74,
+        "weightLb": 255
+      },
+      "birthDate": "1998-12-15"
+    },
+    {
+      "name": {
+        "first": "Deane",
+        "last": "Leonard"
+      },
+      "position": "CB",
+      "college": "Mississippi",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 7,
+        "pick": 236,
+        "team": "LAC"
+      },
+      "measurables": {
+        "heightIn": 72,
+        "weightLb": 195
+      },
+      "birthDate": "1999-11-20"
+    },
+    {
+      "name": {
+        "first": "Chase",
+        "last": "Lucas"
+      },
+      "position": "CB",
+      "college": "Arizona State",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 7,
+        "pick": 237,
+        "team": "DET"
+      },
+      "measurables": {
+        "heightIn": 71,
+        "weightLb": 184
+      },
+      "combine": {
+        "fortyYd": 4.48,
+        "verticalIn": 39.0,
+        "broadIn": 128
+      },
+      "birthDate": "1997-03-04"
+    },
+    {
+      "name": {
+        "first": "Thayer",
+        "last": "Munford"
+      },
+      "position": "OT",
+      "college": "Ohio State",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 7,
+        "pick": 238,
+        "team": "LV"
+      },
+      "measurables": {
+        "heightIn": 77,
+        "weightLb": 354
+      },
+      "combine": {
+        "fortyYd": 5.39,
+        "verticalIn": 22.0,
+        "broadIn": 104
+      },
+      "birthDate": "1999-09-18"
+    },
+    {
+      "name": {
+        "first": "Rodney",
+        "last": "Thomas"
+      },
+      "position": "S",
+      "college": "Yale",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 7,
+        "pick": 239,
+        "team": "IND"
+      },
+      "measurables": {
+        "heightIn": 73,
+        "weightLb": 196
+      },
+      "birthDate": "1998-06-26"
+    },
+    {
+      "name": {
+        "first": "Christian",
+        "last": "Holmes"
+      },
+      "position": "CB",
+      "college": "Oklahoma State",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 7,
+        "pick": 240,
+        "team": "WAS"
+      },
+      "measurables": {
+        "heightIn": 73,
+        "weightLb": 205
+      },
+      "birthDate": "1997-11-14"
+    },
+    {
+      "name": {
+        "first": "Chris",
+        "last": "Oladokun"
+      },
+      "position": "QB",
+      "college": "South Dakota State",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 7,
+        "pick": 241,
+        "team": "PIT"
+      },
+      "measurables": {
+        "heightIn": 73,
+        "weightLb": 213
+      },
+      "birthDate": "1997-09-03"
+    },
+    {
+      "name": {
+        "first": "Kalon",
+        "last": "Barnes"
+      },
+      "position": "CB",
+      "college": "Baylor",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 7,
+        "pick": 242,
+        "team": "CAR"
+      },
+      "measurables": {
+        "heightIn": 72,
+        "weightLb": 186
+      },
+      "combine": {
+        "fortyYd": 4.23
+      },
+      "birthDate": "1998-12-16"
+    },
+    {
+      "name": {
+        "first": "Jaylen",
+        "last": "Watson"
+      },
+      "position": "CB",
+      "college": "Washington State",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 7,
+        "pick": 243,
+        "team": "KC"
+      },
+      "measurables": {
+        "heightIn": 74,
+        "weightLb": 197
+      },
+      "combine": {
+        "fortyYd": 4.51,
+        "bench": 18
+      },
+      "birthDate": "1998-09-17"
+    },
+    {
+      "name": {
+        "first": "Christian",
+        "last": "Matthew"
+      },
+      "position": "CB",
+      "college": "Valdosta State",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 7,
+        "pick": 244,
+        "team": "ARI"
+      },
+      "measurables": {
+        "heightIn": 74,
+        "weightLb": 195
+      },
+      "birthDate": "1996-10-26"
+    },
+    {
+      "name": {
+        "first": "Andrew",
+        "last": "Stueber"
+      },
+      "position": "OT",
+      "college": "Michigan",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 7,
+        "pick": 245,
+        "team": "NE"
+      },
+      "measurables": {
+        "heightIn": 79,
+        "weightLb": 338
+      },
+      "combine": {
+        "verticalIn": 24.5,
+        "broadIn": 101,
+        "shuttle": 4.9,
+        "threeCone": 7.94
+      },
+      "birthDate": "1999-07-01"
+    },
+    {
+      "name": {
+        "first": "Dawson",
+        "last": "Deaton"
+      },
+      "position": "C",
+      "college": "Texas Tech",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 7,
+        "pick": 246,
+        "team": "CLE"
+      },
+      "measurables": {
+        "heightIn": 73,
+        "weightLb": 306
+      },
+      "combine": {
+        "fortyYd": 5.12,
+        "bench": 24,
+        "verticalIn": 29.0,
+        "broadIn": 108,
+        "shuttle": 4.49,
+        "threeCone": 7.52
+      },
+      "birthDate": "1999-05-06"
+    },
+    {
+      "name": {
+        "first": "Skylar",
+        "last": "Thompson"
+      },
+      "position": "QB",
+      "college": "Kansas State",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 7,
+        "pick": 247,
+        "team": "MIA"
+      },
+      "measurables": {
+        "heightIn": 74,
+        "weightLb": 219
+      },
+      "combine": {
+        "fortyYd": 4.91,
+        "verticalIn": 31.0,
+        "broadIn": 112,
+        "shuttle": 4.28,
+        "threeCone": 7.0
+      },
+      "birthDate": "1997-06-04"
+    },
+    {
+      "name": {
+        "first": "Andre",
+        "last": "Anthony"
+      },
+      "position": "LB",
+      "college": "LSU",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 7,
+        "pick": 248,
+        "team": "TB"
+      },
+      "measurables": {
+        "heightIn": 76,
+        "weightLb": 251
+      },
+      "birthDate": "1996-11-21"
+    },
+    {
+      "name": {
+        "first": "Rasheed",
+        "last": "Walker"
+      },
+      "position": "OT",
+      "college": "Penn State",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 7,
+        "pick": 249,
+        "team": "GB"
+      },
+      "measurables": {
+        "heightIn": 78,
+        "weightLb": 325
+      },
+      "birthDate": "2000-02-13"
+    },
+    {
+      "name": {
+        "first": "Brittain",
+        "last": "Brown"
+      },
+      "position": "RB",
+      "college": "UCLA",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 7,
+        "pick": 250,
+        "team": "LV"
+      },
+      "measurables": {
+        "heightIn": 73,
+        "weightLb": 205
+      },
+      "birthDate": "1997-10-10"
+    },
+    {
+      "name": {
+        "first": "Isiah",
+        "last": "Pacheco"
+      },
+      "position": "RB",
+      "college": "Rutgers",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 7,
+        "pick": 251,
+        "team": "KC"
+      },
+      "measurables": {
+        "heightIn": 70,
+        "weightLb": 216
+      },
+      "combine": {
+        "fortyYd": 4.37,
+        "verticalIn": 33.0,
+        "broadIn": 118
+      },
+      "birthDate": "1999-03-02"
+    },
+    {
+      "name": {
+        "first": "Jeffrey",
+        "last": "Gunter"
+      },
+      "position": "DE",
+      "college": "Coastal Carolina",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 7,
+        "pick": 252,
+        "team": "CIN"
+      },
+      "measurables": {
+        "heightIn": 76,
+        "weightLb": 263
+      },
+      "combine": {
+        "fortyYd": 4.7,
+        "verticalIn": 35.5,
+        "broadIn": 122,
+        "shuttle": 4.35,
+        "threeCone": 7.21
+      },
+      "birthDate": "1999-06-01"
+    },
+    {
+      "name": {
+        "first": "Craig",
+        "last": "Yeast"
+      },
+      "position": "S",
+      "college": "Kansas State",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 7,
+        "pick": 253,
+        "team": "LA"
+      },
+      "measurables": {
+        "heightIn": 70,
+        "weightLb": 195
+      },
+      "birthDate": "1999-05-08"
+    },
+    {
+      "name": {
+        "first": "Elijah",
+        "last": "Hicks"
+      },
+      "position": "S",
+      "college": "California",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 7,
+        "pick": 254,
+        "team": "CHI"
+      },
+      "measurables": {
+        "heightIn": 71,
+        "weightLb": 204
+      },
+      "birthDate": "1999-10-16"
+    },
+    {
+      "name": {
+        "first": "Trenton",
+        "last": "Gill"
+      },
+      "position": "P",
+      "college": "N.C. State",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 7,
+        "pick": 255,
+        "team": "CHI"
+      },
+      "measurables": {
+        "heightIn": 76,
+        "weightLb": 219
+      },
+      "birthDate": "1999-01-01"
+    },
+    {
+      "name": {
+        "first": "Jesse",
+        "last": "Luketa"
+      },
+      "position": "LB",
+      "college": "Penn State",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 7,
+        "pick": 256,
+        "team": "ARI"
+      },
+      "measurables": {
+        "heightIn": 75,
+        "weightLb": 252
+      },
+      "combine": {
+        "fortyYd": 4.89,
+        "verticalIn": 37.5,
+        "broadIn": 114
+      },
+      "birthDate": "1999-01-15"
+    },
+    {
+      "name": {
+        "first": "Marquis",
+        "last": "Hayes"
+      },
+      "position": "OG",
+      "college": "Oklahoma",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 7,
+        "pick": 257,
+        "team": "ARI"
+      },
+      "measurables": {
+        "heightIn": 77,
+        "weightLb": 318
+      },
+      "combine": {
+        "fortyYd": 5.3,
+        "verticalIn": 23.5,
+        "broadIn": 102
+      },
+      "birthDate": "1999-02-14"
+    },
+    {
+      "name": {
+        "first": "Samori",
+        "last": "Toure"
+      },
+      "position": "WR",
+      "college": "Nebraska",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 7,
+        "pick": 258,
+        "team": "GB"
+      },
+      "measurables": {
+        "heightIn": 73,
+        "weightLb": 196
+      },
+      "birthDate": "1998-03-24"
+    },
+    {
+      "name": {
+        "first": "Nazeeh",
+        "last": "Johnson"
+      },
+      "position": "CB",
+      "college": "Marshall",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 7,
+        "pick": 259,
+        "team": "KC"
+      },
+      "measurables": {
+        "heightIn": 70,
+        "weightLb": 199
+      },
+      "birthDate": "1998-07-17"
+    },
+    {
+      "name": {
+        "first": "Alexander",
+        "last": "Horvath"
+      },
+      "position": "RB",
+      "college": "Purdue",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 7,
+        "pick": 260,
+        "team": "LAC"
+      },
+      "measurables": {
+        "heightIn": 75,
+        "weightLb": 230
+      },
+      "birthDate": "1998-12-10"
+    },
+    {
+      "name": {
+        "first": "A.J.",
+        "last": "Arcuri"
+      },
+      "position": "OT",
+      "college": "Michigan State",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 7,
+        "pick": 261,
+        "team": "LA"
+      },
+      "measurables": {
+        "heightIn": 79,
+        "weightLb": 308
+      },
+      "birthDate": "1997-08-13"
+    },
+    {
+      "name": {
+        "first": "Brock",
+        "last": "Purdy"
+      },
+      "position": "QB",
+      "college": "Iowa State",
+      "collegeYear": "SR",
+      "redshirt": false,
+      "draft": {
+        "round": 7,
+        "pick": 262,
+        "team": "SF"
+      },
+      "measurables": {
+        "heightIn": 73,
+        "weightLb": 220
+      },
+      "combine": {
+        "fortyYd": 4.84,
+        "verticalIn": 27.0,
+        "shuttle": 4.45,
+        "threeCone": 7.21
+      },
+      "birthDate": "1999-12-27"
+    }
+  ]
+}
