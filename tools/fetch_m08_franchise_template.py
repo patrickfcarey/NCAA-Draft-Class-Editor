@@ -25,8 +25,13 @@ import tempfile
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
-DEFAULT_MEMCARD = Path("/mnt/c/PCSX2/memcards/Mcd001.ps2")
-SAVE_FOLDER = "BASLUS-21638BFran1"
+# Defaults point at the user's "true Week 1 fresh franchise" save - taken
+# immediately after starting a new franchise, before any preseason games or
+# free-agent signings. Mid-season / Super-Bowl-state saves carry simmed
+# in-flight contracts that confound the compile-franchise pipeline (see
+# memory of the May 2026 spike) - always use a pre-Week-1 save as template.
+DEFAULT_MEMCARD = Path("/mnt/c/PCSX2/memcards/franchise_phase2_test.ps2")
+SAVE_FOLDER = "BASLUS-21638BFran2"
 OUTPUT_PATH = REPO_ROOT / "out" / "templates" / "madden-nfl-08-franchise-template.psu"
 INNER_BIN_PATH = REPO_ROOT / "out" / "templates" / "madden-nfl-08-franchise-template.bin"
 
@@ -67,7 +72,12 @@ def main() -> int:
     p = argparse.ArgumentParser()
     p.add_argument("--memcard", type=Path, default=DEFAULT_MEMCARD,
                    help=f"Source memcard (default: {DEFAULT_MEMCARD})")
+    p.add_argument("--slot", default=SAVE_FOLDER,
+                   help=f"Save folder name (default: {SAVE_FOLDER}). Use BASLUS-21638BFran[1-5].")
     args = p.parse_args()
+    # Allow overriding the global by CLI
+    global SAVE_FOLDER
+    SAVE_FOLDER = args.slot
     out = fetch(args.memcard)
     print(f"Wrote {out} ({out.stat().st_size} bytes)", file=sys.stderr)
     return 0

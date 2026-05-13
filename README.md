@@ -28,16 +28,16 @@ build pipeline, and the M09/M12 + Deluxe targets — was added in this fork.
 
 ## Status
 
-| Target                                  | What it produces                                                          | State                                                                                                                                  |
-| --------------------------------------- | ------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| Madden 08 PS2 (vanilla)                 | NCAA draft class + roster, 2008–2026                                      | End-to-end verified for 2018 in PCSX2; bulk build implemented                                                                          |
-| Madden 09 PS2 (Deluxe-compatible)       | Roster `.psu`, 2008–2025                                                  | Compile + pack verified for 2018; bulk build implemented                                                                               |
-| Madden 12 PS2 (Deluxe-compatible)       | Roster `.psu`, 2008–2025                                                  | Compile + pack verified for 2018; bulk build implemented                                                                               |
-| Draft class import into M09 / M12       | NCAA-format `.psu` retargeted to BASLUS-21769 / BASLUS-21932              | Pack pipeline wired (`m09-draft-class` / `m12-draft-class`); PCSX2 verification pending                                                |
-| Madden 08 franchise compiler (Phase 1)  | Year-correct calendar + cap economy via SEAI.SEYR + SLRI.SCAD/SMAD/RFA1-4 | ✅ Verified end-to-end in PCSX2 for 2018: save loads, cap shows $177M, season year shows 2018 in stats                                  |
-| Franchise Phase 2: per-player contracts | PSA0-6 / PSB0-6 / PCSA synthesis from rating + age + position             | ✅ Verified in PCSX2 for 2018: free-agent asking prices reflect era. **Caveat:** in-place rostered contracts stay at the template's baseline until natural turnover (Madden snapshots signed contracts in a separate table — Phase 3 work). |
-| M09 / M12 franchise compilers           | Same approach as M08 with per-game base year + own templates              | Not started                                                                                                                            |
-| Tier 7 release pipeline                 | One-shot build of all 38+ artifacts                                       | Not started                                                                                                                            |
+| Target                                  | What it produces                                                          | State                                                                                                                                                                                                                                |
+| --------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Madden 08 PS2 (vanilla)                 | NCAA draft class + roster, 2008–2026                                      | End-to-end verified for 2018 in PCSX2; bulk build implemented                                                                                                                                                                        |
+| Madden 09 PS2 (Deluxe-compatible)       | Roster `.psu`, 2008–2025                                                  | Compile + pack verified for 2018; bulk build implemented                                                                                                                                                                             |
+| Madden 12 PS2 (Deluxe-compatible)       | Roster `.psu`, 2008–2025                                                  | Compile + pack verified for 2018; bulk build implemented                                                                                                                                                                             |
+| Draft class import into M09 / M12       | NCAA-format `.psu` retargeted to BASLUS-21769 / BASLUS-21932              | Pack pipeline wired (`m09-draft-class` / `m12-draft-class`); PCSX2 verification pending                                                                                                                                              |
+| Madden 08 franchise compiler (Phase 1)  | Year-correct calendar + cap economy via SEAI.SEYR + SLRI.SCAD/SMAD/RFA1-4 | ✅ Verified end-to-end in PCSX2 for 2018: save loads, cap shows $177M, season year shows 2018 in stats                                                                                                                                |
+| Franchise Phase 2: per-player contracts | PSA0-6 / PSB0-6 / PCSA synthesis from rating + age + position             | ✅ Verified in PCSX2 for 2018: in-place AND free-agent contracts both reflect new era. PLAY's PSA/PSB/PCSA IS the snapshot (no separate table to chase). Requires Week-1-fresh template; SEYR=0 SEWN=0 SEWT=200 confirms fresh state. |
+| M09 / M12 franchise compilers           | Same approach as M08 with per-game base year + own templates              | Not started                                                                                                                                                                                                                          |
+| Tier 7 release pipeline                 | One-shot build of all 38+ artifacts                                       | Not started                                                                                                                                                                                                                          |
 
 Open work items are tracked in `CLAUDE.md` (the "Where to look first" section).
 
@@ -498,18 +498,15 @@ decline outside), and contract-length distribution are all in
 contracts — Phase 3 (real Spotrac/OvertheCap import) is the next step up.
 
 Skip contract synthesis with `--no-contracts` if you'd rather let the
-engine auto-generate them from the 2007-era model.
+engine auto-generate them from the disc-era model.
 
-**Known caveat:** the contract fields we write drive Madden's **future**
-contract math — free agency asking prices, rookie signings, expired-deal
-renewals all use the new era's values. But Madden snapshots **currently
-signed** rostered-player contracts in a separate location (likely the
-`PLRS` / `PSTA` tables — empty in a fresh-Week-1 template). Those stay
-at whatever the engine generated at franchise creation (2007-era), so
-in-place cap hits won't visibly change after Phase 2. The cap economy
-realigns over 1-3 in-game seasons of natural turnover. Phase 3 will
-address this by overwriting the snapshot tables (and likely needs a
-mid-season template rather than fresh Week 1).
+**Template requirement:** the franchise template MUST be exported from a
+truly-fresh franchise (Week 1 preseason, before any games or free-agent
+signings). `fetch_m08_franchise_template.py` defaults to this state.
+Identifying flags in SEAI for a Week-1 fresh franchise: `SEYR=0 SEWN=0
+SEWT=200 SEST=10`. If you use a mid-season or end-of-season template,
+the in-game cap UI may display 2007-era simulated values rather than the
+era-correct ones we write.
 
 What Phase 1 + 2 still don't do:
 
