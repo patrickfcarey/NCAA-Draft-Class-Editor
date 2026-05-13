@@ -27,7 +27,7 @@ files via a PS2 memcard, and gets a franchise that mirrors NFL history.
 | 3 | Scrapers (nflverse drafts, wikipedia 2026, weebly Madden) | ✅ Done (16 of 19 Madden years; gaps documented) |
 | 4 | Compiler canonical→binary + position/college mapping | ✅ MVP done; 2018 verified end-to-end in PCSX2 |
 | 5 | College mapping table (folded into Tier 4) | ✅ Done |
-| 6 | Madden 08 PS2 roster builder | 🚧 TDB read/write done (Python + C#, byte-exact roundtrip); canonical roster schema + compiler still TBD |
+| 6 | Madden 08 PS2 roster builder | ✅ TDB read/write (Python + C#, byte-exact roundtrip); CanonicalRoster schema; MaddenRosterCompiler; nflverse roster scraper; CLI compile-roster; 18 canonical rosters generated; pack_baslus.py extended to --type roster; build_all_rosters.py loop ready |
 | 7 | Pipeline + releases (one-shot build all 38 artifacts) | ⬜ Not started |
 | 8 | PCSX2 verification | ✅ 2018 verified; other years pending Tier 7 |
 
@@ -435,24 +435,33 @@ Read+write of the TDB format is **done**:
 - `NcaaDraftEditor.Compiler/MaddenTdb.cs` — C# port; same API surface
   as `DraftClassFile`. Test coverage in `MaddenTdbTests.cs`.
 
-**What's left for Tier 6:**
+**Tier 6 pipeline is now complete in code. On Windows run:**
 
-1. **Canonical roster schema.** New `roster-{year}.json` shape — likely
-   one team header per NFL team, list of player records per team, with
-   the same per-player fields the PLAY table cares about (name, pos,
-   jersey, age, height, weight, years-pro, 50+ ratings). Mirror the
-   Tier 2 canonical draft class shape.
-2. **Roster scraper.** nflverse has `rosters` release on
-   `github.com/nflverse/nflverse-data` — historical NFL rosters by year.
-   Join with our existing `data/raw/madden-ratings/` for per-year
-   Madden launch ratings.
-3. **Roster compiler.** Take canonical roster JSON + the sample TDB
-   fixture as a template. For each PLAY record in the template, mutate
-   it to match the corresponding canonical player. Output binary +
-   `pack_baslus.py` for BASLUS-21638 (will need to extend the pack
-   script to handle the different product code).
-4. **CLI integration.** `ncaa-draft compile-roster <canonical.json>
-   <template.bin> <out.bin>` subcommand.
-5. **PCSX2 verification.** Import the produced .max as a Madden 08
-   roster save, boot Madden 08, start franchise, verify rosters match
-   the year.
+```
+python tools/build_all_draft_classes.py       # 2008-2026 NCAA draft .max files
+python tools/build_all_rosters.py             # 2008-2025 Madden roster .max files
+```
+
+Each script loops the year-by-year:
+```
+dotnet run --project NcaaDraftEditor.Cli -- compile [-roster] ...
+python tools/pack_baslus.py <bin> <max> [--type roster]
+```
+
+Outputs land in `out/draft-class-{year}.max` and `out/roster-{year}.max`.
+Import via PCSX2 memory card manager (or `mymcplus <memcard.ps2>
+import out/...max` directly).
+
+**What's left for Tier 6:**
+1. **PCSX2 verification** — boot Madden 08, load a roster save, start
+   franchise, sanity check rosters match the canonical year.
+2. **TEAM table updates** — the compiler only mutates PLAY records.
+   Relocated teams (Rams in LA from 2016+, Chargers in LA from 2017+,
+   Raiders in LV from 2020+) still appear under their 2007 names. Easy
+   future extension: write TDNA/TLNA/TSNA fields from CanonicalTeam in
+   the compiler.
+3. **Per-team roster cap** — canonical has 55-100 players per team but
+   Madden's PLAY table has only ~62 slots per TGID. The compiler
+   currently sorts by OVR descending and silently drops the rest;
+   could be smarter (preserve role distribution, etc.).
+4. **Team name updates for relocations** (overlap with #2).
