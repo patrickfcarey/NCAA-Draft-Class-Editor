@@ -48,8 +48,12 @@ public sealed class MaddenFranchiseCompiler
     /// <summary>
     /// Mutate <paramref name="template"/> in place to target the given NFL
     /// season year. Returns the same instance, ready to .Save().
+    ///
+    /// Phase 1 work: SEAI.SEYR (calendar) + SLRI.SCAD/SMAD/RFA1..4 (cap).
+    /// Phase 2 work: per-player contract synthesis via ContractSynthesizer
+    /// (gated by <paramref name="synthesizeContracts"/>; default on).
     /// </summary>
-    public MaddenTdb Compile(int nflSeason, MaddenTdb template)
+    public MaddenTdb Compile(int nflSeason, MaddenTdb template, bool synthesizeContracts = true)
     {
         if (!_caps.Years.TryGetValue(nflSeason.ToString(), out var year))
             throw new InvalidOperationException(
@@ -83,7 +87,34 @@ public sealed class MaddenFranchiseCompiler
             slri.Records[0].SetUInt("RFA4", (uint)year.Rfa[3]);
         }
 
+        if (synthesizeContracts)
+            SynthesizeContracts(template, year.Cap);
+
         return template;
+    }
+
+    /// <summary>
+    /// Iterate PLAY records and write era-appropriate contract terms
+    /// (PCON / PSA0..6 / PSB0..6 / PCSA) based on each player's POVR,
+    /// PPOS, PAGE. Only runs if the PLAY table has the contract fields
+    /// (i.e. it's a franchise PLAY table, not a roster PLAY).
+    /// </summary>
+    private static void SynthesizeContracts(MaddenTdb template, long leagueCap)
+    {
+        var play = template.FindTable("PLAY");
+        if (play is null) return;
+        if (play.FindField("PSA0") is null || play.FindField("PCSA") is null)
+            return;  // not a franchise PLAY table
+
+        var synth = new ContractSynthesizer(leagueCap);
+        foreach (var rec in play.Records)
+        {
+            uint ovr = rec.GetUInt("POVR");
+            uint pos = rec.GetUInt("PPOS");
+            uint age = rec.GetUInt("PAGE");
+            var terms = synth.Synthesize(ovr, pos, age);
+            ContractSynthesizer.Apply(rec, terms);
+        }
     }
 }
 

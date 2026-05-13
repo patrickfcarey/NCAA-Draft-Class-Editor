@@ -34,7 +34,7 @@ files via a PS2 memcard, and gets a franchise that mirrors NFL history.
 | 10 | Madden 12 PS2 (Deluxe-compatible) roster builder | ✅ M12 PS2 is bare TDB (MC02 wrapper is PS3/360/PC-only); PLAY field bit-layout shifted vs M08 (~74 of 110 fields) but metadata-driven compiler handles transparently; pack_baslus.py m12-roster preset (BASLUS-21946); fetch_m12_template.py auto-downloads Deluxe .psu; build_all_rosters.py --target m12; 2018 compile+pack verified end-to-end |
 | 11 | NCAA draft class import for M09 / M12 (vanilla + Deluxe) | ✅ Format identical to M08 NCAA binary (138,240 bytes). pack_baslus.py m09-draft-class (BASLUS-21769LClass08, for NCAA 09→M09) and m12-draft-class (BASLUS-21932LClass10, for NCAA 11→M12; NCAA 12 has no PS2 release). build_all_draft_classes.py --target m08\|m09\|m12\|all. PCSX2 verification of BASLUS suffix convention pending. |
 | 12 | Madden 08 franchise compiler (Phase 1: calendar + cap economy) | ✅ Verified in PCSX2 for 2018: franchise loads, salary cap shows $177M, player stats history shows 2018. MaddenTdb has preamble support (franchise saves prepend 02 00 00 00 before DB magic) AND CRC-32/MPEG-2 recomputation on Save (4 CRC fields: file-header, per-table priorCRC, per-table headerCRC, EOF CRC — PS2 stores LE, PS3/PC variant in bep713 stores BE). MaddenFranchiseCompiler writes SEAI.SEYR + SLRI.SCAD/SMAD/RFA1..4. data/raw/salary-caps/nfl-salary-caps.json carries real NFL cap + RFA tenders 2007–2026. CLI compile-franchise. pack_baslus.py m08-franchise preset. fetch_m08_franchise_template.py extracts template from user memcard. |
-| 13 | Phase 2: per-player contract synthesizer | ⬜ Not started. Franchise PLAY has 21 extra fields vs roster PLAY: PSA0..6 (annual salary, 14-bit), PSB0..6 (signing bonus, 13-bit), PCSA (cap hit), PCTS, PSBO, PSBS. Need rating+age+position model to populate. Roster save has only PCON (4-bit contract length) and PYRP (years pro); game auto-generates contracts on franchise start from those. |
+| 13 | Phase 2: per-player contract synthesizer | ✅ ContractSynthesizer writes PCON / PSA0..6 / PSB0..6 / PCSA / PSBO per player based on POVR + PPOS + PAGE + league cap. Position-weight table calibrated so league total cap usage lands within ~17% of (cap × 32 teams). Top QB OVR 99 ~$17M, backup K OVR 60s near $700K floor. Default-on; opt out with `--no-contracts`. |
 | 14 | Phase 3: real contract data (Spotrac/OvertheCap import) | ⬜ Not started. |
 | 15 | M09 / M12 franchise compiler | ⬜ Not started. Templates not fetched; field schema not yet diffed against M08 franchise. Expected to share most table shape. |
 
@@ -266,10 +266,10 @@ M08's engine routinely produces caps in the $200M+ range during long sims
 ($109M..$300M+ across 2007–2026) is well within proven engine range — see
 [footballidiot.com cap inflation thread](https://www.footballidiot.com/forum/viewtopic.php?t=20989).
 
-Phase-1 compiler **does not** populate per-player contracts. The engine
-generates plausible contracts at franchise start from rating + age + PCON +
-position. Phase 2 adds a rating-driven contract synthesizer; Phase 3 adds
-real Spotrac/OvertheCap contract import.
+`MaddenFranchiseCompiler` (Phase 1) handles SEAI + SLRI; `ContractSynthesizer`
+(Phase 2) handles per-player PCON/PSA/PSB/PCSA. Both run inside one
+`compile-franchise` invocation by default. Phase 3 (real Spotrac/OvertheCap
+contract import) is the next step up.
 
 ## Pipelines
 

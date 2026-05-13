@@ -53,6 +53,52 @@ public class MaddenFranchiseCompilerTests
     }
 
     [Fact]
+    public void Contract_Synthesizer_Produces_Sane_Numbers()
+    {
+        // 2018 league cap = $177.2M. Calibration target: avg cap hit per
+        // player ≈ cap/53, top stars in the $20M ballpark, league total
+        // within ~20% of cap × 32 teams.
+        var synth = new ContractSynthesizer(177_200_000);
+
+        // Star QB, age 28 - should land near top of pay scale
+        var qbStar = synth.Synthesize(ovr: 95, pos: 0, age: 28);
+        Assert.True(qbStar.PCON >= 4 && qbStar.PCON <= 7);
+        long qbCapHit = qbStar.PCSA10k * 10_000L;
+        Assert.InRange(qbCapHit, 10_000_000, 50_000_000);
+
+        // Backup kicker, age 30 - should be near veteran minimum
+        var kBackup = synth.Synthesize(ovr: 65, pos: 19, age: 30);
+        Assert.True(kBackup.PCSA10k > 0);
+        long kCapHit = kBackup.PCSA10k * 10_000L;
+        Assert.InRange(kCapHit, 500_000, 3_000_000);
+
+        // OVR 0 / empty slot - should produce minimum contract
+        var empty = synth.Synthesize(ovr: 0, pos: 0, age: 0);
+        Assert.Equal(1u, empty.PCON);
+
+        // Star outranks backup by a wide margin
+        Assert.True(qbStar.PCSA10k > kBackup.PCSA10k * 4);
+
+        // Contract years lined up
+        Assert.Equal((int)qbStar.PCON, qbStar.PSA10k.Length);
+        Assert.Equal((int)qbStar.PCON, qbStar.PSB10k.Length);
+    }
+
+    [Fact]
+    public void Contract_Synthesis_Fits_14bit_PSA_Ceiling()
+    {
+        // Even an extreme cap shouldn't overflow the 14-bit PSA field
+        // ($163.83M ceiling in $10K units).
+        var synth = new ContractSynthesizer(500_000_000);  // synthetic future cap
+        var terms = synth.Synthesize(ovr: 99, pos: 0, age: 28);
+        foreach (var psa in terms.PSA10k)
+            Assert.True(psa <= ContractSynthesizer.Psa10kCeiling);
+        foreach (var psb in terms.PSB10k)
+            Assert.True(psb <= ContractSynthesizer.Psb10kCeiling);
+        Assert.True(terms.PCSA10k <= ContractSynthesizer.Psa10kCeiling);
+    }
+
+    [Fact]
     public void YearOffset_OutOfRange_Throws()
     {
         var caps = SalaryCapTable.LoadFile(CapsPath);

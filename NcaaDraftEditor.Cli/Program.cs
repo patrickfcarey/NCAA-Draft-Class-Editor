@@ -192,17 +192,19 @@ internal static class Program
     static int CompileFranchise(string[] args)
     {
         if (args.Length < 2)
-            return Help("compile-franchise requires <template.bin> <out.bin> --year YYYY --caps <salary-caps.json> [--base-year YYYY]");
+            return Help("compile-franchise requires <template.bin> <out.bin> --year YYYY --caps <salary-caps.json> [--base-year YYYY] [--no-contracts]");
         var templatePath = args[0];
         var outPath = args[1];
         int year = -1;
         string? capsPath = null;
         int baseYear = MaddenFranchiseCompiler.M08BaseYear;
+        bool synthesizeContracts = true;
         for (int i = 2; i < args.Length; i++)
         {
             if (args[i] == "--year" && i + 1 < args.Length) year = int.Parse(args[++i]);
             else if (args[i] == "--caps" && i + 1 < args.Length) capsPath = args[++i];
             else if (args[i] == "--base-year" && i + 1 < args.Length) baseYear = int.Parse(args[++i]);
+            else if (args[i] == "--no-contracts") synthesizeContracts = false;
             else return Help($"Unexpected argument: {args[i]}");
         }
         if (year < 0) return Help("compile-franchise requires --year YYYY");
@@ -211,15 +213,31 @@ internal static class Program
         var caps = SalaryCapTable.LoadFile(capsPath);
         var template = MaddenTdb.LoadFile(templatePath);
         var compiler = new MaddenFranchiseCompiler(baseYear, caps);
-        compiler.Compile(year, template);
+        compiler.Compile(year, template, synthesizeContracts);
         template.SaveFile(outPath);
 
         var seai = template.FindTable("SEAI")!.Records[0];
         var slri = template.FindTable("SLRI")!.Records[0];
+        var play = template.FindTable("PLAY");
+        long totalCapHit = 0;
+        int contracted = 0;
+        if (synthesizeContracts && play is not null && play.FindField("PCSA") is not null)
+        {
+            foreach (var r in play.Records)
+            {
+                long cap10k = r.GetUInt("PCSA");
+                if (cap10k > 0) { totalCapHit += cap10k * 10_000L; contracted++; }
+            }
+        }
         Console.Error.WriteLine(
             $"Wrote {outPath}: target NFL season {year}, base year {baseYear}, " +
             $"SEYR={seai.GetUInt("SEYR")} SCAD=${slri.GetUInt("SCAD"):N0} " +
-            $"SMAD=${slri.GetUInt("SMAD"):N0}");
+            $"SMAD=${slri.GetUInt("SMAD"):N0}" +
+            (synthesizeContracts
+                ? $" | contracts: {contracted} players, total cap hit ${totalCapHit:N0} " +
+                  $"(avg ${(contracted > 0 ? totalCapHit / contracted : 0):N0}/player, " +
+                  $"vs {32} teams × ${slri.GetUInt("SCAD"):N0} = ${32L * slri.GetUInt("SCAD"):N0} league cap)"
+                : " | contracts: not synthesized"));
         return 0;
     }
 
