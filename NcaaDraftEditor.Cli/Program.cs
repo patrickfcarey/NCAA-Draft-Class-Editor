@@ -45,8 +45,12 @@ internal static class Program
               build <in.json> <out.bin>            Read JSON, write a draft class binary
               roundtrip <in.bin>                   Load -> JSON -> Save; exit 0 iff byte-exact
               new --players N <out.json>           Write a blank JSON template with N empty records
-              compile <canonical.json> <positions.json> <colleges.json> <out.bin> [--madden <path>]
-                                                   Compile canonical real-world draft class to binary
+              compile <canonical.json> <positions.json> <colleges.json> <out.bin>
+                      [--madden <path>] [--filler <path>]
+                                                   Compile canonical real-world draft class to binary.
+                                                   --filler fills slots beyond your real picks with
+                                                   valid records from an existing draft class file;
+                                                   without it Madden 08 hangs on empty padding.
 
             Set NCAA_DRAFT_VERBOSE=1 to print full stack traces on errors.
             """);
@@ -100,7 +104,7 @@ internal static class Program
     static int Compile(string[] args)
     {
         if (args.Length < 4)
-            return Help("compile requires <canonical.json> <positions.json> <colleges.json> <out.bin> [--madden <path>]");
+            return Help("compile requires <canonical.json> <positions.json> <colleges.json> <out.bin> [--madden <path>] [--filler <path>]");
 
         var canonical = CanonicalJson.Load(args[0]);
         var positions = PositionMapper.LoadFile(args[1]);
@@ -108,15 +112,24 @@ internal static class Program
         var outPath = args[3];
 
         MaddenRoster? madden = null;
+        DraftClassFile? filler = null;
         for (int i = 4; i < args.Length; i++)
         {
             if (args[i] == "--madden" && i + 1 < args.Length)
                 madden = MaddenRoster.LoadFile(args[++i]);
+            else if (args[i] == "--filler" && i + 1 < args.Length)
+                filler = DraftClassFile.Load(args[++i]);
             else
                 return Help($"Unexpected argument: {args[i]}");
         }
 
-        var compiler = new DraftClassCompiler(positions, colleges, madden);
+        if (filler is null)
+            Console.Error.WriteLine(
+                "WARNING: --filler not provided. Madden 08 hangs on empty player records; " +
+                "pass --filler tests/fixtures/sample.bin (or any real NCAA draft class file) " +
+                "to fill slots beyond your canonical picks with valid records.");
+
+        var compiler = new DraftClassCompiler(positions, colleges, madden, filler);
         var dc = compiler.Compile(canonical);
         dc.Save(outPath);
 
@@ -124,7 +137,8 @@ internal static class Program
         Console.Error.WriteLine(
             $"Wrote {outPath}: {realPlayers} real players from canonical, " +
             $"padded to {dc.Players.Count} records, {dc.Trailer.Length}-byte trailer " +
-            $"(madden={(madden is null ? "none" : "loaded")})");
+            $"(madden={(madden is null ? "none" : "loaded")}, " +
+            $"filler={(filler is null ? "none" : $"loaded {filler.Players.Count} records")})");
         return 0;
     }
 

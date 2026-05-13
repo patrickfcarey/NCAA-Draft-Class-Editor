@@ -14,12 +14,18 @@ public sealed class DraftClassCompiler
     private readonly PositionMapper _positions;
     private readonly CollegeMapper _colleges;
     private readonly MaddenRoster? _madden;
+    private readonly DraftClassFile? _filler;
 
-    public DraftClassCompiler(PositionMapper positions, CollegeMapper colleges, MaddenRoster? madden = null)
+    public DraftClassCompiler(
+        PositionMapper positions,
+        CollegeMapper colleges,
+        MaddenRoster? madden = null,
+        DraftClassFile? filler = null)
     {
         _positions = positions;
         _colleges = colleges;
         _madden = madden;
+        _filler = filler;
     }
 
     public DraftClassFile Compile(CanonicalDraftClass canonical)
@@ -30,9 +36,34 @@ public sealed class DraftClassCompiler
             if (dc.Players.Count >= DraftClassFile.MaxPlayers) break;
             dc.Players.Add(CompilePlayer(player));
         }
-        PadToMaxPlayers(dc);
+        FillRemainingSlots(dc);
         dc.Trailer = BuildSectorPadTrailer(dc.Players.Count);
         return dc;
+    }
+
+    /// <summary>
+    /// Real NCAA draft-class files always carry 1600 valid college player records
+    /// (the full eligible senior + early-entry pool, not just the ~250 actually
+    /// drafted). Madden 08 hangs on "initializing roster management" if any of
+    /// the 1600 slots contains an empty/zeroed record (player with no name, 0
+    /// OVR, TGID=0, etc.). If a filler file is provided we use its records for
+    /// slots beyond our real picks; otherwise we fall back to zero padding and
+    /// warn that Madden may reject the file.
+    /// </summary>
+    private void FillRemainingSlots(DraftClassFile dc)
+    {
+        int realCount = dc.Players.Count;
+        if (_filler is not null)
+        {
+            for (int i = realCount; i < DraftClassFile.MaxPlayers && i < _filler.Players.Count; i++)
+            {
+                var copy = new byte[DraftClassFile.RecordSize];
+                Buffer.BlockCopy(_filler.Players[i].Raw, 0, copy, 0, DraftClassFile.RecordSize);
+                dc.Players.Add(new PlayerRecord(copy));
+            }
+        }
+        while (dc.Players.Count < DraftClassFile.MaxPlayers)
+            dc.Players.Add(new PlayerRecord(new byte[DraftClassFile.RecordSize]));
     }
 
     private PlayerRecord CompilePlayer(CanonicalPlayer cp)
@@ -95,12 +126,6 @@ public sealed class DraftClassCompiler
 
     private static byte ClampToByte(int value) =>
         (byte)Math.Clamp(value, 0, 255);
-
-    private static void PadToMaxPlayers(DraftClassFile dc)
-    {
-        while (dc.Players.Count < DraftClassFile.MaxPlayers)
-            dc.Players.Add(new PlayerRecord(new byte[DraftClassFile.RecordSize]));
-    }
 
     /// <summary>
     /// Real NCAA 08 draft-class files are exactly 138,240 bytes = 270 sectors
