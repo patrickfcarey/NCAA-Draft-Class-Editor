@@ -150,30 +150,77 @@ from age + OVR + position. The NCAA file doesn't carry it.
 Produced by Madden NFL 08 PS2 itself. EA's **TDB** (tabular database)
 format. Sample is 246,784 bytes.
 
-| Offset | Size | Contents |
+**ENDIANNESS: PS2 is little-endian.** The bep713 madden-db-editor parser
+(at `../madden-db-editor/src/worker/TableReader.js`) reads big-endian
+and would target a different EA platform variant (PS3/PC). For PS2 the
+fields must be read LE. Reverse-engineered and verified empirically by
+`tools/parse_madden_tdb.py`.
+
+#### File header (24 bytes)
+
+| Offset | Size | Field | Notes |
+|---|---|---|---|
+| 0x00 | 2 | magic | ASCII `"DB"` (= 0x4244 LE) |
+| 0x02 | 2 | version | 0x0008 LE → 8 |
+| 0x04 | 4 | unknown1 | |
+| 0x08 | 4 | dbSize | 245,856 in sample |
+| 0x0C | 4 | zero | |
+| 0x10 | 4 | tableCount | 4 for a roster |
+| 0x14 | 4 | checksum | |
+
+#### Table directory (24 bytes onward, 8 bytes per entry)
+
+| Offset | Size | Field |
 |---|---|---|
-| 0x00 | 2 | Magic: `"DB"` (`0x4442`) |
-| 0x02 | 2 | Version 0x0800 |
-| 0x08 | 4 | DB size in bytes |
-| 0x10 | 4 | Table count (4 for a roster) |
-| 0x14 | 4 | Checksum |
-| 0x18 | 4 × 8 = 32 | Table directory: 4-byte name + 4-byte offset, per table |
-| 0x38 | … | Table data, in directory-listed order |
+| +0 | 4 | ASCII table name, forward direction (e.g. `"DCHT"`) |
+| +4 | 4 | LE offset, **relative to end of table directory** (= file offset 24 + tableCount×8) |
 
-The 4 roster tables:
+#### Per-table header (40 bytes at directory-end + offset)
 
-| Name | Likely contents |
-|---|---|
-| DCHT | Depth chart |
-| INJY | Injury list |
-| PLAY | Player records (the main payload) |
-| TEAM | Team metadata |
+Bytes 0–3 priorcrc; 4–7 unknown; 8–11 lenBytes (record stride in bytes);
+12–15 lenBits (record stride in bits — bit-packed); 16–19 zero; 20–21
+maxRecords (LE word); 22–23 curRecords (LE word); 24–27 unknown;
+byte 28 numFields; byte 29 indexCount; 30–31 zero2; 32–35 zero3;
+36–39 headercrc.
 
-We have a test fixture but **no parser yet** (Tier 6 work). The Electron
-app at `../madden-db-editor` handles this format; its source is the
-reference implementation (`src/renderer/components/MaddenDatabase.vue`,
-`MaddenHeader.vue`, `MaddenTable.vue`, `utils/HexReader.js`, plus the
-Vuex `READ_TABLES` action).
+#### Field directory (16 bytes per field, immediately after table header)
+
+| Offset | Size | Field |
+|---|---|---|
+| +0 | 4 | type (0=STRING, 1=BINARY, 2=SINT, 3=UINT, 4=FLOAT) |
+| +4 | 4 | bit offset within record |
+| +8 | 4 | ASCII field name, forward (e.g. `"PFNA"`, `"PSPD"`) |
+| +12 | 4 | bit width |
+
+#### Records (immediately after field directory)
+
+Records are tightly **bit-packed** — fields don't align to byte boundaries.
+Each record is `lenBytes` bytes (with `lenBits` significant bits). UINT
+fields use MSB-first bit reading within the record byte sequence. STRING
+fields ARE byte-aligned (offset is always a multiple of 8) and read as
+ASCII with null termination.
+
+#### The 4 roster tables (from the sample)
+
+| Name | curRecords/max | lenBytes | numFields | Purpose |
+|---|---|---|---|---|
+| DCHT | 1745 / 2912 | 8 (63 bits) | 4 | Depth chart (PGID, TGID, PPOS, ddep) |
+| INJY | 115 / 320 | 8 (63 bits) | 5 | Injuries (PGID, TGID, INJL, INIR, INJT) |
+| PLAY | 1995 / 2048 | 104 (831 bits) | 110 | Players (all attributes - 50+ rating + bio fields) |
+| TEAM | 33 / 33 | 116 (927 bits) | 66 | Teams (32 NFL + 1 free agents bucket) |
+
+PLAY field codes share many with NCAA's 86-byte record (`PSPD`, `PACC`,
+`PSTR`, `PAGI`, `PAWR`, `PCTH`, `PCAR`, `PTHP`, `PTHA`, `PKAC`, `PJMP`,
+`PINJ`, `PSTA`, etc.), plus name (`PFNA`, `PLNA`), age (`PAGE`), and
+position (`PPOS`). The 21 NCAA-side rating fields almost certainly map
+to identically named PLAY fields here — that makes the Tier 6 compiler's
+field-mapping work mostly trivial. Confirmed by spot-checking record 0
+of PLAY against the 2007 Chicago Bears roster: Olin Kreutz, Brian
+Urlacher, Brian Griese, Muhsin Muhammad, all present with correct
+TGID, PPOS, names.
+
+Use `tools/parse_madden_tdb.py <file> [out.json]` to dump the full
+parse for any TDB file in the working directory.
 
 ## Pipelines
 
