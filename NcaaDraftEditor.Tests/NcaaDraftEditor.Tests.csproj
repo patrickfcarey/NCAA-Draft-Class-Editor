@@ -29,5 +29,8 @@
     <None Include="..\data\mappings\positions.json" Link="fixtures\positions.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="..\data\mappings\colleges.json" Link="fixtures\colleges.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 </Project>
