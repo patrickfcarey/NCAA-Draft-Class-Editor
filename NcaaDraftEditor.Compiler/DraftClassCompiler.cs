@@ -15,18 +15,27 @@ public sealed class DraftClassCompiler
     private readonly CollegeMapper _colleges;
     private readonly MaddenRoster? _madden;
     private readonly DraftClassFile? _filler;
+    private readonly bool _lockDraftOrder;
 
     public DraftClassCompiler(
         PositionMapper positions,
         CollegeMapper colleges,
         MaddenRoster? madden = null,
-        DraftClassFile? filler = null)
+        DraftClassFile? filler = null,
+        bool lockDraftOrder = false)
     {
         _positions = positions;
         _colleges = colleges;
         _madden = madden;
         _filler = filler;
+        _lockDraftOrder = lockDraftOrder;
     }
+
+    // Pick-anchored OVR. Linear from pick 1 (OVR 90) to pick 256 (OVR 50) so
+    // Madden 08's OVR-sorted auto-draft picks players in real draft order.
+    public const byte LockedDraftTopOvr = 90;
+    public const byte LockedDraftBottomOvr = 50;
+    public const int LockedDraftMaxPick = 256;
 
     public DraftClassFile Compile(CanonicalDraftClass canonical)
     {
@@ -117,7 +126,27 @@ public sealed class DraftClassCompiler
             rec.PWGT = ClampToByte(w);
 
         ApplyRatings(rec, cp);
+
+        if (_lockDraftOrder && cp.Draft?.Pick is int pick && pick >= 1)
+        {
+            byte anchored = ComputeLockedOvr(pick);
+            if (anchored > rec.POVR) rec.POVR = anchored;
+        }
+
         return rec;
+    }
+
+    /// <summary>
+    /// Linear OVR floor by draft pick number. Pick 1 = 90, pick 256 = 50.
+    /// Applied as a *floor* (max of Madden launch OVR and this value) so
+    /// players keep their Madden rating when it's already higher.
+    /// </summary>
+    public static byte ComputeLockedOvr(int pick)
+    {
+        int p = Math.Clamp(pick, 1, LockedDraftMaxPick);
+        int range = LockedDraftTopOvr - LockedDraftBottomOvr;
+        int adjusted = LockedDraftTopOvr - (p - 1) * range / (LockedDraftMaxPick - 1);
+        return (byte)adjusted;
     }
 
     private void ApplyRatings(PlayerRecord rec, CanonicalPlayer cp)

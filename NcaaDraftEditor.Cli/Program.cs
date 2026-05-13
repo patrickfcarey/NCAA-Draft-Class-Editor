@@ -46,11 +46,14 @@ internal static class Program
               roundtrip <in.bin>                   Load -> JSON -> Save; exit 0 iff byte-exact
               new --players N <out.json>           Write a blank JSON template with N empty records
               compile <canonical.json> <positions.json> <colleges.json> <out.bin>
-                      [--madden <path>] [--filler <path>]
+                      [--madden <path>] [--filler <path>] [--lock-draft-order]
                                                    Compile canonical real-world draft class to binary.
                                                    --filler fills slots beyond your real picks with
                                                    valid records from an existing draft class file;
                                                    without it Madden 08 hangs on empty padding.
+                                                   --lock-draft-order applies a pick-number-based
+                                                   OVR floor (pick 1 -> 90, pick 256 -> 50) so the
+                                                   in-game draft order matches the real one.
 
             Set NCAA_DRAFT_VERBOSE=1 to print full stack traces on errors.
             """);
@@ -113,12 +116,15 @@ internal static class Program
 
         MaddenRoster? madden = null;
         DraftClassFile? filler = null;
+        bool lockDraftOrder = false;
         for (int i = 4; i < args.Length; i++)
         {
             if (args[i] == "--madden" && i + 1 < args.Length)
                 madden = MaddenRoster.LoadFile(args[++i]);
             else if (args[i] == "--filler" && i + 1 < args.Length)
                 filler = DraftClassFile.Load(args[++i]);
+            else if (args[i] == "--lock-draft-order")
+                lockDraftOrder = true;
             else
                 return Help($"Unexpected argument: {args[i]}");
         }
@@ -129,7 +135,7 @@ internal static class Program
                 "pass --filler tests/fixtures/sample.bin (or any real NCAA draft class file) " +
                 "to fill slots beyond your canonical picks with valid records.");
 
-        var compiler = new DraftClassCompiler(positions, colleges, madden, filler);
+        var compiler = new DraftClassCompiler(positions, colleges, madden, filler, lockDraftOrder);
         var dc = compiler.Compile(canonical);
         dc.Save(outPath);
 
@@ -138,7 +144,8 @@ internal static class Program
             $"Wrote {outPath}: {realPlayers} real players from canonical, " +
             $"padded to {dc.Players.Count} records, {dc.Trailer.Length}-byte trailer " +
             $"(madden={(madden is null ? "none" : "loaded")}, " +
-            $"filler={(filler is null ? "none" : $"loaded {filler.Players.Count} records")})");
+            $"filler={(filler is null ? "none" : $"loaded {filler.Players.Count} records")}, " +
+            $"lock-draft-order={lockDraftOrder})");
         return 0;
     }
 
