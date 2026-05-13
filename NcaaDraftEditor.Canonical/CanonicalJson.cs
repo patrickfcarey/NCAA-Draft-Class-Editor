@@ -12,16 +12,26 @@ public static class CanonicalJson
         DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
     };
 
+    // Generic helpers - same Options for every canonical type
+    // (CanonicalDraftClass, CanonicalRoster, ...).
+    public static string Serialize<T>(T value) where T : notnull =>
+        JsonSerializer.Serialize(value, Options);
+
+    public static T Deserialize<T>(string json) where T : notnull =>
+        JsonSerializer.Deserialize<T>(json, Options)
+        ?? throw new InvalidDataException($"Failed to parse canonical {typeof(T).Name} JSON.");
+
+    // CanonicalDraftClass convenience wrappers (kept for back-compat with
+    // existing call sites in the compiler + CLI).
     public static CanonicalDraftClass Load(string path) =>
-        Deserialize(File.ReadAllText(path));
+        Deserialize<CanonicalDraftClass>(File.ReadAllText(path));
 
     public static void Save(CanonicalDraftClass dc, string path) =>
         File.WriteAllText(path, Serialize(dc));
 
     public static string Serialize(CanonicalDraftClass dc) =>
-        JsonSerializer.Serialize(dc, Options);
+        Serialize<CanonicalDraftClass>(dc);
 
     public static CanonicalDraftClass Deserialize(string json) =>
-        JsonSerializer.Deserialize<CanonicalDraftClass>(json, Options)
-        ?? throw new InvalidDataException("Failed to parse canonical draft class JSON.");
+        Deserialize<CanonicalDraftClass>(json);
 }
