@@ -1,3 +1,5 @@
+using NcaaDraftEditor.Canonical;
+using NcaaDraftEditor.Compiler;
 using NcaaDraftEditor.Core;
 
 namespace NcaaDraftEditor.Cli;
@@ -17,6 +19,7 @@ internal static class Program
                 "build" => Build(args[1..]),
                 "roundtrip" => Roundtrip(args[1..]),
                 "new" => NewTemplate(args[1..]),
+                "compile" => Compile(args[1..]),
                 "-h" or "--help" or "help" => Help(),
                 _ => Help($"Unknown command: {args[0]}"),
             };
@@ -24,6 +27,8 @@ internal static class Program
         catch (Exception ex)
         {
             Console.Error.WriteLine($"Error: {ex.Message}");
+            if (Environment.GetEnvironmentVariable("NCAA_DRAFT_VERBOSE") == "1")
+                Console.Error.WriteLine(ex.ToString());
             return 1;
         }
     }
@@ -36,10 +41,14 @@ internal static class Program
             Usage: ncaa-draft <command> [args...]
 
             Commands:
-              dump <in.bin> <out.json>       Read a draft class binary, write its JSON
-              build <in.json> <out.bin>      Read JSON, write a draft class binary
-              roundtrip <in.bin>             Load -> JSON -> Save; exit 0 iff byte-exact
-              new --players N <out.json>     Write a blank JSON template with N empty records
+              dump <in.bin> <out.json>             Read a draft class binary, write its JSON
+              build <in.json> <out.bin>            Read JSON, write a draft class binary
+              roundtrip <in.bin>                   Load -> JSON -> Save; exit 0 iff byte-exact
+              new --players N <out.json>           Write a blank JSON template with N empty records
+              compile <canonical.json> <positions.json> <colleges.json> <out.bin> [--madden <path>]
+                                                   Compile canonical real-world draft class to binary
+
+            Set NCAA_DRAFT_VERBOSE=1 to print full stack traces on errors.
             """);
         return error is null ? 0 : 2;
     }
@@ -86,6 +95,37 @@ internal static class Program
         {
             File.Delete(temp);
         }
+    }
+
+    static int Compile(string[] args)
+    {
+        if (args.Length < 4)
+            return Help("compile requires <canonical.json> <positions.json> <colleges.json> <out.bin> [--madden <path>]");
+
+        var canonical = CanonicalJson.Load(args[0]);
+        var positions = PositionMapper.LoadFile(args[1]);
+        var colleges = CollegeMapper.LoadFile(args[2]);
+        var outPath = args[3];
+
+        MaddenRoster? madden = null;
+        for (int i = 4; i < args.Length; i++)
+        {
+            if (args[i] == "--madden" && i + 1 < args.Length)
+                madden = MaddenRoster.LoadFile(args[++i]);
+            else
+                return Help($"Unexpected argument: {args[i]}");
+        }
+
+        var compiler = new DraftClassCompiler(positions, colleges, madden);
+        var dc = compiler.Compile(canonical);
+        dc.Save(outPath);
+
+        var realPlayers = canonical.Players.Count;
+        Console.Error.WriteLine(
+            $"Wrote {outPath}: {realPlayers} real players from canonical, " +
+            $"padded to {dc.Players.Count} records, {dc.Trailer.Length}-byte trailer " +
+            $"(madden={(madden is null ? "none" : "loaded")})");
+        return 0;
     }
 
     static int NewTemplate(string[] args)
