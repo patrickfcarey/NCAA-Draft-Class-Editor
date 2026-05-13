@@ -38,5 +38,8 @@
     <None Include="..\tests\fixtures\madden08-roster-sample.bin" Link="fixtures\madden08-roster-sample.bin">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="..\data\raw\salary-caps\nfl-salary-caps.json" Link="fixtures\nfl-salary-caps.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 </Project>

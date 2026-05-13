@@ -1,0 +1,36 @@
+{
+  "schema": "nfl-salary-caps/v1",
+  "description": "Real NFL salary cap + RFA tender amounts per season. Values written verbatim into SLRI.SCAD / SLRI.RFA1..4 of a Madden franchise save to seed an era-correct cap economy. Source: OvertheCap.com / NFLPA historical CBA records, cross-referenced with the M08 PS2 fresh-save fixture (2007 entry confirmed byte-identical).",
+  "fields": {
+    "cap": "League salary cap for the regular season (dollars). Written to SLRI.SCAD.",
+    "franchiseTag": "Approximate franchise tag for the most-expensive position (QB) that year (dollars). Written to SLRI.SMAD.",
+    "rfa": "Restricted free agent tender amounts (dollars) at the 4 ascending tiers: low / second-round / first-round / original-round. Written to SLRI.RFA1..RFA4 in order."
+  },
+  "notes": [
+    "2010 was an uncapped year (CBA expiration). We use a synthetic ~$123M figure so Madden's cap math has a non-zero value to display.",
+    "2021 cap dipped due to COVID-19 reduced revenues; first time the cap decreased year-over-year. Madden's engine never produces a decrease via simulation, but writing the lower value is mechanically safe (32-bit field).",
+    "2026 values are TBD until late February of that year; placeholder = projected upper end of estimates."
+  ],
+  "years": {
+    "2007": {"cap": 109000000, "franchiseTag": 16000000, "rfa": [850000,  1350000, 1850000, 2350000]},
+    "2008": {"cap": 116000000, "franchiseTag": 16770000, "rfa": [927000,  1417000, 1970000, 2561000]},
+    "2009": {"cap": 123000000, "franchiseTag": 18280000, "rfa": [1010000, 1545000, 2198000, 2792000]},
+    "2010": {"cap": 123000000, "franchiseTag": 16404000, "rfa": [1101000, 1684000, 2396000, 3043000]},
+    "2011": {"cap": 120375000, "franchiseTag": 16000000, "rfa": [1200000, 1835000, 2612000, 3318000]},
+    "2012": {"cap": 120600000, "franchiseTag": 14400000, "rfa": [1260000, 1927000, 2742000, 3484000]},
+    "2013": {"cap": 123000000, "franchiseTag": 14896000, "rfa": [1323000, 2023000, 2879000, 3658000]},
+    "2014": {"cap": 133000000, "franchiseTag": 16912000, "rfa": [1431000, 2187000, 3113000, 3955000]},
+    "2015": {"cap": 143280000, "franchiseTag": 18544000, "rfa": [1542000, 2356000, 3354000, 4262000]},
+    "2016": {"cap": 155270000, "franchiseTag": 19953000, "rfa": [1671000, 2553000, 3635000, 4619000]},
+    "2017": {"cap": 167000000, "franchiseTag": 21268000, "rfa": [1797000, 2746000, 3909000, 4969000]},
+    "2018": {"cap": 177200000, "franchiseTag": 23189000, "rfa": [1907000, 2914000, 4149000, 5273000]},
+    "2019": {"cap": 188200000, "franchiseTag": 25000000, "rfa": [2025000, 3095000, 4407000, 5594000]},
+    "2020": {"cap": 198200000, "franchiseTag": 27000000, "rfa": [2133000, 3259000, 4641000, 5895000]},
+    "2021": {"cap": 182500000, "franchiseTag": 23005000, "rfa": [2183000, 3384000, 4766000, 6044000]},
+    "2022": {"cap": 208200000, "franchiseTag": 29900000, "rfa": [2433000, 3986000, 5562000, 7048000]},
+    "2023": {"cap": 224800000, "franchiseTag": 32416000, "rfa": [2627000, 4304000, 6005000, 7613000]},
+    "2024": {"cap": 255400000, "franchiseTag": 35790000, "rfa": [2985000, 4892000, 6815000, 8639000]},
+    "2025": {"cap": 279200000, "franchiseTag": 40242000, "rfa": [3266000, 5346000, 7458000, 9446000]},
+    "2026": {"cap": 300000000, "franchiseTag": 43250000, "rfa": [3500000, 5750000, 8000000, 10150000]}
+  }
+}

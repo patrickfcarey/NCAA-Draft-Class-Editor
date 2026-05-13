@@ -32,6 +32,11 @@ files via a PS2 memcard, and gets a franchise that mirrors NFL history.
 | 8 | PCSX2 verification | ✅ 2018 verified; other years pending Tier 7 |
 | 9 | Madden 09 PS2 (Deluxe-compatible) roster builder | ✅ M09 TDB schema confirmed byte-identical to M08; pack_baslus.py m09-roster preset (BASLUS-21770); fetch_m09_template.py auto-downloads Deluxe .psu; build_all_rosters.py --target m09; 2018 compile+pack verified end-to-end |
 | 10 | Madden 12 PS2 (Deluxe-compatible) roster builder | ✅ M12 PS2 is bare TDB (MC02 wrapper is PS3/360/PC-only); PLAY field bit-layout shifted vs M08 (~74 of 110 fields) but metadata-driven compiler handles transparently; pack_baslus.py m12-roster preset (BASLUS-21946); fetch_m12_template.py auto-downloads Deluxe .psu; build_all_rosters.py --target m12; 2018 compile+pack verified end-to-end |
+| 11 | NCAA draft class import for M09 / M12 (vanilla + Deluxe) | ✅ Format identical to M08 NCAA binary (138,240 bytes). pack_baslus.py m09-draft-class (BASLUS-21769LClass08, for NCAA 09→M09) and m12-draft-class (BASLUS-21932LClass10, for NCAA 11→M12; NCAA 12 has no PS2 release). build_all_draft_classes.py --target m08\|m09\|m12\|all. PCSX2 verification of BASLUS suffix convention pending. |
+| 12 | Madden 08 franchise compiler (Phase 1: calendar + cap economy) | ✅ MaddenTdb preamble support (franchise saves prepend 02 00 00 00 before DB magic). MaddenFranchiseCompiler writes SEAI.SEYR (calendar year offset from base 2007) and SLRI.SCAD/SMAD/RFA1..4 (real-dollar cap economy). data/raw/salary-caps/nfl-salary-caps.json carries real NFL cap + RFA tenders 2007–2026. CLI compile-franchise. pack_baslus.py m08-franchise preset. fetch_m08_franchise_template.py extracts template from user memcard. 2018 smoke test verified (SEYR=11, SCAD=$177.2M) end-to-end through pack/unpack roundtrip. PCSX2 verification pending. |
+| 13 | Phase 2: per-player contract synthesizer | ⬜ Not started. Franchise PLAY has 21 extra fields vs roster PLAY: PSA0..6 (annual salary, 14-bit), PSB0..6 (signing bonus, 13-bit), PCSA (cap hit), PCTS, PSBO, PSBS. Need rating+age+position model to populate. Roster save has only PCON (4-bit contract length) and PYRP (years pro); game auto-generates contracts on franchise start from those. |
+| 14 | Phase 3: real contract data (Spotrac/OvertheCap import) | ⬜ Not started. |
+| 15 | M09 / M12 franchise compiler | ⬜ Not started. Templates not fetched; field schema not yet diffed against M08 franchise. Expected to share most table shape. |
 
 End-to-end works for one year (2018). User has loaded the compiled file in
 Madden 08 on PCSX2 and seen Mayfield/Barkley/etc. in the draft pool.
@@ -224,6 +229,48 @@ TGID, PPOS, names.
 Use `tools/parse_madden_tdb.py <file> [out.json]` to dump the full
 parse for any TDB file in the working directory.
 
+### Madden 08 PS2 franchise binary (BASLUS-21638BFran1)
+
+Same TDB family as the roster, but **prepended with a 4-byte `02 00 00 00`
+preamble** before the `"DB"` magic. Our `MaddenTdb.Load` auto-detects and
+strips the preamble; `Save()` re-prepends it. Don't fight the preamble — pass
+the whole file through `MaddenTdb` and it's handled.
+
+The franchise TDB has **183 tables** (vs 4 in a roster). The PLAY table here
+has **131 fields** (vs 110 in the roster); the 21 extras are per-player
+franchise state, including:
+
+- `PSA0..PSA6` (14 bits each) — annual base salary, year 0–6 of contract.
+  Units appear to be **$10,000** (14-bit ceiling = $163.83M, room for top
+  contracts).
+- `PSB0..PSB6` (13 bits each) — prorated signing bonus, year 0–6.
+- `PCSA` (14 bits) — current-year cap hit (PSA + bonus allocation).
+- `PCTS` (2 bits), `PSBO` (13 bits), `PSBS` (7 bits) — contract status,
+  original bonus total, bonus state.
+- Other franchise state: morale, role, progression, fatigue.
+
+The two singletons our Phase-1 compiler mutates:
+
+- **`SEAI`** (Season Info, 19 fields). `SEAI.SEYR` is a **6-bit SINT at
+  offset 51** holding the year offset from the disc's base year
+  (M08 = 2007). Fresh save has SEYR=0; for a 2018 target on M08 write
+  SEYR=11. Range -32..+31 covers 1975..2038 from a 2007 base.
+- **`SLRI`** (Salary Info, 9 fields, all 32-bit UINT except 3 small flags):
+  - `SCAD` — league salary cap, real dollars.
+  - `SMAD` — franchise tag amount, real dollars.
+  - `RFA1..RFA4` — RFA tender amounts at the 4 ascending tiers, real dollars.
+  - `SAIP` / `SIIP` / `SAMU` — cap-policy constants (min salary, etc.).
+
+M08's engine routinely produces caps in the $200M+ range during long sims
+(~6% YoY inflation, community-documented). Writing real-historical caps
+($109M..$300M+ across 2007–2026) is well within proven engine range — see
+[footballidiot.com cap inflation thread](https://www.footballidiot.com/forum/viewtopic.php?t=20989).
+
+Phase-1 compiler **does not** populate per-player contracts. The engine
+generates plausible contracts at franchise start from rating + age + PCON +
+position. Phase 2 adds a rating-driven contract synthesizer; Phase 3 adds
+real Spotrac/OvertheCap contract import.
+
 ## Pipelines
 
 ### NCAA draft class (Tier 4, working)
@@ -279,6 +326,41 @@ out/roster-{year}.max
                 ↓ mymcplus import
 PCSX2 memcard
 ```
+
+### Madden 08 franchise (Tier 12, Phase 1 built)
+
+```
+data/raw/salary-caps/nfl-salary-caps.json   real NFL cap + RFA tenders 2007-2026
+                ↓ MaddenFranchiseCompiler.Compile(year, template)
+out/templates/madden-nfl-08-franchise-template.bin  (user-extracted via fetch_m08_franchise_template.py)
+                ↓ mutates SEAI.SEYR + SLRI.SCAD/SMAD/RFA1..4 in place
+out/franchise-{year}.bin                    (1,474,560-byte BASLUS-21638BFran1 with 4-byte preamble)
+                ↓ tools/pack_baslus.py --type m08-franchise
+out/franchise-{year}.psu                    PS2 save container
+                ↓ mymcplus import
+PCSX2 memcard                               Boot Madden 08 → Load Franchise → date should be {year}
+```
+
+CLI:
+
+```
+dotnet run --project NcaaDraftEditor.Cli -- compile-franchise \
+    out/templates/madden-nfl-08-franchise-template.bin \
+    out/franchise-2018.bin \
+    --year 2018 \
+    --caps data/raw/salary-caps/nfl-salary-caps.json
+python3 tools/pack_baslus.py out/franchise-2018.bin out/franchise-2018.psu --type m08-franchise
+```
+
+The template is user-specific (a fresh-Week-1 franchise the user exported
+from their own PS2 memcard). `tools/fetch_m08_franchise_template.py` reads
+from `/mnt/c/PCSX2/memcards/Mcd001.ps2` (configurable via `--memcard`) and
+caches both `.psu` and inner `.bin` at the standard path.
+
+PCSX2 verification of "did the in-game calendar actually flip to 2018"
+pending. Smoke-test verification of file contents (SEYR=11, SCAD=$177.2M,
+all other SEAI/SLRI fields preserved byte-exact, 4-byte preamble survives
+pack/unpack roundtrip) is ✅.
 
 ### Madden 09 / Madden 12 rosters (Tier 9–10, built — Deluxe-compatible)
 
@@ -432,6 +514,33 @@ Madden 19 launch ratings don't always track NFL Draft pick order
 Mayfield going #1). Use `--lock-draft-order` to apply a linear OVR
 floor by real pick number.
 
+### Franchise saves have a 4-byte preamble
+Madden 08 franchise saves (`BASLUS-21638BFran1`) prepend `02 00 00 00`
+before the TDB's `"DB"` magic. Both the Python `parse_madden_tdb.py`
+parser and the C# `MaddenTdb` class auto-detect and strip the preamble on
+read; `MaddenTdb.Save()` re-prepends it. Don't manually slice; pass the
+whole file in.
+
+### Roster save's contract data is minimal
+Roster save's PLAY table has only `PCON` (4-bit contract length) and
+`PYRP` (5-bit years pro). No salary/bonus/cap-hit fields. Full per-player
+contracts live only in franchise saves (`PSA0..6`, `PSB0..6`, `PCSA`, etc.,
+21 extra fields in the franchise PLAY table). When Madden 08 boots a fresh
+franchise from a roster, it generates contracts on the fly from a
+`f(rating, age, position, PCON)` model.
+
+### Madden uses ~6% YoY cap inflation
+Engine-driven franchise simulation grows the league cap ~6% per offseason.
+A long sim out to year 25 reportedly produces caps above $400M with no
+display/overflow problems — modders have hex-edited `SLRI.SCAD` to large
+values for over a decade without issue. So writing real-historical NFL caps
+(up to ~$300M for 2026) into a fresh M08 save is **safe by a wide margin**.
+
+### Salary cap field is in real dollars, not $10K units
+`SLRI.SCAD` is 32-bit UINT, **raw dollar amount**. (M08's 2007 default
+holds the literal value 109,000,000.) Don't divide by 10,000 — that's the
+PLAY contract fields' convention, not the league cap.
+
 ## What's known to NOT exist
 
 - Bulk launch-ratings data for Madden 25 modern (2024), Madden 26
@@ -494,13 +603,32 @@ import out/...max` directly).
 **What's left for Tier 6:**
 1. **PCSX2 verification** — boot Madden 08, load a roster save, start
    franchise, sanity check rosters match the canonical year.
-2. **TEAM table updates** — the compiler only mutates PLAY records.
-   Relocated teams (Rams in LA from 2016+, Chargers in LA from 2017+,
-   Raiders in LV from 2020+) still appear under their 2007 names. Easy
-   future extension: write TDNA/TLNA/TSNA fields from CanonicalTeam in
-   the compiler.
+2. ~~TEAM table updates~~ — ✅ Done (d29b48f). Compiler authoritatively
+   rewrites `TDNA` / `TLNA` / `TSNA` / `TMNC` per canonical year. Relocated
+   teams now show correct city/abbr on every target including Deluxe.
 3. **Per-team roster cap** — canonical has 55-100 players per team but
    Madden's PLAY table has only ~62 slots per TGID. The compiler
    currently sorts by OVR descending and silently drops the rest;
    could be smarter (preserve role distribution, etc.).
-4. **Team name updates for relocations** (overlap with #2).
+
+**Where to look first when picking up Tier 12 (franchise) Phase 2:**
+
+The franchise calendar + cap economy work is complete. Phase 2 is the
+per-player contract synthesizer:
+
+- Schema: 21 extra PLAY fields exist only in franchise saves
+  (`PSA0..6` 14-bit annual salary in $10K units, `PSB0..6` 13-bit
+  signing bonus, `PCSA` cap hit, plus `PCTS`, `PSBO`, `PSBS`).
+- Model: `cap_hit = f(POVR, PPOS, PAGE, PCON)` calibrated against the
+  league cap (`SLRI.SCAD`).
+- Caveat: the franchise PLAY table has 1,963 records by default. Roster
+  PLAY had `PCON=0 PSA0=0` for record 0 (empty slot) but most franchise
+  PLAY records carry real contracts — we need to **overwrite all 1,963**
+  with synthesized values, not just the populated ones, or the engine
+  will produce inconsistent cap math.
+
+Test fixtures: `out/franchise-2018.bin` is the Phase-1 smoke-test output
+(1,474,560 bytes with 4-byte preamble). Re-parse via
+`python3 tools/parse_madden_tdb.py out/franchise-2018.bin /tmp/parsed.json`
+— both the Python parser and the C# `MaddenTdb` class auto-detect and strip
+the preamble.

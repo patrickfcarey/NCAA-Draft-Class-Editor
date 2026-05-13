@@ -186,7 +186,19 @@ def parse_table_records(data: bytes, header: dict, fields: list[dict], data_star
 
 
 def parse_tdb(file_bytes: bytes) -> dict:
+    # Auto-detect and strip a pre-TDB preamble. Madden franchise saves
+    # prepend `02 00 00 00` before the `"DB"` magic; roster and draft-class
+    # saves start with the TDB directly. Scan the first 16 bytes for the
+    # magic; anything before is preamble.
+    preamble_len = 0
+    for i in range(min(16, len(file_bytes) - 1)):
+        if file_bytes[i:i+2] == b"DB":
+            preamble_len = i
+            break
+    if preamble_len:
+        file_bytes = file_bytes[preamble_len:]
     header = parse_file_header(file_bytes)
+    header["preambleBytes"] = preamble_len
     tables = parse_table_directory(file_bytes, header["tableCount"])
     data_origin = FILE_HEADER_SIZE + header["tableCount"] * TABLE_DEFINITION_SIZE
     for t in tables:

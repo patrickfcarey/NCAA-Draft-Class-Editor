@@ -21,6 +21,7 @@ internal static class Program
                 "new" => NewTemplate(args[1..]),
                 "compile" => Compile(args[1..]),
                 "compile-roster" => CompileRoster(args[1..]),
+                "compile-franchise" => CompileFranchise(args[1..]),
                 "-h" or "--help" or "help" => Help(),
                 _ => Help($"Unknown command: {args[0]}"),
             };
@@ -61,6 +62,13 @@ internal static class Program
                                                    leaves TEAM/DCHT/INJY tables untouched. Use
                                                    tests/fixtures/madden08-roster-sample.bin as the
                                                    template.
+              compile-franchise <template.bin> <out.bin> --year YYYY --caps <salary-caps.json>
+                                                   [--base-year YYYY]
+                                                   Mutate a Madden franchise save to target NFL
+                                                   season YYYY. Writes SEAI.SEYR (calendar) and
+                                                   SLRI.SCAD/SMAD/RFA1..4 (cap economy). Default
+                                                   base year is 2007 (M08); pass --base-year 2008
+                                                   for M09 or 2011 for M12.
 
             Set NCAA_DRAFT_VERBOSE=1 to print full stack traces on errors.
             """);
@@ -178,6 +186,40 @@ internal static class Program
             $"Wrote {outPath}: {canonical.Teams.Count} teams, " +
             $"{totalCanonicalPlayers} canonical players supplied, " +
             $"{totalTemplateSlots} template PLAY slots available");
+        return 0;
+    }
+
+    static int CompileFranchise(string[] args)
+    {
+        if (args.Length < 2)
+            return Help("compile-franchise requires <template.bin> <out.bin> --year YYYY --caps <salary-caps.json> [--base-year YYYY]");
+        var templatePath = args[0];
+        var outPath = args[1];
+        int year = -1;
+        string? capsPath = null;
+        int baseYear = MaddenFranchiseCompiler.M08BaseYear;
+        for (int i = 2; i < args.Length; i++)
+        {
+            if (args[i] == "--year" && i + 1 < args.Length) year = int.Parse(args[++i]);
+            else if (args[i] == "--caps" && i + 1 < args.Length) capsPath = args[++i];
+            else if (args[i] == "--base-year" && i + 1 < args.Length) baseYear = int.Parse(args[++i]);
+            else return Help($"Unexpected argument: {args[i]}");
+        }
+        if (year < 0) return Help("compile-franchise requires --year YYYY");
+        if (capsPath is null) return Help("compile-franchise requires --caps <salary-caps.json>");
+
+        var caps = SalaryCapTable.LoadFile(capsPath);
+        var template = MaddenTdb.LoadFile(templatePath);
+        var compiler = new MaddenFranchiseCompiler(baseYear, caps);
+        compiler.Compile(year, template);
+        template.SaveFile(outPath);
+
+        var seai = template.FindTable("SEAI")!.Records[0];
+        var slri = template.FindTable("SLRI")!.Records[0];
+        Console.Error.WriteLine(
+            $"Wrote {outPath}: target NFL season {year}, base year {baseYear}, " +
+            $"SEYR={seai.GetUInt("SEYR")} SCAD=${slri.GetUInt("SCAD"):N0} " +
+            $"SMAD=${slri.GetUInt("SMAD"):N0}");
         return 0;
     }
 

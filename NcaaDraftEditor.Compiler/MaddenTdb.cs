@@ -35,9 +35,33 @@ public sealed class MaddenTdb
     /// </summary>
     private byte[]? _originalBytes;
 
+    /// <summary>
+    /// Bytes that appear before the TDB "DB" magic in the source file. Madden
+    /// franchise saves prepend a 4-byte 02 00 00 00 wrapper (purpose unknown,
+    /// likely a save-format version); roster saves and draft-class saves have
+    /// no preamble. Preserved through Save() so byte-exact roundtrip works for
+    /// both shapes.
+    /// </summary>
+    public byte[] Preamble { get; set; } = Array.Empty<byte>();
+
     public static MaddenTdb Load(byte[] data)
     {
-        var tdb = new MaddenTdb { _originalBytes = data };
+        // Detect a pre-TDB preamble (franchise saves have 02 00 00 00 before
+        // the DB magic). Scan the first 16 bytes for "DB"; anything before is
+        // preamble. Roster/draft saves start with DB directly -> empty preamble.
+        int tdbStart = 0;
+        for (int i = 0; i < Math.Min(16, data.Length - 1); i++)
+        {
+            if (data[i] == (byte)'D' && data[i + 1] == (byte)'B')
+            {
+                tdbStart = i;
+                break;
+            }
+        }
+        var preamble = data.AsSpan(0, tdbStart).ToArray();
+        data = tdbStart == 0 ? data : data[tdbStart..];
+
+        var tdb = new MaddenTdb { _originalBytes = data, Preamble = preamble };
         tdb.Header = TdbHeader.Read(data.AsSpan(0, FileHeaderSize));
 
         int dataOrigin = FileHeaderSize + (int)tdb.Header.TableCount * TableDefinitionSize;
@@ -141,7 +165,14 @@ public sealed class MaddenTdb
         }
         foreach (var (start, body) in tableBlocks)
             body.CopyTo(outBuf, start);
-        return outBuf;
+
+        if (Preamble.Length == 0) return outBuf;
+        // Prepend preamble for franchise saves (and any future format that
+        // wraps the TDB with leading metadata bytes).
+        var withPreamble = new byte[Preamble.Length + outBuf.Length];
+        Preamble.CopyTo(withPreamble, 0);
+        outBuf.CopyTo(withPreamble, Preamble.Length);
+        return withPreamble;
     }
 
     public void SaveFile(string path) => File.WriteAllBytes(path, Save());
