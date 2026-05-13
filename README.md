@@ -34,7 +34,7 @@ build pipeline, and the M09/M12 + Deluxe targets — was added in this fork.
 | Madden 09 PS2 (Deluxe-compatible)       | Roster `.psu`, 2008–2025                                                  | Compile + pack verified for 2018; bulk build implemented                                                   |
 | Madden 12 PS2 (Deluxe-compatible)       | Roster `.psu`, 2008–2025                                                  | Compile + pack verified for 2018; bulk build implemented                                                   |
 | Draft class import into M09 / M12       | NCAA-format `.psu` retargeted to BASLUS-21769 / BASLUS-21932              | Pack pipeline wired (`m09-draft-class` / `m12-draft-class`); PCSX2 verification pending                    |
-| Madden 08 franchise compiler (Phase 1)  | Year-correct calendar + cap economy via SEAI.SEYR + SLRI.SCAD/SMAD/RFA1-4 | `compile-franchise` CLI + `m08-franchise` pack preset wired; 2018 smoke test ✅; PCSX2 verification pending |
+| Madden 08 franchise compiler (Phase 1)  | Year-correct calendar + cap economy via SEAI.SEYR + SLRI.SCAD/SMAD/RFA1-4 | ✅ Verified end-to-end in PCSX2 for 2018: save loads, cap shows $177M, season year shows 2018 in stats |
 | Franchise Phase 2: per-player contracts | PSA0-6 / PSB0-6 / PCSA synthesis from rating + age + position             | Not started                                                                                                |
 | M09 / M12 franchise compilers           | Same approach as M08 with per-game base year + own templates              | Not started                                                                                                |
 | Tier 7 release pipeline                 | One-shot build of all 38+ artifacts                                       | Not started                                                                                                |
@@ -671,6 +671,21 @@ To open a save:
 - **M08's cap-inflation engine can produce $400M+ caps in long sims.** ~6%
   YoY compounding from $109M (2007). Writing real-historical caps for any
   year through 2026 is well within proven engine range.
+- **Franchise saves are CRC-protected; any byte change fails to load unless
+  CRCs are recomputed.** `MaddenTdb.Save()` does this automatically using
+  CRC-32/MPEG-2 (poly 0x04C11DB7, init 0xFFFFFFFF, no reflection, no xorout).
+  PS2 stores the CRCs in little-endian; PS3/PC stores in big-endian. There
+  are four CRC fields: file-header CRC, per-table `priorCRC` (CRC of previous
+  table's data), per-table `headerCRC` (CRC of bytes 4..36 of own header),
+  and EOF CRC at `dbSize - 4`. Roster saves use the same algorithm but
+  Madden seems not to enforce it on roster loads — only franchise.
+- **TDB STRING fields must use Latin-1, not ASCII.** EA's TDB stadium names
+  (`STAD.SNAM`) contain bytes ≥ 0x80 (e.g. `0xB0` = `°`). Reading with
+  `Encoding.ASCII` corrupts those into `'?'` (0x3F) on roundtrip and breaks
+  byte-exactness (which then breaks CRC validation downstream). Use
+  `Encoding.Latin1` and don't pre-clear the field on write — `Save()`
+  already seeds from `_originalBytes`, so leaving the bytes-after-null
+  untouched preserves whatever the original carried.
 
 ---
 
