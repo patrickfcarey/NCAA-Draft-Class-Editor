@@ -1,0 +1,21 @@
+{
+  "schema": "ncaa-position-mapping/v1",
+  "comment": "Maps canonical NFL position strings to NCAA 06 PPOS byte values. NCAA 06 distinguishes L/R sides for OL, DE, OLB; the canonical schema uses generic labels (OT/OG/DE/LB/S) so we default to a single variant. Per-player overrides can be added later if needed.",
+  "map": {
+    "QB":  0,
+    "RB":  1,
+    "FB":  2,
+    "WR":  3,
+    "TE":  4,
+    "OT":  5,
+    "OG":  6,
+    "C":   7,
+    "DE": 10,
+    "DT": 12,
+    "LB": 14,
+    "CB": 16,
+    "S":  17,
+    "K":  19,
+    "P":  20
+  }
+}
