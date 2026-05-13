@@ -1,5 +1,6 @@
 using System.ComponentModel;
 using System.Windows.Forms;
+using NcaaDraftEditor.Core;
 
 namespace NcaaDraftEditor.WinForms;
 

@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-namespace NcaaDraftEditor.WinForms;
+namespace NcaaDraftEditor.Core;
 public static class FieldMap
 {
     public const int FirstNameOffset = 6;

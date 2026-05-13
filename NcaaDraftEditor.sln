@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.14.36414.22 d17.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NcaaDraftEditor.WinForms", "DraftClassEditor\NcaaDraftEditor.WinForms.csproj", "{BE055F41-D870-CD19-2F41-F3E0E1E7001C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NcaaDraftEditor.Core", "NcaaDraftEditor.Core\NcaaDraftEditor.Core.csproj", "{B045BB16-99B5-4601-AEFE-C07FB92B6FEF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NcaaDraftEditor.WinForms", "NcaaDraftEditor.WinForms\NcaaDraftEditor.WinForms.csproj", "{BE055F41-D870-CD19-2F41-F3E0E1E7001C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,6 +13,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B045BB16-99B5-4601-AEFE-C07FB92B6FEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B045BB16-99B5-4601-AEFE-C07FB92B6FEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B045BB16-99B5-4601-AEFE-C07FB92B6FEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B045BB16-99B5-4601-AEFE-C07FB92B6FEF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BE055F41-D870-CD19-2F41-F3E0E1E7001C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BE055F41-D870-CD19-2F41-F3E0E1E7001C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE055F41-D870-CD19-2F41-F3E0E1E7001C}.Release|Any CPU.ActiveCfg = Release|Any CPU

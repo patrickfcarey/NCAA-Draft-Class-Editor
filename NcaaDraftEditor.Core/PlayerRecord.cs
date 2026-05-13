@@ -1,5 +1,5 @@
 using System.Text;
-namespace NcaaDraftEditor.WinForms;
+namespace NcaaDraftEditor.Core;
 public sealed class PlayerRecord
 {
     public byte[] Raw { get; }

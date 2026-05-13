@@ -1,6 +1,6 @@
 // Auto-generated from NCAA-DB-Conversion-Reference.xlsx
 using System.Collections.Generic;
-namespace NcaaDraftEditor.WinForms;
+namespace NcaaDraftEditor.Core;
 public static class AppearanceCatalog {
     public static readonly Dictionary<byte,string> PSKI = new() {
         [ (byte)0 ] = "Light (0)",

@@ -1,6 +1,6 @@
 // Auto-generated from NCAA-DB-Conversion-Reference.xlsx
 using System.Collections.Generic;
-namespace NcaaDraftEditor.WinForms;
+namespace NcaaDraftEditor.Core;
 public static class PositionCatalog {
     public static readonly Dictionary<byte,string> ByCode = new() {
         [ (byte)0 ] = "QB",

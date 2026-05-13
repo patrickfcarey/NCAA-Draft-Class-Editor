@@ -1,6 +1,6 @@
 // Auto-generated from NCAA-DB-Conversion-Reference.xlsx
 using System.Collections.Generic;
-namespace NcaaDraftEditor.WinForms;
+namespace NcaaDraftEditor.Core;
 public static class CollegeCatalog {
     public static readonly Dictionary<byte,string> ByTGID = new() {
         [ (byte)1 ] = "Air Force",

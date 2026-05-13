@@ -1,5 +1,5 @@
 using System.Text;
-namespace NcaaDraftEditor.WinForms;
+namespace NcaaDraftEditor.Core;
 public sealed class DraftClassFile
 {
     public static readonly byte[] MagicHeader = { 0x46, 0x00, 0x40, 0x06 };
