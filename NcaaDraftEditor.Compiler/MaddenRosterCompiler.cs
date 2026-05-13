@@ -10,7 +10,9 @@ namespace NcaaDraftEditor.Compiler;
 /// record count, indices, anything we don't model), so the file remains valid
 /// for Madden 08 to load.
 ///
-/// MVP behavior: only PLAY records are mutated. TEAM/DCHT/INJY untouched.
+/// Mutates PLAY records (rosters) and TEAM string fields (city/name/abbr) so
+/// historical-year output is correct even on Deluxe templates whose baseline
+/// is the 2026 NFL (LAR/LAC/LV Raiders/Commanders). DCHT/INJY untouched.
 /// Players beyond the template's per-team slot count are silently dropped; the
 /// compiler does NOT add records. Future work: sort canonical by OVR descending
 /// so the best players take the available slots when canonical exceeds capacity.
@@ -33,9 +35,12 @@ public sealed class MaddenRosterCompiler
     {
         var play = template.FindTable("PLAY")
             ?? throw new InvalidOperationException("Template TDB missing PLAY table");
+        var teamTable = template.FindTable("TEAM")
+            ?? throw new InvalidOperationException("Template TDB missing TEAM table");
 
         foreach (var team in canonical.Teams)
         {
+            ApplyTeamStrings(teamTable, team);
             // Sort canonical players by ratings.ovr descending so the best
             // take the limited slot count when we over-supply.
             var ordered = team.Players
@@ -55,6 +60,26 @@ public sealed class MaddenRosterCompiler
         }
 
         return template;
+    }
+
+    /// <summary>
+    /// Authoritatively write the 4 TEAM string fields for the given canonical
+    /// team. Drives historical accuracy on Deluxe templates (which ship 2026
+    /// cities) and on vanilla templates that predate later relocations.
+    /// Stadium name isn't in the TDB - it's keyed off SGID into an ISO-level
+    /// catalog - so we can't fix that from save data.
+    /// </summary>
+    private static void ApplyTeamStrings(TdbTable teamTable, CanonicalTeam team)
+    {
+        var rec = teamTable.Records.FirstOrDefault(r => r.GetUInt("TGID") == (uint)team.TgId);
+        if (rec is null) return;
+        if (!string.IsNullOrEmpty(team.Name))
+        {
+            rec.SetString("TDNA", team.Name);
+            rec.SetString("TMNC", team.Name);
+        }
+        if (!string.IsNullOrEmpty(team.City)) rec.SetString("TLNA", team.City);
+        if (!string.IsNullOrEmpty(team.Abbreviation)) rec.SetString("TSNA", team.Abbreviation);
     }
 
     private void ApplyPlayer(TdbRecord slot, CanonicalRosterPlayer player)

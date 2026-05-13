@@ -103,6 +103,42 @@ public class MaddenRosterCompilerTests
     }
 
     [Fact]
+    public void Compile_Rewrites_Team_Strings_For_Relocations()
+    {
+        // Sample is M08 vanilla -> Rams are in St. Louis (TGID=24, TSNA=STL).
+        // Compile a canonical for an LA-Rams-era year and confirm the TEAM
+        // record now says Los Angeles / LAR. This is the load-bearing fix for
+        // historical-year rosters on Deluxe templates whose baseline is 2026.
+        var template = MaddenTdb.LoadFile(SamplePath);
+        var beforeRams = template.FindTable("TEAM")!
+            .Records.First(r => r.GetUInt("TGID") == 24);
+        Assert.Equal("St. Louis", beforeRams.GetString("TLNA"));
+        Assert.Equal("STL", beforeRams.GetString("TSNA"));
+
+        var canonical = new CanonicalRoster
+        {
+            NflSeason = 2018,
+            Teams =
+            {
+                new CanonicalTeam
+                {
+                    TgId = 24, Abbreviation = "LAR", City = "Los Angeles", Name = "Rams",
+                },
+            },
+        };
+
+        var compiler = new MaddenRosterCompiler(PositionMapper.LoadFile(PositionsPath));
+        compiler.Compile(canonical, template);
+
+        var afterRams = template.FindTable("TEAM")!
+            .Records.First(r => r.GetUInt("TGID") == 24);
+        Assert.Equal("Los Angeles", afterRams.GetString("TLNA"));
+        Assert.Equal("LAR", afterRams.GetString("TSNA"));
+        Assert.Equal("Rams", afterRams.GetString("TDNA"));
+        Assert.Equal("Rams", afterRams.GetString("TMNC"));
+    }
+
+    [Fact]
     public void Compiled_Tdb_Saves_And_Reloads_Cleanly()
     {
         var template = MaddenTdb.LoadFile(SamplePath);
