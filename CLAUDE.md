@@ -27,7 +27,7 @@ files via a PS2 memcard, and gets a franchise that mirrors NFL history.
 | 3 | Scrapers (nflverse drafts, wikipedia 2026, weebly Madden) | ✅ Done (16 of 19 Madden years; gaps documented) |
 | 4 | Compiler canonical→binary + position/college mapping | ✅ MVP done; 2018 verified end-to-end in PCSX2 |
 | 5 | College mapping table (folded into Tier 4) | ✅ Done |
-| 6 | Madden 08 PS2 roster builder | ⬜ Not started; have sample fixture |
+| 6 | Madden 08 PS2 roster builder | 🚧 TDB read/write done (Python + C#, byte-exact roundtrip); canonical roster schema + compiler still TBD |
 | 7 | Pipeline + releases (one-shot build all 38 artifacts) | ⬜ Not started |
 | 8 | PCSX2 verification | ✅ 2018 verified; other years pending Tier 7 |
 
@@ -424,19 +424,35 @@ floor by real pick number.
 
 ## Where to look first when picking up Tier 6
 
-1. `/mnt/c/GitHub/madden-db-editor/src/renderer/` — Vue components + Vuex
-   store that parse the TDB format. Particularly:
-   - `components/MaddenDatabase.vue` (entry point)
-   - `components/MaddenHeader.vue` (24-byte header)
-   - `components/MaddenTable.vue`, `MaddenTableData.vue` (per-table parsing)
-   - `utils/HexReader.js` (byte reading helpers)
-   - `store/` directory — the `READ_TABLES` Vuex action does the work
-2. `tests/fixtures/madden08-roster-sample.bin` — our test target (Madden
-   08 PS2 default roster).
-3. `nflverse-data` `rosters` release — historical NFL rosters by year.
-   `https://github.com/nflverse/nflverse-data/releases/tag/rosters`
+Read+write of the TDB format is **done**:
 
-The fastest path is probably: write a Python TDB parser that dumps the
-PLAY table from our sample, get the schema right, then port to C# as
-`NcaaDraftEditor.Compiler.MaddenRosterFile`. Don't try to drive the
-Electron app headlessly — too painful.
+- `tools/parse_madden_tdb.py` — Python parser, byte-exact validated
+- `tools/write_madden_tdb.py` — Python writer, byte-exact roundtrip
+- `tools/edit_madden_tdb.py` — proves mutation works (changed Urlacher's
+  PSPD from 88 → 99 in the sample, all neighboring fields preserved)
+- `tools/dump_tdb_schema.py` + `docs/madden08-tdb-schema.md` — full
+  field reference for all 4 tables (DCHT/INJY/PLAY 110 fields/TEAM 66)
+- `NcaaDraftEditor.Compiler/MaddenTdb.cs` — C# port; same API surface
+  as `DraftClassFile`. Test coverage in `MaddenTdbTests.cs`.
+
+**What's left for Tier 6:**
+
+1. **Canonical roster schema.** New `roster-{year}.json` shape — likely
+   one team header per NFL team, list of player records per team, with
+   the same per-player fields the PLAY table cares about (name, pos,
+   jersey, age, height, weight, years-pro, 50+ ratings). Mirror the
+   Tier 2 canonical draft class shape.
+2. **Roster scraper.** nflverse has `rosters` release on
+   `github.com/nflverse/nflverse-data` — historical NFL rosters by year.
+   Join with our existing `data/raw/madden-ratings/` for per-year
+   Madden launch ratings.
+3. **Roster compiler.** Take canonical roster JSON + the sample TDB
+   fixture as a template. For each PLAY record in the template, mutate
+   it to match the corresponding canonical player. Output binary +
+   `pack_baslus.py` for BASLUS-21638 (will need to extend the pack
+   script to handle the different product code).
+4. **CLI integration.** `ncaa-draft compile-roster <canonical.json>
+   <template.bin> <out.bin>` subcommand.
+5. **PCSX2 verification.** Import the produced .max as a Madden 08
+   roster save, boot Madden 08, start franchise, verify rosters match
+   the year.
