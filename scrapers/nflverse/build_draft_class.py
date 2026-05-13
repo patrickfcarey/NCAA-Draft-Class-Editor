@@ -115,7 +115,10 @@ def build(year: int) -> dict[str, Any]:
         pfr_id = bio.get("pfr_id", "")
         combine = combine_by_pfr.get(pfr_id, {})
 
-        first = bio.get("first_name", "")
+        # Prefer common_first_name (player's playing name: "Tremaine", "Josh", "DJ")
+        # over first_name (legal name: "Fe'Zahn", "Joshua", "Denniston"). Game UIs and
+        # commentary use the common name; legal names confuse anyone looking at the roster.
+        first = (bio.get("common_first_name") or "").strip() or bio.get("first_name", "")
         last = bio.get("last_name", "")
         raw_pos = bio.get("position", "")
         position = POSITION_MAP.get(raw_pos, raw_pos)

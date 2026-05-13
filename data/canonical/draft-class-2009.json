@@ -4,7 +4,7 @@
   "players": [
     {
       "name": {
-        "first": "John",
+        "first": "Matthew",
         "last": "Stafford"
       },
       "position": "QB",
@@ -59,7 +59,7 @@
     },
     {
       "name": {
-        "first": "Anthony",
+        "first": "Tyson",
         "last": "Jackson"
       },
       "position": "DE",
@@ -220,7 +220,7 @@
     },
     {
       "name": {
-        "first": "Busari",
+        "first": "B.J.",
         "last": "Raji"
       },
       "position": "DT",
@@ -542,7 +542,7 @@
     },
     {
       "name": {
-        "first": "Javon",
+        "first": "Alex",
         "last": "Mack"
       },
       "position": "C",
@@ -668,7 +668,7 @@
     },
     {
       "name": {
-        "first": "William",
+        "first": "Clay",
         "last": "Matthews"
       },
       "position": "LB",
@@ -775,7 +775,7 @@
     },
     {
       "name": {
-        "first": "Kenneth",
+        "first": "Kenny",
         "last": "Britt"
       },
       "position": "WR",
@@ -802,7 +802,7 @@
     },
     {
       "name": {
-        "first": "Chris",
+        "first": "Beanie",
         "last": "Wells"
       },
       "position": "RB",
@@ -828,7 +828,7 @@
     },
     {
       "name": {
-        "first": "Evander",
+        "first": "Ziggy",
         "last": "Hood"
       },
       "position": "DT",
@@ -992,7 +992,7 @@
     },
     {
       "name": {
-        "first": "Reynold",
+        "first": "Rey",
         "last": "Maualuga"
       },
       "position": "LB",
@@ -1045,7 +1045,7 @@
     },
     {
       "name": {
-        "first": "Ronald",
+        "first": "Ron",
         "last": "Brace"
       },
       "position": "DT",
@@ -1151,7 +1151,7 @@
     },
     {
       "name": {
-        "first": "Patrick",
+        "first": "Pat",
         "last": "White"
       },
       "position": "QB",
@@ -1233,7 +1233,7 @@
     },
     {
       "name": {
-        "first": "Michael",
+        "first": "Mike",
         "last": "Mitchell"
       },
       "position": "S",
@@ -1253,7 +1253,7 @@
     },
     {
       "name": {
-        "first": "Steven",
+        "first": "Darcel",
         "last": "McBath"
       },
       "position": "CB",
@@ -1281,7 +1281,7 @@
     },
     {
       "name": {
-        "first": "Maxwell",
+        "first": "Max",
         "last": "Unger"
       },
       "position": "C",
@@ -1334,7 +1334,7 @@
     },
     {
       "name": {
-        "first": "Andrew",
+        "first": "Andy",
         "last": "Levitre"
       },
       "position": "OG",
@@ -1542,7 +1542,7 @@
     },
     {
       "name": {
-        "first": "Jerald",
+        "first": "Sherrod",
         "last": "Martin"
       },
       "position": "CB",
@@ -1782,7 +1782,7 @@
     },
     {
       "name": {
-        "first": "Arcilla",
+        "first": "Alex",
         "last": "Magee"
       },
       "position": "DE",
@@ -1886,7 +1886,7 @@
     },
     {
       "name": {
-        "first": "Matthew",
+        "first": "Matt",
         "last": "Shaughnessy"
       },
       "position": "LB",
@@ -2225,7 +2225,7 @@
     },
     {
       "name": {
-        "first": "Burnell",
+        "first": "Mike",
         "last": "Wallace"
       },
       "position": "WR",
@@ -2385,7 +2385,7 @@
     },
     {
       "name": {
-        "first": "Christopher",
+        "first": "Chris",
         "last": "Owens"
       },
       "position": "CB",
@@ -2413,7 +2413,7 @@
     },
     {
       "name": {
-        "first": "Vincent",
+        "first": "Deon",
         "last": "Butler"
       },
       "position": "WR",
@@ -2441,7 +2441,7 @@
     },
     {
       "name": {
-        "first": "Courtney",
+        "first": "Jerraud",
         "last": "Powers"
       },
       "position": "CB",
@@ -2523,7 +2523,7 @@
     },
     {
       "name": {
-        "first": "Julian",
+        "first": "Rashad",
         "last": "Johnson"
       },
       "position": "S",
@@ -2833,7 +2833,7 @@
     },
     {
       "name": {
-        "first": "Michael",
+        "first": "Mike",
         "last": "Thomas"
       },
       "position": "WR",
@@ -2887,7 +2887,7 @@
     },
     {
       "name": {
-        "first": "Thomas",
+        "first": "T.J.",
         "last": "Lang"
       },
       "position": "OG",
@@ -2935,7 +2935,7 @@
     },
     {
       "name": {
-        "first": "Michael",
+        "first": "Mike",
         "last": "Goodson"
       },
       "position": "RB",
@@ -3059,7 +3059,7 @@
     },
     {
       "name": {
-        "first": "Clarence",
+        "first": "Chip",
         "last": "Vaughn"
       },
       "position": "CB",
@@ -3143,7 +3143,7 @@
     },
     {
       "name": {
-        "first": "David",
+        "first": "D.J.",
         "last": "Moore"
       },
       "position": "CB",
@@ -3458,7 +3458,7 @@
     },
     {
       "name": {
-        "first": "Gregory",
+        "first": "Greg",
         "last": "Toler"
       },
       "position": "CB",
@@ -4060,7 +4060,7 @@
     },
     {
       "name": {
-        "first": "William",
+        "first": "Garrett",
         "last": "Reynolds"
       },
       "position": "OT",
@@ -4088,7 +4088,7 @@
     },
     {
       "name": {
-        "first": "Victor",
+        "first": "Macho",
         "last": "Harris"
       },
       "position": "S",
@@ -4115,7 +4115,7 @@
     },
     {
       "name": {
-        "first": "Nicholvin",
+        "first": "Cody",
         "last": "Glenn"
       },
       "position": "LB",
@@ -4167,7 +4167,7 @@
     },
     {
       "name": {
-        "first": "Bobby",
+        "first": "Brooks",
         "last": "Foster"
       },
       "position": "WR",
@@ -4191,7 +4191,7 @@
     },
     {
       "name": {
-        "first": "Johnathan",
+        "first": "John",
         "last": "Nalbone"
       },
       "position": "TE",
@@ -4211,7 +4211,7 @@
     },
     {
       "name": {
-        "first": "James",
+        "first": "Jamon",
         "last": "Meredith"
       },
       "position": "OG",
@@ -4286,7 +4286,7 @@
     },
     {
       "name": {
-        "first": "Christian",
+        "first": "Chris",
         "last": "Clemons"
       },
       "position": "CB",
@@ -4314,7 +4314,7 @@
     },
     {
       "name": {
-        "first": "Michael",
+        "first": "Mike",
         "last": "Hamlin"
       },
       "position": "CB",
@@ -4366,7 +4366,7 @@
     },
     {
       "name": {
-        "first": "Joseph",
+        "first": "Joe",
         "last": "Burnett"
       },
       "position": "CB",
@@ -4511,7 +4511,7 @@
     },
     {
       "name": {
-        "first": "Thomas",
+        "first": "Tom",
         "last": "Brandstater"
       },
       "position": "QB",
@@ -4749,7 +4749,7 @@
     },
     {
       "name": {
-        "first": "McKenna",
+        "first": "Bear",
         "last": "Pascoe"
       },
       "position": "TE",
@@ -4964,7 +4964,7 @@
     },
     {
       "name": {
-        "first": "Matthew",
+        "first": "Matt",
         "last": "Slauson"
       },
       "position": "OG",
@@ -5185,7 +5185,7 @@
     },
     {
       "name": {
-        "first": "William",
+        "first": "Will",
         "last": "Davis"
       },
       "position": "LB",
@@ -5314,7 +5314,7 @@
     },
     {
       "name": {
-        "first": "Anthony",
+        "first": "Bernard",
         "last": "Scott"
       },
       "position": "RB",
@@ -5367,7 +5367,7 @@
     },
     {
       "name": {
-        "first": "Christopher",
+        "first": "Chris",
         "last": "Ogbonnaya"
       },
       "position": "RB",
@@ -5421,7 +5421,7 @@
     },
     {
       "name": {
-        "first": "Pauliasi",
+        "first": "Paul",
         "last": "Fanaika"
       },
       "position": "OG",
@@ -5445,7 +5445,7 @@
     },
     {
       "name": {
-        "first": "John",
+        "first": "J.D.",
         "last": "Folsom"
       },
       "position": "LB",
@@ -5465,7 +5465,7 @@
     },
     {
       "name": {
-        "first": "Taufui",
+        "first": "Fui",
         "last": "Vakapuna"
       },
       "position": "RB",
@@ -5513,7 +5513,7 @@
     },
     {
       "name": {
-        "first": "Edjuan",
+        "first": "E.J.",
         "last": "Biggers"
       },
       "position": "CB",
@@ -5533,7 +5533,7 @@
     },
     {
       "name": {
-        "first": "Bradley",
+        "first": "Brad",
         "last": "Jones"
       },
       "position": "LB",
@@ -5625,7 +5625,7 @@
     },
     {
       "name": {
-        "first": "Patrick",
+        "first": "Pat",
         "last": "McAfee"
       },
       "position": "P",
@@ -5693,7 +5693,7 @@
     },
     {
       "name": {
-        "first": "Allen",
+        "first": "A.Q.",
         "last": "Shipley"
       },
       "position": "C",
@@ -5721,7 +5721,7 @@
     },
     {
       "name": {
-        "first": "Michael",
+        "first": "Mike",
         "last": "Mickens"
       },
       "position": "CB",
@@ -5924,7 +5924,7 @@
     },
     {
       "name": {
-        "first": "Zachary",
+        "first": "Zack",
         "last": "Follett"
       },
       "position": "LB",
@@ -6062,7 +6062,7 @@
     },
     {
       "name": {
-        "first": "Nicholas",
+        "first": "Nick",
         "last": "Schommer"
       },
       "position": "S",
@@ -6332,7 +6332,7 @@
     },
     {
       "name": {
-        "first": "Daniel",
+        "first": "Dan",
         "last": "Gronkowski"
       },
       "position": "TE",
