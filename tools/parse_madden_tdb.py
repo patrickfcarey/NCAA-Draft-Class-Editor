@@ -129,15 +129,22 @@ def parse_table_fields(data: bytes, fields_start: int, num_fields: int) -> list[
 
 
 def read_bits(record: bytes, offset_bits: int, num_bits: int) -> int:
-    """Read num_bits starting at offset_bits within record, MSB-first."""
+    """Read num_bits starting at offset_bits within record.
+
+    PS2 Madden 08 TDB uses LSB-first within each byte AND LSB-first
+    bit collection within the field. Verified empirically against
+    Brian Urlacher's 2007 stats: POVR 98, PSPD 88, PAGE 29, PHGT 76,
+    PJEN 54 all read correctly under this convention. (The JS reference
+    parser uses MSB-first; that's a different platform variant.)
+    """
     value = 0
     for i in range(num_bits):
         bit_pos = offset_bits + i
         byte_index = bit_pos // 8
-        bit_in_byte = 7 - (bit_pos % 8)
+        bit_in_byte = bit_pos % 8           # LSB-first within byte
         if byte_index < len(record):
             bit = (record[byte_index] >> bit_in_byte) & 1
-            value = (value << 1) | bit
+            value |= bit << i               # LSB-first within field
     return value
 
 
