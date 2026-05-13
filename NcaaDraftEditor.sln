@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NcaaDraftEditor.Core", "Nca
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NcaaDraftEditor.WinForms", "NcaaDraftEditor.WinForms\NcaaDraftEditor.WinForms.csproj", "{BE055F41-D870-CD19-2F41-F3E0E1E7001C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NcaaDraftEditor.Tests", "NcaaDraftEditor.Tests\NcaaDraftEditor.Tests.csproj", "{DD88745D-96FD-4029-8D68-17078CE973E1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{BE055F41-D870-CD19-2F41-F3E0E1E7001C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE055F41-D870-CD19-2F41-F3E0E1E7001C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE055F41-D870-CD19-2F41-F3E0E1E7001C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD88745D-96FD-4029-8D68-17078CE973E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD88745D-96FD-4029-8D68-17078CE973E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD88745D-96FD-4029-8D68-17078CE973E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD88745D-96FD-4029-8D68-17078CE973E1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
