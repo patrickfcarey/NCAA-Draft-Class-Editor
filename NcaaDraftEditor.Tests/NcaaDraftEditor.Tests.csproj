@@ -35,5 +35,8 @@
     <None Include="..\data\raw\madden-ratings\madden19-2018.json" Link="fixtures\madden19-2018.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="..\tests\fixtures\madden08-roster-sample.bin" Link="fixtures\madden08-roster-sample.bin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 </Project>
