@@ -58,6 +58,35 @@ PRESETS = {
         "template": REPO_ROOT / "out" / "templates" / "madden-nfl-12-template.psu",
         "save_folder": "BASLUS-21946DRost1",     # Madden NFL 12 USA, roster save
     },
+    "m09-draft-class": {
+        # NCAA Football 09 PS2's "Send to Madden" export, consumed by Madden 09.
+        # Inner-file format is the same 138,240-byte / 1,600-record / 86-byte
+        # NCAA binary as M08 (confirmed by community: NCAA 09->M09 import works
+        # without binary changes). We reuse the M08 NCAA template's icon.sys
+        # and view.ico (cosmetic only - the PS2 dashboard will show the M08
+        # title); what matters is the BASLUS folder name Madden 09 looks for.
+        #
+        # WARNING: Suffix "LClass08" is unverified. M08 uses "LClass07" where
+        # "07" is the in-game NCAA season year (NCAA 08 covers 2007 college
+        # season). Extrapolating: NCAA 09 covers 2008 -> "LClass08". Will need
+        # PCSX2 verification; trivial to change if a real NCAA 09 save uses a
+        # different convention.
+        "template": REPO_ROOT / "madden-nfl-08.26380.max",
+        "template_folder": "BASLUS-21620LClass07",
+        "save_folder": "BASLUS-21769LClass08",   # NCAA Football 09 USA, draft class export
+    },
+    "m12-draft-class": {
+        # Madden NFL 12 PS2 reads draft classes written by NCAA Football *11*,
+        # not NCAA 12 - NCAA 12 has no PS2 release; NCAA 11 (BASLUS-21932) was
+        # EA's last PS2 NCAA. Community confirms the NCAA 11 -> M12 import works
+        # on the binary level. Same 138,240-byte NCAA binary format.
+        #
+        # WARNING: Suffix "LClass10" is unverified (NCAA 11 covers 2010 college
+        # season per the M08 convention). Needs PCSX2 verification.
+        "template": REPO_ROOT / "madden-nfl-08.26380.max",
+        "template_folder": "BASLUS-21620LClass07",
+        "save_folder": "BASLUS-21932LClass10",   # NCAA Football 11 USA, draft class export
+    },
 }
 DEFAULT_PRESET = "draft-class"
 
@@ -74,6 +103,10 @@ def pack(compiled_bin: Path, output_path: Path, save_type: str = DEFAULT_PRESET)
     preset = PRESETS[save_type]
     template_max: Path = preset["template"]
     save_folder: str = preset["save_folder"]
+    # Most presets reuse a template whose save folder name already matches the
+    # target. The M09/M12 draft-class presets reuse the M08 NCAA template under
+    # a different folder name, so they declare template_folder explicitly.
+    template_folder: str = preset.get("template_folder", save_folder)
     inner_filename: str = save_folder
 
     if not compiled_bin.exists():
@@ -84,6 +117,8 @@ def pack(compiled_bin: Path, output_path: Path, save_type: str = DEFAULT_PRESET)
             hint = " Run: python tools/fetch_m09_template.py"
         elif save_type == "m12-roster":
             hint = " Run: python tools/fetch_m12_template.py"
+        elif save_type in ("m09-draft-class", "m12-draft-class"):
+            hint = " (Template madden-nfl-08.26380.max should be at repo root)"
         raise FileNotFoundError(
             f"Template not found at {template_max}.{hint}")
 
@@ -97,10 +132,35 @@ def pack(compiled_bin: Path, output_path: Path, save_type: str = DEFAULT_PRESET)
         staged_bin = tmp_dir / inner_filename
         shutil.copy2(compiled_bin, staged_bin)
 
-        run(["mymcplus", card, "format"])
-        run(["mymcplus", card, "import", template_max])
-        run(["mymcplus", card, "remove", f"{save_folder}/{inner_filename}"])
-        run(["mymcplus", card, "add", "-d", save_folder, staged_bin])
+        if template_folder == save_folder:
+            # Fast path: template lands at the target folder name. Just swap the
+            # inner data file in place.
+            run(["mymcplus", card, "format"])
+            run(["mymcplus", card, "import", template_max])
+            run(["mymcplus", card, "remove", f"{save_folder}/{inner_filename}"])
+            run(["mymcplus", card, "add", "-d", save_folder, staged_bin])
+        else:
+            # Rename path: template lives under template_folder. Pull icon.sys
+            # and view.ico out of the imported template, wipe the card, and
+            # rebuild under save_folder with the new data file. mkdir + add
+            # creates a valid PS2 save folder (verified empirically with this
+            # exact sequence).
+            run(["mymcplus", card, "format"])
+            run(["mymcplus", card, "import", template_max])
+            icon_path = tmp_dir / "icon.sys"
+            view_path = tmp_dir / "view.ico"
+            run(["mymcplus", card, "extract", "-d", template_folder,
+                 "-o", icon_path, "icon.sys"])
+            run(["mymcplus", card, "extract", "-d", template_folder,
+                 "-o", view_path, "view.ico"])
+            # Recursively delete the template's folder so we can reuse the
+            # card with the target folder name. mymcplus won't reformat an
+            # existing card, so `delete` is the cleanup step.
+            run(["mymcplus", card, "delete", template_folder])
+            run(["mymcplus", card, "mkdir", save_folder])
+            run(["mymcplus", card, "add", "-d", save_folder,
+                 icon_path, view_path, staged_bin])
+
         output_path.parent.mkdir(parents=True, exist_ok=True)
         run(["mymcplus", card, "export", fmt_flag,
              "-o", output_path, "-f", save_folder])
@@ -112,11 +172,14 @@ def main() -> int:
     p.add_argument("input", help="compiled .bin to wrap")
     p.add_argument("output", help="output file (.max or .psu by extension)")
     p.add_argument("--type", choices=list(PRESETS), default=DEFAULT_PRESET,
-                   help=f"save type (default: {DEFAULT_PRESET}). draft-class -> "
-                        f"BASLUS-21620 NCAA Football 08 draft class slot. roster -> "
-                        f"BASLUS-21638 Madden NFL 08 roster slot. m09-roster -> "
-                        f"BASLUS-21770 Madden NFL 09 roster slot. m12-roster -> "
-                        f"BASLUS-21946 Madden NFL 12 roster slot.")
+                   help=f"save type (default: {DEFAULT_PRESET}). "
+                        f"draft-class -> BASLUS-21620 NCAA 08 draft class (for M08). "
+                        f"roster -> BASLUS-21638 Madden NFL 08 roster. "
+                        f"m09-roster -> BASLUS-21770 Madden NFL 09 roster. "
+                        f"m12-roster -> BASLUS-21946 Madden NFL 12 roster. "
+                        f"m09-draft-class -> BASLUS-21769 NCAA 09 draft class (for M09). "
+                        f"m12-draft-class -> BASLUS-21932 NCAA 11 draft class (for M12; "
+                        f"NCAA 12 has no PS2 release).")
     args = p.parse_args()
 
     compiled_bin = Path(args.input).resolve()

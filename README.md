@@ -28,13 +28,13 @@ build pipeline, and the M09/M12 + Deluxe targets — was added in this fork.
 
 ## Status
 
-| Target | What it produces | State |
-|---|---|---|
-| Madden 08 PS2 (vanilla) | NCAA draft class + roster, 2008–2026 | End-to-end verified for 2018 in PCSX2; bulk build implemented |
-| Madden 09 PS2 (Deluxe-compatible) | Roster `.psu`, 2008–2025 | Compile + pack verified for 2018; bulk build implemented |
-| Madden 12 PS2 (Deluxe-compatible) | Roster `.psu`, 2008–2025 | Compile + pack verified for 2018; bulk build implemented |
-| Draft class import into M09 / M12 | NCAA-format `.max` retargeted to BASLUS-21769 / BASLUS-21932 | Not yet wired; format compatibility confirmed in research |
-| Tier 7 release pipeline | One-shot build of all 38 artifacts | Not started |
+| Target                            | What it produces                                             | State                                                         |
+| --------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------- |
+| Madden 08 PS2 (vanilla)           | NCAA draft class + roster, 2008–2026                         | End-to-end verified for 2018 in PCSX2; bulk build implemented |
+| Madden 09 PS2 (Deluxe-compatible) | Roster `.psu`, 2008–2025                                     | Compile + pack verified for 2018; bulk build implemented      |
+| Madden 12 PS2 (Deluxe-compatible) | Roster `.psu`, 2008–2025                                     | Compile + pack verified for 2018; bulk build implemented      |
+| Draft class import into M09 / M12 | NCAA-format `.psu` retargeted to BASLUS-21769 / BASLUS-21932 | Pack pipeline wired (`m09-draft-class` / `m12-draft-class`); PCSX2 verification pending |
+| Tier 7 release pipeline           | One-shot build of all 38 artifacts                           | Not started                                                   |
 
 Open work items are tracked in `CLAUDE.md` (the "Where to look first" section).
 
@@ -105,11 +105,17 @@ The template is auto-downloaded on first use by
 ### Bulk build all years
 
 ```bash
-python3 tools/build_all_draft_classes.py            # NCAA classes 2008–2026
-python3 tools/build_all_rosters.py --target m08     # M08 rosters
-python3 tools/build_all_rosters.py --target m09     # M09 Deluxe rosters
-python3 tools/build_all_rosters.py --target m12     # M12 Deluxe rosters
-python3 tools/build_all_rosters.py --target all     # all three
+# Draft classes 2008–2026
+python3 tools/build_all_draft_classes.py                       # M08 only (default)
+python3 tools/build_all_draft_classes.py --target m09          # M09 only
+python3 tools/build_all_draft_classes.py --target m12          # M12 only
+python3 tools/build_all_draft_classes.py --target all          # all three
+
+# Rosters 2008–2025
+python3 tools/build_all_rosters.py --target m08                # M08 rosters
+python3 tools/build_all_rosters.py --target m09                # M09 Deluxe rosters
+python3 tools/build_all_rosters.py --target m12                # M12 Deluxe rosters
+python3 tools/build_all_rosters.py --target all                # all three
 ```
 
 ---
@@ -177,16 +183,16 @@ python3 tools/build_all_rosters.py --target all     # all three
 PS2 memory-card save export format from the Action Replay MAX / SharkPort era.
 Layout:
 
-| Offset | Size | Field |
-|---|---|---|
-| `0x00` | 12 | Magic: `"Ps2PowerSave"` |
-| `0x0C` | 4 | CRC32 (file with this area zeroed) |
-| `0x10` | 32 | Directory name, e.g. `"BASLUS-21620LClass07"` |
-| `0x30` | 32 | Display title, e.g. `"NCAA Draft Class"` |
-| `0x50` | 4 | Compressed data length |
-| `0x54` | 4 | File count inside the save |
-| `0x58` | 4 | Uncompressed data length |
-| `0x5C` | … | LZSS-Ari compressed stream (file table + contents) |
+| Offset | Size | Field                                              |
+| ------ | ---- | -------------------------------------------------- |
+| `0x00` | 12   | Magic: `"Ps2PowerSave"`                            |
+| `0x0C` | 4    | CRC32 (file with this area zeroed)                 |
+| `0x10` | 32   | Directory name, e.g. `"BASLUS-21620LClass07"`      |
+| `0x30` | 32   | Display title, e.g. `"NCAA Draft Class"`           |
+| `0x50` | 4    | Compressed data length                             |
+| `0x54` | 4    | File count inside the save                         |
+| `0x58` | 4    | Uncompressed data length                           |
+| `0x5C` | …    | LZSS-Ari compressed stream (file table + contents) |
 
 We do not reinvent the codec; `mymcplus` handles it. The `.psu` container used
 for M09/M12 is a related but distinct PS2 save format also handled by
@@ -199,31 +205,31 @@ bytes** (270 × 512-byte sectors). Always **1,600 player records**; Madden 08
 hangs on "initializing roster management" if any of the 1,600 slots is empty,
 so unused slots are filled from a known-good template with OVR capped to 49.
 
-| Offset | Size | Contents |
-|---|---|---|
-| `0x00` | 4 | Magic: `46 00 40 06` |
-| `0x04` | 1600 × 86 = 137,600 | Player records (86 bytes each) |
-| `0x21984` | 636 | Zero trailer to 270-sector boundary |
+| Offset    | Size                | Contents                            |
+| --------- | ------------------- | ----------------------------------- |
+| `0x00`    | 4                   | Magic: `46 00 40 06`                |
+| `0x04`    | 1600 × 86 = 137,600 | Player records (86 bytes each)      |
+| `0x21984` | 636                 | Zero trailer to 270-sector boundary |
 
 Per-record layout is in
 [`NcaaDraftEditor.Core/PlayerRecord.cs`](NcaaDraftEditor.Core/PlayerRecord.cs)
 and [`FieldMap.cs`](NcaaDraftEditor.Core/FieldMap.cs). Highlights:
 
-| Bytes | Field | Notes |
-|---|---|---|
-| 0 | `PFMP` | Face appearance |
-| 4 | `TGID` | College (NCAA 06 catalog ID; 255 = N/A) |
-| 6–16 | First name | 11 bytes ASCII, zero-padded |
-| 17–30 | Last name | 14 bytes ASCII, zero-padded |
-| 31 | `PYER` | College year (FR=0 / SO=1 / JR=2 / SR=3 / GS=4) |
-| 32 | `PRSD` | Redshirt flag |
-| 33 | `POVR` | Overall rating |
-| 34 | `PJEN` | Jersey number |
-| 35 | `PPOS` | Position (0=QB, 1=HB, … 20=P) |
-| 36 | `PWGT` | Weight (lb) |
-| 37 | `PHGT` | Height (inches) |
-| 38–58 | 21 ratings | `PSTR`, `PAGI`, `PSPD`, `PACC`, `PAWR`, … |
-| 60–85 | Appearance | Hair, face, skin, gear |
+| Bytes | Field      | Notes                                           |
+| ----- | ---------- | ----------------------------------------------- |
+| 0     | `PFMP`     | Face appearance                                 |
+| 4     | `TGID`     | College (NCAA 06 catalog ID; 255 = N/A)         |
+| 6–16  | First name | 11 bytes ASCII, zero-padded                     |
+| 17–30 | Last name  | 14 bytes ASCII, zero-padded                     |
+| 31    | `PYER`     | College year (FR=0 / SO=1 / JR=2 / SR=3 / GS=4) |
+| 32    | `PRSD`     | Redshirt flag                                   |
+| 33    | `POVR`     | Overall rating                                  |
+| 34    | `PJEN`     | Jersey number                                   |
+| 35    | `PPOS`     | Position (0=QB, 1=HB, … 20=P)                   |
+| 36    | `PWGT`     | Weight (lb)                                     |
+| 37    | `PHGT`     | Height (inches)                                 |
+| 38–58 | 21 ratings | `PSTR`, `PAGI`, `PSPD`, `PACC`, `PAWR`, …       |
+| 60–85 | Appearance | Hair, face, skin, gear                          |
 
 7 bytes remain empirically unmapped (1, 5, 59, 69, 70, 73, 84). They do not
 carry rating-scale values — verified by profiling `sample.bin` across all
@@ -239,22 +245,22 @@ parser targets).
 
 #### File header (24 bytes)
 
-| Offset | Size | Field |
-|---|---|---|
-| `0x00` | 2 | Magic: ASCII `"DB"` |
-| `0x02` | 2 | Version: `0x0008` |
-| `0x04` | 4 | (unknown) |
-| `0x08` | 4 | dbSize |
-| `0x0C` | 4 | zero |
-| `0x10` | 4 | tableCount (4 for a roster) |
-| `0x14` | 4 | checksum |
+| Offset | Size | Field                       |
+| ------ | ---- | --------------------------- |
+| `0x00` | 2    | Magic: ASCII `"DB"`         |
+| `0x02` | 2    | Version: `0x0008`           |
+| `0x04` | 4    | (unknown)                   |
+| `0x08` | 4    | dbSize                      |
+| `0x0C` | 4    | zero                        |
+| `0x10` | 4    | tableCount (4 for a roster) |
+| `0x14` | 4    | checksum                    |
 
 #### Table directory (8 bytes per entry)
 
-| Offset | Size | Field |
-|---|---|---|
-| +0 | 4 | ASCII table name |
-| +4 | 4 | LE offset relative to end of table directory |
+| Offset | Size | Field                                        |
+| ------ | ---- | -------------------------------------------- |
+| +0     | 4    | ASCII table name                             |
+| +4     | 4    | LE offset relative to end of table directory |
 
 #### Per-table header (40 bytes)
 
@@ -264,12 +270,12 @@ headercrc.
 
 #### Field directory (16 bytes per field)
 
-| Offset | Size | Field |
-|---|---|---|
-| +0 | 4 | type (0=STRING, 1=BINARY, 2=SINT, 3=UINT, 4=FLOAT) |
-| +4 | 4 | bit offset within record |
-| +8 | 4 | ASCII field name |
-| +12 | 4 | bit width |
+| Offset | Size | Field                                              |
+| ------ | ---- | -------------------------------------------------- |
+| +0     | 4    | type (0=STRING, 1=BINARY, 2=SINT, 3=UINT, 4=FLOAT) |
+| +4     | 4    | bit offset within record                           |
+| +8     | 4    | ASCII field name                                   |
+| +12    | 4    | bit width                                          |
 
 #### Records
 
@@ -279,12 +285,12 @@ multiple of 8) and read as ASCII with null termination.
 
 #### Roster tables
 
-| Name | Records | Stride | Fields | Purpose |
-|---|---|---|---|---|
-| `DCHT` | up to 2,912 | 8 bytes (63 bits) | 4 | Depth chart |
-| `INJY` | up to 320 | 8 bytes (63 bits) | 5 | Injuries |
-| `PLAY` | up to 2,048 | 104 bytes (831 bits) | 110 | Players (50+ ratings + bio) |
-| `TEAM` | 33 | 116 bytes (927 bits) | 66 | 32 NFL + 1 free-agent bucket |
+| Name   | Records     | Stride               | Fields | Purpose                      |
+| ------ | ----------- | -------------------- | ------ | ---------------------------- |
+| `DCHT` | up to 2,912 | 8 bytes (63 bits)    | 4      | Depth chart                  |
+| `INJY` | up to 320   | 8 bytes (63 bits)    | 5      | Injuries                     |
+| `PLAY` | up to 2,048 | 104 bytes (831 bits) | 110    | Players (50+ ratings + bio)  |
+| `TEAM` | 33          | 116 bytes (927 bits) | 66     | 32 NFL + 1 free-agent bucket |
 
 A complete field reference is in
 [`docs/madden08-tdb-schema.md`](docs/madden08-tdb-schema.md). M09 PS2's PLAY
@@ -362,15 +368,15 @@ show modern stadium names on screen. Accepted scope limitation.
 
 ## Data sources
 
-| Source | Provides | Years | Notes |
-|---|---|---|---|
-| nflverse `players.csv` | NFL drafts + bio (college, height, weight, jersey, draft slot) | 2007–2025 | Use `common_first_name`, **not** `first_name` (legal-name column). |
-| nflverse `combine.csv` | Combine measurables (40, bench, vert, broad, cone, shuttle) | 1987–2025 | Joined on `pfr_id`. Height format `"6-2"`. |
-| nflverse rosters | Opening-day team rosters per season | 2008–2025 | Source for the roster builder. |
-| Wikipedia `{year}_NFL_draft` | Draft picks, basic | any | Used for 2026 (nflverse hasn't backfilled). Strip non-digits from round/pick cells; compensatory picks display as `3*`. |
-| `maddenratings.weebly.com/madden-nfl-{NN}.html` | Per-team XLSX with ~50 attributes per player | Madden 09–25 anniversary + Madden 06–08 | Madden 11 is `.xls` (BIFF; needs `xlrd==1.2.0`). Schema varies year-to-year. |
-| `sportsgamingrosters.com/madden-nfl-25/` | Madden 25 modern launch OVR | 2024 draft | OVR + position + team for all 257 picks. |
-| `web.archive.org/.../maddenratings.com` | Top-100 rookies per year, full attributes | recent | Rate-limited (~20 req/s of disconnect); not viable for bulk. |
+| Source                                          | Provides                                                       | Years                                   | Notes                                                                                                                   |
+| ----------------------------------------------- | -------------------------------------------------------------- | --------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| nflverse `players.csv`                          | NFL drafts + bio (college, height, weight, jersey, draft slot) | 2007–2025                               | Use `common_first_name`, **not** `first_name` (legal-name column).                                                      |
+| nflverse `combine.csv`                          | Combine measurables (40, bench, vert, broad, cone, shuttle)    | 1987–2025                               | Joined on `pfr_id`. Height format `"6-2"`.                                                                              |
+| nflverse rosters                                | Opening-day team rosters per season                            | 2008–2025                               | Source for the roster builder.                                                                                          |
+| Wikipedia `{year}_NFL_draft`                    | Draft picks, basic                                             | any                                     | Used for 2026 (nflverse hasn't backfilled). Strip non-digits from round/pick cells; compensatory picks display as `3*`. |
+| `maddenratings.weebly.com/madden-nfl-{NN}.html` | Per-team XLSX with ~50 attributes per player                   | Madden 09–25 anniversary + Madden 06–08 | Madden 11 is `.xls` (BIFF; needs `xlrd==1.2.0`). Schema varies year-to-year.                                            |
+| `sportsgamingrosters.com/madden-nfl-25/`        | Madden 25 modern launch OVR                                    | 2024 draft                              | OVR + position + team for all 257 picks.                                                                                |
+| `web.archive.org/.../maddenratings.com`         | Top-100 rookies per year, full attributes                      | recent                                  | Rate-limited (~20 req/s of disconnect); not viable for bulk.                                                            |
 
 Madden launch-ratings files are named `madden{version}-{NFL season year}.json`,
 e.g. `madden09-2008.json`. The Madden 25 anniversary (2013) vs Madden 25
@@ -456,10 +462,12 @@ Python scrapers are stdlib-only except for `openpyxl` / `xlrd` in
   Madden's PLAY table allocates only ~62 slots per TGID. The compiler sorts
   by OVR descending and silently drops the remainder. Smarter selection
   (preserve role distribution) is future work.
-- **No NCAA draft class import target for M09 / M12 yet.** Research confirms
-  the inner format is shared with M08 and that Deluxe doesn't patch the
-  import code path. The remaining work is two new BASLUS dir-name presets in
-  `pack_baslus.py` and PCSX2 verification.
+- **NCAA draft class import for M09 / M12 is wired but unverified.** The
+  pack pipeline emits `BASLUS-21769LClass08` (NCAA 09 → M09) and
+  `BASLUS-21932LClass10` (NCAA 11 → M12) `.psu` files; the BASLUS suffix
+  ("LClass08" / "LClass10") is inferred from M08's convention (in-game NCAA
+  season year) and needs PCSX2 verification before bulk release. Easy
+  one-line fix in `tools/pack_baslus.py` if the actual suffix differs.
 - **NCAA draft class import in Madden 12 PS2 pairs with NCAA Football *11*,
   not 12.** NCAA 12 has no PS2 release; NCAA 11 was EA's last PS2 NCAA.
 

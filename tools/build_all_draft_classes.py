@@ -21,9 +21,13 @@ compile is run without --madden (rookies get default ratings, anchored
 via --lock-draft-order so the auto-draft order still matches reality).
 
 Run on Windows where the .NET SDK is installed:
-    python tools/build_all_draft_classes.py
+    python tools/build_all_draft_classes.py                # M08 only (default)
+    python tools/build_all_draft_classes.py --target m09   # M09 only
+    python tools/build_all_draft_classes.py --target m12   # M12 only
+    python tools/build_all_draft_classes.py --target all   # all three
 
-All outputs land in out/. Pass --year YYYY to build just one.
+All outputs land under out/ (M08 at out/, M09 at out/m09/, M12 at out/m12/).
+Pass --year YYYY to build just one year.
 """
 from __future__ import annotations
 
@@ -50,6 +54,15 @@ SEASON_TO_MADDEN_VERSION = {
 }
 
 YEARS = list(range(2008, 2027))   # 2008..2026 inclusive
+
+# Targets the bulk builder can emit. The .bin produced by the compiler is the
+# same NCAA-format binary in all cases; only the BASLUS save-folder name (set
+# by pack_baslus.py's --type) and output directory differ.
+TARGETS = {
+    "m08": {"pack_type": "draft-class",    "out_subdir": "."},
+    "m09": {"pack_type": "m09-draft-class", "out_subdir": "m09"},
+    "m12": {"pack_type": "m12-draft-class", "out_subdir": "m12"},
+}
 
 
 def find_dotnet() -> str:
@@ -93,23 +106,36 @@ def compile_year(year: int, dotnet: str) -> Path:
     return out_bin
 
 
-def pack_year(year: int, bin_path: Path) -> Path:
-    out_max = OUT_DIR / f"draft-class-{year}.max"
+def pack_year(year: int, bin_path: Path, target: str) -> Path:
+    cfg = TARGETS[target]
+    out_dir = OUT_DIR / cfg["out_subdir"] if cfg["out_subdir"] != "." else OUT_DIR
+    out_dir.mkdir(parents=True, exist_ok=True)
+    suffix = "" if target == "m08" else f"-{target}"
+    # Use .psu for the M09/M12 case to match the roster pipeline's container
+    # choice; M08 keeps the historical .max convention.
+    ext = ".max" if target == "m08" else ".psu"
+    out_path = out_dir / f"draft-class-{year}{suffix}{ext}"
     cmd = [sys.executable, str(REPO_ROOT / "tools" / "pack_baslus.py"),
-           str(bin_path), str(out_max)]
+           str(bin_path), str(out_path), "--type", cfg["pack_type"]]
     print(f"  $ {' '.join(cmd)}", file=sys.stderr)
     subprocess.run(cmd, check=True)
-    return out_max
+    return out_path
 
 
 def main() -> int:
     p = argparse.ArgumentParser()
     p.add_argument("--year", type=int, help="Build only this year")
+    p.add_argument("--target", choices=list(TARGETS) + ["all"], default="m08",
+                   help="Pack target. m08 -> Madden 08 PS2 (.max via BASLUS-21620). "
+                        "m09 -> Madden 09 PS2 (.psu via BASLUS-21769). "
+                        "m12 -> Madden 12 PS2 (.psu via BASLUS-21932). "
+                        "all -> emit all three.")
     p.add_argument("--skip-pack", action="store_true",
-                   help="Compile .bin only; skip the .max packaging step")
+                   help="Compile .bin only; skip the .max/.psu packaging step")
     args = p.parse_args()
 
     years = [args.year] if args.year else YEARS
+    targets = list(TARGETS) if args.target == "all" else [args.target]
     dotnet = find_dotnet()
 
     summary = []
@@ -117,19 +143,25 @@ def main() -> int:
         print(f"\n=== {year} ===", file=sys.stderr)
         try:
             bin_path = compile_year(year, dotnet)
-            if args.skip_pack:
-                summary.append((year, "compiled", bin_path.name, "-"))
-            else:
-                max_path = pack_year(year, bin_path)
-                summary.append((year, "compiled+packed", bin_path.name, max_path.name))
         except Exception as e:
-            summary.append((year, f"FAILED: {e}", "-", "-"))
+            summary.append((year, "-", f"FAILED compile: {e}", "-"))
             print(f"  ERROR: {e}", file=sys.stderr)
+            continue
+        if args.skip_pack:
+            summary.append((year, "all", "compiled", bin_path.name))
+            continue
+        for target in targets:
+            try:
+                out_path = pack_year(year, bin_path, target)
+                summary.append((year, target, "compiled+packed", out_path.name))
+            except Exception as e:
+                summary.append((year, target, f"FAILED pack: {e}", "-"))
+                print(f"  ERROR ({target}): {e}", file=sys.stderr)
 
     print("\n=== Summary ===")
-    print(f"{'Year':<6}{'Status':<22}{'.bin':<32}.max")
-    for y, s, b, m in summary:
-        print(f"{y:<6}{s:<22}{b:<32}{m}")
+    print(f"{'Year':<6}{'Target':<8}{'Status':<22}Output")
+    for y, t, s, o in summary:
+        print(f"{y:<6}{t:<8}{s:<22}{o}")
     return 0
 
 
