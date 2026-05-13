@@ -119,6 +119,31 @@ public class DraftClassCompilerTests
     }
 
     [Fact]
+    public void Compile_With_Filler_Replaces_Empty_Padding_Slots()
+    {
+        var canonical = CanonicalJson.Load(SampleCanonicalPath);
+        var filler = DraftClassFile.Load(
+            Path.Combine(AppContext.BaseDirectory, "fixtures", "sample.bin"));
+
+        var compiler = new DraftClassCompiler(
+            PositionMapper.LoadFile(PositionsPath),
+            CollegeMapper.LoadFile(CollegesPath),
+            madden: null,
+            filler: filler);
+        var dc = compiler.Compile(canonical);
+
+        // First 5 slots are our compiled players (sample canonical has 5)
+        Assert.Equal("Baker", dc.Players[0].FirstName);
+        Assert.Equal("Saquon", dc.Players[1].FirstName);
+
+        // Slots 5..1599 must come from the filler with their original names.
+        // sample.bin's record 5 onward should be populated, not empty.
+        Assert.Equal(filler.Players[5].FirstName, dc.Players[5].FirstName);
+        Assert.NotEmpty(dc.Players[5].FirstName);
+        Assert.Equal(filler.Players[1599].FirstName, dc.Players[1599].FirstName);
+    }
+
+    [Fact]
     public void Compiled_File_Roundtrips_Through_Save_And_Load()
     {
         var canonical = CanonicalJson.Load(SampleCanonicalPath);
