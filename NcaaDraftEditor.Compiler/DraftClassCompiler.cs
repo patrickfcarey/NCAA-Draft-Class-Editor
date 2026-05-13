@@ -103,15 +103,18 @@ public sealed class DraftClassCompiler
     }
 
     /// <summary>
-    /// Real NCAA 08 files end on a 512-byte sector boundary - 4 magic + 1600*86 +
-    /// 636 zero bytes = 138,240 = 270 sectors. We emit the same trailer so the
-    /// produced file matches the format the game expects byte-for-byte.
+    /// Real NCAA 08 draft-class files are exactly 138,240 bytes = 270 sectors
+    /// of 512 bytes. That's one sector beyond the natural alignment of
+    /// 4 (magic) + 1600*86 (records) = 137,604 bytes, which would otherwise
+    /// align to 269 sectors. EA's writer always pads to 270; we match that
+    /// so produced files are byte-shape-identical to what the game emits.
     /// </summary>
+    public const int CanonicalFileSize = 138_240;
+
     private static byte[] BuildSectorPadTrailer(int playerCount)
     {
-        const int sectorSize = 512;
         int dataSize = DraftClassFile.FileHeaderSize + playerCount * DraftClassFile.RecordSize;
-        int aligned = (dataSize + sectorSize - 1) / sectorSize * sectorSize;
-        return new byte[aligned - dataSize];
+        int padding = CanonicalFileSize - dataSize;
+        return padding > 0 ? new byte[padding] : Array.Empty<byte>();
     }
 }

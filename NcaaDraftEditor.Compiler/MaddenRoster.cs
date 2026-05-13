@@ -116,9 +116,10 @@ public sealed class MaddenPlayer
 
     public static MaddenPlayer FromJson(JsonElement rec, string teamSlug)
     {
+        // Clone each JsonElement so it survives disposal of the parent JsonDocument.
         var raw = new Dictionary<string, JsonElement>(StringComparer.OrdinalIgnoreCase);
         foreach (var prop in rec.EnumerateObject())
-            raw[prop.Name] = prop.Value;
+            raw[prop.Name] = prop.Value.Clone();
 
         // The schema varies by year. Try the common variants for each field.
         string firstName, lastName;
