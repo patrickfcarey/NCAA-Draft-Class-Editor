@@ -28,16 +28,17 @@ build pipeline, and the M09/M12 + Deluxe targets — was added in this fork.
 
 ## Status
 
-| Target                                  | What it produces                                                          | State                                                                                                                                                                                                                                |
-| --------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Madden 08 PS2 (vanilla)                 | NCAA draft class + roster, 2008–2026                                      | End-to-end verified for 2018 in PCSX2; bulk build implemented                                                                                                                                                                        |
-| Madden 09 PS2 (Deluxe-compatible)       | Roster `.psu`, 2008–2025                                                  | Compile + pack verified for 2018; bulk build implemented                                                                                                                                                                             |
-| Madden 12 PS2 (Deluxe-compatible)       | Roster `.psu`, 2008–2025                                                  | Compile + pack verified for 2018; bulk build implemented                                                                                                                                                                             |
-| Draft class import into M09 / M12       | NCAA-format `.psu` retargeted to BASLUS-21769 / BASLUS-21932              | Pack pipeline wired (`m09-draft-class` / `m12-draft-class`); PCSX2 verification pending                                                                                                                                              |
-| Madden 08 franchise compiler (Phase 1)  | Year-correct calendar + cap economy via SEAI.SEYR + SLRI.SCAD/SMAD/RFA1-4 | ✅ Verified end-to-end in PCSX2 for 2018: save loads, cap shows $177M, season year shows 2018 in stats                                                                                                                                |
-| Franchise Phase 2: per-player contracts | PSA0-6 / PSB0-6 / PCSA synthesis from rating + age + position             | ✅ Verified in PCSX2 for 2018: in-place AND free-agent contracts both reflect new era. PLAY's PSA/PSB/PCSA IS the snapshot (no separate table to chase). Requires Week-1-fresh template; SEYR=0 SEWN=0 SEWT=200 confirms fresh state. |
-| M09 / M12 franchise compilers           | Same approach as M08 with per-game base year + own templates              | Not started                                                                                                                                                                                                                          |
-| Tier 7 release pipeline                 | One-shot build of all 38+ artifacts                                       | Not started                                                                                                                                                                                                                          |
+| Target                                      | What it produces                                                          | State                                                                                                                                                                                                                                       |
+| ------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Madden 08 PS2 (vanilla)                     | NCAA draft class + roster, 2008–2026                                      | End-to-end verified for 2018 in PCSX2; bulk build implemented                                                                                                                                                                               |
+| Madden 09 PS2 (Deluxe-compatible)           | Roster `.psu`, 2008–2025                                                  | Compile + pack verified for 2018; bulk build implemented                                                                                                                                                                                    |
+| Madden 12 PS2 (Deluxe-compatible)           | Roster `.psu`, 2008–2025                                                  | Compile + pack verified for 2018; bulk build implemented                                                                                                                                                                                    |
+| Draft class import into M09 / M12           | NCAA-format `.psu` retargeted to BASLUS-21769 / BASLUS-21932              | Pack pipeline wired (`m09-draft-class` / `m12-draft-class`); PCSX2 verification pending                                                                                                                                                     |
+| Madden 08 franchise compiler (Phase 1)      | Year-correct calendar + cap economy via SEAI.SEYR + SLRI.SCAD/SMAD/RFA1-4 | ✅ Verified end-to-end in PCSX2 for 2018: save loads, cap shows $177M, season year shows 2018 in stats                                                                                                                                       |
+| Franchise Phase 2: per-player contracts     | PSA0-6 / PSB0-6 / PCSA synthesis from rating + age + position             | ✅ Verified in PCSX2 for 2018: in-place AND free-agent contracts both reflect new era. PLAY's PSA/PSB/PCSA IS the snapshot (no separate table to chase). Requires Week-1-fresh template; SEYR=0 SEWN=0 SEWT=200 confirms fresh state.        |
+| Franchise Phase 3: real OTC contract import | nflverse historical_contracts.parquet (mirrors OvertheCap)                | ✅ Wired: `--contracts <path>` matches PLAY records by name, applies real PSA/PSB/PCSA. 2018 spot-checks: Rodgers $20.9M, Brady $22M, Garoppolo $37M all match real to the dollar. ~73% name-match rate; unmatched fall back to synthesizer. |
+| M09 / M12 franchise compilers               | Same approach as M08 with per-game base year + own templates              | Not started                                                                                                                                                                                                                                 |
+| Tier 7 release pipeline                     | One-shot build of all 38+ artifacts                                       | Not started                                                                                                                                                                                                                                 |
 
 Open work items are tracked in `CLAUDE.md` (the "Where to look first" section).
 
@@ -483,6 +484,60 @@ What Phase 1 does:
 3. **`SLRI.SMAD`** + **`SLRI.RFA1..4`** — franchise tag and RFA tender amounts
    for the year, raw dollars.
 
+### Phase 3: real contract import from OvertheCap (optional)
+
+For full historical accuracy, pass `--contracts <path>` to compile-franchise:
+
+```bash
+# 1. Build canonical contracts JSONs from nflverse mirror of OvertheCap
+python3 scrapers/nflverse/build_contracts.py    # 2008-2026 inclusive
+
+# 2. Build the franchise with real contracts applied
+dotnet run --project NcaaDraftEditor.Cli -- compile-franchise \
+    out/templates/madden-nfl-08-franchise-template.bin \
+    out/franchise-2018.bin \
+    --year 2018 \
+    --caps data/raw/salary-caps/nfl-salary-caps.json \
+    --contracts data/canonical/contracts-2018.json
+```
+
+How it works:
+
+1. Each PLAY record in the franchise template is normalized to
+   `"FirstName LastName"` (lowercased, punctuation stripped, suffixes
+   removed).
+2. Looked up against the contracts JSON. If matched, `PCSA` /
+   `PSA0..PSA6` / `PSB0..PSB6` / `PSBO` / `PCON` are written from real
+   OTC values for that player-year.
+3. Unmatched PLAY records (~25-30% in practice, mostly low-OVR backups,
+   players with name mismatches between rosters and OTC, undrafted FAs)
+   fall through to Phase 2 synthesis.
+
+The compile-franchise CLI prints a `{matched real} / {synthesized fallback}`
+breakdown so you can see how the match rate landed.
+
+For the workflow to be useful, the PLAY records need to contain *the
+year's players*. The franchise template ships with the disc's launch
+year (2007 for M08); for 2018 contracts to match, run `compile-roster`
+first to replace PLAY with 2018 player names before compile-franchise:
+
+```bash
+# Compile 2018 roster INTO the franchise template
+dotnet run --project NcaaDraftEditor.Cli -- compile-roster \
+    data/canonical/roster-2018.json \
+    data/mappings/positions.json \
+    out/templates/madden-nfl-08-franchise-template.bin \
+    out/franchise-2018-rostered.bin
+
+# Then run compile-franchise with --contracts on that output
+dotnet run --project NcaaDraftEditor.Cli -- compile-franchise \
+    out/franchise-2018-rostered.bin \
+    out/franchise-2018.bin \
+    --year 2018 \
+    --caps data/raw/salary-caps/nfl-salary-caps.json \
+    --contracts data/canonical/contracts-2018.json
+```
+
 ### Phase 2: per-player contract synthesis
 
 `ContractSynthesizer` runs by default after Phase 1 and writes `PCON`,
@@ -571,9 +626,13 @@ ncaa-draft compile-roster  <canonical-roster.json> <positions.json>
                             <template.bin> <out.bin>                  # canonical roster -> TDB
 ncaa-draft compile-franchise <template.bin> <out.bin>
                             --year YYYY --caps <salary-caps.json>
-                            [--base-year YYYY] [--no-contracts]       # SEAI.SEYR + SLRI cap + per-player
-                                                                       # contracts (Phase 1+2). default base
-                                                                       # year = 2007 (M08); contracts default-on
+                            [--base-year YYYY] [--no-contracts]       # Phase 1: SEAI.SEYR + SLRI cap.
+                            [--contracts <contracts.json>]            # Phase 2: synthesize per-player
+                                                                       # contracts (default-on).
+                                                                       # Phase 3: --contracts adds real
+                                                                       # OTC contract import; matched
+                                                                       # players get real values, rest
+                                                                       # fall through to Phase 2.
 ```
 
 ---

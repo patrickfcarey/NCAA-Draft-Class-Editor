@@ -1,4 +1,5 @@
 using System.Text.Json;
+using NcaaDraftEditor.Canonical;
 
 namespace NcaaDraftEditor.Compiler;
 
@@ -50,10 +51,16 @@ public sealed class MaddenFranchiseCompiler
     /// season year. Returns the same instance, ready to .Save().
     ///
     /// Phase 1 work: SEAI.SEYR (calendar) + SLRI.SCAD/SMAD/RFA1..4 (cap).
-    /// Phase 2 work: per-player contract synthesis via ContractSynthesizer
-    /// (gated by <paramref name="synthesizeContracts"/>; default on).
+    /// Phase 2 work: per-player contract synthesis (rating-based model).
+    /// Phase 3 work: real contract import from <paramref name="contracts"/>;
+    ///     PLAY records are matched by name and get real PSA/PSB/PCSA. Players
+    ///     with no contract match fall through to Phase 2 synthesis.
     /// </summary>
-    public MaddenTdb Compile(int nflSeason, MaddenTdb template, bool synthesizeContracts = true)
+    public MaddenTdb Compile(
+        int nflSeason,
+        MaddenTdb template,
+        bool synthesizeContracts = true,
+        CanonicalContracts? contracts = null)
     {
         if (!_caps.Years.TryGetValue(nflSeason.ToString(), out var year))
             throw new InvalidOperationException(
@@ -88,23 +95,45 @@ public sealed class MaddenFranchiseCompiler
         }
 
         if (synthesizeContracts)
-            SynthesizeContracts(template, year.Cap);
+            ContractStats = ApplyContracts(template, year.Cap, contracts);
 
         return template;
     }
 
     /// <summary>
-    /// Iterate PLAY records and write era-appropriate contract terms
-    /// (PCON / PSA0..6 / PSB0..6 / PCSA) based on each player's POVR,
-    /// PPOS, PAGE. Only runs if the PLAY table has the contract fields
-    /// (i.e. it's a franchise PLAY table, not a roster PLAY).
+    /// Stats from the last Compile() call's contract pass: how many PLAY
+    /// records got real contracts (matched against the CanonicalContracts
+    /// list) vs. synthesized contracts. Available for the CLI to print.
     /// </summary>
-    private static void SynthesizeContracts(MaddenTdb template, long leagueCap)
+    public ContractApplyStats? ContractStats { get; private set; }
+
+    /// <summary>
+    /// Iterate PLAY records and write era-appropriate contract terms.
+    /// If <paramref name="contracts"/> is provided, match each record by
+    /// "FirstName LastName" against the contract list and write real values
+    /// (PCSA from cap_number, PSA0/PSB0 from base_salary/prorated_bonus).
+    /// Records with no contract match fall back to ContractSynthesizer.
+    /// </summary>
+    private static ContractApplyStats ApplyContracts(
+        MaddenTdb template, long leagueCap, CanonicalContracts? contracts)
     {
         var play = template.FindTable("PLAY");
-        if (play is null) return;
+        var stats = new ContractApplyStats();
+        if (play is null) return stats;
         if (play.FindField("PSA0") is null || play.FindField("PCSA") is null)
-            return;  // not a franchise PLAY table
+            return stats;  // not a franchise PLAY table
+
+        // Build name -> contract lookup. Names normalized via NormalizeName.
+        var byName = new Dictionary<string, CanonicalContract>(StringComparer.OrdinalIgnoreCase);
+        if (contracts is not null)
+        {
+            foreach (var c in contracts.Players)
+            {
+                var key = NormalizeName(c.Name);
+                if (!string.IsNullOrEmpty(key))
+                    byName[key] = c;
+            }
+        }
 
         var synth = new ContractSynthesizer(leagueCap);
         foreach (var rec in play.Records)
@@ -112,10 +141,99 @@ public sealed class MaddenFranchiseCompiler
             uint ovr = rec.GetUInt("POVR");
             uint pos = rec.GetUInt("PPOS");
             uint age = rec.GetUInt("PAGE");
-            var terms = synth.Synthesize(ovr, pos, age);
-            ContractSynthesizer.Apply(rec, terms);
+
+            string first = rec.GetString("PFNA");
+            string last = rec.GetString("PLNA");
+            string nameKey = NormalizeName($"{first} {last}");
+
+            if (!string.IsNullOrEmpty(nameKey) && byName.TryGetValue(nameKey, out var real))
+            {
+                ApplyRealContract(rec, real);
+                stats.MatchedReal++;
+            }
+            else
+            {
+                var terms = synth.Synthesize(ovr, pos, age);
+                ContractSynthesizer.Apply(rec, terms);
+                stats.SynthesizedFallback++;
+            }
+        }
+        return stats;
+    }
+
+    /// <summary>
+    /// Map a CanonicalContract onto a PLAY record's contract fields.
+    /// Real-world dollars in $M -> $10K units = millions × 100.
+    /// </summary>
+    private static void ApplyRealContract(TdbRecord rec, CanonicalContract c)
+    {
+        // Cap hit (PCSA): 14-bit ceiling = $163.83M in $10K units
+        uint pcsa10k = (uint)Math.Min(ContractSynthesizer.Psa10kCeiling,
+            Math.Max(0, (long)Math.Round(c.CapHitMillions * 100)));
+
+        // Years remaining (PCON): 4-bit field, clamp 1..15
+        uint pcon = (uint)Math.Clamp(c.YearsRemaining, 1, 15);
+
+        // Base salary + prorated bonus for current year. If OTC didn't break
+        // out base/bonus separately, split the cap hit 60/40.
+        double baseM = c.BaseSalaryMillions > 0 ? c.BaseSalaryMillions : c.CapHitMillions * 0.6;
+        double bonusM = c.ProratedBonusMillions > 0 ? c.ProratedBonusMillions : c.CapHitMillions * 0.4;
+        uint psa0 = (uint)Math.Min(ContractSynthesizer.Psa10kCeiling,
+            Math.Max(0, (long)Math.Round(baseM * 100)));
+        uint psb0 = (uint)Math.Min(ContractSynthesizer.Psb10kCeiling,
+            Math.Max(0, (long)Math.Round(bonusM * 100)));
+
+        rec.SetUInt("PCON", pcon);
+        rec.SetUInt("PCSA", pcsa10k);
+        rec.SetUInt("PSA0", psa0);
+        rec.SetUInt("PSB0", psb0);
+        rec.SetUInt("PSBO", (uint)Math.Min(ContractSynthesizer.Psb10kCeiling, psb0 * pcon));
+
+        // Future years aren't broken out in our canonical contracts (we'd
+        // need per-year columns from the parquet's `cols`, which we currently
+        // collapse to a single year). Use a simple model: PSA grows 5%/yr,
+        // PSB stays flat. Beyond contract length: zero.
+        for (int y = 1; y < ContractSynthesizer.MaxContractYears; y++)
+        {
+            if (y < pcon)
+            {
+                rec.SetUInt($"PSA{y}", (uint)Math.Min(ContractSynthesizer.Psa10kCeiling, psa0 * (100 + y * 5) / 100));
+                rec.SetUInt($"PSB{y}", psb0);
+            }
+            else
+            {
+                rec.SetUInt($"PSA{y}", 0);
+                rec.SetUInt($"PSB{y}", 0);
+            }
         }
     }
+
+    /// <summary>
+    /// Canonicalize a player name for matching. Handles case, whitespace,
+    /// trailing suffixes (Jr/Sr/II/III/IV), and punctuation.
+    /// </summary>
+    public static string NormalizeName(string name)
+    {
+        if (string.IsNullOrWhiteSpace(name)) return "";
+        var s = name.Trim().ToLowerInvariant();
+        // Strip suffixes that PLAY records may omit but contracts include.
+        foreach (var suffix in new[] { " jr.", " jr", " sr.", " sr", " ii", " iii", " iv", " v" })
+        {
+            if (s.EndsWith(suffix)) s = s[..^suffix.Length];
+        }
+        // Remove periods and apostrophes for matching ("T.J." vs "TJ").
+        s = s.Replace(".", "").Replace("'", "").Replace("-", " ");
+        // Collapse multiple spaces.
+        while (s.Contains("  ")) s = s.Replace("  ", " ");
+        return s.Trim();
+    }
+}
+
+public sealed class ContractApplyStats
+{
+    public int MatchedReal { get; set; }
+    public int SynthesizedFallback { get; set; }
+    public int Total => MatchedReal + SynthesizedFallback;
 }
 
 /// <summary>
