@@ -42,13 +42,25 @@ public sealed class DraftClassCompiler
     }
 
     /// <summary>
-    /// Real NCAA draft-class files always carry 1600 valid college player records
-    /// (the full eligible senior + early-entry pool, not just the ~250 actually
-    /// drafted). Madden 08 hangs on "initializing roster management" if any of
-    /// the 1600 slots contains an empty/zeroed record (player with no name, 0
-    /// OVR, TGID=0, etc.). If a filler file is provided we use its records for
-    /// slots beyond our real picks; otherwise we fall back to zero padding and
-    /// warn that Madden may reject the file.
+    /// Hard cap applied to filler players' OVR and key attributes (speed,
+    /// strength, agility, acceleration, awareness, catch, throw power, tackle).
+    /// Without this cap, high-rated college players from the template file
+    /// (e.g. 91-OVR Forsett, 90-OVR Foster from the 2008 sample) outrank our
+    /// real NFL Draft picks in Madden 08's OVR-sorted draft pool, and the
+    /// game's simulated draft picks them ahead of the actual rookies.
+    /// Default real-pick OVR is 50 when no Madden data matches, so filler is
+    /// capped one below that to keep all filler strictly below all real picks.
+    /// </summary>
+    public const byte FillerRatingCap = 49;
+
+    /// <summary>
+    /// Real NCAA draft-class files always carry 1600 valid college player
+    /// records (the full eligible senior + early-entry pool, not just the
+    /// ~250 actually drafted). Madden 08 hangs on "initializing roster
+    /// management" if any of the 1600 slots contains an empty/zeroed record.
+    /// If a filler file is provided we use its records for slots beyond our
+    /// real picks; otherwise we fall back to zero padding and warn that
+    /// Madden may reject the file.
     /// </summary>
     private void FillRemainingSlots(DraftClassFile dc)
     {
@@ -59,12 +71,33 @@ public sealed class DraftClassCompiler
             {
                 var copy = new byte[DraftClassFile.RecordSize];
                 Buffer.BlockCopy(_filler.Players[i].Raw, 0, copy, 0, DraftClassFile.RecordSize);
-                dc.Players.Add(new PlayerRecord(copy));
+                var rec = new PlayerRecord(copy);
+                CapFillerAttributes(rec);
+                dc.Players.Add(rec);
             }
         }
         while (dc.Players.Count < DraftClassFile.MaxPlayers)
             dc.Players.Add(new PlayerRecord(new byte[DraftClassFile.RecordSize]));
     }
+
+    private static void CapFillerAttributes(PlayerRecord rec)
+    {
+        rec.POVR = Min(rec.POVR, FillerRatingCap);
+        rec.PSPD = Min(rec.PSPD, FillerRatingCap);
+        rec.PACC = Min(rec.PACC, FillerRatingCap);
+        rec.PAGI = Min(rec.PAGI, FillerRatingCap);
+        rec.PSTR = Min(rec.PSTR, FillerRatingCap);
+        rec.PAWR = Min(rec.PAWR, FillerRatingCap);
+        rec.PCTH = Min(rec.PCTH, FillerRatingCap);
+        rec.PCAR = Min(rec.PCAR, FillerRatingCap);
+        rec.PTHP = Min(rec.PTHP, FillerRatingCap);
+        rec.PTHA = Min(rec.PTHA, FillerRatingCap);
+        rec.PTAK = Min(rec.PTAK, FillerRatingCap);
+        rec.PBTK = Min(rec.PBTK, FillerRatingCap);
+        rec.PJMP = Min(rec.PJMP, FillerRatingCap);
+    }
+
+    private static byte Min(byte a, byte b) => a < b ? a : b;
 
     private PlayerRecord CompilePlayer(CanonicalPlayer cp)
     {
