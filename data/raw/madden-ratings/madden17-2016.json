@@ -1,8 +1,9 @@
 {
+  "nflSeason": 2016,
   "maddenVersion": "17",
   "source": "maddenratings.weebly.com",
   "teams": {
-    "afc_pro_bowl_team__madden_nfl_17_.xlsx": [
+    "afc_pro_bowl_team_": [
       {
         "AFC Pro Bowl Team": "Position",
         "col_1": "Name",
@@ -274,7 +275,7 @@
         "col_3": "Indianapolis Colts"
       }
     ],
-    "arizona_cardinals__madden_nfl_17_.xlsx": [
+    "arizona_cardinals_": [
       {
         "Team": "Cardinals",
         "Last Name": "Shipley",
@@ -4050,7 +4051,7 @@
         "Injury": 88
       }
     ],
-    "atlanta_falcons__madden_nfl_17_.xlsx": [
+    "atlanta_falcons_": [
       {
         "Team": "Falcons",
         "Last Name": "Mack",
@@ -7826,7 +7827,7 @@
         "Injury": 92
       }
     ],
-    "baltimore_ravens__madden_nfl_17_.xlsx": [
+    "baltimore_ravens_": [
       {
         "Team": "Ravens",
         "Last Name": "Zuttah",
@@ -11602,7 +11603,7 @@
         "Injury": 81
       }
     ],
-    "buffalo_bills__madden_nfl_17_.xlsx": [
+    "buffalo_bills_": [
       {
         "Team": "Bills",
         "Last Name": "Wood",
@@ -15378,7 +15379,7 @@
         "Injury": 88
       }
     ],
-    "carolina_panthers__madden_nfl_17_.xlsx": [
+    "carolina_panthers_": [
       {
         "Team": "Panthers",
         "Last Name": "Kalil",
@@ -19154,7 +19155,7 @@
         "Injury": 85
       }
     ],
-    "chicago_bears__madden_nfl_17_.xlsx": [
+    "chicago_bears_": [
       {
         "Team": "Bears",
         "Last Name": "Grasu",
@@ -22930,7 +22931,7 @@
         "Injury": 86
       }
     ],
-    "cincinnati_bengals__madden_nfl_17_.xlsx": [
+    "cincinnati_bengals_": [
       {
         "Team": "Bengals",
         "Last Name": "Bodine",
@@ -26706,7 +26707,7 @@
         "Injury": 91
       }
     ],
-    "cleveland_browns__madden_nfl_17_.xlsx": [
+    "cleveland_browns_": [
       {
         "Team": "Browns",
         "Last Name": "Erving",
@@ -30482,7 +30483,7 @@
         "Injury": 89
       }
     ],
-    "dallas_cowboys__madden_nfl_17_.xlsx": [
+    "dallas_cowboys_": [
       {
         "Team": "Cowboys",
         "Last Name": "Frederick",
@@ -34258,7 +34259,7 @@
         "Injury": 89
       }
     ],
-    "denver_broncos__madden_nfl_17_.xlsx": [
+    "denver_broncos_": [
       {
         "Team": "Broncos",
         "Last Name": "Paradis",
@@ -38034,7 +38035,7 @@
         "Injury": 77
       }
     ],
-    "detroit_lions__madden_nfl_17_.xlsx": [
+    "detroit_lions_": [
       {
         "Team": "Lions",
         "Last Name": "Glasgow",
@@ -41810,7 +41811,7 @@
         "Injury": 87
       }
     ],
-    "green_bay_packers__madden_nfl_17_.xlsx": [
+    "green_bay_packers_": [
       {
         "Team": "Packers",
         "Last Name": "Linsley",
@@ -45586,7 +45587,7 @@
         "Injury": 87
       }
     ],
-    "houston_texans__madden_nfl_17_.xlsx": [
+    "houston_texans_": [
       {
         "Team": "Texans",
         "Last Name": "Martin",
@@ -49362,7 +49363,7 @@
         "Injury": 87
       }
     ],
-    "indianapolis_colts__madden_nfl_17_.xlsx": [
+    "indianapolis_colts_": [
       {
         "Team": "Colts",
         "Last Name": "Kelly",
@@ -53138,7 +53139,7 @@
         "Injury": 85
       }
     ],
-    "jacksonville_jagaurs__madden_nfl_17_.xlsx": [
+    "jacksonville_jagaurs_": [
       {
         "Team": "Jaguars",
         "Last Name": "Bowanko",
@@ -56914,7 +56915,7 @@
         "Injury": 75
       }
     ],
-    "kansas_city_chiefs__madden_nfl_17_.xlsx": [
+    "kansas_city_chiefs_": [
       {
         "Team": "Chiefs",
         "Last Name": "Morse",
@@ -60690,7 +60691,7 @@
         "Injury": 91
       }
     ],
-    "los_angeles_rams__madden_nfl_17_.xlsx": [
+    "los_angeles_rams_": [
       {
         "Team": "Rams",
         "Last Name": "Barnes",
@@ -184930,7 +184931,7 @@
         "Injury": 91
       }
     ],
-    "miami_dolphins__madden_nfl_17_.xlsx": [
+    "miami_dolphins_": [
       {
         "Team": "Dolphins",
         "Last Name": "Pouncey",
@@ -188706,7 +188707,7 @@
         "Injury": 87
       }
     ],
-    "minnesota_vikings__madden_nfl_17_.xlsx": [
+    "minnesota_vikings_": [
       {
         "Team": "Vikings",
         "Last Name": "Sullivan",
@@ -192482,7 +192483,7 @@
         "Injury": 91
       }
     ],
-    "new_england_patriots__madden_nfl_17_.xlsx": [
+    "new_england_patriots_": [
       {
         "Team": "Patriots",
         "Last Name": "Stork",
@@ -196258,7 +196259,7 @@
         "Injury": 89
       }
     ],
-    "new_orleans_saints__madden_nfl_17_.xlsx": [
+    "new_orleans_saints_": [
       {
         "Team": "Saints",
         "Last Name": "Unger",
@@ -200034,7 +200035,7 @@
         "Injury": 87
       }
     ],
-    "new_york_giants__madden_nfl_17_.xlsx": [
+    "new_york_giants_": [
       {
         "Team": "Giants",
         "Last Name": "Richburg",
@@ -203810,7 +203811,7 @@
         "Injury": 87
       }
     ],
-    "new_york_jets__madden_nfl_17_.xlsx": [
+    "new_york_jets_": [
       {
         "Team": "Jets",
         "Last Name": "Mangold",
@@ -207586,7 +207587,7 @@
         "Injury": 87
       }
     ],
-    "nfc_pro_bowl_team__madden_nfl_17_.xlsx": [
+    "nfc_pro_bowl_team_": [
       {
         "NFC Pro Bowl Team": "Position",
         "col_1": "Name",
@@ -207858,7 +207859,7 @@
         "col_3": "Los Angeles Rams"
       }
     ],
-    "oakland_raiders__madden_nfl_17_.xlsx": [
+    "oakland_raiders_": [
       {
         "Team": "Raiders",
         "Last Name": "Hudson",
@@ -211583,7 +211584,7 @@
         "Injury": 90
       }
     ],
-    "philadelphia_eagles__madden_nfl_17_.xlsx": [
+    "philadelphia_eagles_": [
       {
         "Team": "Eagles",
         "Last Name": "Kelce",
@@ -215359,7 +215360,7 @@
         "Injury": 87
       }
     ],
-    "pittsburgh_steelers__madden_nfl_17_.xlsx": [
+    "pittsburgh_steelers_": [
       {
         "Team": "Steelers",
         "Last Name": "Pouncey",
@@ -219033,7 +219034,7 @@
         "Injury": 87
       }
     ],
-    "san_diego_chargers__madden_nfl_17_.xlsx": [
+    "san_diego_chargers_": [
       {
         "Team": "Chargers",
         "Last Name": "Slauson",
@@ -222809,7 +222810,7 @@
         "Injury": 87
       }
     ],
-    "san_francisco_49ers__madden_nfl_17_.xlsx": [
+    "san_francisco_49ers_": [
       {
         "Team": "49ers",
         "Last Name": "Kilgore",
@@ -226585,7 +226586,7 @@
         "Injury": 75
       }
     ],
-    "seattle_seahawks__madden_nfl_17_.xlsx": [
+    "seattle_seahawks_": [
       {
         "Team": "Seahawks",
         "Last Name": "Britt",
@@ -230310,7 +230311,7 @@
         "Injury": 76
       }
     ],
-    "tampa_bay_buccaneers__madden_nfl_17_.xlsx": [
+    "tampa_bay_buccaneers_": [
       {
         "Team": "Buccaneers",
         "Last Name": "Smith",
@@ -234086,7 +234087,7 @@
         "Injury": 91
       }
     ],
-    "tennessee_titans__madden_nfl_17_.xlsx": [
+    "tennessee_titans_": [
       {
         "Team": "Titans",
         "Last Name": "Jones",
@@ -237862,7 +237863,7 @@
         "Injury": 87
       }
     ],
-    "washington_redskins__madden_nfl_17_.xlsx": [
+    "washington_redskins_": [
       {
         "Team": "Redskins",
         "Last Name": "Lichtensteiger",

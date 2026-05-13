@@ -1,8 +1,9 @@
 {
+  "nflSeason": 2009,
   "maddenVersion": "10",
   "source": "maddenratings.weebly.com",
   "teams": {
-    "arizona_cardinals__madden_nfl_10_.xlsx": [
+    "arizona_cardinals_": [
       {
         "Team": "Cardinals",
         "First": "Lyle",
@@ -556,7 +557,7 @@
         "Acceleration": 82
       }
     ],
-    "atlanta_falcons__madden_nfl_10_.xlsx": [
+    "atlanta_falcons_": [
       {
         "Team": "Falcons",
         "First": "Todd",
@@ -1108,7 +1109,7 @@
         "Acceleration": 84
       }
     ],
-    "baltimore_ravens__madden_nfl_10_.xlsx": [
+    "baltimore_ravens_": [
       {
         "Team": "Ravens",
         "First": "Matt",
@@ -1664,7 +1665,7 @@
         "Acceleration": 97
       }
     ],
-    "buffalo_bills__madden_nfl_10_.xlsx": [
+    "buffalo_bills_": [
       {
         "Team": "Bills",
         "First": "Geoff",
@@ -2218,7 +2219,7 @@
         "Acceleration": 88
       }
     ],
-    "carolina_panthers__madden_nfl_10_.xlsx": [
+    "carolina_panthers_": [
       {
         "Team": "Panthers",
         "First": "Ryan",
@@ -2768,7 +2769,7 @@
         "Acceleration": 88
       }
     ],
-    "chicago_bears__madden_nfl_10_.xlsx": [
+    "chicago_bears_": [
       {
         "Team": "Bears",
         "First": "Olin",
@@ -3318,7 +3319,7 @@
         "Acceleration": 96
       }
     ],
-    "cincinnati_bengals__madden_nfl_10_.xlsx": [
+    "cincinnati_bengals_": [
       {
         "Team": "Bengals",
         "First": "Kyle",
@@ -3874,7 +3875,7 @@
         "Acceleration": 92
       }
     ],
-    "cleveland_browns__madden_nfl_10_.xlsx": [
+    "cleveland_browns_": [
       {
         "Team": "Browns",
         "First": "Hank",
@@ -4434,7 +4435,7 @@
         "Acceleration": 85
       }
     ],
-    "dallas_cowboys__madden_nfl_10_.xlsx": [
+    "dallas_cowboys_": [
       {
         "Team": "Cowboys",
         "First": "Andre",
@@ -4988,7 +4989,7 @@
         "Acceleration": 87
       }
     ],
-    "denver_broncos__madden_nfl_10_.xlsx": [
+    "denver_broncos_": [
       {
         "Team": "Broncos",
         "First": "Casey",
@@ -5544,7 +5545,7 @@
         "Acceleration": 84
       }
     ],
-    "detroit_lions__madden_nfl_10_.xlsx": [
+    "detroit_lions_": [
       {
         "Team": "Lions",
         "First": "Dominic",
@@ -6098,7 +6099,7 @@
         "Acceleration": 92
       }
     ],
-    "free_agents__madden_nfl_10_.xlsx": [
+    "free_agents_": [
       {
         "Team": "Free Agent",
         "Name": "Chris McAlister",
@@ -6290,7 +6291,7 @@
         "POS": "WR"
       }
     ],
-    "green_bay_packers__madden_nfl_10_.xlsx": [
+    "green_bay_packers_": [
       {
         "Team": "Packers",
         "First": "Scott",
@@ -6842,7 +6843,7 @@
         "Acceleration": 83
       }
     ],
-    "houston_texans__madden_nfl_10_.xlsx": [
+    "houston_texans_": [
       {
         "Team": "Texans",
         "First": "Chris",
@@ -7398,7 +7399,7 @@
         "Acceleration": 85
       }
     ],
-    "indianapolis_colts__madden_nfl_10_.xlsx": [
+    "indianapolis_colts_": [
       {
         "Team": "Colts",
         "First": "Jeff",
@@ -7950,7 +7951,7 @@
         "Acceleration": 78
       }
     ],
-    "jacksonville_jaguars__madden_nfl_10_.xlsx": [
+    "jacksonville_jaguars_": [
       {
         "Team": "Jaguars",
         "First": "Brad",
@@ -8502,7 +8503,7 @@
         "Acceleration": 89
       }
     ],
-    "kansas_city_chiefs__madden_nfl_10_.xlsx": [
+    "kansas_city_chiefs_": [
       {
         "Team": "Chiefs",
         "First": "Rudy",
@@ -9056,7 +9057,7 @@
         "Acceleration": 95
       }
     ],
-    "miami_dolphins__madden_nfl_10_.xlsx": [
+    "miami_dolphins_": [
       {
         "Team": "Dolphins",
         "First": "Jake",
@@ -9616,7 +9617,7 @@
         "Acceleration": 87
       }
     ],
-    "minnesota_vikings__madden_nfl_10_.xlsx": [
+    "minnesota_vikings_": [
       {
         "Team": "Vikings",
         "First": "John",
@@ -10170,7 +10171,7 @@
         "Acceleration": 86
       }
     ],
-    "new_england_patriots__madden_nfl_10_.xlsx": [
+    "new_england_patriots_": [
       {
         "Team": "Patriots",
         "First": "Dan",
@@ -10722,7 +10723,7 @@
         "Acceleration": 81
       }
     ],
-    "new_orleans_saints__madden_nfl_10_.xlsx": [
+    "new_orleans_saints_": [
       {
         "Team": "Saints",
         "First": "Jonathan",
@@ -11278,7 +11279,7 @@
         "Acceleration": 84
       }
     ],
-    "new_york_giants__madden_nfl_10_.xlsx": [
+    "new_york_giants_": [
       {
         "Team": "Giants",
         "First": "Shaun",
@@ -11836,7 +11837,7 @@
         "Acceleration": 94
       }
     ],
-    "new_york_jets__madden_nfl_10_.xlsx": [
+    "new_york_jets_": [
       {
         "Team": "Jets",
         "First": "Nick",
@@ -12394,7 +12395,7 @@
         "Acceleration": 85
       }
     ],
-    "oakland_raiders__madden_nfl_10_.xlsx": [
+    "oakland_raiders_": [
       {
         "Team": "Raiders",
         "First": "Samson",
@@ -12946,7 +12947,7 @@
         "Acceleration": 90
       }
     ],
-    "philadelphia_eagles__madden_nfl_10_.xlsx": [
+    "philadelphia_eagles_": [
       {
         "Team": "Eagles",
         "First": "Jamaal",
@@ -13500,7 +13501,7 @@
         "Acceleration": 84
       }
     ],
-    "pittsburgh_steelers__madden_nfl_10_.xlsx": [
+    "pittsburgh_steelers_": [
       {
         "Team": "Steelers",
         "First": "Justin",
@@ -14056,7 +14057,7 @@
         "Acceleration": 95
       }
     ],
-    "san_diego_chargers__madden_nfl_10_.xlsx": [
+    "san_diego_chargers_": [
       {
         "Team": "Chargers",
         "First": "Nick",
@@ -14614,7 +14615,7 @@
         "Acceleration": 82
       }
     ],
-    "san_francisco_49ers__madden_nfl_10_.xlsx": [
+    "san_francisco_49ers_": [
       {
         "Team": "49ers",
         "First": "Eric",
@@ -15168,7 +15169,7 @@
         "Acceleration": 87
       }
     ],
-    "seattle_seahawks__madden_nfl_10_.xlsx": [
+    "seattle_seahawks_": [
       {
         "Team": "Seahawks",
         "First": "Chris",
@@ -15720,7 +15721,7 @@
         "Acceleration": 84
       }
     ],
-    "st._louis_rams__madden_nfl_10_.xlsx": [
+    "st._louis_rams_": [
       {
         "Team": "Rams",
         "First": "Jason",
@@ -16263,7 +16264,7 @@
         "Acceleration": 85
       }
     ],
-    "tampa_bay_buccaneers__madden_nfl_10_.xlsx": [
+    "tampa_bay_buccaneers_": [
       {
         "Team": "Bucs",
         "First": "Jeff",
@@ -16815,7 +16816,7 @@
         "Acceleration": 92
       }
     ],
-    "tennessee_titans__madden_nfl_10_.xlsx": [
+    "tennessee_titans_": [
       {
         "Team": "Titans",
         "First": "Kevin",
@@ -17373,7 +17374,7 @@
         "Acceleration": 83
       }
     ],
-    "washington_redskins__madden_nfl_10_.xlsx": [
+    "washington_redskins_": [
       {
         "Team": "Redskins",
         "First": "Casey",

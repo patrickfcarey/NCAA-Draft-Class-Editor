@@ -1,23 +1,38 @@
 #!/usr/bin/env python3
 """
-Scrape per-team rosters from maddenratings.weebly.com for a given Madden NFL year.
+Scrape per-team rosters from maddenratings.weebly.com for a given NFL season.
+
+CLI takes the NFL SEASON YEAR (e.g. 2013, 2018, 2023) rather than the Madden
+version. That avoids the Madden 25 collision: there's a 2013 anniversary
+edition AND a 2024 modern release, both literally named "Madden NFL 25".
+By indexing on NFL season, the mapping draft-year -> rookie-ratings file is
+trivial: the 2013 NFL Draft rookies live in `madden-2013.json` (sourced from
+the 2013 anniversary game), and the eventual 2024 NFL Draft rookies will be
+in `madden-2024.json` (sourced from the modern 2024 game from a different
+URL once we add that scraper).
 
 The site hosts a per-team XLSX file for each Madden year on its team page.
 URL pattern observed (Madden 09):
     https://maddenratings.weebly.com/uploads/1/4/0/9/14097292/
         pittsburgh_steelers_madden_nfl_09.xlsx
 
-The year page (e.g. madden-nfl-09.html) embeds each team logo as an <a href="...xlsx">
-link. We scrape the page, collect all XLSX URLs, download each, and parse with openpyxl.
+The year page (e.g. madden-nfl-09.html) embeds each team logo as an
+<a href="...xlsx"> link. We scrape the page, collect all XLSX URLs, download
+each, and parse with openpyxl. Madden 11 uses .xls (BIFF) which needs xlrd.
 
-Output: data/raw/madden-ratings/madden-{yy}.json
-        { maddenVersion, source, teams: { team_slug: [player_dicts...], ... } }
+Output: data/raw/madden-ratings/madden{version}-{nflSeason}.json
+        { nflSeason, maddenVersion, source, teams: { team_slug: [...], ... } }
+Examples:
+    madden09-2008.json   (M09, released Aug 2008, 2008 rookies)
+    madden25-2013.json   (M25 anniversary, released Aug 2013, 2013 rookies)
+    madden25-2024.json   (M25 modern, released Aug 2024, 2024 rookies; future)
 
 Usage:
-    python build_madden_year.py 09     # Madden NFL 09  (2008 draftees as rookies)
-    python build_madden_year.py 27     # Madden NFL 27  (2026 draftees as rookies)
+    python build_madden_year.py 2008    # NFL 2008 season = Madden NFL 09
+    python build_madden_year.py 2013    # 2013 season    = Madden NFL 25 (anniversary)
+    python build_madden_year.py 2018    # 2018 season    = Madden NFL 19
 
-Dependencies: openpyxl (pip install openpyxl).
+Dependencies: openpyxl>=3.0, xlrd==1.2.0 (see requirements.txt).
 """
 from __future__ import annotations
 
@@ -38,6 +53,28 @@ RAW_DIR = REPO_ROOT / "data" / "raw" / "madden-ratings"
 BASE = "https://maddenratings.weebly.com"
 UA = "Mozilla/5.0 (X11; Linux x86_64) NCAA-Draft-Class-Editor-research/1.0"
 DELAY = 0.3  # seconds between XLSX downloads (static file host, but be polite)
+
+# NFL season year -> Madden version string used in URLs on weebly.
+# Note the M25 anniversary case: the 2013 season game is "Madden NFL 25",
+# distinct from the modern 2024-released M25 which is NOT on weebly.
+SEASON_TO_MADDEN: dict[int, str] = {
+    2008: "09",
+    2009: "10",
+    2010: "11",
+    2011: "12",
+    2012: "13",
+    2013: "25",   # anniversary edition
+    2014: "15",
+    2015: "16",
+    2016: "17",
+    2017: "18",
+    2018: "19",
+    2019: "20",
+    2020: "21",
+    2021: "22",
+    2022: "23",
+    2023: "24",
+}
 
 
 def fetch(url: str, cache_path: Path) -> bytes:
@@ -96,7 +133,12 @@ def json_default(o: Any) -> str:
     raise TypeError(f"Object of type {type(o).__name__} is not JSON serializable")
 
 
-def scrape_year(yy: str) -> dict[str, Any]:
+def scrape_season(season: int) -> dict[str, Any]:
+    if season not in SEASON_TO_MADDEN:
+        raise ValueError(f"NFL season {season} not in SEASON_TO_MADDEN map. "
+                         f"Available: {sorted(SEASON_TO_MADDEN)}")
+    yy = SEASON_TO_MADDEN[season]
+
     year_url = f"{BASE}/madden-nfl-{yy}.html"
     html_path = CACHE_DIR / "pages" / f"madden-nfl-{yy}.html"
     html = fetch(year_url, html_path).decode("utf-8", errors="replace")
@@ -105,7 +147,7 @@ def scrape_year(yy: str) -> dict[str, Any]:
     urls = sorted(set(re.findall(pattern, html)))
     if not urls:
         urls = sorted(set(re.findall(r"/uploads/[^'\"]+\.xlsx?", html)))
-    print(f"Madden {yy}: found {len(urls)} XLSX URLs", file=sys.stderr)
+    print(f"Season {season} (Madden {yy}): {len(urls)} XLSX URLs", file=sys.stderr)
 
     teams_data: dict[str, list[dict[str, Any]]] = {}
     for rel in urls:
@@ -123,6 +165,7 @@ def scrape_year(yy: str) -> dict[str, Any]:
         print(f"  {team_key}: {len(players)} players", file=sys.stderr)
 
     return {
+        "nflSeason": season,
         "maddenVersion": yy,
         "source": "maddenratings.weebly.com",
         "teams": teams_data,
@@ -131,19 +174,19 @@ def scrape_year(yy: str) -> dict[str, Any]:
 
 def main() -> int:
     if len(sys.argv) != 2:
-        print(f"Usage: {sys.argv[0]} <madden_year_yy>", file=sys.stderr)
-        print(f"Example: {sys.argv[0]} 09   (for Madden NFL 09 = 2008 rookies)", file=sys.stderr)
+        print(f"Usage: {sys.argv[0]} <nfl_season_year>", file=sys.stderr)
+        print(f"Example: {sys.argv[0]} 2013   (rookies = 2013 NFL Draft class)", file=sys.stderr)
         return 2
-    yy = sys.argv[1].zfill(2)
+    season = int(sys.argv[1])
 
-    result = scrape_year(yy)
+    result = scrape_season(season)
     RAW_DIR.mkdir(parents=True, exist_ok=True)
-    out_path = RAW_DIR / f"madden-{yy}.json"
+    out_path = RAW_DIR / f"madden{result['maddenVersion']}-{season}.json"
     with out_path.open("w", encoding="utf-8") as f:
         json.dump(result, f, indent=2, ensure_ascii=False, default=json_default)
 
     total = sum(len(t) for t in result["teams"].values())
-    print(f"Wrote {out_path}: {len(result['teams'])} teams, {total} players", file=sys.stderr)
+    print(f"Wrote {out_path}: {len(result['teams'])} files, {total} players", file=sys.stderr)
     return 0
 
 

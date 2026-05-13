@@ -1,8 +1,9 @@
 {
+  "nflSeason": 2022,
   "maddenVersion": "23",
   "source": "maddenratings.weebly.com",
   "teams": {
-    "arizona_cardinals__madden_nfl_23_.xlsx": [
+    "arizona_cardinals_": [
       {
         "Team": "Cardinals",
         "Position": "C",
@@ -5480,7 +5481,7 @@
         "Primary Key": 20574
       }
     ],
-    "atlanta_falcons__madden_nfl_23_.xlsx": [
+    "atlanta_falcons_": [
       {
         "Team": "Falcons",
         "Position": "C",
@@ -10958,7 +10959,7 @@
         "Primary Key": 21589
       }
     ],
-    "baltimore_ravens__madden_nfl_23_.xlsx": [
+    "baltimore_ravens_": [
       {
         "Team": "Ravens",
         "Position": "C",
@@ -16436,7 +16437,7 @@
         "Primary Key": 22374
       }
     ],
-    "buffalo_bills__madden_nfl_23_.xlsx": [
+    "buffalo_bills_": [
       {
         "Team": "Bills",
         "Position": "C",
@@ -21914,7 +21915,7 @@
         "Primary Key": 12988
       }
     ],
-    "carolina_panthers__madden_nfl_23_.xlsx": [
+    "carolina_panthers_": [
       {
         "Team": "Panthers",
         "Position": "C",
@@ -27392,7 +27393,7 @@
         "Primary Key": 13782
       }
     ],
-    "chicago_bears__madden_nfl_23_.xlsx": [
+    "chicago_bears_": [
       {
         "Team": "Bears",
         "Position": "C",
@@ -32870,7 +32871,7 @@
         "Primary Key": 21322
       }
     ],
-    "cincinnati_bengals__madden_nfl_23_.xlsx": [
+    "cincinnati_bengals_": [
       {
         "Team": "Bengals",
         "Position": "C",
@@ -38348,7 +38349,7 @@
         "Primary Key": 22082
       }
     ],
-    "cleveland_browns__madden_nfl_23_.xlsx": [
+    "cleveland_browns_": [
       {
         "Team": "Browns",
         "Position": "C",
@@ -43826,7 +43827,7 @@
         "Primary Key": 22479
       }
     ],
-    "dallas_cowboys__madden_nfl_23_.xlsx": [
+    "dallas_cowboys_": [
       {
         "Team": "Cowboys",
         "Position": "C",
@@ -49304,7 +49305,7 @@
         "Primary Key": 21758
       }
     ],
-    "denver_broncos__madden_nfl_23_.xlsx": [
+    "denver_broncos_": [
       {
         "Team": "Broncos",
         "Position": "C",
@@ -54782,7 +54783,7 @@
         "Primary Key": 21070
       }
     ],
-    "detroit_lions__madden_nfl_23_.xlsx": [
+    "detroit_lions_": [
       {
         "Team": "Lions",
         "Position": "C",
@@ -60260,7 +60261,7 @@
         "Primary Key": 20867
       }
     ],
-    "green_bay_packers__madden_nfl_23_.xlsx": [
+    "green_bay_packers_": [
       {
         "Team": "Packers",
         "Position": "C",
@@ -65738,7 +65739,7 @@
         "Primary Key": 22372
       }
     ],
-    "houston_texans__madden_nfl_23_.xlsx": [
+    "houston_texans_": [
       {
         "Team": "Texans",
         "Position": "C",
@@ -71216,7 +71217,7 @@
         "Primary Key": 21739
       }
     ],
-    "indianapolis_colts__madden_nfl_23_.xlsx": [
+    "indianapolis_colts_": [
       {
         "Team": "Colts",
         "Position": "C",
@@ -76694,7 +76695,7 @@
         "Primary Key": 22564
       }
     ],
-    "jacksonville_jaguars__madden_nfl_23_.xlsx": [
+    "jacksonville_jaguars_": [
       {
         "Team": "Jaguars",
         "Position": "C",
@@ -82172,7 +82173,7 @@
         "Primary Key": 22354
       }
     ],
-    "kansas_city_chiefs__madden_nfl_23_.xlsx": [
+    "kansas_city_chiefs_": [
       {
         "Team": "Chiefs",
         "Position": "C",
@@ -87650,7 +87651,7 @@
         "Primary Key": 13322
       }
     ],
-    "las_vegas_raiders__madden_nfl_23_.xlsx": [
+    "las_vegas_raiders_": [
       {
         "Team": "Raiders",
         "Position": "C",
@@ -93128,7 +93129,7 @@
         "Primary Key": 21757
       }
     ],
-    "los_angeles_chargers__madden_nfl_23_.xlsx": [
+    "los_angeles_chargers_": [
       {
         "Team": "Chargers",
         "Position": "C",
@@ -98606,7 +98607,7 @@
         "Primary Key": 22568
       }
     ],
-    "los_angeles_rams__madden_nfl_23_.xlsx": [
+    "los_angeles_rams_": [
       {
         "Team": "Rams",
         "Position": "C",
@@ -279318,7 +279319,7 @@
         "Primary Key": 12979
       }
     ],
-    "miami_dolphins__madden_nfl_23_.xlsx": [
+    "miami_dolphins_": [
       {
         "Team": "Dolphins",
         "Position": "C",
@@ -284796,7 +284797,7 @@
         "Primary Key": 13835
       }
     ],
-    "minnesota_vikings__madden_nfl_23_.xlsx": [
+    "minnesota_vikings_": [
       {
         "Team": "Vikings",
         "Position": "C",
@@ -290274,7 +290275,7 @@
         "Primary Key": 21392
       }
     ],
-    "new_england_patriots__madden_nfl_23_.xlsx": [
+    "new_england_patriots_": [
       {
         "Team": "Patriots",
         "Position": "C",
@@ -295752,7 +295753,7 @@
         "Primary Key": 21602
       }
     ],
-    "new_orleans_saints__madden_nfl_23_.xlsx": [
+    "new_orleans_saints_": [
       {
         "Team": "Saints",
         "Position": "C",
@@ -301230,7 +301231,7 @@
         "Primary Key": 22016
       }
     ],
-    "new_york_giants__madden_nfl_23_.xlsx": [
+    "new_york_giants_": [
       {
         "Team": "Giants",
         "Position": "C",
@@ -306708,7 +306709,7 @@
         "Primary Key": 20350
       }
     ],
-    "new_york_jets__madden_nfl_23_.xlsx": [
+    "new_york_jets_": [
       {
         "Team": "Jets",
         "Position": "C",
@@ -312186,7 +312187,7 @@
         "Primary Key": 21304
       }
     ],
-    "philadelphia_eagles__madden_nfl_23_.xlsx": [
+    "philadelphia_eagles_": [
       {
         "Team": "Eagles",
         "Position": "C",
@@ -317664,7 +317665,7 @@
         "Primary Key": 21056
       }
     ],
-    "pittsburgh_steelers__madden_nfl_23_.xlsx": [
+    "pittsburgh_steelers_": [
       {
         "Team": "Steelers",
         "Position": "C",
@@ -323142,7 +323143,7 @@
         "Primary Key": 20933
       }
     ],
-    "san_francisco_49ers__madden_nfl_23_.xlsx": [
+    "san_francisco_49ers_": [
       {
         "Team": "49ers",
         "Position": "C",
@@ -328620,7 +328621,7 @@
         "Primary Key": 21076
       }
     ],
-    "seattle_seahawks__madden_nfl_23_.xlsx": [
+    "seattle_seahawks_": [
       {
         "Team": "Seahawks",
         "Position": "C",
@@ -334098,7 +334099,7 @@
         "Primary Key": 21303
       }
     ],
-    "tampa_bay_buccaneers__madden_nfl_23_.xlsx": [
+    "tampa_bay_buccaneers_": [
       {
         "Team": "Buccaneers",
         "Position": "C",
@@ -339576,7 +339577,7 @@
         "Primary Key": 13913
       }
     ],
-    "tennessee_titans__madden_nfl_23_.xlsx": [
+    "tennessee_titans_": [
       {
         "Team": "Titans",
         "Position": "C",
@@ -345054,7 +345055,7 @@
         "Primary Key": 21612
       }
     ],
-    "washington_commanders__madden_nfl_23_.xlsx": [
+    "washington_commanders_": [
       {
         "Team": "Commanders",
         "Position": "C",

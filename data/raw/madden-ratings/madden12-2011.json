@@ -1,8 +1,9 @@
 {
+  "nflSeason": 2011,
   "maddenVersion": "12",
   "source": "maddenratings.weebly.com",
   "teams": {
-    "arizona_cardinals__madden_nfl_12_.xlsx": [
+    "arizona_cardinals_": [
       {
         "Name": "Derek Anderson",
         "Position": "QB",
@@ -1988,7 +1989,7 @@
         "Trucking": 70
       }
     ],
-    "atlanta_falcons__madden_nfl_12_.xlsx": [
+    "atlanta_falcons_": [
       {
         "Name": "Matt Ryan",
         "Position": "QB",
@@ -3879,7 +3880,7 @@
         "Trucking": 65
       }
     ],
-    "baltimore_ravens__madden_nfl_12_.xlsx": [
+    "baltimore_ravens_": [
       {
         "Name": "Joe Flacco",
         "Position": "QB",
@@ -5790,7 +5791,7 @@
         "Trucking": 65
       }
     ],
-    "buffalo_bills__madden_nfl_12_.xlsx": [
+    "buffalo_bills_": [
       {
         "Name": "Ryan Fitzpatrick",
         "Position": "QB",
@@ -7737,7 +7738,7 @@
         "Trucking": 80
       }
     ],
-    "carolina_panthers__madden_nfl_12_.xlsx": [
+    "carolina_panthers_": [
       {
         "Name": "Cam Newton",
         "Position": "QB",
@@ -9718,7 +9719,7 @@
         "Trucking": 60
       }
     ],
-    "chicago_bears__madden_nfl_12_.xlsx": [
+    "chicago_bears_": [
       {
         "Name": "Jay Cutler",
         "Position": "QB",
@@ -11577,7 +11578,7 @@
         "Trucking": 71
       }
     ],
-    "cincinnati_bengals__madden_nfl_12_.xlsx": [
+    "cincinnati_bengals_": [
       {
         "Name": "Carson Palmer",
         "Position": "QB",
@@ -13559,7 +13560,7 @@
         "Trucking": 60
       }
     ],
-    "cleveland_browns__madden_nfl_12_.xlsx": [
+    "cleveland_browns_": [
       {
         "Name": "Colt McCoy",
         "Position": "QB",
@@ -15507,7 +15508,7 @@
         "Trucking": 80
       }
     ],
-    "dallas_cowboys__madden_nfl_12_.xlsx": [
+    "dallas_cowboys_": [
       {
         "Name": "Tony Romo",
         "Position": "QB",
@@ -17450,7 +17451,7 @@
         "Trucking": 70
       }
     ],
-    "denver_broncos__madden_nfl_12_.xlsx": [
+    "denver_broncos_": [
       {
         "Name": "Kyle Orton",
         "Position": "QB",
@@ -19387,7 +19388,7 @@
         "Trucking": 55
       }
     ],
-    "detroit_lions__madden_nfl_12_.xlsx": [
+    "detroit_lions_": [
       {
         "Name": "Matthew Stafford",
         "Position": "QB",
@@ -21354,7 +21355,7 @@
         "Trucking": 80
       }
     ],
-    "green_bay_packers__madden_nfl_12_.xlsx": [
+    "green_bay_packers_": [
       {
         "Name": "Aaron Rodgers",
         "Position": "QB",
@@ -23346,7 +23347,7 @@
         "Trucking": 65
       }
     ],
-    "houston_texans__madden_nfl_12_.xlsx": [
+    "houston_texans_": [
       {
         "Name": "Matt Schaub",
         "Position": "QB",
@@ -25301,7 +25302,7 @@
         "Trucking": 60
       }
     ],
-    "indianapolis_colts__madden_nfl_12_.xlsx": [
+    "indianapolis_colts_": [
       {
         "Name": "Peyton Manning",
         "Position": "QB",
@@ -27263,7 +27264,7 @@
         "Trucking": 65
       }
     ],
-    "jacksonville_jaguars__madden_nfl_12_.xlsx": [
+    "jacksonville_jaguars_": [
       {
         "Name": "David Garrard",
         "Position": "QB",
@@ -29165,7 +29166,7 @@
         "Trucking": 80
       }
     ],
-    "kansas_city_chiefs__madden_nfl_12_.xlsx": [
+    "kansas_city_chiefs_": [
       {
         "Name": "Matt Cassel",
         "Position": "QB",
@@ -31099,7 +31100,7 @@
         "Trucking": 75
       }
     ],
-    "miami_dolphins__madden_nfl_12_.xlsx": [
+    "miami_dolphins_": [
       {
         "Name": "Chad Henne",
         "Position": "QB",
@@ -33082,7 +33083,7 @@
         "Trucking": 65
       }
     ],
-    "minnesota_vikings__madden_nfl_12_.xlsx": [
+    "minnesota_vikings_": [
       {
         "Name": "Christian Ponder",
         "Position": "QB",
@@ -35000,7 +35001,7 @@
         "Trucking": 75
       }
     ],
-    "new_england_patriots__madden_nfl_12_.xlsx": [
+    "new_england_patriots_": [
       {
         "Name": "Tom Brady",
         "Position": "QB",
@@ -36938,7 +36939,7 @@
         "Trucking": 66
       }
     ],
-    "new_orleans_saints__madden_nfl_12_.xlsx": [
+    "new_orleans_saints_": [
       {
         "Name": "Drew Brees",
         "Position": "QB",
@@ -38876,7 +38877,7 @@
         "Trucking": 75
       }
     ],
-    "new_york_giants__madden_nfl_12_.xlsx": [
+    "new_york_giants_": [
       {
         "Name": "Eli Manning",
         "Position": "QB",
@@ -40840,7 +40841,7 @@
         "Trucking": 72
       }
     ],
-    "new_york_jets__madden_nfl_12_.xlsx": [
+    "new_york_jets_": [
       {
         "Name": "Mark Sanchez",
         "Position": "QB",
@@ -42808,7 +42809,7 @@
         "Trucking": 65
       }
     ],
-    "oakland_raiders__madden_nfl_12_.xlsx": [
+    "oakland_raiders_": [
       {
         "Name": "Jason Campbell",
         "Position": "QB",
@@ -44692,7 +44693,7 @@
         "Trucking": 70
       }
     ],
-    "philadelphia_eagles__madden_nfl_12_.xlsx": [
+    "philadelphia_eagles_": [
       {
         "Name": "Michael Vick",
         "Position": "QB",
@@ -46675,7 +46676,7 @@
         "Trucking": 85
       }
     ],
-    "pittsburgh_steelers__madden_nfl_12_.xlsx": [
+    "pittsburgh_steelers_": [
       {
         "Name": "Ben Roethlisberger",
         "Position": "QB",
@@ -48614,7 +48615,7 @@
         "Trucking": 50
       }
     ],
-    "san_diego_chargers__madden_nfl_12_.xlsx": [
+    "san_diego_chargers_": [
       {
         "Name": "Philip Rivers",
         "Position": "QB",
@@ -50596,7 +50597,7 @@
         "Trucking": 65
       }
     ],
-    "san_francisco_49ers__madden_nfl_12_.xlsx": [
+    "san_francisco_49ers_": [
       {
         "Name": "Alex Smith",
         "Position": "QB",
@@ -52474,7 +52475,7 @@
         "Trucking": 70
       }
     ],
-    "seattle_seahawks__madden_nfl_12_.xlsx": [
+    "seattle_seahawks_": [
       {
         "Name": "Matt Hasselbeck",
         "Position": "QB",
@@ -54426,7 +54427,7 @@
         "Trucking": 74
       }
     ],
-    "st._louis_rams__madden_nfl_12_.xlsx": [
+    "st._louis_rams_": [
       {
         "Name": "Sam Bradford",
         "Position": "QB",
@@ -56397,7 +56398,7 @@
         "Trucking": 60
       }
     ],
-    "tampa_bay_buccaneers__madden_nfl_12_.xlsx": [
+    "tampa_bay_buccaneers_": [
       {
         "Name": "Josh Freeman",
         "Position": "QB",
@@ -58362,7 +58363,7 @@
         "Trucking": 75
       }
     ],
-    "tennessee_titans__madden_nfl_12_.xlsx": [
+    "tennessee_titans_": [
       {
         "Name": "Kerry Collins",
         "Position": "QB",
@@ -60311,7 +60312,7 @@
         "Trucking": 50
       }
     ],
-    "washington_redskins__madden_nfl_12_.xlsx": [
+    "washington_redskins_": [
       {
         "Name": "Donovan McNabb",
         "Position": "QB",
