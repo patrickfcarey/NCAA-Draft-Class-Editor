@@ -38,7 +38,7 @@ build pipeline, and the M09/M12 + Deluxe targets — was added in this fork.
 | Franchise Phase 2: per-player contracts     | PSA0-6 / PSB0-6 / PCSA synthesis from rating + age + position             | ✅ Verified in PCSX2 for 2018: in-place AND free-agent contracts both reflect new era. PLAY's PSA/PSB/PCSA IS the snapshot (no separate table to chase). Requires Week-1-fresh template; SEYR=0 SEWN=0 SEWT=200 confirms fresh state.        |
 | Franchise Phase 3: real OTC contract import | nflverse historical_contracts.parquet (mirrors OvertheCap)                | ✅ Wired: `--contracts <path>` matches PLAY records by name, applies real PSA/PSB/PCSA. 2018 spot-checks: Rodgers $20.9M, Brady $22M, Garoppolo $37M all match real to the dollar. ~73% name-match rate; unmatched fall back to synthesizer. |
 | M09 / M12 franchise compilers               | Same approach as M08 with per-game base year + own templates              | Not started                                                                                                                                                                                                                                 |
-| Tier 7 release pipeline                     | One-shot build of all 38+ artifacts                                       | Not started                                                                                                                                                                                                                                 |
+| Tier 7 release pipeline                     | One-shot build of all 130 artifacts                                       | ✅ `tools/build_all.py` (master) + `tools/build_all_franchises.py` (new). `--release` flag assembles `out/release/{game}/{year}/` tree. 7 artifacts per year × 19 years = 133. Smoke-tested for 2010/2014/2018/2021/2025.                    |
 
 Open work items are tracked in `CLAUDE.md` (the "Where to look first" section).
 
@@ -143,6 +143,13 @@ rosters in one save.
 ### Bulk build all years
 
 ```bash
+# ----- Master one-shot wrapper (builds everything) -----
+python3 tools/build_all.py                                     # all targets, all years
+python3 tools/build_all.py --year 2018                         # just 2018
+python3 tools/build_all.py --release                           # also assemble out/release/
+
+# ----- Or run individual builders -----
+
 # Draft classes 2008–2026
 python3 tools/build_all_draft_classes.py                       # M08 only (default)
 python3 tools/build_all_draft_classes.py --target m09          # M09 only
@@ -154,6 +161,11 @@ python3 tools/build_all_rosters.py --target m08                # M08 rosters
 python3 tools/build_all_rosters.py --target m09                # M09 Deluxe rosters
 python3 tools/build_all_rosters.py --target m12                # M12 Deluxe rosters
 python3 tools/build_all_rosters.py --target all                # all three
+
+# Franchises 2008–2026 (M08 only; calendar + cap + contracts)
+python3 tools/build_all_franchises.py                          # all years
+python3 tools/build_all_franchises.py --year 2018              # one year
+python3 tools/build_all_franchises.py --no-contracts           # synthesize only
 ```
 
 ---

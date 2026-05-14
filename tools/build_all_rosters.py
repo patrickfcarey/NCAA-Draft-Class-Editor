@@ -69,14 +69,28 @@ TARGETS = {
 }
 
 
-def find_dotnet() -> str:
+def find_dotnet() -> tuple[str, bool]:
+    """Returns (dotnet path, translate_paths_to_windows_form)."""
     found = shutil.which("dotnet")
     if found:
-        return found
-    win = Path("C:/Program Files/dotnet/dotnet.exe")
-    if win.exists():
-        return str(win)
+        return (found, False)
+    for candidate in [
+        Path("/mnt/c/Program Files/dotnet/dotnet.exe"),
+        Path("C:/Program Files/dotnet/dotnet.exe"),
+    ]:
+        if candidate.exists():
+            return (str(candidate), True)
     raise RuntimeError("dotnet not found; install the .NET 8 SDK or add it to PATH")
+
+
+def winpath(p, translate: bool) -> str:
+    if not translate:
+        return str(p)
+    s = str(p)
+    if s.startswith("/mnt/"):
+        drive = s[5].upper()
+        return f"{drive}:\\" + s[7:].replace("/", "\\")
+    return s
 
 
 def ensure_template(target: str) -> None:
@@ -103,17 +117,18 @@ def out_paths(target: str, year: int) -> tuple[Path, Path]:
     return out_bin, out_pack
 
 
-def compile_year(target: str, year: int, dotnet: str) -> Path:
+def compile_year(target: str, year: int, dotnet: str, translate: bool) -> Path:
     cfg = TARGETS[target]
     canonical = CANONICAL / f"roster-{year}.json"
     if not canonical.exists():
         raise FileNotFoundError(f"Missing canonical roster for {year}: {canonical}")
     out_bin, _ = out_paths(target, year)
+    def w(p): return winpath(p, translate)
 
     cmd = [
-        dotnet, "run", "--project", str(REPO_ROOT / "NcaaDraftEditor.Cli"),
+        dotnet, "run", "--project", w(REPO_ROOT / "NcaaDraftEditor.Cli"),
         "--", "compile-roster",
-        str(canonical), str(POSITIONS), str(cfg["template_bin"]), str(out_bin),
+        w(canonical), w(POSITIONS), w(cfg["template_bin"]), w(out_bin),
     ]
     print(f"  $ {' '.join(cmd)}", file=sys.stderr)
     subprocess.run(cmd, check=True)
@@ -130,7 +145,7 @@ def pack_year(target: str, year: int, bin_path: Path) -> Path:
     return out_pack
 
 
-def build_target(target: str, years: list[int], dotnet: str,
+def build_target(target: str, years: list[int], dotnet: str, translate: bool,
                  skip_pack: bool) -> list[tuple]:
     print(f"\n### {TARGETS[target]['label']} ###", file=sys.stderr)
     ensure_template(target)
@@ -138,7 +153,7 @@ def build_target(target: str, years: list[int], dotnet: str,
     for year in years:
         print(f"\n=== {target} {year} ===", file=sys.stderr)
         try:
-            bin_path = compile_year(target, year, dotnet)
+            bin_path = compile_year(target, year, dotnet, translate)
             if skip_pack:
                 summary.append((target, year, "compiled", bin_path.name, "-"))
             else:
@@ -162,11 +177,11 @@ def main() -> int:
 
     years = [args.year] if args.year else YEARS
     targets = list(TARGETS) if args.target == "all" else [args.target]
-    dotnet = find_dotnet()
+    dotnet, translate = find_dotnet()
 
     summary = []
     for target in targets:
-        summary.extend(build_target(target, years, dotnet, args.skip_pack))
+        summary.extend(build_target(target, years, dotnet, translate, args.skip_pack))
 
     print("\n=== Summary ===")
     print(f"{'Target':<8}{'Year':<6}{'Status':<22}{'.bin':<32}.pack")

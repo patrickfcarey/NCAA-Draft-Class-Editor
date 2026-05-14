@@ -65,35 +65,48 @@ TARGETS = {
 }
 
 
-def find_dotnet() -> str:
-    """Locate the dotnet executable, preferring PATH but falling back to the
-    common Windows install path so this script works in a vanilla shell."""
+def find_dotnet() -> tuple[str, bool]:
+    """Locate dotnet. Returns (path, translate_paths_to_windows_form).
+    Windows-side dotnet.exe invoked from WSL doesn't resolve /mnt/c/... paths,
+    so callers must convert path args via wslpath."""
     candidate = shutil.which("dotnet")
     if candidate:
-        return candidate
-    win = Path("C:/Program Files/dotnet/dotnet.exe")
-    if win.exists():
-        return str(win)
+        return (candidate, False)
+    for win in [Path("/mnt/c/Program Files/dotnet/dotnet.exe"),
+                Path("C:/Program Files/dotnet/dotnet.exe")]:
+        if win.exists():
+            return (str(win), True)
     raise RuntimeError("dotnet not found; install the .NET 8 SDK or add it to PATH")
 
 
-def compile_year(year: int, dotnet: str) -> Path:
+def winpath(p, translate: bool) -> str:
+    if not translate:
+        return str(p)
+    s = str(p)
+    if s.startswith("/mnt/"):
+        drive = s[5].upper()
+        return f"{drive}:\\" + s[7:].replace("/", "\\")
+    return s
+
+
+def compile_year(year: int, dotnet: str, translate: bool) -> Path:
     canonical = CANONICAL / f"draft-class-{year}.json"
     if not canonical.exists():
         raise FileNotFoundError(f"Missing canonical draft class for {year}: {canonical}")
     out_bin = OUT_DIR / f"draft-class-{year}.bin"
     OUT_DIR.mkdir(parents=True, exist_ok=True)
+    def w(p): return winpath(p, translate)
 
     cmd = [
-        dotnet, "run", "--project", str(REPO_ROOT / "NcaaDraftEditor.Cli"),
-        "--", "compile", str(canonical), str(POSITIONS), str(COLLEGES), str(out_bin),
-        "--filler", str(FILLER), "--lock-draft-order",
+        dotnet, "run", "--project", w(REPO_ROOT / "NcaaDraftEditor.Cli"),
+        "--", "compile", w(canonical), w(POSITIONS), w(COLLEGES), w(out_bin),
+        "--filler", w(FILLER), "--lock-draft-order",
     ]
     madden_version = SEASON_TO_MADDEN_VERSION.get(year)
     if madden_version is not None:
         madden_path = MADDEN_DIR / f"madden{madden_version}-{year}.json"
         if madden_path.exists():
-            cmd.extend(["--madden", str(madden_path)])
+            cmd.extend(["--madden", w(madden_path)])
         else:
             print(f"  WARNING: expected Madden file {madden_path.name} not found; "
                   f"using defaults for {year}", file=sys.stderr)
@@ -136,13 +149,13 @@ def main() -> int:
 
     years = [args.year] if args.year else YEARS
     targets = list(TARGETS) if args.target == "all" else [args.target]
-    dotnet = find_dotnet()
+    dotnet, translate = find_dotnet()
 
     summary = []
     for year in years:
         print(f"\n=== {year} ===", file=sys.stderr)
         try:
-            bin_path = compile_year(year, dotnet)
+            bin_path = compile_year(year, dotnet, translate)
         except Exception as e:
             summary.append((year, "-", f"FAILED compile: {e}", "-"))
             print(f"  ERROR: {e}", file=sys.stderr)

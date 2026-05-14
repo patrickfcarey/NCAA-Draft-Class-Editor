@@ -28,7 +28,7 @@ files via a PS2 memcard, and gets a franchise that mirrors NFL history.
 | 4 | Compiler canonical→binary + position/college mapping | ✅ MVP done; 2018 verified end-to-end in PCSX2 |
 | 5 | College mapping table (folded into Tier 4) | ✅ Done |
 | 6 | Madden 08 PS2 roster builder | ✅ TDB read/write (Python + C#, byte-exact roundtrip); CanonicalRoster schema; MaddenRosterCompiler; nflverse roster scraper; CLI compile-roster; 18 canonical rosters generated; pack_baslus.py extended to --type roster; build_all_rosters.py loop ready |
-| 7 | Pipeline + releases (one-shot build all 38 artifacts) | ⬜ Not started |
+| 7 | Pipeline + releases (one-shot build all 133 artifacts) | ✅ `tools/build_all.py` wraps draft-class + roster + franchise builders across all targets. Path translation handles WSL→Windows dotnet invocation. `--release` flag emits `out/release/{game}/{year}/{artifact}` tree with a top-level README. Smoke-tested for 2010/2014/2018/2021/2025. |
 | 8 | PCSX2 verification | ✅ 2018 verified; other years pending Tier 7 |
 | 9 | Madden 09 PS2 (Deluxe-compatible) roster builder | ✅ M09 TDB schema confirmed byte-identical to M08; pack_baslus.py m09-roster preset (BASLUS-21770); fetch_m09_template.py auto-downloads Deluxe .psu; build_all_rosters.py --target m09; 2018 compile+pack verified end-to-end |
 | 10 | Madden 12 PS2 (Deluxe-compatible) roster builder | ✅ M12 PS2 is bare TDB (MC02 wrapper is PS3/360/PC-only); PLAY field bit-layout shifted vs M08 (~74 of 110 fields) but metadata-driven compiler handles transparently; pack_baslus.py m12-roster preset (BASLUS-21946); fetch_m12_template.py auto-downloads Deluxe .psu; build_all_rosters.py --target m12; 2018 compile+pack verified end-to-end |
