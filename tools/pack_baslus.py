@@ -85,6 +85,24 @@ PRESETS = {
         "template": REPO_ROOT / "out" / "templates" / "madden-nfl-08-franchise-template.psu",
         "save_folder": "BASLUS-21638BFran1",
     },
+    "m09-franchise": {
+        # Madden NFL 09 PS2 franchise save. Same TDB family as M08 franchise
+        # (shared engine). Base year is 2008 (SEYR=0 -> 2008 NFL season).
+        # Template is user-specific; create a fresh franchise in M09 PS2, save
+        # at Week 1 preseason, then run tools/fetch_m09_franchise_template.py.
+        # BASLUS folder convention follows M08's "BFran1" pattern.
+        "template": REPO_ROOT / "out" / "templates" / "madden-nfl-09-franchise-template.psu",
+        "save_folder": "BASLUS-21770BFran1",
+    },
+    "m12-franchise": {
+        # Madden NFL 12 PS2 franchise save. Same TDB family as M08 franchise.
+        # Base year is 2011 (SEYR=0 -> 2011 NFL season).
+        # Template is user-specific; create a fresh franchise in M12 PS2 (works
+        # with Deluxe ISO patch), save at Week 1 preseason, then run
+        # tools/fetch_m12_franchise_template.py.
+        "template": REPO_ROOT / "out" / "templates" / "madden-nfl-12-franchise-template.psu",
+        "save_folder": "BASLUS-21946BFran1",
+    },
     "m12-draft-class": {
         # Madden NFL 12 PS2 reads draft classes written by NCAA Football *11*,
         # not NCAA 12 - NCAA 12 has no PS2 release; NCAA 11 (BASLUS-21932) was
@@ -129,6 +147,10 @@ def pack(compiled_bin: Path, output_path: Path, save_type: str = DEFAULT_PRESET)
             hint = " Run: python tools/fetch_m12_template.py"
         elif save_type == "m08-franchise":
             hint = " Run: python tools/fetch_m08_franchise_template.py"
+        elif save_type == "m09-franchise":
+            hint = " Run: python tools/fetch_m09_franchise_template.py"
+        elif save_type == "m12-franchise":
+            hint = " Run: python tools/fetch_m12_franchise_template.py"
         elif save_type in ("m09-draft-class", "m12-draft-class"):
             hint = " (Template madden-nfl-08.26380.max should be at repo root)"
         raise FileNotFoundError(
@@ -192,7 +214,9 @@ def main() -> int:
                         f"m09-draft-class -> BASLUS-21769 NCAA 09 draft class (for M09). "
                         f"m12-draft-class -> BASLUS-21932 NCAA 11 draft class (for M12; "
                         f"NCAA 12 has no PS2 release). "
-                        f"m08-franchise -> BASLUS-21638BFran1 Madden 08 franchise save.")
+                        f"m08-franchise -> BASLUS-21638BFran1 Madden 08 franchise save. "
+                        f"m09-franchise -> BASLUS-21770BFran1 Madden 09 franchise save. "
+                        f"m12-franchise -> BASLUS-21946BFran1 Madden 12 franchise save.")
     args = p.parse_args()
 
     compiled_bin = Path(args.input).resolve()

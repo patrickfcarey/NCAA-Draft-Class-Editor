@@ -28,17 +28,17 @@ build pipeline, and the M09/M12 + Deluxe targets — was added in this fork.
 
 ## Status
 
-| Target                                      | What it produces                                                          | State                                                                                                                                                                                                                                       |
-| ------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Madden 08 PS2 (vanilla)                     | NCAA draft class + roster, 2008–2026                                      | End-to-end verified for 2018 in PCSX2; bulk build implemented                                                                                                                                                                               |
-| Madden 09 PS2 (Deluxe-compatible)           | Roster `.psu`, 2008–2025                                                  | Compile + pack verified for 2018; bulk build implemented                                                                                                                                                                                    |
-| Madden 12 PS2 (Deluxe-compatible)           | Roster `.psu`, 2008–2025                                                  | Compile + pack verified for 2018; bulk build implemented                                                                                                                                                                                    |
-| Draft class import into M09 / M12           | NCAA-format `.psu` retargeted to BASLUS-21769 / BASLUS-21932              | Pack pipeline wired (`m09-draft-class` / `m12-draft-class`); PCSX2 verification pending                                                                                                                                                     |
-| Madden 08 franchise compiler (Phase 1)      | Year-correct calendar + cap economy via SEAI.SEYR + SLRI.SCAD/SMAD/RFA1-4 | ✅ Verified end-to-end in PCSX2 for 2018: save loads, cap shows $177M, season year shows 2018 in stats                                                                                                                                       |
-| Franchise Phase 2: per-player contracts     | PSA0-6 / PSB0-6 / PCSA synthesis from rating + age + position             | ✅ Verified in PCSX2 for 2018: in-place AND free-agent contracts both reflect new era. PLAY's PSA/PSB/PCSA IS the snapshot (no separate table to chase). Requires Week-1-fresh template; SEYR=0 SEWN=0 SEWT=200 confirms fresh state.        |
-| Franchise Phase 3: real OTC contract import | nflverse historical_contracts.parquet (mirrors OvertheCap)                | ✅ Wired: `--contracts <path>` matches PLAY records by name, applies real PSA/PSB/PCSA. 2018 spot-checks: Rodgers $20.9M, Brady $22M, Garoppolo $37M all match real to the dollar. ~73% name-match rate; unmatched fall back to synthesizer. |
-| M09 / M12 franchise compilers               | Same approach as M08 with per-game base year + own templates              | Not started                                                                                                                                                                                                                                 |
-| Tier 7 release pipeline                     | One-shot build of all 130 artifacts                                       | ✅ `tools/build_all.py` (master) + `tools/build_all_franchises.py` (new). `--release` flag assembles `out/release/{game}/{year}/` tree. 7 artifacts per year × 19 years = 133. Smoke-tested for 2010/2014/2018/2021/2025.                    |
+| Target                                      | What it produces                                                          | State                                                                                                                                                                                                                                                                                      |
+| ------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Madden 08 PS2 (vanilla)                     | NCAA draft class + roster, 2008–2026                                      | End-to-end verified for 2018 in PCSX2; bulk build implemented                                                                                                                                                                                                                              |
+| Madden 09 PS2 (Deluxe-compatible)           | Roster `.psu`, 2008–2025                                                  | Compile + pack verified for 2018; bulk build implemented                                                                                                                                                                                                                                   |
+| Madden 12 PS2 (Deluxe-compatible)           | Roster `.psu`, 2008–2025                                                  | Compile + pack verified for 2018; bulk build implemented                                                                                                                                                                                                                                   |
+| Draft class import into M09 / M12           | NCAA-format `.psu` retargeted to BASLUS-21769 / BASLUS-21932              | Pack pipeline wired (`m09-draft-class` / `m12-draft-class`); PCSX2 verification pending                                                                                                                                                                                                    |
+| Madden 08 franchise compiler (Phase 1)      | Year-correct calendar + cap economy via SEAI.SEYR + SLRI.SCAD/SMAD/RFA1-4 | ✅ Verified end-to-end in PCSX2 for 2018: save loads, cap shows $177M, season year shows 2018 in stats                                                                                                                                                                                      |
+| Franchise Phase 2: per-player contracts     | PSA0-6 / PSB0-6 / PCSA synthesis from rating + age + position             | ✅ Verified in PCSX2 for 2018: in-place AND free-agent contracts both reflect new era. PLAY's PSA/PSB/PCSA IS the snapshot (no separate table to chase). Requires Week-1-fresh template; SEYR=0 SEWN=0 SEWT=200 confirms fresh state.                                                       |
+| Franchise Phase 3: real OTC contract import | nflverse historical_contracts.parquet (mirrors OvertheCap)                | ✅ Wired: `--contracts <path>` matches PLAY records by name, applies real PSA/PSB/PCSA. 2018 spot-checks: Rodgers $20.9M, Brady $22M, Garoppolo $37M all match real to the dollar. ~73% name-match rate; unmatched fall back to synthesizer.                                                |
+| M09 / M12 franchise compilers               | Same approach as M08 with per-game base year + own templates              | ✅ Scaffolding done: pack presets, fetch scripts, `--target m09/m12/all` in `build_all_franchises.py`. Compiler is target-agnostic (metadata-driven). **Blocked on user-provided templates** — see `tools/fetch_m{09,12}_franchise_template.py` for the create-a-fresh-franchise procedure. |
+| Tier 7 release pipeline                     | One-shot build of all 130 artifacts                                       | ✅ `tools/build_all.py` (master) + `tools/build_all_franchises.py` (new). `--release` flag assembles `out/release/{game}/{year}/` tree. 7 artifacts per year × 19 years = 133. Smoke-tested for 2010/2014/2018/2021/2025.                                                                   |
 
 Open work items are tracked in `CLAUDE.md` (the "Where to look first" section).
 
@@ -694,13 +694,15 @@ Python scrapers are stdlib-only except for `openpyxl` / `xlrd` in
   (preserve role distribution) is future work.
 - **Franchise compiler Phase 1 only.** Today's `compile-franchise` writes
   calendar + cap-economy singletons (`SEAI.SEYR`, `SLRI.SCAD/SMAD/RFA1..4`).
-  Per-player contract terms (`PSA0..6`, `PSB0..6`, `PCSA` in franchise PLAY)
-  are NOT populated — Madden auto-generates them at franchise start from
-  rating/age/PCON. Phase 2 (rating-driven contract synthesizer) and Phase 3
-  (real Spotrac/OvertheCap import) are not started.
-- **No M09 / M12 franchise compiler yet.** Approach is identical to M08
-  (different base year + per-game template). Templates haven't been fetched,
-  field offsets haven't been confirmed to match M08 exactly.
+  Per-player contract terms are populated via Phase 2 (synthesizer) and
+  Phase 3 (real OvertheCap data, ~73% name-match).
+- **M09 / M12 franchise compilers exist but need user-provided templates.**
+  The compiler is target-agnostic (metadata-driven, same `MaddenFranchiseCompiler`
+  code path for all three games with `--base-year 2008` for M09 and
+  `--base-year 2011` for M12). What's missing is the input: a Week-1-fresh
+  franchise save exported from each game. See `tools/fetch_m{09,12}_franchise_template.py`
+  for the procedure (start a fresh franchise in PCSX2, save at Week 1
+  preseason, run the fetch script).
 - **Franchise template is user-specific.** Unlike the M09/M12 roster Deluxe
   templates (community-distributed, auto-fetched), the M08 franchise
   template has to come from the user's own memcard. `tools/fetch_m08_franchise_template.py`

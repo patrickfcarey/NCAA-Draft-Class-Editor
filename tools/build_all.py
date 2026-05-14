@@ -66,10 +66,12 @@ RELEASE_LAYOUT = {
     "madden09-deluxe": [
         ("draft-class", "m09/draft-class-{year}-m09.psu",        "draft-class.psu"),
         ("roster",      "m09/roster-{year}.psu",                 "roster.psu"),
+        ("franchise",   "franchise/m09/franchise-{year}-m09.psu", "franchise.psu"),
     ],
     "madden12-deluxe": [
         ("draft-class", "m12/draft-class-{year}-m12.psu",        "draft-class.psu"),
         ("roster",      "m12/roster-{year}.psu",                 "roster.psu"),
+        ("franchise",   "franchise/m12/franchise-{year}-m12.psu", "franchise.psu"),
     ],
 }
 
@@ -165,16 +167,11 @@ def main() -> int:
             failures += 1
 
     if not args.skip_franchises:
-        # M08 only for now (M09/M12 franchise builders not yet implemented).
-        if args.target in ("m08", "all"):
-            rc = run_sub(
-                [str(TOOLS / "build_all_franchises.py")] + common,
-                "Franchises (m08)")
-            if rc != 0:
-                failures += 1
-        else:
-            print(f"\n  (skipping franchises: --target {args.target} doesn't yet have a franchise builder)",
-                  file=sys.stderr)
+        rc = run_sub(
+            [str(TOOLS / "build_all_franchises.py"), "--target", args.target] + common,
+            f"Franchises ({args.target})")
+        if rc != 0:
+            failures += 1
 
     if args.release:
         years_for_release = [args.year] if args.year else range(2008, 2027)
