@@ -250,13 +250,24 @@ public sealed class MaddenRosterCompiler
                 {
                     var rec = NewRecordFor(pcde);
                     rec.SetUInt("PGID", pgid);
-                    rec.SetUInt("csca", ClampUInt(c.Get("tacklesSolo"),   12));
-                    rec.SetUInt("cdta", ClampUInt(c.Get("tacklesAst"),    12));
+                    // Audit found: csca is zero across all 657 template PCDE
+                    // records, meaning it's a sim-tracked field Madden doesn't
+                    // pre-load. cdta carries the actual tackles stat (solo +
+                    // assists combined - cdta=963 for Urlacher ≈ real combined
+                    // 1049). Don't waste a write on csca.
+                    rec.SetUInt("cdta", ClampUInt(c.Get("tacklesSolo") + c.Get("tacklesAst"), 12));
                     rec.SetUInt("clff", ClampUInt(c.Get("forcedFum"),      9));
                     rec.SetUInt("cdbh", ClampUInt(c.Get("passDefended"),  12));
                     rec.SetUInt("clsk", ClampUInt(c.Get("sacks"),         10));
                     rec.SetUInt("csin", ClampUInt(c.Get("defInts"),        9));
                     rec.SetUInt("clfr", ClampUInt(c.Get("fumRecov"),       9));
+                    // csiy = INT return yards. Decoded against Ed Reed
+                    // (csiy=880 == his real 2007 career INT return yards).
+                    rec.SetUInt("csiy", ClampSInt(c.Get("intReturnYds"),  13));
+                    // clfy = fumble return yards. Field is SINT-12; nflverse
+                    // gives us own-team recoveries' yards. Likely matches but
+                    // template doesn't pre-load this so unverified.
+                    rec.SetUInt("clfy", ClampSInt(c.Get("fumReturnYds"),  12));
                     pcde.Records.Add(rec);
                 }
 
@@ -393,13 +404,16 @@ public sealed class MaddenRosterCompiler
                     var rec = NewRecordFor(psde);
                     rec.SetUInt("PGID", pgid);
                     rec.SetUInt("SEYR", seyr);
-                    rec.SetUInt("ssca", ClampUInt(sb.Get("tacklesSolo"), 8));
-                    rec.SetUInt("sdta", ClampUInt(sb.Get("tacklesAst"),  9));
+                    // Same audit finding as PCDE: ssca is sim-tracked, not
+                    // pre-loaded. Write combined tackles to sdta only.
+                    rec.SetUInt("sdta", ClampUInt(sb.Get("tacklesSolo") + sb.Get("tacklesAst"), 9));
                     rec.SetUInt("slff", ClampUInt(sb.Get("forcedFum"),   6));
                     rec.SetUInt("sdbh", ClampUInt(sb.Get("passDefended"),9));
                     rec.SetUInt("slsk", ClampUInt(sb.Get("sacks"),       6));
                     rec.SetUInt("ssin", ClampUInt(sb.Get("defInts"),     6));
                     rec.SetUInt("slfr", ClampUInt(sb.Get("fumRecov"),    5));
+                    rec.SetUInt("ssiy", ClampSInt(sb.Get("intReturnYds"),10));
+                    rec.SetUInt("slfy", ClampSInt(sb.Get("fumReturnYds"),10));
                     psde.Records.Add(rec);
                 }
 
@@ -465,6 +479,20 @@ public sealed class MaddenRosterCompiler
     private static uint ClampUInt(int value, int bits)
     {
         long max = (1L << bits) - 1;
+        if (value < 0) value = 0;
+        if (value > max) value = (int)max;
+        return (uint)value;
+    }
+
+    /// <summary>
+    /// Clamp a non-negative integer into the positive range of a SINT field
+    /// (top bit reserved for sign so positive range is bits-1). We don't
+    /// write negative values to TDB fields - none of our scraped stats are
+    /// negative - so this is just a safety clamp.
+    /// </summary>
+    private static uint ClampSInt(int value, int bits)
+    {
+        long max = (1L << (bits - 1)) - 1;
         if (value < 0) value = 0;
         if (value > max) value = (int)max;
         return (uint)value;

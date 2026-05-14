@@ -70,8 +70,10 @@ STAT_COLUMNS = {
     "tacklesAst":   "def_tackle_assists",
     "sacks":        "def_sacks",
     "defInts":      "def_interceptions",
+    "intReturnYds": "def_interception_yards",
     "forcedFum":    "def_fumbles_forced",
     "fumRecov":     "fumble_recovery_own",
+    "fumReturnYds": "fumble_recovery_yards_own",
     "defTDs":       "def_tds",
     "passDefended": "def_pass_defended",
     # Kicking

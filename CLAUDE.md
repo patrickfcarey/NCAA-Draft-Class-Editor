@@ -312,6 +312,33 @@ template, and optional CanonicalStats:
 the franchise-specific singletons (SEAI calendar, SLRI cap economy) plus
 the contract pass (PSA/PSB/PCSA per PLAY record).
 
+## EA TDB stat-table encoding insight: pre-loaded vs sim-tracked fields
+
+EA's stats tables (PCOF/PCDE/PCKI/PCKP/PCNG and PSOF/PSDE/PSKI/PSKP/PSNG)
+fall into two classes of fields:
+
+1. **Pre-loaded fields**: populated by EA on the disc for the launch year's
+   established players. We can write nflverse data into these and Madden
+   will render it. Examples: PCOF.caya/catd/cacm/caat/cain/cufu/cuya/cutd/
+   cuat/ccca/ccya/cctd, PCDE.cdta/clff/cdbh/clsk/csin/clfr/csiy, PCKI.ckfa/
+   ckfm/ckea/ckem/cpat/cpya/cptb/cpbl, PCKP.crka/crpa/crky/crpy/crkt/crpt,
+   PCNG.cgmp.
+
+2. **Sim-tracked fields**: 0 across every template record, regardless of
+   how famous the player is. These get populated only by in-game play in
+   the franchise sim — Madden's coverage at disc-creation time chose not
+   to back-import them from real-world history. Writing to them probably
+   works but may or may not display in any UI screen. Examples:
+   PCOF.casa/cacb/ccyc/cafd/cubt, PCDE.csca/clft/csit/clfy,
+   PCKI.ckaa/ckma/ckac/ckmc/ckad/ckmd/ckae/ckme/cktb/cknk/ckwf/ckgw/cppt/cpny,
+   PCNG.cgdp/cgms. The s-prefix counterparts in per-season tables behave
+   the same way.
+
+The toolchain writes the **pre-loaded** fields only. If a future Madden
+"by-distance FG stats" UI is found to read from the sim-only fields,
+we'd need to populate them with best-guess mappings from
+nflverse's `fg_made_0_19` / `fg_made_20_29` / etc.
+
 ## EA TDB field encodings (decoded so far)
 
 **PCOF (Player Career Offense)** — decoded against Peyton Manning's known
@@ -335,23 +362,23 @@ the contract pass (PSA/PSB/PCSA per PLAY record).
 Convention: 2nd-letter `a`=Arm (passing), `c`=Catch (receiving),
 `u`=rUn (rushing). PSOF mirrors with `s` prefix (per-season).
 
-**PCDE (Player Career Defense)** — decoded against Khalil Mack's 2017 line:
+**PCDE (Player Career Defense)** — decoded against Urlacher / Reed /
+Bailey / Lynch / Polamalu + Khalil Mack:
 
 | Field | Bits | Meaning |
 |-------|------|---------|
-| `csca` | 12 UINT | Career **solo tackles** |
-| `cdta` | 12 UINT | Career **tackle assists** |
+| `csca` | 12 UINT | **zero in template across all 657 records — sim-only field, don't write** |
+| `cdta` | 12 UINT | Career **total tackles** (solo + assists combined). Lynch 1067 ≈ real 1042 ✓ |
 | `clff` | 9 UINT  | Career **forced fumbles** |
 | `cdbh` | 12 UINT | Career **passes defended** |
 | `clsk` | 10 UINT | Career **sacks** |
 | `csin` | 9 UINT  | Career **defensive INTs** |
 | `clfr` | 9 UINT  | Career **fumble recoveries** |
-| `clft` | 8 UINT  | (unknown — maybe FF return TDs?) |
-| `csit` | 8 UINT  | (unknown — maybe INT return TDs?) |
-| `clfy` | 12 SINT | (likely fumble return yards — not in our data) |
-| `csiy` | 13 SINT | (likely INT return yards — not in our data) |
+| `csiy` | 13 SINT | Career **INT return yards**. Reed 880 = real ✓ |
+| `clfy` | 12 SINT | Career **fumble return yards** (own-team recoveries). Template-zero so unverified, but bit-width fits. |
+| `clft`, `csit` | 8 UINT | Both have small values (1-3) for HOF defenders; appears to be **sim-tracked**, not pre-loaded — leave 0. |
 
-PSDE mirrors with `s` prefix (per-season).
+PSDE mirrors with `s` prefix (per-season). `ssca` is also sim-only.
 
 **PCKI (Career Kicking + Punting)** — decoded against Vinatieri / Stover
 / Tucker / Gostkowski / Lechler:
