@@ -4,9 +4,11 @@ Extract a Madden NFL 12 PS2 franchise save from a PCSX2 memory card and
 package it as a template .psu at the path the pack_baslus.py 'm12-franchise'
 preset expects.
 
-The M12 franchise template is user-specific - you must create it yourself:
-  1. Boot Madden NFL 12 PS2 in PCSX2 (Deluxe ISO or vanilla; the franchise
-     save layout is the same).
+The M12 franchise template is user-specific - you must create it yourself.
+We test with a save generated from the Madden 12 Deluxe ISO mod (consistent
+with the rest of the M12 pipeline; vanilla M12 should also work since the
+save format is the same, but is untested):
+  1. Boot Madden NFL 12 PS2 in PCSX2 (Deluxe ISO recommended).
   2. Start a new franchise.
   3. Save it at Week 1 preseason (before any games or FA signings).
      SEAI.SEWN should equal 0 in the resulting save; SEYR=0; SEWT=200.
@@ -31,7 +33,7 @@ import tempfile
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
-DEFAULT_MEMCARD = Path("/mnt/c/PCSX2/memcards/Madden12Deluxe.ps2")
+DEFAULT_MEMCARD = Path("/mnt/c/PCSX2/memcards/Madden12.ps2")
 SAVE_FOLDER = "BASLUS-21946BFran1"
 OUTPUT_PATH = REPO_ROOT / "out" / "templates" / "madden-nfl-12-franchise-template.psu"
 INNER_BIN_PATH = REPO_ROOT / "out" / "templates" / "madden-nfl-12-franchise-template.bin"
