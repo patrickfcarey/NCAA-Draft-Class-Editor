@@ -36,7 +36,10 @@ files via a PS2 memcard, and gets a franchise that mirrors NFL history.
 | 12 | Madden 08 franchise compiler (Phase 1: calendar + cap economy) | ✅ Verified in PCSX2 for 2018: franchise loads, salary cap shows $177M, player stats history shows 2018. MaddenTdb has preamble support (franchise saves prepend 02 00 00 00 before DB magic) AND CRC-32/MPEG-2 recomputation on Save (4 CRC fields: file-header, per-table priorCRC, per-table headerCRC, EOF CRC — PS2 stores LE, PS3/PC variant in bep713 stores BE). MaddenFranchiseCompiler writes SEAI.SEYR + SLRI.SCAD/SMAD/RFA1..4. data/raw/salary-caps/nfl-salary-caps.json carries real NFL cap + RFA tenders 2007–2026. CLI compile-franchise. pack_baslus.py m08-franchise preset. fetch_m08_franchise_template.py extracts template from user memcard. |
 | 13 | Phase 2: per-player contract synthesizer | ✅ PCSX2-verified for 2018: ContractSynthesizer writes PCON / PSA0..6 / PSB0..6 / PCSA / PSBO per player. Confirmed via Week 1→Week 2 diff that PLAY's PSA/PSB/PCSA IS the contract snapshot - both in-place and free-agent contracts read from these fields. Free-agent OT asks $10M in-game, star QB cap hit ~$9.5M (rec1 OVR 98 age 30). Default-on; opt out with `--no-contracts`. |
 | 14 | Phase 3: real contract data (OvertheCap) | ✅ Real contracts wired via nflverse's daily-mirrored `historical_contracts.parquet` (sourced from OvertheCap.com, bypasses Cloudflare). `scrapers/nflverse/build_contracts.py` emits per-year `data/canonical/contracts-{year}.json`. `compile-franchise --contracts <path>` matches PLAY records to canonical contracts by normalized name and writes real PSA/PSB/PCSA; falls back to synthesizer for unmatched. 2018 spot-checks: Rodgers $20.9M ✓, Brady $22M ✓, Garoppolo $37M ✓, Brees $24M ✓, Barkley rookie $5.67M ✓. Match rate ~73% (1,439/1,963); known unmatched are mostly common_first_name vs OTC display name mismatches (e.g. "Justin Watt" vs "J.J. Watt"). |
-| 15 | M09 / M12 franchise compiler | ✅ End-to-end built for 2018: M09 SEYR=10 (base 2008), M12 SEYR=7 (base 2011), both with $177.2M cap, ~$4.7B league cap usage. Templates from user-provided Week-1 fresh franchises (M09: 1987 PLAY records, M12: 1984 — both 131 fields, same as M08). M12 template is Deluxe-mod-sourced (consistent with M09/M12 roster pipeline). PCSX2 verification still pending. |
+| 15 | M09 / M12 franchise compiler | ✅ End-to-end built for 2018: M09 SEYR=10 (base 2008), M12 SEYR=7 (base 2011), both with $177.2M cap, ~$4.7B league cap usage. Templates from user-provided Week-1 fresh franchises (M09: 1987 PLAY records, M12: 1984 — both 131 fields, same as M08). M12 template is Deluxe-mod-sourced (consistent with M09/M12 roster pipeline). M09 PCSX2-verified after the Tier-16/17 fixes. |
+| 16 | Roster compiler upgrades: identity + appearance + DCHT + safety sweep | ✅ MaddenRosterCompiler now: matches teams by mascot name (works across all TGID schemes); assigns each canonical player a new PGID in 16384-32767 (no Madden photo-library collisions); writes hash-derived PHED/PSKI/PHCL/PNEK/PEYE for distinct 3D heads; rebuilds DCHT depth chart referencing new PGIDs with L/R distribution (round-robin OT→LT+RT, OG→LG+RG, DE→LE+RE, LB→LOLB+MLB+ROLB, S→FS+SS); clears 50+ PGID-keyed tables that would otherwise hold dangling references (INJY, all PSDE/PSKI/PSKP/PSNG/PSOF stats tables, all PC* career tables, FBPL hall-of-fame, plus 30+ smaller orphan tables). Result: 2018 Bears now show 2018 players (not 2008 Urlacher), all 32 teams populated (Vikings no longer dropped), depth chart filled on both sides. |
+| 17 | Codebase audit + data-integrity fixes | ✅ Audit found and fixed 5 related bugs: (a) ROSTER templates use TGID 1-32 / Texans last; FRANCHISE templates use TGID 0-31 / Titans last → name-based lookup fixes both; (b) nflverse rosters CSV has birth_date not age → compute age from birth_date at scrape time; (c) nflverse `position` is coarse (DB/OL/DL) → use `depth_chart_position` (FS/SS/G/DE/FB) which has 15 distinct positions vs 11; (d) Madden ratings store 'Patrick Mahomes II' but nflverse stores 'Patrick Mahomes' → name_key() helper strips Jr/Sr/II/III/IV/V before joining; (e) MaddenFranchiseCompiler duplicate-name contract collision (two Chris Joneses) → Dict<string, List<>> + team-abbrev disambiguation with NormalizeTeamAbbrev (LAR→STL/LAC→SD/LV→OAK). |
+| 18 | Phase 4: real career stats from nflverse | ✅ scrapers/nflverse/build_stats.py downloads 1999-2025 stats_player_reg parquets (~7MB), aggregates per-(gsis_id, season), rolls into career-through-(target-1) totals. Emits data/canonical/stats-{year}.json with per-player career block. Roster scraper now persists gsis_id as join key. MaddenRosterCompiler Pass 5 writes PCOF (career offense: caya/catd/cacm/caat/cain/cufu/cuya/cutd/cuat/ccca/ccya/cctd) and PCDE (career defense: csca/cdta/clff/cdbh/clsk/csin/clfr) per matched player. Field encodings decoded against Peyton Manning's 2007 known career line. Verified vs real: Brady 66,161 passYds / 488 TDs ✓, Mack 282 tackles / 40 sacks ✓, Mahomes 284 passYds rookie ✓. Per-season tables (PSOF/PSDE) still empty — need base-year-aware compile (Phase 5). Kicker (PCKI), return (PCKP), games-played (PCNG) tables also empty — field encodings not yet decoded. |
 
 End-to-end works for one year (2018). User has loaded the compiled file in
 Madden 08 on PCSX2 and seen Mayfield/Barkley/etc. in the draft pool.
@@ -270,6 +273,88 @@ M08's engine routinely produces caps in the $200M+ range during long sims
 (Phase 2) handles per-player PCON/PSA/PSB/PCSA. Both run inside one
 `compile-franchise` invocation by default. Phase 3 (real Spotrac/OvertheCap
 contract import) is the next step up.
+
+## MaddenRosterCompiler.Compile passes (reference)
+
+The compiler runs five passes when called with a CanonicalRoster, a TDB
+template, and optional CanonicalStats:
+
+1. **PGID assignment.** Each canonical roster player gets a unique sequential
+   PGID starting at 16384 (Madden's photo library covers ~0-3000; the
+   16384-32767 range avoids collisions so unknown players render as the
+   default head, not someone else's face).
+2. **TEAM + PLAY rewrite.** Resolve canonical team → template TGID by mascot
+   name (handles M08-roster's 1-32 scheme AND franchise files' 0-31 scheme,
+   plus historical aliases like Redskins↔Commanders). Per resolved team,
+   sort canonical players by OVR descending and overwrite the template's
+   first-N PLAY records for that TGID with name / position / jersey / age /
+   weight / height / OVR / 20 attribute ratings / **new PGID** / hash-derived
+   PHED PSKI PHCL PNEK PEYE appearance fields. TEAM.TDNA/TLNA/TSNA/TMNC are
+   authoritatively rewritten from canonical so Deluxe (2026) templates roll
+   back correctly.
+3. **DCHT rebuild.** Iterate the template's depth chart records in document
+   order; for each (TGID, PPOS) slot, write the next-best canonical player
+   at that team/position. Positions with L/R variants are distributed
+   round-robin: OT→{LT, RT}, OG→{LG, RG}, DE→{LE, RE}, LB→{LOLB, MLB, ROLB},
+   S→{FS, SS}. Slots without a canonical match get PGID=0.
+4. **Stale-PGID safety sweep.** Clear every PGID-referencing table that
+   would otherwise hold dangling pointers to template-era players who no
+   longer exist after the PGID shift: INJY, PCDE, PCKI, PCKP, PCNG, PCOF,
+   FBPL, pPYR, TCIN, PMCV, every PSDE/PSKI/PSKP/PSNG/PSOF/PSOL stats
+   table, plus 30+ smaller box-score / playoff / draft-history tables.
+   See `PgidReferencingTablesToClear` array in `MaddenRosterCompiler.cs`.
+5. **Career stats population** (only if CanonicalStats provided). Build a
+   gsis_id → CanonicalPlayerStats map. For each canonical roster player
+   with a matched gsis_id, write a PCOF record (career offense) and/or PCDE
+   record (career defense) with real values from nflverse.
+
+`MaddenFranchiseCompiler.Compile` runs *after* compile-roster and handles
+the franchise-specific singletons (SEAI calendar, SLRI cap economy) plus
+the contract pass (PSA/PSB/PCSA per PLAY record).
+
+## EA TDB field encodings (decoded so far)
+
+**PCOF (Player Career Offense)** — decoded against Peyton Manning's known
+2007 career line:
+
+| Field | Bits | Meaning |
+|-------|------|---------|
+| `caya` | 18 SINT | Career passing **yards** |
+| `catd` | 11 UINT | Career passing **TDs** |
+| `cacm` | 14 UINT | Career **completions** |
+| `caat` | 14 UINT | Career passing **attempts** |
+| `cain` | 11 UINT | Career **INTs thrown** |
+| `cufu` | 9 UINT  | Career **fumbles** |
+| `cuya` | 17 SINT | Career **rushing yards** |
+| `cutd` | 10 UINT | Career **rushing TDs** |
+| `cuat` | 14 UINT | Career **carries** (rushing attempts) |
+| `ccca` | 12 UINT | Career **receptions** |
+| `ccya` | 17 SINT | Career **receiving yards** |
+| `cctd` | 10 UINT | Career **receiving TDs** |
+
+Convention: 2nd-letter `a`=Arm (passing), `c`=Catch (receiving),
+`u`=rUn (rushing). PSOF mirrors with `s` prefix (per-season).
+
+**PCDE (Player Career Defense)** — decoded against Khalil Mack's 2017 line:
+
+| Field | Bits | Meaning |
+|-------|------|---------|
+| `csca` | 12 UINT | Career **solo tackles** |
+| `cdta` | 12 UINT | Career **tackle assists** |
+| `clff` | 9 UINT  | Career **forced fumbles** |
+| `cdbh` | 12 UINT | Career **passes defended** |
+| `clsk` | 10 UINT | Career **sacks** |
+| `csin` | 9 UINT  | Career **defensive INTs** |
+| `clfr` | 9 UINT  | Career **fumble recoveries** |
+| `clft` | 8 UINT  | (unknown — maybe FF return TDs?) |
+| `csit` | 8 UINT  | (unknown — maybe INT return TDs?) |
+| `clfy` | 12 SINT | (likely fumble return yards — not in our data) |
+| `csiy` | 13 SINT | (likely INT return yards — not in our data) |
+
+PSDE mirrors with `s` prefix (per-season).
+
+**Other stat tables (PCKI/PCKP/PCNG, per-season PS*)**: structure parses
+fine but field encodings not yet decoded. Cleared but not populated.
 
 ## Pipelines
 
@@ -585,21 +670,65 @@ canonical player ends up with `age=None` and compile-roster doesn't
 write `PAGE`, leaving the template's 2007/2008/2011-era age in place
 (e.g. 2018 Brady showed as 33 because his slot's template age was 33).
 
-### Player portraits inherit from the template slot's original player
-`compile-roster` writes name, position, jersey, age, height, weight, OVR
-and ratings into PLAY records by TGID — but does NOT touch PGID (player
-ID, 15-bit). Madden's portrait library is keyed by PGID, so:
+### PGIDs get shifted into 16384-32767 to avoid Madden's photo library
+`compile-roster` assigns a fresh PGID per canonical player in the
+range 16384+. Madden's built-in player photo / face library covers low
+PGIDs (~0-3000), so anything in our range falls back to default art
+instead of showing a wrong player's face. Combined with hash-derived
+PHED/PSKI/PHCL/PNEK/PEYE per player, each player gets a unique 3D head
+unrelated to whatever 2007/2008 player was originally in that slot.
+Trade-off: every PGID-keyed table in the template now points at vanished
+players. The roster compiler's Pass 4 clears 50+ such tables (INJY, all
+career/season stats tables, hall of fame, playoff history, draft
+archive). Phase 4 then writes real career stats into PCOF/PCDE.
 
-- Brady's name in slot X displays *slot X's original-2007/2008-player's
-  face*, not Brady's face.
-- Slots are sorted by canonical OVR descending and assigned to the
-  template's per-team slot order, so a 2018 player rarely ends up in
-  the slot of their 2007/2008-era selves.
+### Template TGID schemes differ across files - match by mascot name
+**M08 roster save** (`BASLUS-21638DRost5`): TGID 1-32, **Texans last**
+(slot 32).
+**M08/M09/M12 franchise saves** (`BASLUS-*BFran1`): TGID 0-31,
+**Titans last** (slot 31). And the in-between ordering of the alphabetical
+mascots is slightly different.
 
-This is by design: we keep PGID stable so league history, draft archive,
-hall of fame, and other PGID-keyed tables don't lose their references.
-Fixing portraits would require generating new PGIDs and a much deeper
-roster-rewrite pass. **Documented limitation; not currently planned.**
+A naive `WHERE TGID == canonical.tgId` lookup against canonical's 1-32
+indexing matches M08 roster perfectly but is off-by-one for every
+franchise file — every team's data lands in the next team's slot, Bears
+goes into Bengals, Vikings (tgId=32) is dropped entirely because no slot
+matches. `MaddenRosterCompiler.Compile` now resolves TGIDs by reading
+each template TEAM record's `TDNA` (mascot name) and looking up the
+canonical team by name. Handles Redskins↔Commanders aliasing for Deluxe
+templates.
+
+### nflverse `position` is coarse; use `depth_chart_position`
+nflverse roster CSV `position` collapses defensive line to "DL", offensive
+line to "OL", defensive backs to "DB", etc. — only 11 buckets. Use
+`depth_chart_position` instead for granular FS/SS/G/OG/C/DE/FB/OLB
+positions (15 buckets) needed to populate Madden's per-position depth
+chart slots correctly. Without this, half the OL/DL/DB depth chart
+entries end up at PGID=0 because canonical never had a player at that
+specific position.
+
+### NFL stats join key is gsis_id, never name
+nflverse's `stats_player_reg_{year}.parquet` is keyed by `player_id`
+(GSIS format "00-00XXXXX"). Match canonical roster players to career
+stats by gsis_id; names alone are unreliable across the join (Patrick
+Mahomes vs Patrick Mahomes II, J.J. Watt vs Justin Watt, etc.). The
+roster scraper persists gsis_id whenever nflverse has it.
+
+### Madden ratings store names with suffixes; nflverse strips them
+M19 rates "Patrick Mahomes II"; nflverse has him as "Patrick Mahomes".
+Joining (first_lower, last_lower) directly fails. `scrapers/nflverse/
+build_roster.py`'s `name_key()` helper strips trailing Jr./Sr./II/III/
+IV/V before keying — apply on both sides. Same fix needed any time you
+add a new name-based join.
+
+### Multiple players share normalized names; disambiguate by team
+Two "Chris Jones" or two "Mike Williams" exist in many NFL seasons. A
+`Dictionary<string, T>` from normalized name to single match silently
+clobbers all but the last. `MaddenFranchiseCompiler.ApplyContracts` uses
+`Dictionary<string, List<>>` and disambiguates by team abbreviation when
+multiple match. `NormalizeTeamAbbrev` collapses modern codes back to
+Madden-era forms (LAR→STL / LAC→SD / LV→OAK / WSH→WAS) so contract data
+(modern codes) joins to template TEAM records (Madden-era codes).
 
 ### Madden uses ~6% YoY cap inflation
 Engine-driven franchise simulation grows the league cap ~6% per offseason.
