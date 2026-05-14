@@ -146,22 +146,66 @@ public sealed class MaddenRosterCompiler
             RebuildDcht(canonical, dcht, pgids, resolvedTgid);
         }
 
-        // Pass 4: clear INJY (injuries). The template-era injury rows still
-        // reference template-era PGIDs which no longer exist (we shifted all
-        // canonical PGIDs into the 16384+ range). Without clearing, Madden
-        // sees "Brian Urlacher out 4 weeks" type entries pointing at vanished
-        // players — could show stale injuries or crash the league menu.
-        // We have no year-specific injury data, so empty is the right state
-        // for a fresh-Week-1 franchise.
-        var injy = template.FindTable("INJY");
-        if (injy is not null)
+        // Pass 4: clear every other table that references PGIDs by
+        // template-era values. After our 16384+ PGID shift, every one of
+        // these holds stale references to template-era players who no longer
+        // exist - dangling pointers that could show wrong player names in
+        // stats screens or crash the league menu when Madden looks up the
+        // missing PGID. None of these tables make sense for a fresh-Week-1
+        // franchise anyway (no games played, no career stats accumulated),
+        // so clearing is the right state.
+        //
+        // Categories:
+        //   INJY                                — injuries (cleared above)
+        //   PSDE/PSKI/PSKP/PSNG/PSOF/PSOL       — per-season stats history
+        //   PCDE/PCKI/PCKP/PCNG/PCOF            — per-career cumulative stats
+        //   FBPL                                — Fan Box / playoff history
+        //   PMCV/pPYR/TCIN                      — small singleton/sentinel tables
+        //                                          that reference PGIDs
+        //   AWPL/AYPL/BDEF/BKIC/BKPR/BOFF       — empty in fresh templates but
+        //   BQTR/BSCS/BTES/STTI/etc.              listed for completeness; cleared
+        //                                          defensively so nothing future
+        //                                          can introduce orphans.
+        foreach (var name in PgidReferencingTablesToClear)
         {
-            injy.Records.Clear();
-            injy.Header.CurRecords = 0;
+            var t = template.FindTable(name);
+            if (t is null) continue;
+            t.Records.Clear();
+            t.Header.CurRecords = 0;
         }
 
         return template;
     }
+
+    /// <summary>
+    /// Tables in the franchise TDB that have a PGID field and could end up
+    /// with dangling references after we shift all PLAY-record PGIDs into
+    /// the 16384+ canonical range. PLAY itself + DCHT are handled separately
+    /// (we rewrite them with the new PGIDs). Anything else we clear to avoid
+    /// orphan-pointer crashes / wrong-name displays in stat history screens.
+    /// </summary>
+    private static readonly string[] PgidReferencingTablesToClear =
+    {
+        "INJY",  // injuries
+        // Per-season stats history (highest-record-count tables in a fresh
+        // template; account for stats accumulated by template's launch-year
+        // players over their careers prior to franchise start).
+        "PSDE", "PSKI", "PSKP", "PSNG", "PSOF", "PSOL",
+        // Per-career cumulative stats history.
+        "PCDE", "PCKI", "PCKP", "PCNG", "PCOF", "PCOL",
+        // Misc PGID-keyed tables that may have non-zero records.
+        "FBPL", "PMCV", "pPYR", "TCIN", "TCPA",
+        // Box-score / game-event tables (empty in fresh Week-1 but clear
+        // defensively so any future template variant doesn't sneak in
+        // stale-PGID rows).
+        "AWPL", "AYPL", "BDEF", "BKIC", "BKPR", "BOFF", "BQTR", "BSCS", "BTES",
+        "STTI", "PAGR", "PRGD", "PRGK", "PRGR", "PROF", "PGSO", "PHOF",
+        "DROS", "DRPL", "DRRS", "FDPL", "FDRS", "IRST", "MLAS", "STCF",
+        "PRPB", "pTAT", "PFTA", "PLGR", "PLIA", "PGDS", "PPBS", "PROR",
+        "PLRL", "PLRS", "PLRT", "RFPL", "RFST", "SPLA", "SSPL", "FAPL",
+        "PSTA", "SIOF", "SCON", "DCGA", "IGAM", "TMFN", "TPMN", "PLGA",
+        "PLSU", "PGDE", "PGKI", "PGKP", "PGNG", "PGOF", "PGOL", "PCOL",
+    };
 
     /// <summary>
     /// Resolve a canonical team to the template's TGID by mascot name.
