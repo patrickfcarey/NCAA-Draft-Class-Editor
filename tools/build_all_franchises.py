@@ -24,20 +24,31 @@ For each (target, year), the pipeline runs:
        --type {target}-franchise
 
 Targets:
-  m08   Madden NFL 08 PS2 (base year 2007, BASLUS-21638BFran1)
-  m09   Madden NFL 09 PS2 (base year 2008, BASLUS-21770BFran1)
-  m12   Madden NFL 12 PS2 (base year 2011, BASLUS-21946BFran1)
+  m08      Madden NFL 08 PS2 (base year 2007, BASLUS-21638BFran1)
+  m09      Madden NFL 09 PS2 (base year 2008, BASLUS-21770BFran1)
+  m12      Madden NFL 12 PS2 (base year 2011, BASLUS-21946BFran1)
+  m12-ps3  Madden NFL 12 PS3 (base year 2011, BLUS30770)
+           Output: bare USR-DATA TDB (no PFD wrapper); user drops it into
+           RPCS3 dev_hdd0/home/00000001/savedata/BLUS30770-FRANCHISE-*/.
+           M25 PS3 franchise (FrTk container) is NOT supported — use the
+           m25-ps3 roster pipeline instead; M25 ROSTER carries contracts
+           so a roster-side write is sufficient.
 
-Each target needs a user-provided Week-1-fresh franchise template at
+PS2 targets need a user-provided Week-1-fresh franchise template at
 out/templates/madden-nfl-{NN}-franchise-template.bin. M09 / M12 templates
 do NOT exist in the repo and must be created by you - see the per-target
 fetch_m{NN}_franchise_template.py scripts for the procedure.
 
+The m12-ps3 template is auto-fetched from RPCS3's dev_hdd0 by
+tools/fetch_m12_ps3_template.py. Run that script after booting M12 in
+RPCS3 and saving a fresh franchise.
+
 Run on Windows or WSL where the .NET 8 SDK is installed:
     python tools/build_all_franchises.py                       # M08 only (default)
     python tools/build_all_franchises.py --target m09          # M09 only
-    python tools/build_all_franchises.py --target m12          # M12 only
-    python tools/build_all_franchises.py --target all          # M08 + M09 + M12
+    python tools/build_all_franchises.py --target m12          # M12 PS2 only
+    python tools/build_all_franchises.py --target m12-ps3      # M12 PS3 only
+    python tools/build_all_franchises.py --target all          # M08 + M09 + M12 + M12 PS3
     python tools/build_all_franchises.py --year 2018           # one year
     python tools/build_all_franchises.py --no-contracts        # skip real-contracts
 """
@@ -83,6 +94,14 @@ TARGETS = {
         "out_subdir":    "m12",               # out/franchise/m12/franchise-{year}.psu
         "fetch_script":  "fetch_m12_franchise_template.py",
         "label":         "Madden NFL 12 PS2 (Deluxe-compatible)",
+    },
+    "m12-ps3": {
+        "template_bin":  TEMPLATES_DIR / "madden-nfl-12-ps3-franchise-template.bin",
+        "pack_type":     None,                # bare USR-DATA, RPCS3 dev_hdd0
+        "base_year":     2011,
+        "out_subdir":    "m12-ps3",           # out/franchise/m12-ps3/franchise-{year}.bin
+        "fetch_script":  "fetch_m12_ps3_template.py",
+        "label":         "Madden NFL 12 PS3 (RPCS3 dev_hdd0)",
     },
 }
 
@@ -183,6 +202,10 @@ def compile_year(target: str, year: int, use_contracts: bool,
 
 def pack_year(target: str, year: int, bin_path: Path) -> Path:
     cfg = TARGETS[target]
+    # PS3 targets (pack_type=None) need no pack step — bin IS the USR-DATA
+    # the user drops into RPCS3's dev_hdd0 save folder.
+    if cfg.get("pack_type") is None:
+        return bin_path
     out_dir = target_out_dir(target)
     suffix = "" if target == "m08" else f"-{target}"
     psu = out_dir / f"franchise-{year}{suffix}.psu"

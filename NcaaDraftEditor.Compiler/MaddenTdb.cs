@@ -4,12 +4,26 @@ using System.Text;
 namespace NcaaDraftEditor.Compiler;
 
 /// <summary>
-/// Read/write for EA's TDB (tabular database) format as used by Madden 08 PS2
-/// roster files (BASLUS-21638DRost5). Mirrors tools/parse_madden_tdb.py and
-/// tools/write_madden_tdb.py, which produce byte-exact roundtrip on the sample
-/// fixture. PS2 layout: little-endian multi-byte values, ASCII strings forward,
-/// numeric fields bit-packed LSB-first within each byte AND LSB-first within
-/// the field. See docs/madden08-tdb-schema.md for table/field reference.
+/// Endianness of a TDB file's multi-byte fields. PS2 Madden saves are
+/// LittleEndian; PS3 Madden saves are BigEndian (and additionally store
+/// 4-char table/field names byte-reversed, because EA's code stored them as
+/// CPU-native u32s). Bit-packed UINT/SINT record fields are endian-neutral
+/// (LSB-first within byte and within field on both platforms).
+/// </summary>
+public enum TdbEndian
+{
+    LittleEndian,
+    BigEndian,
+}
+
+/// <summary>
+/// Read/write for EA's TDB (tabular database) format. Originally targeted
+/// Madden 08 PS2 roster files (BASLUS-21638DRost5); now also handles M12 PS3
+/// (BLUS30770) and M25 PS3 (BLUS31178) roster + franchise saves via the
+/// <see cref="Endian"/> flag. PS2 layout: little-endian multi-byte values,
+/// ASCII strings forward, numeric fields bit-packed LSB-first within each
+/// byte AND LSB-first within the field. PS3 layout: same bit-packing, but
+/// multi-byte values are big-endian and 4-char names are byte-reversed.
 /// </summary>
 public sealed class MaddenTdb
 {
@@ -24,6 +38,7 @@ public sealed class MaddenTdb
     public const uint TypeUint = 3;
     public const uint TypeFloat = 4;
 
+    public TdbEndian Endian { get; set; } = TdbEndian.LittleEndian;
     public TdbHeader Header { get; private set; } = new();
     public List<TdbTable> Tables { get; } = new();
 
@@ -61,29 +76,40 @@ public sealed class MaddenTdb
         var preamble = data.AsSpan(0, tdbStart).ToArray();
         data = tdbStart == 0 ? data : data[tdbStart..];
 
-        var tdb = new MaddenTdb { _originalBytes = data, Preamble = preamble };
-        tdb.Header = TdbHeader.Read(data.AsSpan(0, FileHeaderSize));
+        // Auto-detect endianness from the tableCount field at bytes 16..20.
+        // The "version" bytes at 2..4 are identical in both PS2 and PS3 saves
+        // (both are 00 08), so they don't distinguish — but tableCount makes
+        // it trivial: real Madden TDBs have 4..~250 tables. A reading that
+        // overflows or doesn't fit the file is the wrong endian.
+        uint tableCountLe = BinaryPrimitives.ReadUInt32LittleEndian(data.AsSpan(16, 4));
+        long needed = (long)FileHeaderSize + (long)tableCountLe * TableDefinitionSize;
+        TdbEndian endian = (tableCountLe > 10_000 || needed > data.Length)
+            ? TdbEndian.BigEndian
+            : TdbEndian.LittleEndian;
+
+        var tdb = new MaddenTdb { _originalBytes = data, Preamble = preamble, Endian = endian };
+        tdb.Header = TdbHeader.Read(data.AsSpan(0, FileHeaderSize), endian);
 
         int dataOrigin = FileHeaderSize + (int)tdb.Header.TableCount * TableDefinitionSize;
 
         for (int i = 0; i < tdb.Header.TableCount; i++)
         {
             int defStart = FileHeaderSize + i * TableDefinitionSize;
-            var name = Encoding.ASCII.GetString(data, defStart, 4);
-            var offset = BinaryPrimitives.ReadUInt32LittleEndian(data.AsSpan(defStart + 4, 4));
+            var name = ReadName4(data.AsSpan(defStart, 4), endian);
+            var offset = ReadU32(data.AsSpan(defStart + 4, 4), endian);
             tdb.Tables.Add(new TdbTable { Name = name, Offset = offset });
         }
 
         foreach (var table in tdb.Tables)
         {
             int tableStart = dataOrigin + (int)table.Offset;
-            table.Header = TdbTableHeader.Read(data.AsSpan(tableStart, TableHeaderSize));
+            table.Header = TdbTableHeader.Read(data.AsSpan(tableStart, TableHeaderSize), endian);
 
             int fieldsStart = tableStart + TableHeaderSize;
             for (int i = 0; i < table.Header.NumFields; i++)
             {
                 int fStart = fieldsStart + i * TableFieldSize;
-                table.Fields.Add(TdbField.Read(data.AsSpan(fStart, TableFieldSize)));
+                table.Fields.Add(TdbField.Read(data.AsSpan(fStart, TableFieldSize), endian));
             }
 
             int recordsStart = fieldsStart + table.Header.NumFields * TableFieldSize;
@@ -122,10 +148,10 @@ public sealed class MaddenTdb
             int totalBytes = headerBytes + fieldsBytes + recBytes;
 
             var body = new byte[totalBytes];
-            table.Header.Write(body.AsSpan(0, TableHeaderSize));
+            table.Header.Write(body.AsSpan(0, TableHeaderSize), Endian);
             for (int i = 0; i < table.Fields.Count; i++)
             {
-                table.Fields[i].Write(body.AsSpan(TableHeaderSize + i * TableFieldSize, TableFieldSize));
+                table.Fields[i].Write(body.AsSpan(TableHeaderSize + i * TableFieldSize, TableFieldSize), Endian);
             }
 
             int recordsStart = tableStart + TableHeaderSize + fieldsBytes;
@@ -156,22 +182,22 @@ public sealed class MaddenTdb
         if (_originalBytes is not null)
             _originalBytes.AsSpan(0, Math.Min(_originalBytes.Length, finalSize)).CopyTo(outBuf);
 
-        Header.Write(outBuf.AsSpan(0, FileHeaderSize));
+        Header.Write(outBuf.AsSpan(0, FileHeaderSize), Endian);
         for (int i = 0; i < Tables.Count; i++)
         {
             int defStart = FileHeaderSize + i * TableDefinitionSize;
-            Encoding.ASCII.GetBytes(Tables[i].Name.PadRight(4)[..4], outBuf.AsSpan(defStart, 4));
-            BinaryPrimitives.WriteUInt32LittleEndian(outBuf.AsSpan(defStart + 4, 4), Tables[i].Offset);
+            WriteName4(outBuf.AsSpan(defStart, 4), Tables[i].Name, Endian);
+            WriteU32(outBuf.AsSpan(defStart + 4, 4), Tables[i].Offset, Endian);
         }
         foreach (var (start, body) in tableBlocks)
             body.CopyTo(outBuf, start);
 
         // Recompute and write CRCs. EA TDB protects integrity via four kinds
         // of CRCs (all CRC-32/MPEG-2: poly 0x04C11DB7, init 0xFFFFFFFF, no
-        // reflection, no xorout). PS2 stores them in little-endian; PS3/PC
-        // bep713 implementation stores them in big-endian (and we mirror the
-        // algorithm from there). Madden 08 franchise loading enforces these;
-        // without them the save is rejected with "error loading franchise".
+        // reflection, no xorout). PS2 stores them in little-endian; PS3
+        // stores them in big-endian. Madden 08 franchise loading enforces
+        // these; without them the save is rejected with "error loading
+        // franchise".
         WriteCrcs(outBuf);
 
         if (Preamble.Length == 0) return outBuf;
@@ -206,14 +232,15 @@ public sealed class MaddenTdb
 
     /// <summary>
     /// Compute and write all four kinds of CRCs into <paramref name="buf"/>
-    /// (which is the TDB bytes, no preamble). Buf is mutated in place.
-    ///   - File header CRC: bytes [0..20), written LE at offset 20.
+    /// (which is the TDB bytes, no preamble). Buf is mutated in place. CRC
+    /// storage endian matches <see cref="Endian"/> — LE for PS2, BE for PS3.
+    ///   - File header CRC: bytes [0..20), written at offset 20.
     ///   - Per-table priorCRC: CRC of previous table's data (or of the table
-    ///     directory for the first table), written LE at bytes 0..3 of each
+    ///     directory for the first table), written at bytes 0..3 of each
     ///     table header.
     ///   - Per-table headerCRC: CRC of bytes 4..36 of the table header,
-    ///     written LE at bytes 36..39.
-    ///   - EOF CRC: CRC of the last table's data block, written LE at
+    ///     written at bytes 36..39.
+    ///   - EOF CRC: CRC of the last table's data block, written at
     ///     dbSize - 4.
     /// </summary>
     private void WriteCrcs(byte[] buf)
@@ -222,7 +249,7 @@ public sealed class MaddenTdb
 
         // File header CRC = CRC of first 20 bytes.
         uint fileCrc = Crc32Mpeg2(buf.AsSpan(0, 20));
-        BinaryPrimitives.WriteUInt32LittleEndian(buf.AsSpan(20, 4), fileCrc);
+        WriteU32(buf.AsSpan(20, 4), fileCrc, Endian);
 
         // priorCRC starts at the CRC of the table directory.
         uint priorCrc = Crc32Mpeg2(buf.AsSpan(FileHeaderSize, Tables.Count * TableDefinitionSize));
@@ -236,9 +263,9 @@ public sealed class MaddenTdb
 
             // Write priorCRC (CRC of the previous table's data, or table
             // directory for i==0) into this table's header at bytes 0..3.
-            BinaryPrimitives.WriteUInt32LittleEndian(buf.AsSpan(tableStart, 4), priorCrc);
+            WriteU32(buf.AsSpan(tableStart, 4), priorCrc, Endian);
             // Write this table's headerCRC at bytes 36..39.
-            BinaryPrimitives.WriteUInt32LittleEndian(buf.AsSpan(tableStart + TableHeaderSize - 4, 4), headerCrc);
+            WriteU32(buf.AsSpan(tableStart + TableHeaderSize - 4, 4), headerCrc, Endian);
 
             // Update priorCRC to the CRC of this table's data block.
             int dataStart = tableStart + TableHeaderSize;
@@ -251,13 +278,76 @@ public sealed class MaddenTdb
         // EOF CRC = CRC of the last table's data block (i.e. the same value
         // we just computed as priorCrc after the loop). Written at dbSize-4.
         if (Header.DbSize >= 4 && Header.DbSize <= buf.Length)
-            BinaryPrimitives.WriteUInt32LittleEndian(buf.AsSpan((int)Header.DbSize - 4, 4), priorCrc);
+            WriteU32(buf.AsSpan((int)Header.DbSize - 4, 4), priorCrc, Endian);
     }
 
     public void SaveFile(string path) => File.WriteAllBytes(path, Save());
 
     public TdbTable? FindTable(string name) =>
         Tables.FirstOrDefault(t => string.Equals(t.Name, name, StringComparison.Ordinal));
+
+    // ---------- Endian-aware byte helpers ----------
+
+    internal static ushort ReadU16(ReadOnlySpan<byte> s, TdbEndian e) =>
+        e == TdbEndian.LittleEndian
+            ? BinaryPrimitives.ReadUInt16LittleEndian(s)
+            : BinaryPrimitives.ReadUInt16BigEndian(s);
+
+    internal static uint ReadU32(ReadOnlySpan<byte> s, TdbEndian e) =>
+        e == TdbEndian.LittleEndian
+            ? BinaryPrimitives.ReadUInt32LittleEndian(s)
+            : BinaryPrimitives.ReadUInt32BigEndian(s);
+
+    internal static float ReadF32(ReadOnlySpan<byte> s, TdbEndian e) =>
+        e == TdbEndian.LittleEndian
+            ? BinaryPrimitives.ReadSingleLittleEndian(s)
+            : BinaryPrimitives.ReadSingleBigEndian(s);
+
+    internal static void WriteU16(Span<byte> s, ushort v, TdbEndian e)
+    {
+        if (e == TdbEndian.LittleEndian)
+            BinaryPrimitives.WriteUInt16LittleEndian(s, v);
+        else
+            BinaryPrimitives.WriteUInt16BigEndian(s, v);
+    }
+
+    internal static void WriteU32(Span<byte> s, uint v, TdbEndian e)
+    {
+        if (e == TdbEndian.LittleEndian)
+            BinaryPrimitives.WriteUInt32LittleEndian(s, v);
+        else
+            BinaryPrimitives.WriteUInt32BigEndian(s, v);
+    }
+
+    internal static void WriteF32(Span<byte> s, float v, TdbEndian e)
+    {
+        if (e == TdbEndian.LittleEndian)
+            BinaryPrimitives.WriteSingleLittleEndian(s, v);
+        else
+            BinaryPrimitives.WriteSingleBigEndian(s, v);
+    }
+
+    /// <summary>
+    /// Read a 4-char ASCII name from the table directory or field directory.
+    /// On PS3 (BE) these are stored byte-reversed because EA's code did
+    /// effectively `*(u32*)name_field = *(u32*)"PLAY"`, which on a BE CPU
+    /// produces bytes `59 41 4C 50` = "YALP" instead of "PLAY". We reverse
+    /// so callers always see the logical name.
+    /// </summary>
+    internal static string ReadName4(ReadOnlySpan<byte> s, TdbEndian e)
+    {
+        Span<byte> buf = stackalloc byte[4];
+        s.Slice(0, 4).CopyTo(buf);
+        if (e == TdbEndian.BigEndian) buf.Reverse();
+        return Encoding.ASCII.GetString(buf);
+    }
+
+    internal static void WriteName4(Span<byte> s, string name, TdbEndian e)
+    {
+        var padded = name.PadRight(4)[..4];
+        Encoding.ASCII.GetBytes(padded, s);
+        if (e == TdbEndian.BigEndian) s.Slice(0, 4).Reverse();
+    }
 }
 
 public sealed class TdbHeader
@@ -269,30 +359,30 @@ public sealed class TdbHeader
     public uint TableCount { get; set; }
     public byte[] Checksum { get; set; } = new byte[4];
 
-    public static TdbHeader Read(ReadOnlySpan<byte> span)
+    public static TdbHeader Read(ReadOnlySpan<byte> span, TdbEndian e)
     {
         if (span[0] != (byte)'D' || span[1] != (byte)'B')
             throw new InvalidDataException($"Not a TDB file (magic {span[0]:X2} {span[1]:X2})");
         return new TdbHeader
         {
-            Version = BinaryPrimitives.ReadUInt16LittleEndian(span[2..]),
-            Unknown1 = BinaryPrimitives.ReadUInt32LittleEndian(span[4..]),
-            DbSize = BinaryPrimitives.ReadUInt32LittleEndian(span[8..]),
-            Zero = BinaryPrimitives.ReadUInt32LittleEndian(span[12..]),
-            TableCount = BinaryPrimitives.ReadUInt32LittleEndian(span[16..]),
+            Version = MaddenTdb.ReadU16(span[2..], e),
+            Unknown1 = MaddenTdb.ReadU32(span[4..], e),
+            DbSize = MaddenTdb.ReadU32(span[8..], e),
+            Zero = MaddenTdb.ReadU32(span[12..], e),
+            TableCount = MaddenTdb.ReadU32(span[16..], e),
             Checksum = span.Slice(20, 4).ToArray(),
         };
     }
 
-    public void Write(Span<byte> span)
+    public void Write(Span<byte> span, TdbEndian e)
     {
         span[0] = (byte)'D';
         span[1] = (byte)'B';
-        BinaryPrimitives.WriteUInt16LittleEndian(span[2..], Version);
-        BinaryPrimitives.WriteUInt32LittleEndian(span[4..], Unknown1);
-        BinaryPrimitives.WriteUInt32LittleEndian(span[8..], DbSize);
-        BinaryPrimitives.WriteUInt32LittleEndian(span[12..], Zero);
-        BinaryPrimitives.WriteUInt32LittleEndian(span[16..], TableCount);
+        MaddenTdb.WriteU16(span[2..], Version, e);
+        MaddenTdb.WriteU32(span[4..], Unknown1, e);
+        MaddenTdb.WriteU32(span[8..], DbSize, e);
+        MaddenTdb.WriteU32(span[12..], Zero, e);
+        MaddenTdb.WriteU32(span[16..], TableCount, e);
         Checksum.CopyTo(span[20..]);
     }
 }
@@ -313,37 +403,37 @@ public sealed class TdbTableHeader
     public uint Zero3 { get; set; }
     public byte[] HeaderCrc { get; set; } = new byte[4];
 
-    public static TdbTableHeader Read(ReadOnlySpan<byte> span) => new()
+    public static TdbTableHeader Read(ReadOnlySpan<byte> span, TdbEndian e) => new()
     {
         PriorCrc = span.Slice(0, 4).ToArray(),
-        Unknown2 = BinaryPrimitives.ReadUInt32LittleEndian(span[4..]),
-        LenBytes = BinaryPrimitives.ReadUInt32LittleEndian(span[8..]),
-        LenBits = BinaryPrimitives.ReadUInt32LittleEndian(span[12..]),
-        Zero = BinaryPrimitives.ReadUInt32LittleEndian(span[16..]),
-        MaxRecords = BinaryPrimitives.ReadUInt16LittleEndian(span[20..]),
-        CurRecords = BinaryPrimitives.ReadUInt16LittleEndian(span[22..]),
-        Unknown3 = BinaryPrimitives.ReadUInt32LittleEndian(span[24..]),
+        Unknown2 = MaddenTdb.ReadU32(span[4..], e),
+        LenBytes = MaddenTdb.ReadU32(span[8..], e),
+        LenBits = MaddenTdb.ReadU32(span[12..], e),
+        Zero = MaddenTdb.ReadU32(span[16..], e),
+        MaxRecords = MaddenTdb.ReadU16(span[20..], e),
+        CurRecords = MaddenTdb.ReadU16(span[22..], e),
+        Unknown3 = MaddenTdb.ReadU32(span[24..], e),
         NumFields = span[28],
         IndexCount = span[29],
-        Zero2 = BinaryPrimitives.ReadUInt16LittleEndian(span[30..]),
-        Zero3 = BinaryPrimitives.ReadUInt32LittleEndian(span[32..]),
+        Zero2 = MaddenTdb.ReadU16(span[30..], e),
+        Zero3 = MaddenTdb.ReadU32(span[32..], e),
         HeaderCrc = span.Slice(36, 4).ToArray(),
     };
 
-    public void Write(Span<byte> span)
+    public void Write(Span<byte> span, TdbEndian e)
     {
         PriorCrc.CopyTo(span[..4]);
-        BinaryPrimitives.WriteUInt32LittleEndian(span[4..], Unknown2);
-        BinaryPrimitives.WriteUInt32LittleEndian(span[8..], LenBytes);
-        BinaryPrimitives.WriteUInt32LittleEndian(span[12..], LenBits);
-        BinaryPrimitives.WriteUInt32LittleEndian(span[16..], Zero);
-        BinaryPrimitives.WriteUInt16LittleEndian(span[20..], MaxRecords);
-        BinaryPrimitives.WriteUInt16LittleEndian(span[22..], CurRecords);
-        BinaryPrimitives.WriteUInt32LittleEndian(span[24..], Unknown3);
+        MaddenTdb.WriteU32(span[4..], Unknown2, e);
+        MaddenTdb.WriteU32(span[8..], LenBytes, e);
+        MaddenTdb.WriteU32(span[12..], LenBits, e);
+        MaddenTdb.WriteU32(span[16..], Zero, e);
+        MaddenTdb.WriteU16(span[20..], MaxRecords, e);
+        MaddenTdb.WriteU16(span[22..], CurRecords, e);
+        MaddenTdb.WriteU32(span[24..], Unknown3, e);
         span[28] = NumFields;
         span[29] = IndexCount;
-        BinaryPrimitives.WriteUInt16LittleEndian(span[30..], Zero2);
-        BinaryPrimitives.WriteUInt32LittleEndian(span[32..], Zero3);
+        MaddenTdb.WriteU16(span[30..], Zero2, e);
+        MaddenTdb.WriteU32(span[32..], Zero3, e);
         HeaderCrc.CopyTo(span[36..40]);
     }
 }
@@ -355,21 +445,28 @@ public sealed class TdbField
     public string Name { get; set; } = "";
     public uint Bits { get; set; }
 
-    public static TdbField Read(ReadOnlySpan<byte> span) => new()
+    /// <summary>
+    /// Endianness inherited from the containing TDB. Used only by FLOAT
+    /// fields (ReadFloat/WriteFloat); bit-packed UINT/SINT fields are
+    /// endian-neutral, and STRING/BINARY fields store raw bytes.
+    /// </summary>
+    internal TdbEndian Endian { get; set; } = TdbEndian.LittleEndian;
+
+    public static TdbField Read(ReadOnlySpan<byte> span, TdbEndian e) => new()
     {
-        Type = BinaryPrimitives.ReadUInt32LittleEndian(span[..4]),
-        OffsetBits = BinaryPrimitives.ReadUInt32LittleEndian(span[4..]),
-        Name = Encoding.ASCII.GetString(span.Slice(8, 4)),
-        Bits = BinaryPrimitives.ReadUInt32LittleEndian(span[12..]),
+        Type = MaddenTdb.ReadU32(span[..4], e),
+        OffsetBits = MaddenTdb.ReadU32(span[4..], e),
+        Name = MaddenTdb.ReadName4(span.Slice(8, 4), e),
+        Bits = MaddenTdb.ReadU32(span[12..], e),
+        Endian = e,
     };
 
-    public void Write(Span<byte> span)
+    public void Write(Span<byte> span, TdbEndian e)
     {
-        BinaryPrimitives.WriteUInt32LittleEndian(span[..4], Type);
-        BinaryPrimitives.WriteUInt32LittleEndian(span[4..], OffsetBits);
-        var nameBytes = Encoding.ASCII.GetBytes(Name.PadRight(4)[..4]);
-        nameBytes.CopyTo(span[8..]);
-        BinaryPrimitives.WriteUInt32LittleEndian(span[12..], Bits);
+        MaddenTdb.WriteU32(span[..4], Type, e);
+        MaddenTdb.WriteU32(span[4..], OffsetBits, e);
+        MaddenTdb.WriteName4(span[8..], Name, e);
+        MaddenTdb.WriteU32(span[12..], Bits, e);
     }
 
     public object? ReadValue(ReadOnlySpan<byte> record) => Type switch
@@ -451,17 +548,19 @@ public sealed class TdbField
     private object? ReadFloat(ReadOnlySpan<byte> record)
     {
         int byteOffset = (int)(OffsetBits / 8);
-        return BinaryPrimitives.ReadSingleLittleEndian(record.Slice(byteOffset, 4));
+        return MaddenTdb.ReadF32(record.Slice(byteOffset, 4), Endian);
     }
 
     private void WriteFloat(Span<byte> record, object? value)
     {
         int byteOffset = (int)(OffsetBits / 8);
         float f = value switch { float fv => fv, double dv => (float)dv, int iv => iv, _ => 0f };
-        BinaryPrimitives.WriteSingleLittleEndian(record.Slice(byteOffset, 4), f);
+        MaddenTdb.WriteF32(record.Slice(byteOffset, 4), f, Endian);
     }
 
-    // LSB-first within byte, LSB-first within field. See parse_madden_tdb.py for derivation.
+    // LSB-first within byte, LSB-first within field. See parse_madden_tdb.py
+    // for derivation. Endian-neutral: the same algorithm works for both PS2
+    // (LE) and PS3 (BE) records.
     public static uint ReadBits(ReadOnlySpan<byte> record, int offsetBits, int numBits)
     {
         uint value = 0;

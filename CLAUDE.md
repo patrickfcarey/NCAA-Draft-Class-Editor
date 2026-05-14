@@ -40,6 +40,7 @@ files via a PS2 memcard, and gets a franchise that mirrors NFL history.
 | 16 | Roster compiler upgrades: identity + appearance + DCHT + safety sweep | ✅ MaddenRosterCompiler now: matches teams by mascot name (works across all TGID schemes); assigns each canonical player a new PGID in 16384-32767 (no Madden photo-library collisions); writes hash-derived PHED/PSKI/PHCL/PNEK/PEYE for distinct 3D heads; rebuilds DCHT depth chart referencing new PGIDs with L/R distribution (round-robin OT→LT+RT, OG→LG+RG, DE→LE+RE, LB→LOLB+MLB+ROLB, S→FS+SS); clears 50+ PGID-keyed tables that would otherwise hold dangling references (INJY, all PSDE/PSKI/PSKP/PSNG/PSOF stats tables, all PC* career tables, FBPL hall-of-fame, plus 30+ smaller orphan tables). Result: 2018 Bears now show 2018 players (not 2008 Urlacher), all 32 teams populated (Vikings no longer dropped), depth chart filled on both sides. |
 | 17 | Codebase audit + data-integrity fixes | ✅ Audit found and fixed 5 related bugs: (a) ROSTER templates use TGID 1-32 / Texans last; FRANCHISE templates use TGID 0-31 / Titans last → name-based lookup fixes both; (b) nflverse rosters CSV has birth_date not age → compute age from birth_date at scrape time; (c) nflverse `position` is coarse (DB/OL/DL) → use `depth_chart_position` (FS/SS/G/DE/FB) which has 15 distinct positions vs 11; (d) Madden ratings store 'Patrick Mahomes II' but nflverse stores 'Patrick Mahomes' → name_key() helper strips Jr/Sr/II/III/IV/V before joining; (e) MaddenFranchiseCompiler duplicate-name contract collision (two Chris Joneses) → Dict<string, List<>> + team-abbrev disambiguation with NormalizeTeamAbbrev (LAR→STL/LAC→SD/LV→OAK). |
 | 18 | Phase 4: real career stats from nflverse | ✅ scrapers/nflverse/build_stats.py downloads 1999-2025 stats_player_reg parquets (~7MB), aggregates per-(gsis_id, season), rolls into career-through-(target-1) totals. Emits data/canonical/stats-{year}.json with per-player career block. Roster scraper now persists gsis_id as join key. MaddenRosterCompiler Pass 5 writes PCOF (career offense: caya/catd/cacm/caat/cain/cufu/cuya/cutd/cuat/ccca/ccya/cctd) and PCDE (career defense: csca/cdta/clff/cdbh/clsk/csin/clfr) per matched player. Field encodings decoded against Peyton Manning's 2007 known career line. Verified vs real: Brady 66,161 passYds / 488 TDs ✓, Mack 282 tackles / 40 sacks ✓, Mahomes 284 passYds rookie ✓. Per-season tables (PSOF/PSDE) still empty — need base-year-aware compile (Phase 5). Kicker (PCKI), return (PCKP), games-played (PCNG) tables also empty — field encodings not yet decoded. |
+| 19 | M12 PS3 + M25 PS3 (big-endian TDB) | ✅ Validated via RPCS3 dev_hdd0 fresh-save bypass (user installed BLUS30770 + BLUS31178 ISOs at `/mnt/c/Roms/PS3/`, booted each in RPCS3, saved Week-1 franchise+roster). Result: M12 PS3 = bare BE TDB v8 with 195 tables (franchise) / 4 tables (roster), all PS2 load-bearing field names present (PFNA, PLNA, POVR, PSPD, PSA0..6, etc.). M25 PS3 = bare BE TDB v8 for ROSTER (4 tables, 200 PLAY fields **including contracts** PSA0..6/PSB0..6/PCSA), but the CAREER save is zlib-deflated `FrTk` container (NOT TDB) — out of scope. `MaddenTdb` got a new `Endian` flag (auto-detected from tableCount sanity check), endian-aware u16/u32/float read/write, and 4-char name byte-reversal in BE mode (EA stored names as CPU-native u32, so PS3 BE produces YALP/MAET/THCD instead of PLAY/TEAM/DCHT in raw bytes). `MaddenRosterCompiler` got range-based TGID matching (`[main, next-team-main)` covers PS3's sparse TGID scheme where Bears=4 owns slots 4..7; PS2's sequential TGIDs degenerate to range-of-1, no roundtrip break). `build_all_rosters.py` adds `m12-ps3` and `m25-ps3` targets; `build_all_franchises.py` adds `m12-ps3` (no M25 franchise — FrTk). Templates fetched from dev_hdd0 by `tools/fetch_m12_ps3_template.py` / `fetch_m25_ps3_template.py`. PS3 saves go directly into RPCS3's dev_hdd0 unencrypted (RPCS3 doesn't enforce PARAM.PFD on emulated saves). 43/43 tests pass; 2018 spot-build verified end-to-end. Open issue: rating-coverage gap (35% of canonical 2018 players lack OVR — weebly covers only stars) now visible on PS3 because 2013-era templates have higher inherited OVRs than M08 2007-era templates. Same gap exists on PS2, just less visually obvious. |
 
 End-to-end works for one year (2018). User has loaded the compiled file in
 Madden 08 on PCSX2 and seen Mayfield/Barkley/etc. in the draft pool.
@@ -765,6 +766,71 @@ matches. `MaddenRosterCompiler.Compile` now resolves TGIDs by reading
 each template TEAM record's `TDNA` (mascot name) and looking up the
 canonical team by name. Handles Redskins↔Commanders aliasing for Deluxe
 templates.
+
+**Plus M12/M25 PS3 use a sparse TGID scheme** with multiple TGIDs per
+team (active / practice squad / IR / inactive ~= 4 sub-rosters). Bears
+owns TGIDs 4..7, Bengals 8..11, etc., with a few teams getting 1 or 5
+slots instead of the usual 4. `MaddenRosterCompiler` matches by *range*:
+each team owns `[main, next-team-main)` — the next NFL TGID in sorted
+order defines the upper bound. PS2's sequential 1..32 TGIDs degenerate
+to range-of-1 (no behavior change). NFL-team TGIDs filtered to `< 200`
+to exclude PS3's pool TGIDs at 960+ (Free Agents groups, NFL Greats,
+Hall of Fame). See `nflTeamTgids` / `UpperBound` in
+`MaddenRosterCompiler.Compile`.
+
+### PS3 TDB is big-endian and stores 4-char names byte-reversed
+M08/M09/M12 PS2 saves are little-endian. M12 PS3 (BLUS30770) and M25
+PS3 (BLUS31178) saves are **big-endian**. Same TDB format otherwise —
+same "DB" magic, same table-directory + per-table-header layout, same
+LSB-first bit-packing for UINT/SINT record fields (bit packing is
+endian-neutral), same CRC-32/MPEG-2 algorithm — just multi-byte int
+fields (u16/u32/float) flip endianness.
+
+**Plus a quirky byte-reversal for 4-char names.** EA's code does
+effectively `*(u32*)name_field = *(u32*)"PLAY"`. On a LE PS2 CPU that
+writes bytes `50 4C 41 59` ("PLAY" forward). On a BE PS3 CPU the same
+code writes bytes `59 41 4C 50` ("YALP" reversed). Affects:
+- Table-directory entries (the 4-byte name at the start of each entry)
+- Field-directory entries within each table header (4-byte field name
+  at offset +8 of each field-def)
+
+So in M12 PS3 raw bytes: `PLAY` appears as `YALP`, `TEAM` as `MAET`,
+`DCHT` as `THCD`, `INJY` as `YJNI`, `SEAI` as `IAES`, `PFNA` as `ANFP`,
+`POVR` as `RVOP`, `PSA0` as `0ASP`, etc.
+
+The C# `MaddenTdb` class has a `TdbEndian Endian { LittleEndian,
+BigEndian }` property, auto-detected on `Load()` by reading
+`tableCount` as LE u32 — if it overflows (> 10,000) or doesn't fit the
+file, it's BE. Helpers `ReadU16/U32/F32` and `WriteU16/U32/F32`
+dispatch internally; `ReadName4` / `WriteName4` byte-reverse in BE
+mode. All compilers, passes, and tests work unchanged across LE/PS2
+and BE/PS3.
+
+CRC storage also flips endian: PS2 stores the 4 CRCs in LE (per
+existing CRC docs above); PS3 stores them in BE. Same algorithm, just
+the storage order of the 4-byte result differs.
+
+### M25 PS3 CAREER save is `FrTk`, not TDB — out of scope
+M12 PS3 keeps the franchise data in a bare BE TDB (same shape as PS2
+franchise). **M25 PS3 changed that.** The `BLUS31178-CAREER-*/USR-DATA`
+file is zlib-deflated; after decompression the inner blob starts with
+ASCII `FrTk` (a 128-byte-header frame-log container with 1565 × 8-byte
+entries), NOT `DB` magic. This is M25's "Connected Franchise"
+cloud-syncable transaction log; not parseable with the TDB substrate
+this toolchain is built on.
+
+**Fortunately M25 also moved per-player contracts into the ROSTER PLAY
+table.** M08/M09/M12 PS2 roster PLAY had 110 fields, no contracts (only
+PCON 4-bit length + PYRP). M25 PS3 roster PLAY has **200 fields,
+including** PSA0..PSA6 (14-bit annual salary), PSB0..PSB6 (13-bit
+prorated bonus), PCSA (current cap hit), PCON, PCTS, PSBO. Same field
+names + bit widths as PS2 franchise PLAY (which had 131 fields = 110
++ these 21 contract fields).
+
+So for M25 PS3 the pipeline writes ONLY to the roster save (`m25-ps3`
+target in `build_all_rosters.py`). User starts a Connected Franchise
+from the custom roster in-game; the cap economy reads from PSA/PSB/PCSA
+directly. No franchise-side writes needed; no FrTk codec needed.
 
 ### nflverse `position` is coarse; use `depth_chart_position`
 nflverse roster CSV `position` collapses defensive line to "DL", offensive

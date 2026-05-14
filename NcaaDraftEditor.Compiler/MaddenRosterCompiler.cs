@@ -87,21 +87,38 @@ public sealed class MaddenRosterCompiler
 
         // Build canonical-team -> template-TGID map by mascot name. EA's
         // templates use different TGID schemes across files:
-        //   M08 roster:    1..32, Texans last (alphabetical + expansion)
-        //   M08 franchise: 0..31, Titans last
-        //   M09 franchise: 0..31, Titans last
-        //   M12 franchise: 0..31, Titans last
+        //   M08 roster:        1..32, Texans last (sequential, alphabetical + expansion)
+        //   M08 franchise:     0..31, Titans last (sequential)
+        //   M09/M12 franchise: 0..31, Titans last (sequential)
+        //   M12/M25 PS3:       sparse (Bears=4, Bengals=8, Bills=12, ..., Texans=129)
+        //                      Plus pools at TGID 960+ (Free Agents, NFL Greats, HoF).
+        //                      Each team owns the TGID range [main, next-team-main).
         // Canonical roster JSON assigns tgId=1..32 alphabetically, which only
         // matches M08 roster. Without name-based remapping, franchise builds
         // shift every team into the next slot (Bears canonical=1 -> template
-        // Bengals=1) and drop the 32nd team entirely. Result: stale players
-        // from the template's launch year survive in the "left behind" slot.
+        // Bengals=1) and drop the 32nd team entirely.
         var templateTgidByMascot = new Dictionary<string, uint>(StringComparer.OrdinalIgnoreCase);
         foreach (var rec in teamTable.Records)
         {
             var mascot = rec.GetString("TDNA").Trim();
             if (!string.IsNullOrEmpty(mascot))
                 templateTgidByMascot[mascot] = rec.GetUInt("TGID");
+        }
+
+        // Sort the NFL-team TGIDs to derive each team's owned range. Filter out
+        // pool/special TGIDs (Free Agents, NFL Greats, Hall of Fame) which on PS3
+        // sit far above the team range — using 200 as the cutoff is safe: PS2
+        // schemes max out at 32, PS3 NFL teams max at 129 in the Texans slot.
+        var nflTeamTgids = templateTgidByMascot.Values.Where(t => t < 200).OrderBy(t => t).ToList();
+        // Per-team upper bound: the next NFL TGID after `start`. For the last
+        // team in the sorted list, no upper bound exists -> use 200 (anything
+        // beyond is pool/HoF, not a team roster slot).
+        uint UpperBound(uint start)
+        {
+            for (int j = 0; j < nflTeamTgids.Count; j++)
+                if (nflTeamTgids[j] > start)
+                    return nflTeamTgids[j];
+            return 200;
         }
 
         // Resolve each canonical team to its template TGID. Skip teams whose
@@ -127,6 +144,11 @@ public sealed class MaddenRosterCompiler
         }
 
         // Pass 2: mutate TEAM strings + PLAY records using resolved TGIDs.
+        // PLAY slots are matched by TGID range: the team owns [realTgid, nextTgid).
+        // PS3 templates spread a team's roster across consecutive TGIDs (active,
+        // practice squad, IR, inactive ~= 4 sub-rosters). PS2 templates have
+        // sequential per-team TGIDs (range = 1), so the range-match degenerates
+        // to exact-match without breaking the byte-exact PS2 roundtrip.
         foreach (var team in canonical.Teams)
         {
             if (!resolvedTgid.TryGetValue(team, out var realTgid)) continue;
@@ -134,8 +156,9 @@ public sealed class MaddenRosterCompiler
             var ordered = team.Players
                 .OrderByDescending(p => p.Ratings?.Ovr ?? 0)
                 .ToList();
+            uint upper = UpperBound(realTgid);
             var slots = play.Records
-                .Where(r => r.GetUInt("TGID") == realTgid)
+                .Where(r => { var t = r.GetUInt("TGID"); return t >= realTgid && t < upper; })
                 .ToList();
             int limit = Math.Min(slots.Count, ordered.Count);
             for (int i = 0; i < limit; i++)
