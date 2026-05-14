@@ -30,6 +30,10 @@ public sealed record CanonicalTeam
 public sealed record CanonicalRosterPlayer
 {
     public PlayerName Name { get; init; } = new();
+    /// <summary>nflverse / NFL gsis_id ("00-00XXXXX"). Used to join real
+    /// career stats from CanonicalStats. May be empty for very early
+    /// historical players or scraper misses.</summary>
+    public string GsisId { get; init; } = "";
     /// <summary>NFL position label (QB, RB, WR, TE, OT, OG, C, DE, DT, LB, CB, S, K, P).</summary>
     public string Position { get; init; } = "";
     public int? JerseyNumber { get; init; }

@@ -139,6 +139,7 @@ def compile_year(target: str, year: int, use_contracts: bool,
     cfg = TARGETS[target]
     roster_json = CANONICAL / f"roster-{year}.json"
     contracts_json = CANONICAL / f"contracts-{year}.json"
+    stats_json = CANONICAL / f"stats-{year}.json"
     if not roster_json.exists():
         raise FileNotFoundError(f"Missing canonical roster: {roster_json}")
 
@@ -155,7 +156,10 @@ def compile_year(target: str, year: int, use_contracts: bool,
         "--", "compile-roster",
         w(roster_json), w(POSITIONS), w(cfg["template_bin"]), w(intermediate),
     ]
-    print(f"  $ compile-roster {target} {year}", file=sys.stderr)
+    if stats_json.exists():
+        cmd1.extend(["--stats", w(stats_json)])
+    print(f"  $ compile-roster {target} {year}" + (" (with career stats)" if stats_json.exists() else ""),
+          file=sys.stderr)
     subprocess.run(cmd1, check=True)
 
     cmd2 = [

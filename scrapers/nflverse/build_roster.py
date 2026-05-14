@@ -347,6 +347,11 @@ def build(season: int) -> dict[str, Any]:
                 "position": canonical_pos,
                 "college": row.get("college", "").strip(),
             }
+            # Persist gsis_id whenever nflverse has it - this is the join key
+            # for the stats scraper. ~99% present on modern rosters.
+            gsis = (row.get("gsis_id") or "").strip()
+            if gsis:
+                player["gsisId"] = gsis
             jn = to_int(row.get("jersey_number", ""))
             if jn is not None and 0 <= jn <= 99:
                 player["jerseyNumber"] = jn

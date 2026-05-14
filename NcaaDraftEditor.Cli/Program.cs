@@ -166,17 +166,25 @@ internal static class Program
 
     static int CompileRoster(string[] args)
     {
-        if (args.Length != 4)
-            return Help("compile-roster requires <canonical-roster.json> <positions.json> <template.bin> <out.bin>");
+        if (args.Length < 4)
+            return Help("compile-roster requires <canonical-roster.json> <positions.json> <template.bin> <out.bin> [--stats <stats.json>]");
 
         var rosterJson = File.ReadAllText(args[0]);
         var canonical = CanonicalJson.Deserialize<CanonicalRoster>(rosterJson);
         var positions = PositionMapper.LoadFile(args[1]);
         var template = MaddenTdb.LoadFile(args[2]);
         var outPath = args[3];
+        CanonicalStats? stats = null;
+        for (int i = 4; i < args.Length; i++)
+        {
+            if (args[i] == "--stats" && i + 1 < args.Length)
+                stats = CanonicalStats.LoadFile(args[++i]);
+            else
+                return Help($"Unexpected argument: {args[i]}");
+        }
 
         var compiler = new MaddenRosterCompiler(positions);
-        compiler.Compile(canonical, template);
+        compiler.Compile(canonical, template, stats);
         template.SaveFile(outPath);
 
         var play = template.FindTable("PLAY");

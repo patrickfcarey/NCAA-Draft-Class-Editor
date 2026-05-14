@@ -73,7 +73,10 @@ public sealed class MaddenRosterCompiler
     /// MaddenTdb you loaded from a template fixture; after Compile the same
     /// instance is ready to .Save() with the canonical roster baked in.
     /// </summary>
-    public MaddenTdb Compile(CanonicalRoster canonical, MaddenTdb template)
+    public MaddenTdb Compile(
+        CanonicalRoster canonical,
+        MaddenTdb template,
+        CanonicalStats? stats = null)
     {
         var play = template.FindTable("PLAY")
             ?? throw new InvalidOperationException("Template TDB missing PLAY table");
@@ -174,7 +177,113 @@ public sealed class MaddenRosterCompiler
             t.Header.CurRecords = 0;
         }
 
+        // Pass 5: populate career stats tables (PCOF/PCDE) from real nflverse
+        // data. Per-season tables (PSOF/PSDE) stay empty for now - they need
+        // base-year context for the SEYR offset, which is a franchise-level
+        // concept the roster compiler doesn't have. Career totals cover the
+        // most-visible 'Player Profile -> Career Stats' UI; per-season game-
+        // log views stay blank.
+        if (stats is not null)
+        {
+            WriteCareerStats(template, canonical, pgids, stats);
+        }
+
         return template;
+    }
+
+    /// <summary>
+    /// Walk the canonical roster, join each player to nflverse career stats
+    /// by gsis_id, and write PCOF (offense) + PCDE (defense) records.
+    /// Skips players without a gsis_id (very early historical or scraper
+    /// misses) and players whose stats fall below significance thresholds
+    /// in both categories (no point in writing a row of zeros).
+    /// </summary>
+    private void WriteCareerStats(
+        MaddenTdb template,
+        CanonicalRoster canonical,
+        Dictionary<CanonicalRosterPlayer, uint> pgids,
+        CanonicalStats stats)
+    {
+        var byGsis = new Dictionary<string, CanonicalPlayerStats>(StringComparer.OrdinalIgnoreCase);
+        foreach (var s in stats.Players)
+        {
+            if (!string.IsNullOrEmpty(s.GsisId)) byGsis[s.GsisId] = s;
+        }
+
+        var pcof = template.FindTable("PCOF");
+        var pcde = template.FindTable("PCDE");
+
+        foreach (var team in canonical.Teams)
+        {
+            foreach (var player in team.Players)
+            {
+                if (string.IsNullOrEmpty(player.GsisId)) continue;
+                if (!byGsis.TryGetValue(player.GsisId, out var ps)) continue;
+                if (!pgids.TryGetValue(player, out var pgid)) continue;
+
+                var c = ps.Career;
+                if (pcof is not null && HasOffensiveStats(c) && pcof.Records.Count < pcof.Header.MaxRecords)
+                {
+                    var rec = NewRecordFor(pcof);
+                    rec.SetUInt("PGID", pgid);
+                    rec.SetUInt("caya", ClampUInt(c.Get("passYards"),     18));
+                    rec.SetUInt("catd", ClampUInt(c.Get("passTDs"),       11));
+                    rec.SetUInt("cacm", ClampUInt(c.Get("passComp"),      14));
+                    rec.SetUInt("caat", ClampUInt(c.Get("passAtt"),       14));
+                    rec.SetUInt("cain", ClampUInt(c.Get("passInts"),      11));
+                    rec.SetUInt("cufu", ClampUInt(c.Get("fumbles"),        9));
+                    rec.SetUInt("cuya", ClampUInt(c.Get("rushYards"),     17));
+                    rec.SetUInt("cutd", ClampUInt(c.Get("rushTDs"),       10));
+                    rec.SetUInt("cuat", ClampUInt(c.Get("rushAtt"),       14));
+                    rec.SetUInt("ccca", ClampUInt(c.Get("receptions"),    12));
+                    rec.SetUInt("ccya", ClampUInt(Math.Max(0, c.Get("recYards")), 17));
+                    rec.SetUInt("cctd", ClampUInt(c.Get("recTDs"),        10));
+                    pcof.Records.Add(rec);
+                }
+
+                if (pcde is not null && HasDefensiveStats(c) && pcde.Records.Count < pcde.Header.MaxRecords)
+                {
+                    var rec = NewRecordFor(pcde);
+                    rec.SetUInt("PGID", pgid);
+                    rec.SetUInt("csca", ClampUInt(c.Get("tacklesSolo"),   12));
+                    rec.SetUInt("cdta", ClampUInt(c.Get("tacklesAst"),    12));
+                    rec.SetUInt("clff", ClampUInt(c.Get("forcedFum"),      9));
+                    rec.SetUInt("cdbh", ClampUInt(c.Get("passDefended"),  12));
+                    rec.SetUInt("clsk", ClampUInt(c.Get("sacks"),         10));
+                    rec.SetUInt("csin", ClampUInt(c.Get("defInts"),        9));
+                    rec.SetUInt("clfr", ClampUInt(c.Get("fumRecov"),       9));
+                    pcde.Records.Add(rec);
+                }
+            }
+        }
+
+        if (pcof is not null) pcof.Header.CurRecords = (ushort)pcof.Records.Count;
+        if (pcde is not null) pcde.Header.CurRecords = (ushort)pcde.Records.Count;
+    }
+
+    private static bool HasOffensiveStats(StatBlock c) =>
+        c.Get("passYards") + c.Get("rushYards") + Math.Max(0, c.Get("recYards")) > 0
+        || c.Get("passAtt") + c.Get("rushAtt") + c.Get("receptions") > 0;
+
+    private static bool HasDefensiveStats(StatBlock c) =>
+        c.Get("tacklesSolo") + c.Get("tacklesAst") + c.Get("sacks") + c.Get("defInts") > 0;
+
+    private static TdbRecord NewRecordFor(TdbTable table)
+    {
+        var rec = new TdbRecord();
+        foreach (var f in table.Fields)
+        {
+            rec[f.Name] = f.Type == MaddenTdb.TypeString ? "" : (object)0u;
+        }
+        return rec;
+    }
+
+    private static uint ClampUInt(int value, int bits)
+    {
+        long max = (1L << bits) - 1;
+        if (value < 0) value = 0;
+        if (value > max) value = (int)max;
+        return (uint)value;
     }
 
     /// <summary>
