@@ -118,20 +118,39 @@ public sealed class MaddenFranchiseCompiler
         MaddenTdb template, long leagueCap, CanonicalContracts? contracts)
     {
         var play = template.FindTable("PLAY");
+        var teamTable = template.FindTable("TEAM");
         var stats = new ContractApplyStats();
         if (play is null) return stats;
         if (play.FindField("PSA0") is null || play.FindField("PCSA") is null)
             return stats;  // not a franchise PLAY table
 
-        // Build name -> contract lookup. Names normalized via NormalizeName.
-        var byName = new Dictionary<string, CanonicalContract>(StringComparer.OrdinalIgnoreCase);
+        // Build template TGID -> team-abbreviation map for disambiguating
+        // duplicate-name contracts (multiple "Chris Jones", "Mike Williams"
+        // etc. exist across seasons). Without team-aware lookup, the last
+        // contract written to byName wins and the wrong player gets the
+        // wrong cap hit.
+        var tgidToAbbrev = new Dictionary<uint, string>();
+        if (teamTable is not null)
+        {
+            foreach (var rec in teamTable.Records)
+            {
+                var abbr = NormalizeTeamAbbrev(rec.GetString("TSNA"));
+                if (!string.IsNullOrEmpty(abbr))
+                    tgidToAbbrev[rec.GetUInt("TGID")] = abbr;
+            }
+        }
+
+        // Build name -> list-of-contracts (preserves duplicates).
+        var byName = new Dictionary<string, List<CanonicalContract>>(StringComparer.OrdinalIgnoreCase);
         if (contracts is not null)
         {
             foreach (var c in contracts.Players)
             {
                 var key = NormalizeName(c.Name);
-                if (!string.IsNullOrEmpty(key))
-                    byName[key] = c;
+                if (string.IsNullOrEmpty(key)) continue;
+                if (!byName.TryGetValue(key, out var list))
+                    byName[key] = list = new List<CanonicalContract>();
+                list.Add(c);
             }
         }
 
@@ -146,7 +165,34 @@ public sealed class MaddenFranchiseCompiler
             string last = rec.GetString("PLNA");
             string nameKey = NormalizeName($"{first} {last}");
 
-            if (!string.IsNullOrEmpty(nameKey) && byName.TryGetValue(nameKey, out var real))
+            CanonicalContract? real = null;
+            if (!string.IsNullOrEmpty(nameKey) && byName.TryGetValue(nameKey, out var matches))
+            {
+                if (matches.Count == 1)
+                {
+                    real = matches[0];
+                }
+                else
+                {
+                    // Multiple players share this normalized name. Disambiguate
+                    // by team abbreviation. The contract's team may use a modern
+                    // code (LAR/LAC/LV) while the template has the historical
+                    // code (STL/SD/OAK); normalize both.
+                    var playerTeam = tgidToAbbrev.GetValueOrDefault(rec.GetUInt("TGID"), "");
+                    foreach (var candidate in matches)
+                    {
+                        if (NormalizeTeamAbbrev(candidate.Team) == playerTeam)
+                        {
+                            real = candidate;
+                            break;
+                        }
+                    }
+                    // Last-resort: take the first match (preserves old behavior).
+                    real ??= matches[0];
+                }
+            }
+
+            if (real is not null)
             {
                 ApplyRealContract(rec, real);
                 stats.MatchedReal++;
@@ -159,6 +205,29 @@ public sealed class MaddenFranchiseCompiler
             }
         }
         return stats;
+    }
+
+    /// <summary>
+    /// Canonicalize a team abbreviation. Maps modern codes back to their
+    /// historical Madden-era forms (LA/LAR -> STL, LAC -> SD, LV -> OAK).
+    /// Mirrors scrapers/nflverse/build_roster.py's ABBREV_ALIASES.
+    /// </summary>
+    public static string NormalizeTeamAbbrev(string abbr)
+    {
+        if (string.IsNullOrWhiteSpace(abbr)) return "";
+        return abbr.Trim().ToUpperInvariant() switch
+        {
+            "LA" or "LAR" => "STL",
+            "LAC" => "SD",
+            "LV" => "OAK",
+            "WSH" => "WAS",
+            "ARZ" => "ARI",
+            "BLT" => "BAL",
+            "CLV" => "CLE",
+            "HST" => "HOU",
+            "SL" => "STL",
+            var s => s,
+        };
     }
 
     /// <summary>

@@ -334,7 +334,12 @@ def build(season: int) -> dict[str, Any]:
             if not first or not last:
                 continue
 
-            raw_pos = (row.get("position") or "").strip().upper()
+            # `depth_chart_position` is the granular label (G, FS, SS, DE, FB,
+            # ...). `position` is the coarse bucket (OL, DB, DL covering many
+            # specifics). Madden needs the granular form so the depth chart's
+            # L/R variants get populated; without it, half the OL/DL/DB depth
+            # slots end up blank.
+            raw_pos = (row.get("depth_chart_position") or row.get("position") or "").strip().upper()
             canonical_pos = POSITION_MAP.get(raw_pos, raw_pos)
 
             player: dict[str, Any] = {

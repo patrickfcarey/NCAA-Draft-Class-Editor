@@ -44,6 +44,25 @@ public sealed class MaddenRosterCompiler
     /// </summary>
     public const uint CanonicalPgidBase = 16384;
 
+    /// <summary>
+    /// PositionMapper produces a single PPOS code per canonical position
+    /// (OT→LT=5, OG→LG=6, DE→LE=10, LB→MLB=14, S→FS=17). But Madden's depth
+    /// chart maintains L/R variants as separate PPOS values. Without this
+    /// map, DCHT entries at the R-side codes (RT=9, RG=8, RE=11, LOLB=13,
+    /// ROLB=15, SS=18) would never find a canonical player and end up with
+    /// PGID=0, leaving half the OL/DL/LB/S depth chart blank in-game.
+    /// We distribute canonical players across the variant codes round-robin
+    /// so the depth chart has plausible players on both sides.
+    /// </summary>
+    private static readonly Dictionary<uint, uint[]> PositionVariants = new()
+    {
+        [5]  = new uint[] { 5, 9 },        // OT  -> LT, RT
+        [6]  = new uint[] { 6, 8 },        // OG  -> LG, RG
+        [10] = new uint[] { 10, 11 },      // DE  -> LE, RE
+        [14] = new uint[] { 13, 14, 15 },  // LB  -> LOLB, MLB, ROLB
+        [17] = new uint[] { 17, 18 },      // S   -> FS, SS
+    };
+
     public MaddenRosterCompiler(PositionMapper positions)
     {
         _positions = positions;
@@ -125,6 +144,20 @@ public sealed class MaddenRosterCompiler
         if (dcht is not null)
         {
             RebuildDcht(canonical, dcht, pgids, resolvedTgid);
+        }
+
+        // Pass 4: clear INJY (injuries). The template-era injury rows still
+        // reference template-era PGIDs which no longer exist (we shifted all
+        // canonical PGIDs into the 16384+ range). Without clearing, Madden
+        // sees "Brian Urlacher out 4 weeks" type entries pointing at vanished
+        // players — could show stale injuries or crash the league menu.
+        // We have no year-specific injury data, so empty is the right state
+        // for a fresh-Week-1 franchise.
+        var injy = template.FindTable("INJY");
+        if (injy is not null)
+        {
+            injy.Records.Clear();
+            injy.Header.CurRecords = 0;
         }
 
         return template;
@@ -251,6 +284,9 @@ public sealed class MaddenRosterCompiler
         Dictionary<CanonicalTeam, uint> resolvedTgid)
     {
         // Precompute (template_TGID, PPOS) -> ordered list of PGIDs by OVR.
+        // For position groups that have multiple Madden codes (OT -> LT+RT etc.),
+        // distribute canonical players across the variants in round-robin order
+        // so both sides of the depth chart get plausible starters and backups.
         var depthLists = new Dictionary<(uint tgid, uint ppos), List<uint>>();
         foreach (var team in canonical.Teams)
         {
@@ -269,7 +305,24 @@ public sealed class MaddenRosterCompiler
             foreach (var (ppos, list) in byPpos)
             {
                 list.Sort((a, b) => b.ovr.CompareTo(a.ovr));
-                depthLists[(realTgid, ppos)] = list.Select(t => t.pgid).ToList();
+                var variants = PositionVariants.GetValueOrDefault(ppos, new uint[] { ppos });
+                if (variants.Length == 1)
+                {
+                    depthLists[(realTgid, ppos)] = list.Select(t => t.pgid).ToList();
+                }
+                else
+                {
+                    // Round-robin distribute by OVR ranking so each variant
+                    // gets a comparable mix: top OT -> LT[0], 2nd -> RT[0],
+                    // 3rd -> LT[1], 4th -> RT[1], etc.
+                    for (int i = 0; i < variants.Length; i++)
+                        depthLists[(realTgid, variants[i])] = new List<uint>();
+                    for (int i = 0; i < list.Count; i++)
+                    {
+                        var variant = variants[i % variants.Length];
+                        depthLists[(realTgid, variant)].Add(list[i].pgid);
+                    }
+                }
             }
         }
 

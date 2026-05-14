@@ -449,7 +449,7 @@
             "first": "Will",
             "last": "Pericak"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Colorado",
           "jerseyNumber": 73,
           "yearsPro": 5,
@@ -463,7 +463,7 @@
             "first": "Eric",
             "last": "Kush"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "California, Pa.",
           "jerseyNumber": 64,
           "age": 28,
@@ -625,7 +625,7 @@
             "first": "Kyle",
             "last": "Long"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Oregon",
           "jerseyNumber": 75,
           "age": 29,
@@ -692,7 +692,7 @@
             "first": "James",
             "last": "Stone"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Tennessee",
           "jerseyNumber": 62,
           "age": 26,
@@ -722,7 +722,7 @@
             "first": "Aaron",
             "last": "Lynch"
           },
-          "position": "LB",
+          "position": "DE",
           "college": "South Florida",
           "jerseyNumber": 99,
           "age": 25,
@@ -759,7 +759,7 @@
             "first": "Khalil",
             "last": "Mack"
           },
-          "position": "LB",
+          "position": "DE",
           "college": "Buffalo",
           "jerseyNumber": 52,
           "age": 27,
@@ -1107,7 +1107,7 @@
             "first": "Adrian",
             "last": "Amos"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Penn State",
           "jerseyNumber": 38,
           "age": 25,
@@ -1144,7 +1144,7 @@
             "first": "Michael",
             "last": "Burton"
           },
-          "position": "RB",
+          "position": "FB",
           "college": "Rutgers",
           "jerseyNumber": 46,
           "age": 26,
@@ -1378,7 +1378,7 @@
             "first": "Willie",
             "last": "Beavers"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Western Michigan",
           "jerseyNumber": 66,
           "age": 24,
@@ -1444,7 +1444,7 @@
             "first": "Roy",
             "last": "Robertson-Harris"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Texas-El Paso",
           "jerseyNumber": 95,
           "age": 25,
@@ -1481,7 +1481,7 @@
             "first": "Cody",
             "last": "Whitehair"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Kansas State",
           "jerseyNumber": 65,
           "age": 26,
@@ -1533,7 +1533,7 @@
             "first": "Deon",
             "last": "Bush"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Miami",
           "jerseyNumber": 26,
           "age": 25,
@@ -1607,7 +1607,7 @@
             "first": "DeAndre",
             "last": "Houston-Carson"
           },
-          "position": "CB",
+          "position": "S",
           "college": "William &amp; Mary",
           "jerseyNumber": 36,
           "age": 25,
@@ -1644,7 +1644,7 @@
             "first": "Jack",
             "last": "Allen"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Michigan State",
           "jerseyNumber": 66,
           "yearsPro": 2,
@@ -1695,7 +1695,7 @@
             "first": "Jonathan",
             "last": "Bullard"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Florida",
           "jerseyNumber": 90,
           "age": 24,
@@ -1947,7 +1947,7 @@
             "first": "Eddie",
             "last": "Jackson"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Alabama",
           "jerseyNumber": 39,
           "age": 24,
@@ -2058,7 +2058,7 @@
             "first": "Brandon",
             "last": "Greene"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Alabama",
           "jerseyNumber": 60,
           "age": 24,
@@ -2086,7 +2086,7 @@
             "first": "James",
             "last": "Daniels"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Iowa",
           "jerseyNumber": 68,
           "age": 20,
@@ -2437,7 +2437,7 @@
             "first": "Elijah",
             "last": "Norris"
           },
-          "position": "LB",
+          "position": "DE",
           "college": "Shepherd",
           "jerseyNumber": 50,
           "measurables": {
@@ -2463,7 +2463,7 @@
             "first": "Bunmi",
             "last": "Rotimi"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Old Dominion",
           "jerseyNumber": 74,
           "measurables": {
@@ -2512,7 +2512,7 @@
             "first": "Andrew",
             "last": "Trumbetti"
           },
-          "position": "LB",
+          "position": "DE",
           "college": "Notre Dame",
           "jerseyNumber": 48,
           "age": 22,
@@ -2798,7 +2798,7 @@
             "first": "Michael",
             "last": "Johnson"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Georgia Tech",
           "jerseyNumber": 90,
           "age": 31,
@@ -2909,7 +2909,7 @@
             "first": "Carlos",
             "last": "Dunlap"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Florida",
           "jerseyNumber": 96,
           "age": 29,
@@ -3035,7 +3035,7 @@
             "first": "Clint",
             "last": "Boling"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Georgia",
           "jerseyNumber": 65,
           "age": 29,
@@ -3198,7 +3198,7 @@
             "first": "T.J.",
             "last": "Johnson"
           },
-          "position": "OT",
+          "position": "C",
           "college": "South Carolina",
           "jerseyNumber": 60,
           "yearsPro": 5,
@@ -3271,7 +3271,7 @@
             "first": "Shawn",
             "last": "Williams"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Georgia",
           "jerseyNumber": 36,
           "age": 27,
@@ -3345,7 +3345,7 @@
             "first": "Trey",
             "last": "Hopkins"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Texas",
           "jerseyNumber": 66,
           "age": 26,
@@ -3849,7 +3849,7 @@
             "first": "Alex",
             "last": "Redmond"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "UCLA",
           "jerseyNumber": 62,
           "age": 23,
@@ -3923,7 +3923,7 @@
             "first": "Clayton",
             "last": "Fejedelem"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Illinois",
           "jerseyNumber": 42,
           "age": 25,
@@ -4190,7 +4190,7 @@
             "first": "Christian",
             "last": "Westerman"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Arizona State",
           "jerseyNumber": 63,
           "age": 25,
@@ -4648,7 +4648,7 @@
             "first": "Carl",
             "last": "Lawson"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Auburn",
           "jerseyNumber": 58,
           "age": 23,
@@ -4788,7 +4788,7 @@
             "first": "Brandon",
             "last": "Wilson"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Houston",
           "jerseyNumber": 40,
           "age": 24,
@@ -4914,7 +4914,7 @@
             "first": "Jordan",
             "last": "Willis"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Kansas State",
           "jerseyNumber": 75,
           "age": 23,
@@ -4965,7 +4965,7 @@
             "first": "Cory",
             "last": "Helms"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "South Carolina",
           "jerseyNumber": 69,
           "measurables": {
@@ -4978,7 +4978,7 @@
             "first": "Brad",
             "last": "Lundblade"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Oklahoma State",
           "jerseyNumber": 61,
           "age": 22,
@@ -5090,7 +5090,7 @@
             "first": "Rod",
             "last": "Taylor"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Mississippi",
           "jerseyNumber": 64,
           "age": 23,
@@ -5244,7 +5244,7 @@
             "first": "Jessie",
             "last": "Bates"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Wake Forest",
           "jerseyNumber": 30,
           "age": 21,
@@ -5405,7 +5405,7 @@
             "first": "Billy",
             "last": "Price"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Ohio State",
           "jerseyNumber": 53,
           "age": 23,
@@ -5441,7 +5441,7 @@
             "first": "Samuel",
             "last": "Hubbard"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Ohio State",
           "jerseyNumber": 94,
           "age": 23,
@@ -5761,7 +5761,7 @@
             "first": "Rafael",
             "last": "Bush"
           },
-          "position": "CB",
+          "position": "S",
           "college": "South Carolina State",
           "jerseyNumber": 20,
           "age": 31,
@@ -5813,7 +5813,7 @@
             "first": "Vladimir",
             "last": "Ducasse"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Massachusetts",
           "jerseyNumber": 62,
           "age": 30,
@@ -5850,7 +5850,7 @@
             "first": "Jerry",
             "last": "Hughes"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Texas Christian",
           "jerseyNumber": 55,
           "age": 30,
@@ -5998,7 +5998,7 @@
             "first": "Patrick",
             "last": "DiMarco"
           },
-          "position": "RB",
+          "position": "FB",
           "college": "South Carolina",
           "jerseyNumber": 42,
           "age": 29,
@@ -6109,7 +6109,7 @@
             "first": "Kelcie",
             "last": "McCray"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Arkansas State",
           "jerseyNumber": 37,
           "yearsPro": 6,
@@ -6247,7 +6247,7 @@
             "first": "Micah",
             "last": "Hyde"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Iowa",
           "jerseyNumber": 23,
           "age": 27,
@@ -6284,7 +6284,7 @@
             "first": "Jordan",
             "last": "Poyer"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Oregon State",
           "jerseyNumber": 21,
           "age": 27,
@@ -6571,7 +6571,7 @@
             "first": "Ryan",
             "last": "Groy"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Wisconsin",
           "jerseyNumber": 72,
           "age": 27,
@@ -6645,7 +6645,7 @@
             "first": "Trent",
             "last": "Murphy"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Stanford",
           "jerseyNumber": 93,
           "age": 27,
@@ -6682,7 +6682,7 @@
             "first": "Russell",
             "last": "Bodine"
           },
-          "position": "OT",
+          "position": "C",
           "college": "North Carolina",
           "jerseyNumber": 66,
           "age": 26,
@@ -6719,7 +6719,7 @@
             "first": "Terrence",
             "last": "Fede"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Marist",
           "jerseyNumber": 96,
           "yearsPro": 4,
@@ -6792,7 +6792,7 @@
             "first": "Owa",
             "last": "Odighizuwa"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "UCLA",
           "jerseyNumber": 59,
           "yearsPro": 3,
@@ -6954,7 +6954,7 @@
             "first": "Ryan",
             "last": "Russell"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Purdue",
           "jerseyNumber": 59,
           "yearsPro": 3,
@@ -7005,7 +7005,7 @@
             "first": "John",
             "last": "Miller"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Louisville",
           "jerseyNumber": 76,
           "age": 25,
@@ -7116,7 +7116,7 @@
             "first": "Eddie",
             "last": "Yarbrough"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Wyoming",
           "jerseyNumber": 54,
           "age": 25,
@@ -7278,7 +7278,7 @@
             "first": "Shaq",
             "last": "Lawson"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Clemson",
           "jerseyNumber": 90,
           "age": 24,
@@ -7751,7 +7751,7 @@
             "first": "Sam",
             "last": "Rogers"
           },
-          "position": "RB",
+          "position": "FB",
           "college": "Virginia Tech",
           "jerseyNumber": 36,
           "yearsPro": 1,
@@ -7887,7 +7887,7 @@
             "first": "William",
             "last": "Teller"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Virginia Tech",
           "jerseyNumber": 75,
           "age": 23,
@@ -8005,7 +8005,7 @@
             "first": "Mike",
             "last": "Love"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "South Florida",
           "jerseyNumber": 56,
           "age": 24,
@@ -8060,7 +8060,7 @@
             "first": "Mat",
             "last": "Boesen"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Texas Christian",
           "jerseyNumber": 43,
           "measurables": {
@@ -8087,7 +8087,7 @@
             "first": "Albert",
             "last": "Havili"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Eastern Washington",
           "jerseyNumber": 97,
           "measurables": {
@@ -8136,7 +8136,7 @@
             "first": "Zach",
             "last": "Olstad"
           },
-          "position": "RB",
+          "position": "FB",
           "college": "Winona State",
           "jerseyNumber": 36,
           "measurables": {
@@ -8295,7 +8295,7 @@
             "first": "Darian",
             "last": "Stewart"
           },
-          "position": "CB",
+          "position": "S",
           "college": "South Carolina",
           "jerseyNumber": 26,
           "age": 30,
@@ -8547,7 +8547,7 @@
             "first": "Ronald",
             "last": "Leary"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Memphis",
           "jerseyNumber": 65,
           "age": 29,
@@ -8599,7 +8599,7 @@
             "first": "Gino",
             "last": "Gradkowski"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Delaware",
           "jerseyNumber": 75,
           "age": 29,
@@ -8614,7 +8614,7 @@
             "first": "Derek",
             "last": "Wolfe"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Cincinnati",
           "jerseyNumber": 95,
           "age": 28,
@@ -8725,7 +8725,7 @@
             "first": "Shamarko",
             "last": "Thomas"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Syracuse",
           "jerseyNumber": 38,
           "age": 27,
@@ -8740,7 +8740,7 @@
             "first": "Stansly",
             "last": "Maponga"
           },
-          "position": "LB",
+          "position": "DE",
           "college": "Texas Christian",
           "jerseyNumber": 59,
           "yearsPro": 5,
@@ -8923,7 +8923,7 @@
             "first": "Zachariah",
             "last": "Kerr"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Delaware",
           "jerseyNumber": 92,
           "age": 28,
@@ -8952,7 +8952,7 @@
             "first": "Shelby",
             "last": "Harris"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Illinois State",
           "jerseyNumber": 96,
           "age": 27,
@@ -9026,7 +9026,7 @@
             "first": "Matt",
             "last": "Paradis"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Boise State",
           "jerseyNumber": 61,
           "age": 28,
@@ -9137,7 +9137,7 @@
             "first": "William",
             "last": "Turner"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "North Dakota State",
           "jerseyNumber": 77,
           "age": 26,
@@ -9489,7 +9489,7 @@
             "first": "Max",
             "last": "Garcia"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Florida",
           "jerseyNumber": 76,
           "age": 26,
@@ -9563,7 +9563,7 @@
             "first": "Shane",
             "last": "Ray"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Missouri",
           "jerseyNumber": 56,
           "age": 25,
@@ -9637,7 +9637,7 @@
             "first": "Jeremiah",
             "last": "Poutasi"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Utah",
           "jerseyNumber": 74,
           "yearsPro": 3,
@@ -9857,7 +9857,7 @@
             "first": "William",
             "last": "Parks"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Arizona",
           "jerseyNumber": 34,
           "age": 24,
@@ -9872,7 +9872,7 @@
             "first": "Justin",
             "last": "Simmons"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Boston College",
           "jerseyNumber": 31,
           "age": 24,
@@ -9946,7 +9946,7 @@
             "first": "Connor",
             "last": "McGovern"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Missouri",
           "jerseyNumber": 60,
           "age": 25,
@@ -10019,7 +10019,7 @@
             "first": "Adam",
             "last": "Gotsis"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Georgia Tech",
           "jerseyNumber": 99,
           "age": 25,
@@ -10537,7 +10537,7 @@
             "first": "Avery",
             "last": "Gennesy"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Texas A&M",
           "jerseyNumber": 67,
           "age": 24,
@@ -10574,7 +10574,7 @@
             "first": "DeMarcus",
             "last": "Walker"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Florida State",
           "jerseyNumber": 57,
           "age": 23,
@@ -10626,7 +10626,7 @@
             "first": "Jamal",
             "last": "Carter"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Miami",
           "jerseyNumber": 20,
           "age": 24,
@@ -10811,7 +10811,7 @@
             "first": "Austin",
             "last": "Schlottmann"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Texas Christian",
           "jerseyNumber": 71,
           "age": 22,
@@ -10997,7 +10997,7 @@
             "first": "Samuel",
             "last": "Jones"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Arizona State",
           "jerseyNumber": 70,
           "age": 22,
@@ -11095,7 +11095,7 @@
             "first": "Antonio",
             "last": "Simmons"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Georgia Tech",
           "jerseyNumber": 69,
           "measurables": {
@@ -11108,7 +11108,7 @@
             "first": "Nico",
             "last": "Falah"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Southern California",
           "jerseyNumber": 74,
           "age": 23,
@@ -11193,7 +11193,7 @@
             "first": "Bradley",
             "last": "Chubb"
           },
-          "position": "LB",
+          "position": "DE",
           "college": "North Carolina State",
           "jerseyNumber": 55,
           "age": 22,
@@ -11491,7 +11491,7 @@
             "first": "Kevin",
             "last": "Zeitler"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Wisconsin",
           "jerseyNumber": 70,
           "age": 28,
@@ -11565,7 +11565,7 @@
             "first": "Christopher",
             "last": "Hubbard"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Alabama-Birmingham",
           "jerseyNumber": 74,
           "age": 27,
@@ -11647,7 +11647,7 @@
             "first": "Earl",
             "last": "Watford"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "James Madison",
           "jerseyNumber": 71,
           "age": 28,
@@ -11831,7 +11831,7 @@
             "first": "Chris",
             "last": "Smith"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Arkansas",
           "jerseyNumber": 50,
           "age": 26,
@@ -12009,7 +12009,7 @@
             "first": "Joel",
             "last": "Bitonio"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Nevada",
           "jerseyNumber": 75,
           "age": 26,
@@ -12046,7 +12046,7 @@
             "first": "Jermaine",
             "last": "Whitehead"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Auburn",
           "jerseyNumber": 35,
           "age": 25,
@@ -12157,7 +12157,7 @@
             "first": "Derron",
             "last": "Smith"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Fresno State",
           "jerseyNumber": 36,
           "yearsPro": 3,
@@ -12444,7 +12444,7 @@
             "first": "Kyle",
             "last": "Friend"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Temple",
           "jerseyNumber": 74,
           "age": 24,
@@ -12531,7 +12531,7 @@
             "first": "Lenny",
             "last": "Jones"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Nevada",
           "jerseyNumber": 91,
           "age": 27,
@@ -12583,7 +12583,7 @@
             "first": "Emmanuel",
             "last": "Ogbah"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Oklahoma State",
           "jerseyNumber": 90,
           "age": 24,
@@ -12620,7 +12620,7 @@
             "first": "Derrick",
             "last": "Kindred"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Texas Christian",
           "jerseyNumber": 26,
           "age": 24,
@@ -12746,7 +12746,7 @@
             "first": "Jake",
             "last": "Eldrenkamp"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Washington",
           "jerseyNumber": 60,
           "age": 24,
@@ -12783,7 +12783,7 @@
             "first": "Kyle",
             "last": "Kalis"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Michigan",
           "jerseyNumber": 68,
           "age": 24,
@@ -12857,7 +12857,7 @@
             "first": "Geoff",
             "last": "Gray"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Manitoba (Canada)",
           "jerseyNumber": 79,
           "yearsPro": 1,
@@ -13203,7 +13203,7 @@
             "first": "Marquez",
             "last": "Williams"
           },
-          "position": "RB",
+          "position": "FB",
           "college": "Miami (Fla.)",
           "jerseyNumber": 42,
           "yearsPro": 1,
@@ -13239,7 +13239,7 @@
             "first": "Myles",
             "last": "Garrett"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Texas A&amp;M",
           "jerseyNumber": 95,
           "age": 22,
@@ -13276,7 +13276,7 @@
             "first": "Jabrill",
             "last": "Peppers"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Michigan",
           "jerseyNumber": 22,
           "age": 22,
@@ -13408,7 +13408,7 @@
             "first": "Marcell",
             "last": "Frazier"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Missouri",
           "jerseyNumber": 57,
           "measurables": {
@@ -13497,7 +13497,7 @@
             "first": "Fred",
             "last": "Lauina"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Oregon State",
           "jerseyNumber": 60,
           "measurables": {
@@ -13779,7 +13779,7 @@
             "first": "Mason",
             "last": "Gentry"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Southern Methodist",
           "jerseyNumber": 79,
           "age": 24,
@@ -13833,7 +13833,7 @@
             "first": "Chad",
             "last": "Thomas"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Miami",
           "jerseyNumber": 92,
           "age": 22,
@@ -14165,7 +14165,7 @@
             "first": "Evan",
             "last": "Smith"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Idaho State",
           "jerseyNumber": 62,
           "age": 32,
@@ -14328,7 +14328,7 @@
             "first": "Jason",
             "last": "Pierre-Paul"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "South Florida",
           "jerseyNumber": 90,
           "age": 29,
@@ -14365,7 +14365,7 @@
             "first": "Chris",
             "last": "Conte"
           },
-          "position": "CB",
+          "position": "S",
           "college": "California",
           "jerseyNumber": 23,
           "age": 29,
@@ -14439,7 +14439,7 @@
             "first": "Adam",
             "last": "Gettis"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Iowa",
           "jerseyNumber": 72,
           "age": 29,
@@ -14491,7 +14491,7 @@
             "first": "Vincent",
             "last": "Curry"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Marshall",
           "jerseyNumber": 97,
           "age": 30,
@@ -14580,7 +14580,7 @@
             "first": "Austin",
             "last": "Johnson"
           },
-          "position": "RB",
+          "position": "FB",
           "college": "Tennessee",
           "jerseyNumber": 46,
           "yearsPro": 6,
@@ -14653,7 +14653,7 @@
             "first": "Ryan",
             "last": "Jensen"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Colorado State-Pueblo",
           "jerseyNumber": 66,
           "age": 27,
@@ -14727,7 +14727,7 @@
             "first": "William",
             "last": "Gholston"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Michigan State",
           "jerseyNumber": 92,
           "age": 27,
@@ -14964,7 +14964,7 @@
             "first": "Will",
             "last": "Clarke"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "West Virginia",
           "jerseyNumber": 95,
           "age": 27,
@@ -15089,7 +15089,7 @@
             "first": "Michael",
             "last": "Liedtke"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Illinois State",
           "jerseyNumber": 67,
           "age": 26,
@@ -15318,7 +15318,7 @@
             "first": "Alexander",
             "last": "Marpet"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Hobart",
           "jerseyNumber": 74,
           "age": 25,
@@ -15420,7 +15420,7 @@
             "first": "Andrew",
             "last": "Adams"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Connecticut",
           "jerseyNumber": 26,
           "age": 25,
@@ -15509,7 +15509,7 @@
             "first": "Isaiah",
             "last": "Johnson"
           },
-          "position": "CB",
+          "position": "S",
           "college": "South Carolina",
           "jerseyNumber": 39,
           "age": 25,
@@ -15546,7 +15546,7 @@
             "first": "DaVonte",
             "last": "Lambert"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Auburn",
           "jerseyNumber": 75,
           "age": 24,
@@ -15583,7 +15583,7 @@
             "first": "Channing",
             "last": "Ward"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Mississippi",
           "jerseyNumber": 71,
           "age": 25,
@@ -15856,7 +15856,7 @@
             "first": "Drew",
             "last": "Iddings"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "South Dakota",
           "jerseyNumber": 71,
           "yearsPro": 2,
@@ -15907,7 +15907,7 @@
             "first": "Noah",
             "last": "Spence"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Eastern Kentucky",
           "jerseyNumber": 57,
           "age": 24,
@@ -16017,7 +16017,7 @@
             "first": "Carl",
             "last": "Nassib"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Penn State",
           "jerseyNumber": 94,
           "age": 25,
@@ -16325,7 +16325,7 @@
             "first": "Pat",
             "last": "O'Connor"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Eastern Michigan",
           "jerseyNumber": 79,
           "age": 24,
@@ -16414,7 +16414,7 @@
             "first": "Justin",
             "last": "Evans"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Texas A&amp;M",
           "jerseyNumber": 21,
           "age": 23,
@@ -16713,7 +16713,7 @@
             "first": "Alec",
             "last": "James"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Wisconsin",
           "jerseyNumber": 94,
           "age": 23,
@@ -16816,7 +16816,7 @@
             "first": "Demone",
             "last": "Harris"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Buffalo",
           "jerseyNumber": 71,
           "age": 22,
@@ -16870,7 +16870,7 @@
             "first": "Evan",
             "last": "Perrizo"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Minnesota State",
           "jerseyNumber": 78,
           "measurables": {
@@ -16924,7 +16924,7 @@
             "first": "Alexander",
             "last": "Cappa"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Humboldt State",
           "jerseyNumber": 65,
           "age": 23,
@@ -16938,7 +16938,7 @@
             "first": "Ruben",
             "last": "Holcomb"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Indianapolis",
           "jerseyNumber": 70,
           "age": 23,
@@ -17210,7 +17210,7 @@
             "first": "Antoine",
             "last": "Bethea"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Howard",
           "jerseyNumber": 41,
           "age": 34,
@@ -17247,7 +17247,7 @@
             "first": "A.Q.",
             "last": "Shipley"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Penn State",
           "jerseyNumber": 53,
           "age": 32,
@@ -17336,7 +17336,7 @@
             "first": "Arthur",
             "last": "Moats"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "James Madison",
           "jerseyNumber": 93,
           "age": 30,
@@ -17388,7 +17388,7 @@
             "first": "Mike",
             "last": "Iupati"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Idaho",
           "jerseyNumber": 76,
           "age": 31,
@@ -17602,7 +17602,7 @@
             "first": "Derrick",
             "last": "Coleman"
           },
-          "position": "RB",
+          "position": "FB",
           "college": "UCLA",
           "jerseyNumber": 32,
           "age": 27,
@@ -17654,7 +17654,7 @@
             "first": "Chandler",
             "last": "Jones"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Syracuse",
           "jerseyNumber": 55,
           "age": 28,
@@ -17852,7 +17852,7 @@
             "first": "Benson",
             "last": "Mayowa"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Idaho",
           "jerseyNumber": 91,
           "age": 27,
@@ -17956,7 +17956,7 @@
             "first": "Dayario",
             "last": "Swearinger"
           },
-          "position": "CB",
+          "position": "S",
           "college": "South Carolina",
           "jerseyNumber": 35,
           "age": 27,
@@ -17971,7 +17971,7 @@
             "first": "Justin",
             "last": "Pugh"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Syracuse",
           "jerseyNumber": 67,
           "age": 28,
@@ -18008,7 +18008,7 @@
             "first": "Jeremy",
             "last": "Vujnovich"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Louisiana College",
           "jerseyNumber": 68,
           "age": 27,
@@ -18081,7 +18081,7 @@
             "first": "Josh",
             "last": "Allen"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Louisiana-Monroe",
           "jerseyNumber": 66,
           "yearsPro": 4,
@@ -18154,7 +18154,7 @@
             "first": "Zach",
             "last": "Moore"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Concordia-St. Paul",
           "jerseyNumber": 56,
           "age": 27,
@@ -18191,7 +18191,7 @@
             "first": "Jayestin",
             "last": "Boston"
           },
-          "position": "CB",
+          "position": "S",
           "college": "North Carolina",
           "jerseyNumber": 33,
           "age": 26,
@@ -18553,7 +18553,7 @@
             "first": "Cap",
             "last": "Capi"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Akron",
           "jerseyNumber": 61,
           "yearsPro": 3,
@@ -18596,7 +18596,7 @@
             "first": "Markus",
             "last": "Golden"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Missouri",
           "jerseyNumber": 44,
           "age": 27,
@@ -18707,7 +18707,7 @@
             "first": "Daniel",
             "last": "Munyer"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Colorado",
           "jerseyNumber": 62,
           "age": 26,
@@ -18855,7 +18855,7 @@
             "first": "Vontarrius",
             "last": "Dora"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Louisiana Tech",
           "jerseyNumber": 54,
           "age": 25,
@@ -18892,7 +18892,7 @@
             "first": "Bryson",
             "last": "Albright"
           },
-          "position": "DT",
+          "position": "LB",
           "college": "Miami (Ohio)",
           "jerseyNumber": 54,
           "yearsPro": 2,
@@ -19414,7 +19414,7 @@
             "first": "Cameron",
             "last": "Malveaux"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Houston",
           "jerseyNumber": 94,
           "age": 24,
@@ -19451,7 +19451,7 @@
             "first": "Praise",
             "last": "Martin-Oguike"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Temple",
           "jerseyNumber": 76,
           "yearsPro": 1,
@@ -19546,7 +19546,7 @@
             "first": "Greg",
             "last": "Pyke"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Georgia",
           "jerseyNumber": 68,
           "yearsPro": 1,
@@ -19596,7 +19596,7 @@
             "first": "William",
             "last": "Holden"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Vanderbilt",
           "jerseyNumber": 69,
           "age": 24,
@@ -19715,7 +19715,7 @@
             "first": "Budda",
             "last": "Baker"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Washington",
           "jerseyNumber": 36,
           "age": 22,
@@ -19831,7 +19831,7 @@
             "first": "Moubarak",
             "last": "Djeri"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "No College",
           "jerseyNumber": 61,
           "measurables": {
@@ -19866,7 +19866,7 @@
             "first": "Coleman",
             "last": "Shelton"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Washington",
           "jerseyNumber": 77,
           "age": 23,
@@ -19880,7 +19880,7 @@
             "first": "Colby",
             "last": "Gossett"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Appalachian State",
           "jerseyNumber": 78,
           "age": 23,
@@ -19916,7 +19916,7 @@
             "first": "Justin",
             "last": "Evans"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "South Carolina State",
           "jerseyNumber": 63,
           "age": 23,
@@ -20051,7 +20051,7 @@
             "first": "Will",
             "last": "House"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Southern Nazarene",
           "jerseyNumber": 60,
           "age": 23,
@@ -20248,7 +20248,7 @@
             "first": "Ezekiel",
             "last": "Turner"
           },
-          "position": "LB",
+          "position": "CB",
           "college": "Washington",
           "jerseyNumber": 47,
           "age": 22,
@@ -20310,7 +20310,7 @@
             "first": "Zack",
             "last": "Golditch"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Colorado State",
           "jerseyNumber": 75,
           "age": 23,
@@ -20494,7 +20494,7 @@
             "first": "Mason",
             "last": "Cole"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Michigan",
           "jerseyNumber": 64,
           "age": 22,
@@ -20720,7 +20720,7 @@
             "first": "James",
             "last": "Pouncey"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Florida",
           "jerseyNumber": 53,
           "age": 29,
@@ -20809,7 +20809,7 @@
             "first": "Melvin",
             "last": "Ingram"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "South Carolina",
           "jerseyNumber": 54,
           "age": 29,
@@ -20994,7 +20994,7 @@
             "first": "Jahleel",
             "last": "Addae"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Central Michigan",
           "jerseyNumber": 37,
           "age": 28,
@@ -21083,7 +21083,7 @@
             "first": "Jaylen",
             "last": "Watkins"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Florida",
           "jerseyNumber": 27,
           "age": 26,
@@ -21157,7 +21157,7 @@
             "first": "Michael",
             "last": "Schofield"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Michigan",
           "jerseyNumber": 75,
           "age": 27,
@@ -21194,7 +21194,7 @@
             "first": "Adrian",
             "last": "Phillips"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Texas",
           "jerseyNumber": 31,
           "age": 26,
@@ -21231,7 +21231,7 @@
             "first": "Brett",
             "last": "Boyko"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Nevada-Las Vegas",
           "jerseyNumber": 67,
           "yearsPro": 3,
@@ -21665,7 +21665,7 @@
             "first": "Dexter",
             "last": "McCoil"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Tulsa",
           "jerseyNumber": 14,
           "age": 26,
@@ -21680,7 +21680,7 @@
             "first": "Anthony",
             "last": "Lanier"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Alabama A&M",
           "jerseyNumber": 90,
           "age": 25,
@@ -21717,7 +21717,7 @@
             "first": "Tyrone",
             "last": "Holmes"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Montana",
           "jerseyNumber": 54,
           "age": 24,
@@ -21841,7 +21841,7 @@
             "first": "Cole",
             "last": "Toner"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Harvard",
           "jerseyNumber": 64,
           "age": 24,
@@ -21915,7 +21915,7 @@
             "first": "Derek",
             "last": "Watt"
           },
-          "position": "RB",
+          "position": "FB",
           "college": "Wisconsin",
           "jerseyNumber": 34,
           "age": 25,
@@ -22187,7 +22187,7 @@
             "first": "Joseph",
             "last": "Bosa"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Ohio State",
           "jerseyNumber": 99,
           "age": 23,
@@ -22306,7 +22306,7 @@
             "first": "Forrest",
             "last": "Lamp"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Western Kentucky",
           "jerseyNumber": 77,
           "age": 24,
@@ -22395,7 +22395,7 @@
             "first": "Isaac",
             "last": "Rochell"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Notre Dame",
           "jerseyNumber": 98,
           "age": 23,
@@ -22647,7 +22647,7 @@
             "first": "Daniel",
             "last": "Feeney"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Indiana",
           "jerseyNumber": 66,
           "age": 24,
@@ -22662,7 +22662,7 @@
             "first": "Rayshawn",
             "last": "Jenkins"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Miami",
           "jerseyNumber": 23,
           "age": 24,
@@ -22714,7 +22714,7 @@
             "first": "Whitney",
             "last": "Richardson"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Lane",
           "jerseyNumber": 90,
           "yearsPro": 1,
@@ -22841,7 +22841,7 @@
             "first": "Scott",
             "last": "Quessenberry"
           },
-          "position": "OT",
+          "position": "C",
           "college": "UCLA",
           "jerseyNumber": 61,
           "age": 23,
@@ -23108,7 +23108,7 @@
             "first": "Anthony",
             "last": "Manzo-Lewis"
           },
-          "position": "RB",
+          "position": "FB",
           "college": "Albany",
           "jerseyNumber": 40,
           "measurables": {
@@ -23291,7 +23291,7 @@
             "first": "Pat",
             "last": "Afriyie"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Colgate",
           "jerseyNumber": 97,
           "age": 22,
@@ -23333,7 +23333,7 @@
             "first": "Derwin",
             "last": "James"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Florida State",
           "jerseyNumber": 33,
           "age": 22,
@@ -23369,7 +23369,7 @@
             "first": "Erick",
             "last": "Wren"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Oklahoma",
           "jerseyNumber": 74,
           "measurables": {
@@ -23551,7 +23551,7 @@
             "first": "James",
             "last": "Berry"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Tennessee",
           "jerseyNumber": 29,
           "age": 29,
@@ -23566,7 +23566,7 @@
             "first": "Jarvis",
             "last": "Jenkins"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Clemson",
           "jerseyNumber": 94,
           "age": 30,
@@ -23640,7 +23640,7 @@
             "first": "Allen",
             "last": "Bailey"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Miami",
           "jerseyNumber": 97,
           "age": 29,
@@ -23677,7 +23677,7 @@
             "first": "Anthony",
             "last": "Sherman"
           },
-          "position": "RB",
+          "position": "FB",
           "college": "Connecticut",
           "jerseyNumber": 42,
           "age": 29,
@@ -23714,7 +23714,7 @@
             "first": "Ron",
             "last": "Parker"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Newberry",
           "jerseyNumber": 38,
           "age": 31,
@@ -23751,7 +23751,7 @@
             "first": "Robert",
             "last": "Golden"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Arizona",
           "jerseyNumber": 22,
           "yearsPro": 6,
@@ -23824,7 +23824,7 @@
             "first": "Jeffery",
             "last": "Allen"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Illinois",
           "jerseyNumber": 73,
           "age": 28,
@@ -24220,7 +24220,7 @@
             "first": "Daniel",
             "last": "Sorensen"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Brigham Young",
           "jerseyNumber": 49,
           "age": 28,
@@ -24368,7 +24368,7 @@
             "first": "Laurent",
             "last": "Duvernay-Tardif"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "McGill",
           "jerseyNumber": 76,
           "age": 27,
@@ -24478,7 +24478,7 @@
             "first": "Donald",
             "last": "Ford"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Auburn",
           "jerseyNumber": 55,
           "age": 27,
@@ -24582,7 +24582,7 @@
             "first": "Nate",
             "last": "Orchard"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Utah",
           "jerseyNumber": 54,
           "age": 25,
@@ -24693,7 +24693,7 @@
             "first": "Mitchell",
             "last": "Morse"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Missouri",
           "jerseyNumber": 61,
           "age": 26,
@@ -24708,7 +24708,7 @@
             "first": "Austin",
             "last": "Reiter"
           },
-          "position": "OT",
+          "position": "C",
           "college": "South Florida",
           "jerseyNumber": 62,
           "age": 26,
@@ -24760,7 +24760,7 @@
             "first": "Cameron",
             "last": "Erving"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Florida State",
           "jerseyNumber": 75,
           "age": 26,
@@ -25034,7 +25034,7 @@
             "first": "Dillon",
             "last": "Gordon"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "LSU",
           "jerseyNumber": 64,
           "age": 24,
@@ -25071,7 +25071,7 @@
             "first": "Eric",
             "last": "Murray"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Minnesota",
           "jerseyNumber": 21,
           "age": 24,
@@ -25197,7 +25197,7 @@
             "first": "Ethan",
             "last": "Cooper"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Indiana",
           "jerseyNumber": 62,
           "yearsPro": 1,
@@ -25270,7 +25270,7 @@
             "first": "Leon III",
             "last": "McQuay"
           },
-          "position": "CB",
+          "position": "S",
           "college": "USC",
           "jerseyNumber": 34,
           "age": 23,
@@ -25366,7 +25366,7 @@
             "first": "Algernon",
             "last": "Brown"
           },
-          "position": "RB",
+          "position": "FB",
           "college": "Brigham Young",
           "jerseyNumber": 30,
           "yearsPro": 1,
@@ -25468,7 +25468,7 @@
             "first": "Tanoh",
             "last": "Kpassagnon"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Villanova",
           "jerseyNumber": 92,
           "age": 24,
@@ -25542,7 +25542,7 @@
             "first": "Chris",
             "last": "Cooper"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Stony Brook",
           "jerseyNumber": 37,
           "age": 24,
@@ -25556,7 +25556,7 @@
             "first": "Alex",
             "last": "Officer"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Pittsburgh",
           "measurables": {
             "heightIn": 76,
@@ -25720,7 +25720,7 @@
             "first": "James",
             "last": "Murray"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Holy Cross",
           "jerseyNumber": 67,
           "age": 23,
@@ -25898,7 +25898,7 @@
             "first": "Tejan",
             "last": "Koroma"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Brigham Young",
           "jerseyNumber": 73,
           "age": 22,
@@ -26033,7 +26033,7 @@
             "first": "Reginald",
             "last": "McKenzie"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Tennessee",
           "jerseyNumber": 66,
           "age": 21,
@@ -26227,7 +26227,7 @@
             "first": "Matt",
             "last": "Slauson"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Nebraska",
           "jerseyNumber": 68,
           "age": 32,
@@ -26264,7 +26264,7 @@
             "first": "Mike",
             "last": "Mitchell"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Ohio U.",
           "jerseyNumber": 34,
           "age": 31,
@@ -26368,7 +26368,7 @@
             "first": "Jabaal",
             "last": "Sheard"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Pittsburgh",
           "jerseyNumber": 93,
           "age": 29,
@@ -26671,7 +26671,7 @@
             "first": "James",
             "last": "Wilcox"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Georgia Southern",
           "jerseyNumber": 37,
           "age": 27,
@@ -26686,7 +26686,7 @@
             "first": "Josh",
             "last": "Andrews"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Oregon State",
           "jerseyNumber": 63,
           "age": 27,
@@ -26826,7 +26826,7 @@
             "first": "Anthony",
             "last": "Johnson"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "LSU",
           "jerseyNumber": 96,
           "age": 25,
@@ -26937,7 +26937,7 @@
             "first": "Chris",
             "last": "McCain"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "California",
           "jerseyNumber": 76,
           "age": 26,
@@ -27144,7 +27144,7 @@
             "first": "Clayton",
             "last": "Geathers"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Central Florida",
           "jerseyNumber": 26,
           "age": 26,
@@ -27181,7 +27181,7 @@
             "first": "Mark",
             "last": "Glowinski"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "West Virginia",
           "jerseyNumber": 64,
           "age": 26,
@@ -27218,7 +27218,7 @@
             "first": "Robenson",
             "last": "Therezie"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Auburn",
           "jerseyNumber": 40,
           "age": 27,
@@ -27307,7 +27307,7 @@
             "first": "Ronald",
             "last": "Martin"
           },
-          "position": "CB",
+          "position": "S",
           "college": "LSU",
           "jerseyNumber": 20,
           "age": 25,
@@ -27344,7 +27344,7 @@
             "first": "Geneo",
             "last": "Grissom"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Oklahoma",
           "jerseyNumber": 75,
           "age": 26,
@@ -27381,7 +27381,7 @@
             "first": "Corey",
             "last": "Moore"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Georgia",
           "jerseyNumber": 36,
           "age": 25,
@@ -27579,7 +27579,7 @@
             "first": "Ryan",
             "last": "Kelly"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Alabama",
           "jerseyNumber": 78,
           "age": 25,
@@ -27668,7 +27668,7 @@
             "first": "Matthias",
             "last": "Farley"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Notre Dame",
           "jerseyNumber": 41,
           "age": 26,
@@ -27742,7 +27742,7 @@
             "first": "Evan",
             "last": "Boehm"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Missouri",
           "jerseyNumber": 67,
           "age": 25,
@@ -27942,7 +27942,7 @@
             "first": "Le'Raven",
             "last": "Clark"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Texas Tech",
           "jerseyNumber": 62,
           "age": 25,
@@ -28046,7 +28046,7 @@
             "first": "Brandon",
             "last": "Banks"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "North Carolina-Charlotte",
           "jerseyNumber": 54,
           "yearsPro": 1,
@@ -28060,7 +28060,7 @@
             "first": "Deyshawn",
             "last": "Bond"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Cincinnati",
           "jerseyNumber": 69,
           "yearsPro": 1,
@@ -28378,7 +28378,7 @@
             "first": "Carroll",
             "last": "Phillips"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Illinois",
           "jerseyNumber": 59,
           "age": 25,
@@ -28444,7 +28444,7 @@
             "first": "Malik",
             "last": "Hooker"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Ohio State",
           "jerseyNumber": 29,
           "age": 22,
@@ -28592,7 +28592,7 @@
             "first": "Al-Quadin",
             "last": "Muhammad"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Miami",
           "jerseyNumber": 97,
           "age": 23,
@@ -28692,7 +28692,7 @@
             "first": "George",
             "last": "Odum"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Central Arkansas",
           "jerseyNumber": 30,
           "age": 24,
@@ -28804,7 +28804,7 @@
             "first": "Nick",
             "last": "Callender"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Colorado State",
           "jerseyNumber": 63,
           "yearsPro": 1,
@@ -28818,7 +28818,7 @@
             "first": "Quenton",
             "last": "Nelson"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Notre Dame",
           "jerseyNumber": 56,
           "age": 22,
@@ -28854,7 +28854,7 @@
             "first": "Kemoko",
             "last": "Turay"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Rutgers",
           "jerseyNumber": 57,
           "age": 23,
@@ -29146,7 +29146,7 @@
             "first": "Braden",
             "last": "Smith"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Auburn",
           "jerseyNumber": 72,
           "age": 22,
@@ -29381,7 +29381,7 @@
             "first": "Joseph",
             "last": "Looney"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Wake Forest",
           "jerseyNumber": 73,
           "age": 28,
@@ -29396,7 +29396,7 @@
             "first": "Jamize",
             "last": "Olawale"
           },
-          "position": "RB",
+          "position": "FB",
           "college": "North Texas",
           "jerseyNumber": 49,
           "age": 29,
@@ -29433,7 +29433,7 @@
             "first": "Tyrone",
             "last": "Crawford"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Boise State",
           "jerseyNumber": 98,
           "age": 28,
@@ -29470,7 +29470,7 @@
             "first": "Jeffrey",
             "last": "Heath"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Saginaw Valley State",
           "jerseyNumber": 38,
           "age": 27,
@@ -29574,7 +29574,7 @@
             "first": "Travis",
             "last": "Frederick"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Wisconsin",
           "jerseyNumber": 72,
           "age": 27,
@@ -29611,7 +29611,7 @@
             "first": "Datone",
             "last": "Jones"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "UCLA",
           "jerseyNumber": 56,
           "age": 28,
@@ -29869,7 +29869,7 @@
             "first": "Kadeem",
             "last": "Edwards"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Tennessee State",
           "jerseyNumber": 78,
           "age": 27,
@@ -29906,7 +29906,7 @@
             "first": "Marcus",
             "last": "Martin"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Southern California",
           "jerseyNumber": 60,
           "age": 24,
@@ -29958,7 +29958,7 @@
             "first": "Zachary",
             "last": "Martin"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Notre Dame",
           "jerseyNumber": 70,
           "age": 27,
@@ -29973,7 +29973,7 @@
             "first": "Xavier",
             "last": "Su'a-Filo"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "UCLA",
           "jerseyNumber": 76,
           "age": 27,
@@ -30010,7 +30010,7 @@
             "first": "Demarcus",
             "last": "Lawrence"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Boise State",
           "jerseyNumber": 90,
           "age": 26,
@@ -30304,7 +30304,7 @@
             "first": "David",
             "last": "Irving"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Iowa State",
           "jerseyNumber": 95,
           "age": 25,
@@ -30415,7 +30415,7 @@
             "first": "Randy",
             "last": "Gregory"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Nebraska",
           "jerseyNumber": 94,
           "age": 25,
@@ -30526,7 +30526,7 @@
             "first": "Cody",
             "last": "Wichmann"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Fresno State",
           "jerseyNumber": 68,
           "age": 26,
@@ -30577,7 +30577,7 @@
             "first": "Adam",
             "last": "Redmond"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Harvard",
           "jerseyNumber": 61,
           "age": 25,
@@ -30629,7 +30629,7 @@
             "first": "Parker",
             "last": "Ehinger"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Cincinnati",
           "jerseyNumber": 79,
           "age": 25,
@@ -30703,7 +30703,7 @@
             "first": "Oni",
             "last": "Omoile"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Iowa State",
           "jerseyNumber": 60,
           "age": 25,
@@ -30829,7 +30829,7 @@
             "first": "Kavon",
             "last": "Frazier"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Central Michigan",
           "jerseyNumber": 35,
           "age": 24,
@@ -30977,7 +30977,7 @@
             "first": "Charles",
             "last": "Tapper"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Oklahoma",
           "jerseyNumber": 99,
           "yearsPro": 2,
@@ -31028,7 +31028,7 @@
             "first": "Darian",
             "last": "Thompson"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Boise State",
           "jerseyNumber": 20,
           "age": 24,
@@ -31116,7 +31116,7 @@
             "first": "Dustin",
             "last": "Stanton"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Oregon State",
           "jerseyNumber": 67,
           "age": 24,
@@ -31131,7 +31131,7 @@
             "first": "Joby",
             "last": "Saint Fleur"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Northwestern Oklahoma State",
           "jerseyNumber": 62,
           "yearsPro": 1,
@@ -31159,7 +31159,7 @@
             "first": "Damien",
             "last": "Mama"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "USC",
           "jerseyNumber": 69,
           "yearsPro": 1,
@@ -31232,7 +31232,7 @@
             "first": "Vidauntae",
             "last": "Charlton"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Michigan",
           "jerseyNumber": 97,
           "age": 23,
@@ -31321,7 +31321,7 @@
             "first": "Xavier",
             "last": "Woods"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Louisiana Tech",
           "jerseyNumber": 25,
           "age": 23,
@@ -31693,7 +31693,7 @@
             "first": "Jacob",
             "last": "Alsadek"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Arizona",
           "jerseyNumber": 62,
           "measurables": {
@@ -31706,7 +31706,7 @@
             "first": "Connor",
             "last": "Williams"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Texas",
           "jerseyNumber": 52,
           "age": 21,
@@ -31742,7 +31742,7 @@
             "first": "Dorance",
             "last": "Armstrong"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Kansas",
           "jerseyNumber": 92,
           "age": 21,
@@ -32002,7 +32002,7 @@
             "first": "Austin",
             "last": "Larkin"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Purdue",
           "jerseyNumber": 65,
           "age": 23,
@@ -32070,7 +32070,7 @@
             "first": "Kyle",
             "last": "Bosch"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "West Virginia",
           "jerseyNumber": 61,
           "measurables": {
@@ -32203,7 +32203,7 @@
             "first": "Jacob",
             "last": "Ohnesorge"
           },
-          "position": "OT",
+          "position": "C",
           "college": "South Dakota State",
           "jerseyNumber": 62,
           "measurables": {
@@ -32261,7 +32261,7 @@
             "first": "Derek",
             "last": "Wake"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Penn State",
           "jerseyNumber": 91,
           "age": 36,
@@ -32328,7 +32328,7 @@
             "first": "Kendall",
             "last": "Langford"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Hampton",
           "jerseyNumber": 98,
           "yearsPro": 10,
@@ -32342,7 +32342,7 @@
             "first": "William",
             "last": "Hayes"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Winston-Salem State",
           "jerseyNumber": 95,
           "age": 33,
@@ -32379,7 +32379,7 @@
             "first": "Josh",
             "last": "Sitton"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Central Florida",
           "jerseyNumber": 71,
           "age": 32,
@@ -32431,7 +32431,7 @@
             "first": "Theodore",
             "last": "Larsen"
           },
-          "position": "OT",
+          "position": "C",
           "college": "North Carolina State",
           "jerseyNumber": 62,
           "age": 31,
@@ -32446,7 +32446,7 @@
             "first": "Reshad",
             "last": "Jones"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Georgia",
           "jerseyNumber": 20,
           "age": 30,
@@ -32498,7 +32498,7 @@
             "first": "Robert",
             "last": "Quinn"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "North Carolina",
           "jerseyNumber": 94,
           "age": 28,
@@ -32535,7 +32535,7 @@
             "first": "Daniel",
             "last": "Kilgore"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Appalachian State",
           "jerseyNumber": 67,
           "age": 30,
@@ -32609,7 +32609,7 @@
             "first": "Orlandus",
             "last": "Branch"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Clemson",
           "jerseyNumber": 50,
           "age": 29,
@@ -32839,7 +32839,7 @@
             "first": "Tim",
             "last": "McDonald"
           },
-          "position": "CB",
+          "position": "S",
           "college": "USC",
           "jerseyNumber": 22,
           "age": 27,
@@ -33076,7 +33076,7 @@
             "first": "Travis",
             "last": "Swanson"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Arkansas",
           "jerseyNumber": 66,
           "age": 27,
@@ -33128,7 +33128,7 @@
             "first": "Wesley",
             "last": "Johnson"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Vanderbilt",
           "jerseyNumber": 73,
           "age": 27,
@@ -33239,7 +33239,7 @@
             "first": "Hroniss",
             "last": "Grasu"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Oregon",
           "jerseyNumber": 63,
           "age": 27,
@@ -33402,7 +33402,7 @@
             "first": "Jesse",
             "last": "Davis"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Idaho",
           "jerseyNumber": 77,
           "age": 26,
@@ -33601,7 +33601,7 @@
             "first": "Jake",
             "last": "Brendel"
           },
-          "position": "OT",
+          "position": "C",
           "college": "UCLA",
           "jerseyNumber": 64,
           "age": 25,
@@ -33675,7 +33675,7 @@
             "first": "Jonathan",
             "last": "Woodard"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Central Arkansas",
           "jerseyNumber": 76,
           "age": 24,
@@ -33727,7 +33727,7 @@
             "first": "Mike",
             "last": "Matthews"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Texas A&M",
           "jerseyNumber": 63,
           "yearsPro": 2,
@@ -33741,7 +33741,7 @@
             "first": "Trae",
             "last": "Elston"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Mississippi",
           "jerseyNumber": 27,
           "yearsPro": 2,
@@ -34057,7 +34057,7 @@
             "first": "Maurice",
             "last": "Smith"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Georgia",
           "jerseyNumber": 26,
           "age": 23,
@@ -34168,7 +34168,7 @@
             "first": "Isaac",
             "last": "Asiata"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Utah",
           "jerseyNumber": 68,
           "age": 25,
@@ -34316,7 +34316,7 @@
             "first": "Jeremiah",
             "last": "Valoaga"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Nevada-Las Vegas",
           "jerseyNumber": 78,
           "age": 23,
@@ -34390,7 +34390,7 @@
             "first": "Charles",
             "last": "Harris"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Missouri",
           "jerseyNumber": 90,
           "age": 23,
@@ -34554,7 +34554,7 @@
             "first": "Connor",
             "last": "Hilland"
           },
-          "position": "OT",
+          "position": "C",
           "college": "William & Mary",
           "jerseyNumber": 61,
           "age": 23,
@@ -34590,7 +34590,7 @@
             "first": "Claudy",
             "last": "Mathieu"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Notre Dame College (Ohio)",
           "jerseyNumber": 60,
           "measurables": {
@@ -34652,7 +34652,7 @@
             "first": "Quincy",
             "last": "Redmon"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Fairmont State",
           "jerseyNumber": 66,
           "age": 24,
@@ -34715,7 +34715,7 @@
             "first": "Minkah",
             "last": "Fitzpatrick"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Alabama",
           "jerseyNumber": 29,
           "age": 21,
@@ -35078,7 +35078,7 @@
             "first": "Corey",
             "last": "Graham"
           },
-          "position": "CB",
+          "position": "S",
           "college": "New Hampshire",
           "jerseyNumber": 24,
           "age": 33,
@@ -35093,7 +35093,7 @@
             "first": "Christopher",
             "last": "Long"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Virginia",
           "jerseyNumber": 56,
           "age": 33,
@@ -35108,7 +35108,7 @@
             "first": "Michael",
             "last": "Bennett"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Texas A&M",
           "jerseyNumber": 77,
           "age": 32,
@@ -35182,7 +35182,7 @@
             "first": "Malcolm",
             "last": "Jenkins"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Ohio State",
           "jerseyNumber": 27,
           "age": 30,
@@ -35219,7 +35219,7 @@
             "first": "Chris",
             "last": "Maragos"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Wisconsin",
           "jerseyNumber": 42,
           "age": 31,
@@ -35256,7 +35256,7 @@
             "first": "Brandon",
             "last": "Graham"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Michigan",
           "jerseyNumber": 55,
           "age": 30,
@@ -35330,7 +35330,7 @@
             "first": "Stefen",
             "last": "Wisniewski"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Penn State",
           "jerseyNumber": 61,
           "age": 29,
@@ -35367,7 +35367,7 @@
             "first": "Jason",
             "last": "Kelce"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Cincinnati",
           "jerseyNumber": 62,
           "age": 30,
@@ -35419,7 +35419,7 @@
             "first": "Rodney",
             "last": "McLeod"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Virginia",
           "jerseyNumber": 23,
           "age": 28,
@@ -35604,7 +35604,7 @@
             "first": "Brandon",
             "last": "Brooks"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Miami, O.",
           "jerseyNumber": 79,
           "age": 29,
@@ -35804,7 +35804,7 @@
             "first": "Chance",
             "last": "Warmack"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Alabama",
           "jerseyNumber": 67,
           "age": 26,
@@ -36084,7 +36084,7 @@
             "first": "Kaleb",
             "last": "Johnson"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Rutgers",
           "jerseyNumber": 66,
           "age": 25,
@@ -36343,7 +36343,7 @@
             "first": "Anthony",
             "last": "Fabiano"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Harvard",
           "jerseyNumber": 59,
           "age": 25,
@@ -36712,7 +36712,7 @@
             "first": "Isaac",
             "last": "Seumalo"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Oregon State",
           "jerseyNumber": 73,
           "age": 24,
@@ -36749,7 +36749,7 @@
             "first": "Darrell",
             "last": "Greene"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "San Diego State",
           "jerseyNumber": 78,
           "yearsPro": 2,
@@ -36822,7 +36822,7 @@
             "first": "Daeshon",
             "last": "Hall"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Texas A&amp;M",
           "jerseyNumber": 74,
           "age": 23,
@@ -37222,7 +37222,7 @@
             "first": "Derek",
             "last": "Barnett"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Tennessee",
           "jerseyNumber": 96,
           "age": 22,
@@ -37382,7 +37382,7 @@
             "first": "Josh",
             "last": "Sweat"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Florida State",
           "jerseyNumber": 75,
           "age": 21,
@@ -37454,7 +37454,7 @@
             "first": "Matthew",
             "last": "Pryor"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Texas Christian",
           "jerseyNumber": 69,
           "age": 23,
@@ -37567,7 +37567,7 @@
             "first": "Danny",
             "last": "Ezechukwu"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Purdue",
           "jerseyNumber": 63,
           "measurables": {
@@ -37629,7 +37629,7 @@
             "first": "Joe",
             "last": "Ostman"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Central Michigan",
           "jerseyNumber": 95,
           "age": 23,
@@ -37665,7 +37665,7 @@
             "first": "Ian",
             "last": "Park"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Slippery Rock",
           "jerseyNumber": 66,
           "measurables": {
@@ -37893,7 +37893,7 @@
             "first": "Alex",
             "last": "Mack"
           },
-          "position": "OT",
+          "position": "C",
           "college": "California",
           "jerseyNumber": 51,
           "age": 32,
@@ -37930,7 +37930,7 @@
             "first": "Andy",
             "last": "Levitre"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Oregon State",
           "jerseyNumber": 67,
           "age": 32,
@@ -38004,7 +38004,7 @@
             "first": "Ben",
             "last": "Garland"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Air Force",
           "jerseyNumber": 63,
           "age": 30,
@@ -38041,7 +38041,7 @@
             "first": "Zane",
             "last": "Beadles"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Utah",
           "jerseyNumber": 69,
           "age": 31,
@@ -38086,7 +38086,7 @@
             "first": "Brooks",
             "last": "Reed"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Arizona",
           "jerseyNumber": 50,
           "age": 31,
@@ -38160,7 +38160,7 @@
             "first": "Brandon",
             "last": "Fusco"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Slippery Rock",
           "jerseyNumber": 65,
           "age": 30,
@@ -38308,7 +38308,7 @@
             "first": "Derrick",
             "last": "Shelby"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Utah",
           "jerseyNumber": 90,
           "age": 29,
@@ -38345,7 +38345,7 @@
             "first": "Bruce",
             "last": "Irvin"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "West Virginia",
           "jerseyNumber": 52,
           "age": 30,
@@ -38396,7 +38396,7 @@
             "first": "Keith",
             "last": "Tandy"
           },
-          "position": "CB",
+          "position": "S",
           "college": "West Virginia",
           "jerseyNumber": 35,
           "age": 29,
@@ -38470,7 +38470,7 @@
             "first": "Jack",
             "last": "Crawford"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Penn State",
           "jerseyNumber": 95,
           "age": 29,
@@ -38581,7 +38581,7 @@
             "first": "Steven",
             "last": "Means"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Buffalo",
           "jerseyNumber": 56,
           "age": 27,
@@ -38618,7 +38618,7 @@
             "first": "Kemal",
             "last": "Ishmael"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Central Florida",
           "jerseyNumber": 36,
           "age": 27,
@@ -38802,7 +38802,7 @@
             "first": "Ricardo",
             "last": "Allen"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Purdue",
           "jerseyNumber": 37,
           "age": 26,
@@ -38928,7 +38928,7 @@
             "first": "Jordan",
             "last": "Richards"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Stanford",
           "jerseyNumber": 29,
           "age": 25,
@@ -39157,7 +39157,7 @@
             "first": "Victor",
             "last": "Beasley"
           },
-          "position": "DT",
+          "position": "LB",
           "college": "Clemson",
           "jerseyNumber": 44,
           "age": 26,
@@ -39172,7 +39172,7 @@
             "first": "Keanu",
             "last": "Neal"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Florida",
           "jerseyNumber": 22,
           "age": 23,
@@ -39320,7 +39320,7 @@
             "first": "Weston",
             "last": "Schweitzer"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "San Jose State",
           "jerseyNumber": 71,
           "age": 24,
@@ -39365,7 +39365,7 @@
             "first": "Sharrod",
             "last": "Neasman"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Florida Atlantic",
           "jerseyNumber": 41,
           "age": 26,
@@ -39528,7 +39528,7 @@
             "first": "Marcelis",
             "last": "Branch"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Robert Morris",
           "jerseyNumber": 38,
           "yearsPro": 1,
@@ -39601,7 +39601,7 @@
             "first": "JT",
             "last": "Jones"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Miami (Ohio)",
           "jerseyNumber": 55,
           "yearsPro": 1,
@@ -39652,7 +39652,7 @@
             "first": "Richard",
             "last": "Ortiz"
           },
-          "position": "RB",
+          "position": "FB",
           "college": "Oregon State",
           "jerseyNumber": 30,
           "age": 24,
@@ -39682,7 +39682,7 @@
             "first": "Sean",
             "last": "Harlow"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Oregon State",
           "jerseyNumber": 64,
           "age": 23,
@@ -39719,7 +39719,7 @@
             "first": "Damontae",
             "last": "Kazee"
           },
-          "position": "CB",
+          "position": "S",
           "college": "San Diego State",
           "jerseyNumber": 27,
           "age": 25,
@@ -39756,7 +39756,7 @@
             "first": "Takkarist",
             "last": "McKinley"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "UCLA",
           "jerseyNumber": 98,
           "age": 22,
@@ -40054,7 +40054,7 @@
             "first": "Mackendy",
             "last": "Cheridor"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Georgia State",
           "jerseyNumber": 96,
           "measurables": {
@@ -40200,7 +40200,7 @@
             "first": "J.C.",
             "last": "Hassenauer"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Alabama",
           "jerseyNumber": 61,
           "age": 22,
@@ -40817,7 +40817,7 @@
             "first": "Michael",
             "last": "Person"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Montana State",
           "jerseyNumber": 68,
           "age": 30,
@@ -41294,7 +41294,7 @@
             "first": "Cassius",
             "last": "Marsh"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "UCLA",
           "jerseyNumber": 54,
           "age": 26,
@@ -41331,7 +41331,7 @@
             "first": "Weston",
             "last": "Richburg"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Colorado State",
           "jerseyNumber": 58,
           "age": 27,
@@ -41405,7 +41405,7 @@
             "first": "Antone",
             "last": "Exum"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Virginia Tech",
           "jerseyNumber": 38,
           "age": 27,
@@ -41442,7 +41442,7 @@
             "first": "Jimmie",
             "last": "Ward"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Northern Illinois",
           "jerseyNumber": 20,
           "age": 27,
@@ -41590,7 +41590,7 @@
             "first": "Ryan",
             "last": "Delaire"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Towson",
           "jerseyNumber": 92,
           "age": 26,
@@ -41656,7 +41656,7 @@
             "first": "Jaquiski",
             "last": "Tartt"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Samford",
           "jerseyNumber": 29,
           "age": 26,
@@ -41730,7 +41730,7 @@
             "first": "Arik",
             "last": "Armstead"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Oregon",
           "jerseyNumber": 91,
           "age": 24,
@@ -41767,7 +41767,7 @@
             "first": "Laken",
             "last": "Tomlinson"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Duke",
           "jerseyNumber": 75,
           "age": 26,
@@ -41804,7 +41804,7 @@
             "first": "DeForest",
             "last": "Buckner"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Oregon",
           "jerseyNumber": 99,
           "age": 24,
@@ -41841,7 +41841,7 @@
             "first": "Ronald",
             "last": "Blair"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Appalachian State",
           "jerseyNumber": 98,
           "age": 25,
@@ -42063,7 +42063,7 @@
             "first": "Joshua",
             "last": "Garnett"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Stanford",
           "jerseyNumber": 65,
           "age": 24,
@@ -42225,7 +42225,7 @@
             "first": "Pita",
             "last": "Taumoepenu"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Utah",
           "jerseyNumber": 55,
           "age": 24,
@@ -42262,7 +42262,7 @@
             "first": "Adrian",
             "last": "Colbert"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Miami",
           "jerseyNumber": 27,
           "age": 24,
@@ -42373,7 +42373,7 @@
             "first": "JP",
             "last": "Flynn"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Montana State",
           "jerseyNumber": 60,
           "age": 25,
@@ -42595,7 +42595,7 @@
             "first": "Solomon",
             "last": "Thomas"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Stanford",
           "jerseyNumber": 94,
           "age": 23,
@@ -42725,7 +42725,7 @@
             "first": "Alan",
             "last": "Knott"
           },
-          "position": "OT",
+          "position": "C",
           "college": "South Carolina",
           "jerseyNumber": 63,
           "measurables": {
@@ -42837,7 +42837,7 @@
             "first": "Najee",
             "last": "Toran"
           },
-          "position": "CB",
+          "position": "OG",
           "college": "UCLA",
           "jerseyNumber": 66,
           "age": 22,
@@ -42865,7 +42865,7 @@
             "first": "Chris",
             "last": "Gonzalez"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "San Jose State",
           "jerseyNumber": 67,
           "measurables": {
@@ -43000,7 +43000,7 @@
             "first": "Kentavius",
             "last": "Street"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "North Carolina State",
           "jerseyNumber": 95,
           "age": 22,
@@ -43382,7 +43382,7 @@
             "first": "John",
             "last": "Greco"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Toledo",
           "jerseyNumber": 73,
           "age": 33,
@@ -43434,7 +43434,7 @@
             "first": "John",
             "last": "Jerry"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Mississippi",
           "jerseyNumber": 77,
           "age": 32,
@@ -43471,7 +43471,7 @@
             "first": "Chris",
             "last": "Scott"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Tennessee",
           "jerseyNumber": 68,
           "yearsPro": 8,
@@ -43572,7 +43572,7 @@
             "first": "Michael",
             "last": "Thomas"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Stanford",
           "jerseyNumber": 31,
           "age": 28,
@@ -43999,7 +43999,7 @@
             "first": "Kerry",
             "last": "Wynn"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Richmond",
           "jerseyNumber": 72,
           "age": 27,
@@ -44036,7 +44036,7 @@
             "first": "Josh",
             "last": "Mauro"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Stanford",
           "jerseyNumber": 97,
           "age": 27,
@@ -44073,7 +44073,7 @@
             "first": "Kenneth",
             "last": "Ladler"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Vanderbilt",
           "jerseyNumber": 33,
           "age": 26,
@@ -44140,7 +44140,7 @@
             "first": "Jon",
             "last": "Halapio"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Florida",
           "jerseyNumber": 75,
           "age": 27,
@@ -44362,7 +44362,7 @@
             "first": "Malcolm",
             "last": "Bunche"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "UCLA",
           "jerseyNumber": 66,
           "yearsPro": 3,
@@ -44487,7 +44487,7 @@
             "first": "Jamon",
             "last": "Brown"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Louisville",
           "jerseyNumber": 78,
           "age": 25,
@@ -44524,7 +44524,7 @@
             "first": "Landon",
             "last": "Collins"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Alabama",
           "jerseyNumber": 21,
           "age": 24,
@@ -44561,7 +44561,7 @@
             "first": "Mario",
             "last": "Edwards"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Florida State",
           "jerseyNumber": 99,
           "age": 24,
@@ -44858,7 +44858,7 @@
             "first": "Spencer",
             "last": "Pulley"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Vanderbilt",
           "jerseyNumber": 77,
           "age": 25,
@@ -45268,7 +45268,7 @@
             "first": "Shane",
             "last": "Smith"
           },
-          "position": "RB",
+          "position": "FB",
           "college": "San Jose State",
           "jerseyNumber": 43,
           "age": 25,
@@ -45554,7 +45554,7 @@
             "first": "Myles",
             "last": "Humphrey"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Shepherd",
           "jerseyNumber": 59,
           "age": 22,
@@ -45568,7 +45568,7 @@
             "first": "William",
             "last": "Hernandez"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Texas-El Paso",
           "jerseyNumber": 71,
           "age": 22,
@@ -45690,7 +45690,7 @@
             "first": "Nick",
             "last": "Gates"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Nebraska",
           "jerseyNumber": 65,
           "age": 22,
@@ -45726,7 +45726,7 @@
             "first": "Evan",
             "last": "Brown"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Southern Methodist",
           "jerseyNumber": 67,
           "age": 21,
@@ -45930,7 +45930,7 @@
             "first": "Sam",
             "last": "Beal"
           },
-          "position": "CB",
+          "position": "DT",
           "college": "Western Michigan",
           "jerseyNumber": 41,
           "age": 22,
@@ -45994,7 +45994,7 @@
             "first": "Mike",
             "last": "Basile"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Monmouth (N.J.)",
           "jerseyNumber": 30,
           "measurables": {
@@ -46015,7 +46015,7 @@
             "first": "Calais",
             "last": "Campbell"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Miami",
           "jerseyNumber": 93,
           "age": 32,
@@ -46119,7 +46119,7 @@
             "first": "Barry",
             "last": "Church"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Toledo",
           "jerseyNumber": 42,
           "age": 30,
@@ -46281,7 +46281,7 @@
             "first": "Tashaun",
             "last": "Gipson"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Wyoming",
           "jerseyNumber": 39,
           "age": 28,
@@ -46369,7 +46369,7 @@
             "first": "Cody",
             "last": "Davis"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Texas Tech",
           "jerseyNumber": 22,
           "age": 29,
@@ -46406,7 +46406,7 @@
             "first": "Lerentee",
             "last": "McCray"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Florida",
           "jerseyNumber": 55,
           "age": 28,
@@ -46443,7 +46443,7 @@
             "first": "Patrick",
             "last": "Omameh"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Michigan",
           "jerseyNumber": 77,
           "age": 28,
@@ -46480,7 +46480,7 @@
             "first": "Kapron",
             "last": "Lewis-Moore"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Notre Dame",
           "jerseyNumber": 98,
           "yearsPro": 5,
@@ -46590,7 +46590,7 @@
             "first": "Thomas",
             "last": "Bohanon"
           },
-          "position": "RB",
+          "position": "FB",
           "college": "Wake Forest",
           "jerseyNumber": 40,
           "age": 27,
@@ -46672,7 +46672,7 @@
             "first": "Josh",
             "last": "Walker"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Middle Tennessee State",
           "jerseyNumber": 73,
           "age": 27,
@@ -46745,7 +46745,7 @@
             "first": "Christian",
             "last": "Shatley"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Clemson",
           "jerseyNumber": 69,
           "age": 27,
@@ -46870,7 +46870,7 @@
             "first": "Andrew",
             "last": "Norwell"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Ohio State",
           "jerseyNumber": 68,
           "age": 26,
@@ -46936,7 +46936,7 @@
             "first": "Brandon",
             "last": "Thomas"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Clemson",
           "jerseyNumber": 70,
           "age": 27,
@@ -47047,7 +47047,7 @@
             "first": "Brandon",
             "last": "Linder"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Miami",
           "jerseyNumber": 65,
           "age": 26,
@@ -47247,7 +47247,7 @@
             "first": "Christopher",
             "last": "Reed"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Minn. State-Mankato",
           "jerseyNumber": 64,
           "age": 26,
@@ -47520,7 +47520,7 @@
             "first": "Aaron",
             "last": "Cann"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "South Carolina",
           "jerseyNumber": 60,
           "age": 26,
@@ -47586,7 +47586,7 @@
             "first": "Jarrod",
             "last": "Wilson"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Michigan",
           "jerseyNumber": 26,
           "age": 24,
@@ -47822,7 +47822,7 @@
             "first": "Yannick",
             "last": "Ngakoue"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Maryland",
           "jerseyNumber": 91,
           "age": 23,
@@ -48108,7 +48108,7 @@
             "first": "Hunter",
             "last": "Dimick"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Utah",
           "jerseyNumber": 79,
           "yearsPro": 1,
@@ -48248,7 +48248,7 @@
             "first": "Dawuane",
             "last": "Smoot"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Illinois",
           "jerseyNumber": 94,
           "age": 23,
@@ -48314,7 +48314,7 @@
             "first": "Leka",
             "last": "Uhatafe"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Utah",
           "jerseyNumber": 62,
           "age": 23,
@@ -48342,7 +48342,7 @@
             "first": "Dimitri",
             "last": "Flowers"
           },
-          "position": "RB",
+          "position": "FB",
           "college": "Oklahoma",
           "jerseyNumber": 35,
           "age": 22,
@@ -48613,7 +48613,7 @@
             "first": "Darius",
             "last": "Jackson"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Jacksonville State",
           "jerseyNumber": 66,
           "measurables": {
@@ -49003,7 +49003,7 @@
             "first": "James",
             "last": "Carpenter"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Alabama",
           "jerseyNumber": 77,
           "age": 29,
@@ -49166,7 +49166,7 @@
             "first": "Courtney",
             "last": "Upshaw"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Alabama",
           "jerseyNumber": 91,
           "yearsPro": 6,
@@ -49401,7 +49401,7 @@
             "first": "Brandon",
             "last": "Copeland"
           },
-          "position": "LB",
+          "position": "DE",
           "college": "Pennsylvania",
           "jerseyNumber": 51,
           "age": 27,
@@ -49438,7 +49438,7 @@
             "first": "Brian",
             "last": "Winters"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Kent State",
           "jerseyNumber": 67,
           "age": 27,
@@ -49526,7 +49526,7 @@
             "first": "Rontez",
             "last": "Miles"
           },
-          "position": "CB",
+          "position": "S",
           "college": "California (PA)",
           "jerseyNumber": 45,
           "age": 29,
@@ -49599,7 +49599,7 @@
             "first": "Jonotthan",
             "last": "Harrison"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Florida",
           "jerseyNumber": 78,
           "age": 27,
@@ -49688,7 +49688,7 @@
             "first": "Dakota",
             "last": "Dozier"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Furman",
           "jerseyNumber": 70,
           "age": 27,
@@ -49799,7 +49799,7 @@
             "first": "Spencer",
             "last": "Long"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Nebraska",
           "jerseyNumber": 61,
           "age": 27,
@@ -49850,7 +49850,7 @@
             "first": "Jeremiah",
             "last": "Attaochu"
           },
-          "position": "LB",
+          "position": "DE",
           "college": "Georgia Tech",
           "jerseyNumber": 55,
           "age": 25,
@@ -49961,7 +49961,7 @@
             "first": "Terrence",
             "last": "Brooks"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Florida State",
           "jerseyNumber": 23,
           "age": 26,
@@ -50254,7 +50254,7 @@
             "first": "Leonard",
             "last": "Williams"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Southern California",
           "jerseyNumber": 92,
           "age": 24,
@@ -50393,7 +50393,7 @@
             "first": "Henry",
             "last": "Anderson"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Stanford",
           "jerseyNumber": 96,
           "age": 27,
@@ -50519,7 +50519,7 @@
             "first": "Shaneil",
             "last": "Jenkins"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Shepherd",
           "jerseyNumber": 91,
           "yearsPro": 2,
@@ -50585,7 +50585,7 @@
             "first": "Doug",
             "last": "Middleton"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Appalachian State",
           "jerseyNumber": 36,
           "age": 24,
@@ -50622,7 +50622,7 @@
             "first": "Alex",
             "last": "Balducci"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Oregon",
           "jerseyNumber": 60,
           "yearsPro": 2,
@@ -50658,7 +50658,7 @@
             "first": "Lawrence",
             "last": "Thomas"
           },
-          "position": "RB",
+          "position": "FB",
           "college": "Michigan State",
           "jerseyNumber": 44,
           "yearsPro": 2,
@@ -50805,7 +50805,7 @@
             "first": "Bronson",
             "last": "Kaufusi"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Brigham Young",
           "jerseyNumber": 91,
           "age": 27,
@@ -51101,7 +51101,7 @@
             "first": "Ben",
             "last": "Braden"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Michigan",
           "jerseyNumber": 69,
           "age": 24,
@@ -51316,7 +51316,7 @@
             "first": "Jamal",
             "last": "Adams"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Louisiana State",
           "jerseyNumber": 33,
           "age": 22,
@@ -51353,7 +51353,7 @@
             "first": "Marcus",
             "last": "Maye"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Florida",
           "jerseyNumber": 26,
           "age": 25,
@@ -51500,7 +51500,7 @@
             "first": "Jon",
             "last": "Toth"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Kentucky",
           "jerseyNumber": 64,
           "age": 24,
@@ -51537,7 +51537,7 @@
             "first": "Kacy",
             "last": "Rodgers"
           },
-          "position": "CB",
+          "position": "LB",
           "college": "Miami (Fla.)",
           "jerseyNumber": 39,
           "measurables": {
@@ -51613,7 +51613,7 @@
             "first": "Dakoda",
             "last": "Shepley"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "British Columbia, Can.",
           "jerseyNumber": 65,
           "age": 23,
@@ -51888,7 +51888,7 @@
             "first": "Brandon",
             "last": "Bryant"
           },
-          "position": "CB",
+          "position": "QB",
           "college": "Mississippi State",
           "jerseyNumber": 38,
           "age": 22,
@@ -52115,7 +52115,7 @@
             "first": "Robert",
             "last": "Ayers"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Tennessee",
           "jerseyNumber": 91,
           "yearsPro": 9,
@@ -52129,7 +52129,7 @@
             "first": "T.J.",
             "last": "Lang"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Eastern Michigan",
           "jerseyNumber": 76,
           "age": 30,
@@ -52166,7 +52166,7 @@
             "first": "Glover",
             "last": "Quin"
           },
-          "position": "CB",
+          "position": "S",
           "college": "New Mexico",
           "jerseyNumber": 27,
           "age": 32,
@@ -52203,7 +52203,7 @@
             "first": "Don",
             "last": "Carey"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Norfolk State",
           "jerseyNumber": 21,
           "age": 31,
@@ -52292,7 +52292,7 @@
             "first": "Kenneth",
             "last": "Wiggins"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Fresno State",
           "jerseyNumber": 79,
           "age": 30,
@@ -52307,7 +52307,7 @@
             "first": "Nick",
             "last": "Bellore"
           },
-          "position": "RB",
+          "position": "FB",
           "college": "Central Michigan",
           "jerseyNumber": 43,
           "age": 29,
@@ -52505,7 +52505,7 @@
             "first": "Cam",
             "last": "Johnson"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Virginia",
           "jerseyNumber": 57,
           "yearsPro": 6,
@@ -52577,7 +52577,7 @@
             "first": "Tavon",
             "last": "Wilson"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Illinois",
           "jerseyNumber": 32,
           "age": 28,
@@ -52629,7 +52629,7 @@
             "first": "Cornelius",
             "last": "Washington"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Georgia",
           "jerseyNumber": 90,
           "yearsPro": 5,
@@ -52665,7 +52665,7 @@
             "first": "Ezekiel",
             "last": "Ansah"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Brigham Young",
           "jerseyNumber": 94,
           "age": 29,
@@ -52953,7 +52953,7 @@
             "first": "Kerry",
             "last": "Hyder"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Texas Tech",
           "jerseyNumber": 61,
           "age": 27,
@@ -53418,7 +53418,7 @@
             "first": "Graham",
             "last": "Glasgow"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Michigan",
           "jerseyNumber": 60,
           "age": 26,
@@ -53455,7 +53455,7 @@
             "first": "Miles",
             "last": "Killebrew"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Southern Utah",
           "jerseyNumber": 35,
           "age": 25,
@@ -53492,7 +53492,7 @@
             "first": "Joseph",
             "last": "Dahl"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Washington State",
           "jerseyNumber": 66,
           "age": 25,
@@ -53618,7 +53618,7 @@
             "first": "Charles",
             "last": "Washington"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Fresno State",
           "jerseyNumber": 45,
           "age": 25,
@@ -53744,7 +53744,7 @@
             "first": "Eric",
             "last": "Lee"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "South Florida",
           "jerseyNumber": 55,
           "age": 24,
@@ -53781,7 +53781,7 @@
             "first": "Mitchell",
             "last": "Loewen"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Arkansas",
           "jerseyNumber": 70,
           "age": 25,
@@ -54077,7 +54077,7 @@
             "first": "Alex",
             "last": "Barrett"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "San Diego State",
           "jerseyNumber": 58,
           "age": 24,
@@ -54128,7 +54128,7 @@
             "first": "Mafileo",
             "last": "Koloamatangi"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Hawaii",
           "jerseyNumber": 75,
           "age": 24,
@@ -54187,7 +54187,7 @@
             "first": "Jonathan",
             "last": "Wynn"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Vanderbilt",
           "jerseyNumber": 78,
           "age": 23,
@@ -54215,7 +54215,7 @@
             "first": "Frank",
             "last": "Ragnow"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Arkansas",
           "jerseyNumber": 77,
           "age": 22,
@@ -54287,7 +54287,7 @@
             "first": "Da'Shawn",
             "last": "Hand"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Alabama",
           "jerseyNumber": 93,
           "age": 22,
@@ -54490,7 +54490,7 @@
             "first": "John",
             "last": "Montelus"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Virginia",
           "jerseyNumber": 64,
           "measurables": {
@@ -54888,7 +54888,7 @@
             "first": "Muhammad",
             "last": "Wilkerson"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Temple",
           "jerseyNumber": 96,
           "age": 28,
@@ -55184,7 +55184,7 @@
             "first": "Edward",
             "last": "Pleasant"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Oregon",
           "jerseyNumber": 35,
           "age": 29,
@@ -55236,7 +55236,7 @@
             "first": "Lane",
             "last": "Taylor"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Oklahoma State",
           "jerseyNumber": 65,
           "age": 28,
@@ -55273,7 +55273,7 @@
             "first": "Justin",
             "last": "McCray"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Central Florida",
           "jerseyNumber": 64,
           "age": 26,
@@ -55310,7 +55310,7 @@
             "first": "Corey",
             "last": "Linsley"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Ohio State",
           "jerseyNumber": 63,
           "age": 27,
@@ -55473,7 +55473,7 @@
             "first": "Aaron",
             "last": "Ripkowski"
           },
-          "position": "RB",
+          "position": "FB",
           "college": "Oklahoma",
           "jerseyNumber": 22,
           "yearsPro": 3,
@@ -55560,7 +55560,7 @@
             "first": "Dillon",
             "last": "Day"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Mississippi State",
           "jerseyNumber": 55,
           "yearsPro": 3,
@@ -55626,7 +55626,7 @@
             "first": "Ibraheim",
             "last": "Campbell"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Northwestern",
           "jerseyNumber": 39,
           "age": 26,
@@ -55677,7 +55677,7 @@
             "first": "Joe",
             "last": "Kerridge"
           },
-          "position": "RB",
+          "position": "FB",
           "college": "Michigan",
           "jerseyNumber": 40,
           "age": 25,
@@ -55788,7 +55788,7 @@
             "first": "Dean",
             "last": "Lowry"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Northwestern",
           "jerseyNumber": 94,
           "age": 24,
@@ -55936,7 +55936,7 @@
             "first": "Kentrell",
             "last": "Brice"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Louisiana Tech",
           "jerseyNumber": 29,
           "age": 24,
@@ -56136,7 +56136,7 @@
             "first": "Lucas",
             "last": "Patrick"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Duke",
           "jerseyNumber": 62,
           "age": 25,
@@ -56298,7 +56298,7 @@
             "first": "Nicolas",
             "last": "Siragusa"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "San Diego State",
           "jerseyNumber": 56,
           "age": 24,
@@ -56386,7 +56386,7 @@
             "first": "Adam",
             "last": "Pankey"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "West Virginia",
           "jerseyNumber": 77,
           "age": 24,
@@ -56467,7 +56467,7 @@
             "first": "Fadol",
             "last": "Brown"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Mississippi",
           "jerseyNumber": 98,
           "age": 25,
@@ -56658,7 +56658,7 @@
             "first": "Joshua",
             "last": "Jones"
           },
-          "position": "CB",
+          "position": "S",
           "college": "North Carolina State",
           "jerseyNumber": 27,
           "age": 23,
@@ -56826,7 +56826,7 @@
             "first": "Austin",
             "last": "Davis"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Duke",
           "jerseyNumber": 60,
           "age": 23,
@@ -56862,7 +56862,7 @@
             "first": "Raven",
             "last": "Greene"
           },
-          "position": "CB",
+          "position": "S",
           "college": "James Madison",
           "jerseyNumber": 36,
           "age": 23,
@@ -57001,7 +57001,7 @@
             "first": "Conor",
             "last": "Sheehy"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Wisconsin",
           "jerseyNumber": 67,
           "measurables": {
@@ -57108,7 +57108,7 @@
             "first": "Cole",
             "last": "Madison"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Washington State",
           "jerseyNumber": 61,
           "age": 23,
@@ -57459,7 +57459,7 @@
             "first": "James",
             "last": "Hearns"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Louisville",
           "jerseyNumber": 49,
           "measurables": {
@@ -57662,7 +57662,7 @@
             "first": "James",
             "last": "Crawford"
           },
-          "position": "LB",
+          "position": "DE",
           "college": "Illinois",
           "jerseyNumber": 54,
           "age": 23,
@@ -57676,7 +57676,7 @@
             "first": "Eric",
             "last": "Cotton"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Stanford",
           "age": 23,
           "measurables": {
@@ -57697,7 +57697,7 @@
             "first": "Julius",
             "last": "Peppers"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "North Carolina",
           "jerseyNumber": 90,
           "age": 38,
@@ -57734,7 +57734,7 @@
             "first": "Michael",
             "last": "Adams"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Delaware",
           "jerseyNumber": 29,
           "age": 37,
@@ -57823,7 +57823,7 @@
             "first": "Ryan",
             "last": "Kalil"
           },
-          "position": "OT",
+          "position": "C",
           "college": "USC",
           "jerseyNumber": 67,
           "age": 33,
@@ -58046,7 +58046,7 @@
             "first": "Da'Norris",
             "last": "Searcy"
           },
-          "position": "CB",
+          "position": "S",
           "college": "North Carolina",
           "jerseyNumber": 21,
           "age": 29,
@@ -58083,7 +58083,7 @@
             "first": "Colin",
             "last": "Jones"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Texas Christian",
           "jerseyNumber": 42,
           "age": 30,
@@ -58120,7 +58120,7 @@
             "first": "Mario",
             "last": "Addison"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Troy",
           "jerseyNumber": 97,
           "age": 30,
@@ -58320,7 +58320,7 @@
             "first": "Gregory",
             "last": "Van Roten"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Pennsylvania",
           "jerseyNumber": 73,
           "age": 28,
@@ -58446,7 +58446,7 @@
             "first": "Wes",
             "last": "Horton"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Southern California",
           "jerseyNumber": 96,
           "age": 28,
@@ -58557,7 +58557,7 @@
             "first": "Eric",
             "last": "Reid"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Louisiana State",
           "jerseyNumber": 25,
           "age": 26,
@@ -58572,7 +58572,7 @@
             "first": "Tyler",
             "last": "Larsen"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Utah State",
           "jerseyNumber": 69,
           "age": 27,
@@ -58683,7 +58683,7 @@
             "first": "Trai",
             "last": "Turner"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Louisiana State",
           "jerseyNumber": 70,
           "age": 25,
@@ -58868,7 +58868,7 @@
             "first": "Efe",
             "last": "Obada"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "No College",
           "jerseyNumber": 94,
           "age": 26,
@@ -59346,7 +59346,7 @@
             "first": "Sterling",
             "last": "Bailey"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Georgia",
           "jerseyNumber": 79,
           "yearsPro": 2,
@@ -59478,7 +59478,7 @@
             "first": "Landon",
             "last": "Turner"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "North Carolina",
           "jerseyNumber": 78,
           "age": 25,
@@ -59854,7 +59854,7 @@
             "first": "Bryan",
             "last": "Cox"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Florida",
           "jerseyNumber": 91,
           "age": 24,
@@ -60016,7 +60016,7 @@
             "first": "Kai",
             "last": "Nacua"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Brigham Young",
           "jerseyNumber": 31,
           "age": 23,
@@ -60053,7 +60053,7 @@
             "first": "Karter",
             "last": "Schult"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Northern Iowa",
           "jerseyNumber": 76,
           "yearsPro": 1,
@@ -60067,7 +60067,7 @@
             "first": "Dorian",
             "last": "Johnson"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Pittsburgh",
           "jerseyNumber": 64,
           "age": 23,
@@ -60249,7 +60249,7 @@
             "first": "Marquis",
             "last": "Haynes"
           },
-          "position": "DT",
+          "position": "LB",
           "college": "Mississippi",
           "jerseyNumber": 98,
           "age": 24,
@@ -60398,7 +60398,7 @@
             "first": "Taylor",
             "last": "Hearn"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Clemson",
           "jerseyNumber": 62,
           "age": 22,
@@ -60434,7 +60434,7 @@
             "first": "Brendan",
             "last": "Mahon"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Penn State",
           "jerseyNumber": 63,
           "age": 23,
@@ -60488,7 +60488,7 @@
             "first": "Kiante",
             "last": "Anderson"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "East Carolina",
           "jerseyNumber": 76,
           "age": 23,
@@ -60744,7 +60744,7 @@
             "first": "Patrick",
             "last": "Chung"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Oregon",
           "jerseyNumber": 23,
           "age": 31,
@@ -60892,7 +60892,7 @@
             "first": "Devin",
             "last": "McCourty"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Rutgers",
           "jerseyNumber": 32,
           "age": 31,
@@ -60958,7 +60958,7 @@
             "first": "James",
             "last": "Develin"
           },
-          "position": "RB",
+          "position": "FB",
           "college": "Brown",
           "jerseyNumber": 46,
           "age": 30,
@@ -60995,7 +60995,7 @@
             "first": "Adrian",
             "last": "Clayborn"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Iowa",
           "jerseyNumber": 94,
           "age": 30,
@@ -61432,7 +61432,7 @@
             "first": "Duron",
             "last": "Harmon"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Rutgers",
           "jerseyNumber": 21,
           "age": 27,
@@ -61469,7 +61469,7 @@
             "first": "John",
             "last": "Simon"
           },
-          "position": "LB",
+          "position": "DE",
           "college": "Ohio State",
           "jerseyNumber": 55,
           "age": 27,
@@ -61506,7 +61506,7 @@
             "first": "Brian",
             "last": "Schwenke"
           },
-          "position": "OT",
+          "position": "C",
           "college": "California",
           "jerseyNumber": 63,
           "age": 27,
@@ -61595,7 +61595,7 @@
             "first": "James",
             "last": "Ferentz"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Iowa",
           "jerseyNumber": 66,
           "age": 29,
@@ -61794,7 +61794,7 @@
             "first": "Trey",
             "last": "Flowers"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Arkansas",
           "jerseyNumber": 98,
           "age": 25,
@@ -61831,7 +61831,7 @@
             "first": "Shaquille",
             "last": "Mason"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Georgia Tech",
           "jerseyNumber": 69,
           "age": 25,
@@ -61846,7 +61846,7 @@
             "first": "Jams",
             "last": "Andrews"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Georgia",
           "jerseyNumber": 60,
           "age": 26,
@@ -61861,7 +61861,7 @@
             "first": "Brandon",
             "last": "King"
           },
-          "position": "LB",
+          "position": "S",
           "college": "Auburn",
           "jerseyNumber": 36,
           "age": 25,
@@ -62061,7 +62061,7 @@
             "first": "Joseph",
             "last": "Thuney"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "North Carolina State",
           "jerseyNumber": 62,
           "age": 25,
@@ -62149,7 +62149,7 @@
             "first": "Ted",
             "last": "Karras"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Illinois",
           "jerseyNumber": 75,
           "age": 25,
@@ -62325,7 +62325,7 @@
             "first": "Ufomba",
             "last": "Kamalu"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Miami (Fla.)",
           "jerseyNumber": 97,
           "age": 25,
@@ -62517,7 +62517,7 @@
             "first": "Jason",
             "last": "King"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Purdue",
           "jerseyNumber": 65,
           "yearsPro": 1,
@@ -62567,7 +62567,7 @@
             "first": "Nate",
             "last": "Theaker"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Wayne State (Mich.)",
           "jerseyNumber": 65,
           "yearsPro": 1,
@@ -62648,7 +62648,7 @@
             "first": "Dan",
             "last": "Skipper"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Arkansas",
           "jerseyNumber": 74,
           "age": 23,
@@ -62700,7 +62700,7 @@
             "first": "Derek",
             "last": "Rivers"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Youngstown State",
           "jerseyNumber": 95,
           "age": 24,
@@ -62737,7 +62737,7 @@
             "first": "Deatrich",
             "last": "Wise"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Arkansas",
           "jerseyNumber": 91,
           "age": 24,
@@ -62774,7 +62774,7 @@
             "first": "Keionta",
             "last": "Davis"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Tennessee-Chattanooga",
           "jerseyNumber": 58,
           "age": 24,
@@ -63090,7 +63090,7 @@
             "first": "Trent",
             "last": "Harris"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Miami",
           "jerseyNumber": 45,
           "age": 22,
@@ -63104,7 +63104,7 @@
             "first": "Frank",
             "last": "Herron"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Louisiana State",
           "jerseyNumber": 92,
           "age": 24,
@@ -63267,7 +63267,7 @@
             "first": "Tony",
             "last": "Adams"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "North Carolina State",
           "jerseyNumber": 61,
           "age": 22,
@@ -63500,7 +63500,7 @@
             "first": "Reggie",
             "last": "Nelson"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Florida",
           "jerseyNumber": 27,
           "age": 34,
@@ -63773,7 +63773,7 @@
             "first": "Marcus",
             "last": "Gilchrist"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Clemson",
           "jerseyNumber": 31,
           "age": 29,
@@ -63810,7 +63810,7 @@
             "first": "Rodney",
             "last": "Hudson"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Florida State",
           "jerseyNumber": 61,
           "age": 29,
@@ -63913,7 +63913,7 @@
             "first": "Jacquies",
             "last": "Smith"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Missouri",
           "jerseyNumber": 93,
           "age": 28,
@@ -64002,7 +64002,7 @@
             "first": "Kelechi",
             "last": "Osemele"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Iowa State",
           "jerseyNumber": 70,
           "age": 29,
@@ -64195,7 +64195,7 @@
             "first": "Damontre",
             "last": "Moore"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Texas A&amp;M",
           "jerseyNumber": 56,
           "age": 25,
@@ -64210,7 +64210,7 @@
             "first": "Tank",
             "last": "Carradine"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Florida State",
           "jerseyNumber": 96,
           "age": 28,
@@ -64261,7 +64261,7 @@
             "first": "Alton",
             "last": "Smith"
           },
-          "position": "RB",
+          "position": "FB",
           "college": "San Jose State",
           "jerseyNumber": 41,
           "age": 26,
@@ -64402,7 +64402,7 @@
             "first": "Kony",
             "last": "Ealy"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Missouri",
           "jerseyNumber": 96,
           "age": 26,
@@ -64490,7 +64490,7 @@
             "first": "Gabe",
             "last": "Jackson"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Mississippi State",
           "jerseyNumber": 66,
           "age": 27,
@@ -64683,7 +64683,7 @@
             "first": "Jon",
             "last": "Feliciano"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Miami",
           "jerseyNumber": 76,
           "age": 26,
@@ -64720,7 +64720,7 @@
             "first": "Charles",
             "last": "Green"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Florida",
           "jerseyNumber": 65,
           "age": 26,
@@ -64772,7 +64772,7 @@
             "first": "Erik",
             "last": "Harris"
           },
-          "position": "CB",
+          "position": "S",
           "college": "California, Pa.",
           "jerseyNumber": 25,
           "age": 28,
@@ -64883,7 +64883,7 @@
             "first": "Karl",
             "last": "Joseph"
           },
-          "position": "CB",
+          "position": "S",
           "college": "West Virginia",
           "jerseyNumber": 42,
           "age": 24,
@@ -64993,7 +64993,7 @@
             "first": "James",
             "last": "Cowser"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Southern Utah",
           "jerseyNumber": 49,
           "age": 27,
@@ -65104,7 +65104,7 @@
             "first": "Denver",
             "last": "Kirkland"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Arkansas",
           "jerseyNumber": 79,
           "age": 24,
@@ -65317,7 +65317,7 @@
             "first": "Cameron",
             "last": "Hunt"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Oregon",
           "jerseyNumber": 63,
           "age": 23,
@@ -65852,7 +65852,7 @@
             "first": "Rico",
             "last": "Gafford"
           },
-          "position": "WR",
+          "position": "CB",
           "college": "Wyoming",
           "jerseyNumber": 38,
           "age": 22,
@@ -65924,7 +65924,7 @@
             "first": "Connor",
             "last": "Flagel"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Central Missouri State",
           "jerseyNumber": 93,
           "measurables": {
@@ -65937,7 +65937,7 @@
             "first": "Ryan",
             "last": "Yurachek"
           },
-          "position": "RB",
+          "position": "FB",
           "college": "Marshall",
           "jerseyNumber": 44,
           "age": 22,
@@ -66158,7 +66158,7 @@
             "first": "Arden",
             "last": "Key"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Louisiana State",
           "jerseyNumber": 99,
           "age": 22,
@@ -66290,7 +66290,7 @@
             "first": "John",
             "last": "Sullivan"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Notre Dame",
           "jerseyNumber": 65,
           "age": 33,
@@ -66342,7 +66342,7 @@
             "first": "Rodger",
             "last": "Saffold"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Indiana",
           "jerseyNumber": 76,
           "age": 30,
@@ -66446,7 +66446,7 @@
             "first": "Ryan",
             "last": "Davis"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Bethune-Cookman",
           "jerseyNumber": 98,
           "yearsPro": 6,
@@ -66675,7 +66675,7 @@
             "first": "Ethan",
             "last": "Westbrooks"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "West Texas A&amp;M",
           "jerseyNumber": 95,
           "age": 27,
@@ -66786,7 +66786,7 @@
             "first": "Lamarcus",
             "last": "Joyner"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Florida State",
           "jerseyNumber": 20,
           "age": 27,
@@ -67096,7 +67096,7 @@
             "first": "Dante",
             "last": "Fowler"
           },
-          "position": "LB",
+          "position": "DE",
           "college": "Florida",
           "jerseyNumber": 56,
           "age": 24,
@@ -67406,7 +67406,7 @@
             "first": "Austin",
             "last": "Blythe"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Iowa",
           "jerseyNumber": 66,
           "age": 26,
@@ -67443,7 +67443,7 @@
             "first": "Aaron",
             "last": "Neary"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Eastern Washington",
           "jerseyNumber": 72,
           "age": 25,
@@ -67532,7 +67532,7 @@
             "first": "Morgan",
             "last": "Fox"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Colorado State-Pueblo",
           "jerseyNumber": 97,
           "age": 23,
@@ -67606,7 +67606,7 @@
             "first": "Marqui",
             "last": "Christian"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Midwestern State",
           "jerseyNumber": 41,
           "age": 23,
@@ -67643,7 +67643,7 @@
             "first": "Blake",
             "last": "Countess"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Auburn",
           "jerseyNumber": 24,
           "age": 25,
@@ -68168,7 +68168,7 @@
             "first": "John",
             "last": "Johnson"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Boston College",
           "jerseyNumber": 43,
           "age": 22,
@@ -68257,7 +68257,7 @@
             "first": "J.J",
             "last": "Dielman"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Utah",
           "jerseyNumber": 64,
           "age": 24,
@@ -68396,7 +68396,7 @@
             "first": "Jeremiah",
             "last": "Kolone"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "San Jose State",
           "jerseyNumber": 61,
           "age": 23,
@@ -68499,7 +68499,7 @@
             "first": "Marcus",
             "last": "Martin"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Slippery Rock",
           "jerseyNumber": 56,
           "measurables": {
@@ -68570,7 +68570,7 @@
             "first": "Ja'Von",
             "last": "Rolland-Jones"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Arkansas State",
           "jerseyNumber": 95,
           "age": 23,
@@ -68687,7 +68687,7 @@
             "first": "Brian",
             "last": "Womac"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Rice",
           "jerseyNumber": 62,
           "measurables": {
@@ -68750,7 +68750,7 @@
             "first": "Brian",
             "last": "Allen"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Michigan State",
           "jerseyNumber": 55,
           "age": 22,
@@ -68786,7 +68786,7 @@
             "first": "John",
             "last": "Franklin"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Stephen F. Austin",
           "jerseyNumber": 94,
           "age": 21,
@@ -68908,7 +68908,7 @@
             "first": "Jamil",
             "last": "Demby"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Maine",
           "jerseyNumber": 64,
           "age": 22,
@@ -69030,7 +69030,7 @@
             "first": "Justin",
             "last": "Lawler"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Southern Methodist",
           "jerseyNumber": 53,
           "age": 23,
@@ -69175,7 +69175,7 @@
             "first": "Eric",
             "last": "Weddle"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Utah",
           "jerseyNumber": 32,
           "age": 33,
@@ -69212,7 +69212,7 @@
             "first": "Marshal",
             "last": "Yanda"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Iowa",
           "jerseyNumber": 73,
           "age": 33,
@@ -69493,7 +69493,7 @@
             "first": "Tony",
             "last": "Jefferson"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Oklahoma",
           "jerseyNumber": 23,
           "age": 26,
@@ -69604,7 +69604,7 @@
             "first": "James",
             "last": "Hurst"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "North Carolina",
           "jerseyNumber": 74,
           "age": 26,
@@ -69678,7 +69678,7 @@
             "first": "Brent",
             "last": "Urban"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Virginia",
           "jerseyNumber": 96,
           "age": 27,
@@ -70086,7 +70086,7 @@
             "first": "Alexander",
             "last": "Lewis"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Nebraska",
           "jerseyNumber": 72,
           "age": 26,
@@ -70338,7 +70338,7 @@
             "first": "Matthew",
             "last": "Skura"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Duke",
           "jerseyNumber": 68,
           "age": 25,
@@ -70575,7 +70575,7 @@
             "first": "Charles",
             "last": "Clark"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Virginia Tech",
           "jerseyNumber": 36,
           "age": 23,
@@ -70590,7 +70590,7 @@
             "first": "Kofi",
             "last": "Amichia"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "South Florida",
           "jerseyNumber": 79,
           "age": 24,
@@ -70775,7 +70775,7 @@
             "first": "Cameron",
             "last": "Lee"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Illinois State",
           "jerseyNumber": 61,
           "yearsPro": 1,
@@ -70841,7 +70841,7 @@
             "first": "Christopher",
             "last": "Wormley"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Michigan",
           "jerseyNumber": 93,
           "age": 25,
@@ -70884,7 +70884,7 @@
             "first": "Randin",
             "last": "Crecelius"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Portland",
           "jerseyNumber": 60,
           "age": 22,
@@ -70984,7 +70984,7 @@
             "first": "Christian",
             "last": "LaCouture"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "LSU",
           "jerseyNumber": 91,
           "age": 23,
@@ -70998,7 +70998,7 @@
             "first": "Alex",
             "last": "Thompson"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Monmouth (N.J.)",
           "jerseyNumber": 61,
           "age": 23,
@@ -71256,7 +71256,7 @@
             "first": "Bradley",
             "last": "Bozeman"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Alabama",
           "jerseyNumber": 77,
           "age": 23,
@@ -71514,7 +71514,7 @@
             "first": "Christopher",
             "last": "Ezeala"
           },
-          "position": "RB",
+          "position": "FB",
           "college": "Unknown",
           "jerseyNumber": 45,
           "age": 22,
@@ -71767,7 +71767,7 @@
             "first": "Shawn",
             "last": "Lauvao"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Arizona State",
           "jerseyNumber": 77,
           "age": 30,
@@ -72048,7 +72048,7 @@
             "first": "Anthony",
             "last": "Bergstrom"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Utah",
           "jerseyNumber": 66,
           "age": 32,
@@ -72204,7 +72204,7 @@
             "first": "Stacy",
             "last": "McGee"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Oklahoma",
           "jerseyNumber": 92,
           "age": 28,
@@ -72241,7 +72241,7 @@
             "first": "Jonathan",
             "last": "Cooper"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "North Carolina",
           "jerseyNumber": 72,
           "age": 28,
@@ -72278,7 +72278,7 @@
             "first": "Zachary",
             "last": "Kerin"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Toledo",
           "jerseyNumber": 67,
           "age": 27,
@@ -72293,7 +72293,7 @@
             "first": "Luke",
             "last": "Bowanko"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Virginia",
           "jerseyNumber": 69,
           "age": 27,
@@ -72441,7 +72441,7 @@
             "first": "Ha'Sean",
             "last": "Clinton-Dix"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Alabama",
           "jerseyNumber": 20,
           "age": 25,
@@ -72456,7 +72456,7 @@
             "first": "Marcus",
             "last": "Smith"
           },
-          "position": "LB",
+          "position": "DE",
           "college": "Louisville",
           "jerseyNumber": 58,
           "age": 26,
@@ -72493,7 +72493,7 @@
             "first": "Demetrius",
             "last": "Rhaney"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Tennessee State",
           "jerseyNumber": 63,
           "age": 26,
@@ -72582,7 +72582,7 @@
             "first": "Deshazor",
             "last": "Everett"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Texas A&amp;M",
           "jerseyNumber": 22,
           "age": 26,
@@ -72707,7 +72707,7 @@
             "first": "Arie",
             "last": "Kouandjio"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Alabama",
           "jerseyNumber": 60,
           "age": 26,
@@ -72811,7 +72811,7 @@
             "first": "Tavaris",
             "last": "Barnes"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Clemson",
           "jerseyNumber": 63,
           "yearsPro": 3,
@@ -72884,7 +72884,7 @@
             "first": "Brandon",
             "last": "Scherff"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Iowa",
           "jerseyNumber": 75,
           "age": 26,
@@ -73054,7 +73054,7 @@
             "first": "Matthew",
             "last": "Ioannidis"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Temple",
           "jerseyNumber": 98,
           "age": 24,
@@ -73120,7 +73120,7 @@
             "first": "Alex",
             "last": "McCalister"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Florida",
           "jerseyNumber": 59,
           "yearsPro": 2,
@@ -73208,7 +73208,7 @@
             "first": "Tyler",
             "last": "Catalina"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Georgia",
           "jerseyNumber": 68,
           "age": 25,
@@ -73347,7 +73347,7 @@
             "first": "Jonathan",
             "last": "Allen"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Alabama",
           "jerseyNumber": 93,
           "age": 23,
@@ -73436,7 +73436,7 @@
             "first": "Montae",
             "last": "Nicholson"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Michigan State",
           "jerseyNumber": 35,
           "age": 22,
@@ -73510,7 +73510,7 @@
             "first": "Chase",
             "last": "Roullier"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Wyoming",
           "jerseyNumber": 73,
           "age": 25,
@@ -73658,7 +73658,7 @@
             "first": "Kyle",
             "last": "Fuller"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Baylor",
           "jerseyNumber": 62,
           "age": 24,
@@ -74345,7 +74345,7 @@
             "first": "Jalen",
             "last": "Wilkerson"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Florida State",
           "jerseyNumber": 64,
           "measurables": {
@@ -74386,7 +74386,7 @@
             "first": "Casey",
             "last": "Dunn"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Auburn",
           "jerseyNumber": 55,
           "age": 23,
@@ -74489,7 +74489,7 @@
             "first": "Dante",
             "last": "Sawyer"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "South Carolina",
           "jerseyNumber": 63,
           "measurables": {
@@ -74721,7 +74721,7 @@
             "first": "Max",
             "last": "Unger"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Oregon",
           "jerseyNumber": 60,
           "age": 32,
@@ -74810,7 +74810,7 @@
             "first": "George",
             "last": "Johnson"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Rutgers",
           "jerseyNumber": 90,
           "yearsPro": 8,
@@ -74883,7 +74883,7 @@
             "first": "Kurtis",
             "last": "Coleman"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Ohio State",
           "jerseyNumber": 29,
           "age": 30,
@@ -74950,7 +74950,7 @@
             "first": "Cameron",
             "last": "Jordan"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "California",
           "jerseyNumber": 94,
           "age": 29,
@@ -75090,7 +75090,7 @@
             "first": "Don",
             "last": "Barclay"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "West Virginia",
           "jerseyNumber": 77,
           "yearsPro": 6,
@@ -75156,7 +75156,7 @@
             "first": "Andrew",
             "last": "Tiller"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Syracuse",
           "jerseyNumber": 66,
           "yearsPro": 6,
@@ -75170,7 +75170,7 @@
             "first": "Josh",
             "last": "LeRibeus"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Southern Methodist",
           "jerseyNumber": 61,
           "age": 29,
@@ -75207,7 +75207,7 @@
             "first": "Joshua",
             "last": "Robinson"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Central Florida",
           "jerseyNumber": 32,
           "age": 27,
@@ -75222,7 +75222,7 @@
             "first": "Ayorunmi",
             "last": "Banjo"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Southern Methodist",
           "jerseyNumber": 31,
           "age": 28,
@@ -75237,7 +75237,7 @@
             "first": "Zachary",
             "last": "Line"
           },
-          "position": "RB",
+          "position": "FB",
           "college": "Southern Methodist",
           "jerseyNumber": 42,
           "age": 28,
@@ -75252,7 +75252,7 @@
             "first": "Lawrence",
             "last": "Warford"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Kentucky",
           "jerseyNumber": 67,
           "age": 27,
@@ -75430,7 +75430,7 @@
             "first": "Alex",
             "last": "Okafor"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Texas",
           "jerseyNumber": 57,
           "age": 27,
@@ -75592,7 +75592,7 @@
             "first": "John",
             "last": "Fullington"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Washington State",
           "jerseyNumber": 77,
           "yearsPro": 4,
@@ -75914,7 +75914,7 @@
             "first": "Hau'oli",
             "last": "Kikaha"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Washington",
           "jerseyNumber": 44,
           "yearsPro": 3,
@@ -76269,7 +76269,7 @@
             "first": "Vonn",
             "last": "Bell"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Ohio State",
           "jerseyNumber": 24,
           "age": 23,
@@ -76543,7 +76543,7 @@
             "first": "Rickey",
             "last": "Jefferson"
           },
-          "position": "CB",
+          "position": "S",
           "college": "LSU",
           "jerseyNumber": 46,
           "age": 23,
@@ -76595,7 +76595,7 @@
             "first": "Cameron",
             "last": "Tom"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Southern Mississippi",
           "jerseyNumber": 63,
           "age": 23,
@@ -76780,7 +76780,7 @@
             "first": "Marcus",
             "last": "Williams"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Utah",
           "jerseyNumber": 43,
           "age": 21,
@@ -76891,7 +76891,7 @@
             "first": "Collins",
             "last": "Hendrickson"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Florida Atlantic",
           "jerseyNumber": 91,
           "age": 23,
@@ -76921,7 +76921,7 @@
             "first": "Alex",
             "last": "Jenkins"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Incarnate Word (Tex.)",
           "jerseyNumber": 69,
           "age": 25,
@@ -77079,7 +77079,7 @@
             "first": "Nate",
             "last": "Wozniak"
           },
-          "position": "OT",
+          "position": "TE",
           "college": "Minnesota",
           "jerseyNumber": 79,
           "age": 24,
@@ -77135,7 +77135,7 @@
             "first": "Marcus",
             "last": "Davenport"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Texas-San Antonio",
           "jerseyNumber": 92,
           "age": 21,
@@ -77171,7 +77171,7 @@
             "first": "William",
             "last": "Clapp"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Louisiana State",
           "jerseyNumber": 64,
           "age": 22,
@@ -77261,7 +77261,7 @@
             "first": "Trevor",
             "last": "Darling"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Miami (Fla.)",
           "jerseyNumber": 79,
           "measurables": {
@@ -77398,7 +77398,7 @@
             "first": "Kam",
             "last": "Chancellor"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Virginia Tech",
           "jerseyNumber": 31,
           "age": 30,
@@ -77435,7 +77435,7 @@
             "first": "Earl",
             "last": "Thomas"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Texas",
           "jerseyNumber": 29,
           "age": 29,
@@ -77560,7 +77560,7 @@
             "first": "Justin",
             "last": "Sweezy"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "North Carolina State",
           "jerseyNumber": 64,
           "age": 29,
@@ -77723,7 +77723,7 @@
             "first": "Bradley",
             "last": "McDougald"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Kansas",
           "jerseyNumber": 30,
           "age": 27,
@@ -77797,7 +77797,7 @@
             "first": "Danny",
             "last": "Fluker"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Alabama",
           "jerseyNumber": 78,
           "age": 27,
@@ -77812,7 +77812,7 @@
             "first": "Dion",
             "last": "Jordan"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Oregon",
           "jerseyNumber": 95,
           "age": 28,
@@ -77960,7 +77960,7 @@
             "first": "Justin",
             "last": "Britt"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Missouri",
           "jerseyNumber": 68,
           "age": 27,
@@ -77997,7 +77997,7 @@
             "first": "Maurice",
             "last": "Alexander"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Utah State",
           "jerseyNumber": 35,
           "age": 27,
@@ -78108,7 +78108,7 @@
             "first": "Justin",
             "last": "Currie"
           },
-          "position": "LB",
+          "position": "S",
           "college": "Western Michigan",
           "jerseyNumber": 42,
           "age": 24,
@@ -78219,7 +78219,7 @@
             "first": "Frank",
             "last": "Clark"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Michigan",
           "jerseyNumber": 55,
           "age": 25,
@@ -78343,7 +78343,7 @@
             "first": "Germain",
             "last": "Ifedi"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Texas A&amp;M",
           "jerseyNumber": 65,
           "age": 24,
@@ -78506,7 +78506,7 @@
             "first": "Joseph",
             "last": "Hunt"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Texas Christian",
           "jerseyNumber": 53,
           "age": 24,
@@ -78594,7 +78594,7 @@
             "first": "Curtis",
             "last": "Madden"
           },
-          "position": "RB",
+          "position": "FB",
           "college": "USC",
           "jerseyNumber": 38,
           "age": 25,
@@ -78683,7 +78683,7 @@
             "first": "Marcus",
             "last": "Henry"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Boise State",
           "jerseyNumber": 62,
           "age": 25,
@@ -78698,7 +78698,7 @@
             "first": "Marwin",
             "last": "Evans"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Utah State",
           "jerseyNumber": 25,
           "age": 25,
@@ -78771,7 +78771,7 @@
             "first": "Branden",
             "last": "Jackson"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Texas Tech",
           "jerseyNumber": 93,
           "age": 25,
@@ -78808,7 +78808,7 @@
             "first": "T.J.",
             "last": "Green"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Clemson",
           "jerseyNumber": 40,
           "age": 23,
@@ -78896,7 +78896,7 @@
             "first": "Lorenzo",
             "last": "Jerome"
           },
-          "position": "CB",
+          "position": "S",
           "college": "St. Francis (PA)",
           "jerseyNumber": 40,
           "yearsPro": 1,
@@ -78925,7 +78925,7 @@
             "first": "Jordan",
             "last": "Simmons"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Southern California",
           "jerseyNumber": 66,
           "age": 24,
@@ -78955,7 +78955,7 @@
             "first": "Ricky",
             "last": "Ali'ifua"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Utah State",
           "jerseyNumber": 61,
           "age": 26,
@@ -78970,7 +78970,7 @@
             "first": "Tedric",
             "last": "Thompson"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Colorado",
           "jerseyNumber": 33,
           "age": 23,
@@ -79059,7 +79059,7 @@
             "first": "Jordan",
             "last": "Roos"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Purdue",
           "jerseyNumber": 72,
           "age": 25,
@@ -79111,7 +79111,7 @@
             "first": "Tevon",
             "last": "Mutcherson"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Central Florida",
           "jerseyNumber": 38,
           "age": 26,
@@ -79141,7 +79141,7 @@
             "first": "Ethan",
             "last": "Pocic"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Louisiana State",
           "jerseyNumber": 77,
           "age": 23,
@@ -79215,7 +79215,7 @@
             "first": "Delano",
             "last": "Hill"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Michigan",
           "jerseyNumber": 42,
           "age": 22,
@@ -79304,7 +79304,7 @@
             "first": "Shalom",
             "last": "Luani"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Washington State",
           "jerseyNumber": 24,
           "age": 24,
@@ -79428,7 +79428,7 @@
             "first": "Daniel",
             "last": "Marx"
           },
-          "position": "RB",
+          "position": "FB",
           "college": "Stanford",
           "jerseyNumber": 44,
           "measurables": {
@@ -79513,7 +79513,7 @@
             "first": "Jacob",
             "last": "Martin"
           },
-          "position": "LB",
+          "position": "DE",
           "college": "Temple",
           "jerseyNumber": 59,
           "age": 22,
@@ -79604,7 +79604,7 @@
             "first": "Skyler",
             "last": "Phillips"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Idaho State",
           "jerseyNumber": 63,
           "measurables": {
@@ -79928,7 +79928,7 @@
             "first": "Rasheem",
             "last": "Green"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Southern California",
           "jerseyNumber": 94,
           "age": 21,
@@ -80036,7 +80036,7 @@
             "first": "Ramon",
             "last": "Foster"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Tennessee",
           "jerseyNumber": 73,
           "age": 32,
@@ -80110,7 +80110,7 @@
             "first": "Morgan",
             "last": "Burnett"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Georgia Tech",
           "jerseyNumber": 42,
           "age": 29,
@@ -80199,7 +80199,7 @@
             "first": "Tyson",
             "last": "Alualu"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "California",
           "jerseyNumber": 94,
           "age": 31,
@@ -80236,7 +80236,7 @@
             "first": "LaShawn",
             "last": "Pouncey"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Florida",
           "jerseyNumber": 53,
           "age": 29,
@@ -80450,7 +80450,7 @@
             "first": "David",
             "last": "DeCastro"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Stanford",
           "jerseyNumber": 66,
           "age": 28,
@@ -80746,7 +80746,7 @@
             "first": "Roosevelt",
             "last": "Nix"
           },
-          "position": "RB",
+          "position": "FB",
           "college": "Kent State",
           "jerseyNumber": 45,
           "age": 26,
@@ -80856,7 +80856,7 @@
             "first": "Nat",
             "last": "Berhe"
           },
-          "position": "CB",
+          "position": "S",
           "college": "San Diego State",
           "jerseyNumber": 31,
           "age": 27,
@@ -81055,7 +81055,7 @@
             "first": "Stephon",
             "last": "Tuitt"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Notre Dame",
           "jerseyNumber": 91,
           "age": 25,
@@ -81129,7 +81129,7 @@
             "first": "Leterrius",
             "last": "Walton"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Central Michigan",
           "jerseyNumber": 96,
           "age": 26,
@@ -81144,7 +81144,7 @@
             "first": "Benjamin",
             "last": "Finney"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Kansas State",
           "jerseyNumber": 67,
           "age": 26,
@@ -81174,7 +81174,7 @@
             "first": "Lavon",
             "last": "Hooks"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Mississippi",
           "jerseyNumber": 95,
           "age": 26,
@@ -81588,7 +81588,7 @@
             "first": "Sean",
             "last": "Davis"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Maryland",
           "jerseyNumber": 21,
           "age": 24,
@@ -81979,7 +81979,7 @@
             "first": "Parker",
             "last": "Collins"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Appalachian State",
           "jerseyNumber": 60,
           "yearsPro": 1,
@@ -82051,7 +82051,7 @@
             "first": "Darnell",
             "last": "Leslie"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Monmouth (N.J.)",
           "jerseyNumber": 49,
           "yearsPro": 1,
@@ -82176,7 +82176,7 @@
             "first": "Patrick",
             "last": "Morris"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Texas Christian",
           "jerseyNumber": 62,
           "age": 23,
@@ -82190,7 +82190,7 @@
             "first": "Greg",
             "last": "Gilmore"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "LSU",
           "jerseyNumber": 62,
           "measurables": {
@@ -82217,7 +82217,7 @@
             "first": "Chris",
             "last": "Schleuger"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Alabama-Birmingham",
           "jerseyNumber": 74,
           "measurables": {
@@ -82584,7 +82584,7 @@
             "first": "R.J.",
             "last": "Prince"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "North Carolina",
           "jerseyNumber": 64,
           "age": 23,
@@ -82869,7 +82869,7 @@
             "first": "Justin",
             "last": "Watt"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Wisconsin",
           "jerseyNumber": 99,
           "age": 29,
@@ -82958,7 +82958,7 @@
             "first": "Senio",
             "last": "Kelemete"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Washington",
           "jerseyNumber": 64,
           "age": 28,
@@ -83143,7 +83143,7 @@
             "first": "Tyrann",
             "last": "Mathieu"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Louisiana State",
           "jerseyNumber": 32,
           "age": 26,
@@ -83268,7 +83268,7 @@
             "first": "Zachery",
             "last": "Fulton"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Tennessee",
           "jerseyNumber": 73,
           "age": 26,
@@ -83393,7 +83393,7 @@
             "first": "Andre",
             "last": "Hal"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Vanderbilt",
           "jerseyNumber": 29,
           "age": 26,
@@ -83504,7 +83504,7 @@
             "first": "Jadeveon",
             "last": "Clowney"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "South Carolina",
           "jerseyNumber": 90,
           "age": 25,
@@ -83666,7 +83666,7 @@
             "first": "Christian",
             "last": "Covington"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Rice",
           "jerseyNumber": 95,
           "age": 24,
@@ -83733,7 +83733,7 @@
             "first": "Kurtis",
             "last": "Drummond"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Michigan State",
           "jerseyNumber": 23,
           "yearsPro": 3,
@@ -83806,7 +83806,7 @@
             "first": "Gregory",
             "last": "Mancz"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Toledo",
           "jerseyNumber": 65,
           "age": 26,
@@ -83821,7 +83821,7 @@
             "first": "Chad",
             "last": "Slade"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Auburn",
           "jerseyNumber": 62,
           "age": 26,
@@ -83895,7 +83895,7 @@
             "first": "Angelo",
             "last": "Blackson"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Auburn",
           "jerseyNumber": 97,
           "age": 25,
@@ -84094,7 +84094,7 @@
             "first": "Jeremiah",
             "last": "Hendy"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Maryland",
           "jerseyNumber": 37,
           "age": 25,
@@ -84139,7 +84139,7 @@
             "first": "Joel",
             "last": "Heath"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Michigan State",
           "jerseyNumber": 93,
           "age": 25,
@@ -84213,7 +84213,7 @@
             "first": "Chris",
             "last": "Landrum"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Jacksonville State",
           "jerseyNumber": 46,
           "age": 25,
@@ -84250,7 +84250,7 @@
             "first": "Nicolas",
             "last": "Martin"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Notre Dame",
           "jerseyNumber": 66,
           "age": 25,
@@ -84339,7 +84339,7 @@
             "first": "Maurquice",
             "last": "Shakir"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Middle Tennessee State",
           "jerseyNumber": 76,
           "age": 24,
@@ -85187,7 +85187,7 @@
             "first": "Nick",
             "last": "Thurman"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Houston",
           "jerseyNumber": 68,
           "age": 23,
@@ -85430,7 +85430,7 @@
             "first": "Kendrick",
             "last": "Lewis"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Mississippi",
           "jerseyNumber": 28,
           "age": 30,
@@ -85777,7 +85777,7 @@
             "first": "Benjamin",
             "last": "Jones"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Georgia",
           "jerseyNumber": 60,
           "age": 29,
@@ -85881,7 +85881,7 @@
             "first": "Steven",
             "last": "Terrell"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Texas A&M",
           "jerseyNumber": 45,
           "yearsPro": 5,
@@ -85895,7 +85895,7 @@
             "first": "Joshua",
             "last": "Kline"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Kent State",
           "jerseyNumber": 64,
           "age": 28,
@@ -85910,7 +85910,7 @@
             "first": "Brynden",
             "last": "Trawick"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Troy",
           "jerseyNumber": 41,
           "age": 28,
@@ -85947,7 +85947,7 @@
             "first": "Kenny",
             "last": "Vaccaro"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Texas",
           "jerseyNumber": 24,
           "age": 27,
@@ -86036,7 +86036,7 @@
             "first": "David",
             "last": "King"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Oklahoma",
           "jerseyNumber": 95,
           "yearsPro": 5,
@@ -86182,7 +86182,7 @@
             "first": "Johnathan",
             "last": "Cyprien"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Florida International",
           "jerseyNumber": 37,
           "age": 28,
@@ -86307,7 +86307,7 @@
             "first": "DaQuan",
             "last": "Jones"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Penn State",
           "jerseyNumber": 90,
           "age": 26,
@@ -86344,7 +86344,7 @@
             "first": "Kevin",
             "last": "Pamphile"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Purdue",
           "jerseyNumber": 66,
           "age": 27,
@@ -86418,7 +86418,7 @@
             "first": "Julius",
             "last": "Warmsley"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Tulane",
           "jerseyNumber": 72,
           "yearsPro": 4,
@@ -86491,7 +86491,7 @@
             "first": "Jamil",
             "last": "Douglas"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Arizona State",
           "jerseyNumber": 75,
           "age": 26,
@@ -86653,7 +86653,7 @@
             "first": "Quinton",
             "last": "Spain"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "West Virginia",
           "jerseyNumber": 67,
           "age": 27,
@@ -86690,7 +86690,7 @@
             "first": "Jalston",
             "last": "Fowler"
           },
-          "position": "RB",
+          "position": "FB",
           "college": "Alabama",
           "jerseyNumber": 40,
           "age": 28,
@@ -87007,7 +87007,7 @@
             "first": "Claude",
             "last": "Pelon"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "USC",
           "jerseyNumber": 91,
           "yearsPro": 2,
@@ -87272,7 +87272,7 @@
             "first": "Kevin",
             "last": "Byard"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Middle Tennessee",
           "jerseyNumber": 31,
           "age": 25,
@@ -87375,7 +87375,7 @@
             "first": "Francis",
             "last": "Kallon"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Georgia Tech",
           "jerseyNumber": 93,
           "yearsPro": 1,
@@ -87389,7 +87389,7 @@
             "first": "Jordan",
             "last": "Morgan"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Kutztown",
           "jerseyNumber": 67,
           "age": 24,
@@ -87514,7 +87514,7 @@
             "first": "Corey",
             "last": "Levin"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Chattanooga",
           "jerseyNumber": 62,
           "age": 24,
@@ -87773,7 +87773,7 @@
             "first": "Kendal",
             "last": "Vickers"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Tennessee",
           "jerseyNumber": 64,
           "age": 23,
@@ -87936,7 +87936,7 @@
             "first": "Matthew",
             "last": "Dickerson"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "UCLA",
           "jerseyNumber": 92,
           "age": 22,
@@ -88049,7 +88049,7 @@
             "first": "Aaron",
             "last": "Stinnie"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "James Madison",
           "jerseyNumber": 61,
           "age": 24,
@@ -88353,7 +88353,7 @@
             "first": "Brian",
             "last": "Robison"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Texas",
           "jerseyNumber": 96,
           "yearsPro": 11,
@@ -88426,7 +88426,7 @@
             "first": "Everson",
             "last": "Griffen"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Southern California",
           "jerseyNumber": 97,
           "age": 30,
@@ -88500,7 +88500,7 @@
             "first": "Andrew",
             "last": "Sendejo"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Rice",
           "jerseyNumber": 34,
           "age": 30,
@@ -88700,7 +88700,7 @@
             "first": "George",
             "last": "Iloka"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Boise State",
           "jerseyNumber": 23,
           "age": 28,
@@ -88810,7 +88810,7 @@
             "first": "Harrison",
             "last": "Smith"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Notre Dame",
           "jerseyNumber": 22,
           "age": 29,
@@ -89143,7 +89143,7 @@
             "first": "Brett",
             "last": "Jones"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Regina, Can.",
           "jerseyNumber": 61,
           "age": 27,
@@ -89232,7 +89232,7 @@
             "first": "Danielle",
             "last": "Hunter"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Louisiana State",
           "jerseyNumber": 99,
           "age": 23,
@@ -89380,7 +89380,7 @@
             "first": "Nick",
             "last": "Easton"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Harvard",
           "jerseyNumber": 62,
           "age": 26,
@@ -89417,7 +89417,7 @@
             "first": "Anthony",
             "last": "Harris"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Virginia",
           "jerseyNumber": 41,
           "age": 26,
@@ -89565,7 +89565,7 @@
             "first": "Cornelius",
             "last": "Edison"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Portland State",
           "jerseyNumber": 67,
           "age": 25,
@@ -89713,7 +89713,7 @@
             "first": "Stephen",
             "last": "Weatherly"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Vanderbilt",
           "jerseyNumber": 91,
           "age": 24,
@@ -89750,7 +89750,7 @@
             "first": "Jayron",
             "last": "Kearse"
           },
-          "position": "CB",
+          "position": "S",
           "college": "Clemson",
           "jerseyNumber": 27,
           "age": 24,
@@ -89839,7 +89839,7 @@
             "first": "Cortez",
             "last": "Ham"
           },
-          "position": "RB",
+          "position": "FB",
           "college": "Augustana, S.D.",
           "jerseyNumber": 30,
           "age": 25,
@@ -89942,7 +89942,7 @@
             "first": "Tashawn",
             "last": "Bower"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Louisiana State",
           "jerseyNumber": 90,
           "age": 23,
@@ -90216,7 +90216,7 @@
             "first": "Patrick",
             "last": "Elflein"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Ohio State",
           "jerseyNumber": 65,
           "age": 24,
@@ -90283,7 +90283,7 @@
             "first": "Daniel",
             "last": "Isidora"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Miami",
           "jerseyNumber": 63,
           "age": 24,
@@ -90335,7 +90335,7 @@
             "first": "Ifeadi",
             "last": "Odenigbo"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Northwestern",
           "jerseyNumber": 97,
           "age": 24,
@@ -90372,7 +90372,7 @@
             "first": "Kareem",
             "last": "Are"
           },
-          "position": "OT",
+          "position": "OG",
           "college": "Florida State",
           "jerseyNumber": 68,
           "yearsPro": 1,
@@ -90422,7 +90422,7 @@
             "first": "Luke",
             "last": "McNitt"
           },
-          "position": "RB",
+          "position": "FB",
           "college": "Nebraska",
           "jerseyNumber": 43,
           "measurables": {
@@ -90471,7 +90471,7 @@
             "first": "Ade",
             "last": "Aruna"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Tulane",
           "jerseyNumber": 61,
           "age": 24,
@@ -90634,7 +90634,7 @@
             "first": "Hercules",
             "last": "Mata'afa"
           },
-          "position": "DT",
+          "position": "DE",
           "college": "Washington State",
           "jerseyNumber": 51,
           "age": 22,
@@ -90902,7 +90902,7 @@
             "first": "Johnny",
             "last": "Stanton"
           },
-          "position": "RB",
+          "position": "FB",
           "college": "Nevada-Las Vegas",
           "jerseyNumber": 48,
           "age": 23,
@@ -90978,7 +90978,7 @@
             "first": "J.P.",
             "last": "Quinn"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Central Michigan",
           "jerseyNumber": 59,
           "measurables": {
@@ -91004,7 +91004,7 @@
             "first": "Jacob",
             "last": "Judd"
           },
-          "position": "OT",
+          "position": "C",
           "college": "Western Illinois",
           "jerseyNumber": 61,
           "measurables": {
