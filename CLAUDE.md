@@ -577,6 +577,30 @@ Empirically, **roster saves use the same CRC layout but Madden doesn't
 enforce them on roster load** — that's why our PLAY-mutating roster
 compiler works without ever touching CRCs. Franchise loading is stricter.
 
+### nflverse rosters CSV has birth_date, not age
+The CSV has a `birth_date` column (YYYY-MM-DD), no `age` column. Our
+scraper computes age as `season - birth_year - (1 if birthday after Sep 1)`
+to approximate "age at NFL season opening week." Without this, every
+canonical player ends up with `age=None` and compile-roster doesn't
+write `PAGE`, leaving the template's 2007/2008/2011-era age in place
+(e.g. 2018 Brady showed as 33 because his slot's template age was 33).
+
+### Player portraits inherit from the template slot's original player
+`compile-roster` writes name, position, jersey, age, height, weight, OVR
+and ratings into PLAY records by TGID — but does NOT touch PGID (player
+ID, 15-bit). Madden's portrait library is keyed by PGID, so:
+
+- Brady's name in slot X displays *slot X's original-2007/2008-player's
+  face*, not Brady's face.
+- Slots are sorted by canonical OVR descending and assigned to the
+  template's per-team slot order, so a 2018 player rarely ends up in
+  the slot of their 2007/2008-era selves.
+
+This is by design: we keep PGID stable so league history, draft archive,
+hall of fame, and other PGID-keyed tables don't lose their references.
+Fixing portraits would require generating new PGIDs and a much deeper
+roster-rewrite pass. **Documented limitation; not currently planned.**
+
 ### Madden uses ~6% YoY cap inflation
 Engine-driven franchise simulation grows the league cap ~6% per offseason.
 A long sim out to year 25 reportedly produces caps above $400M with no

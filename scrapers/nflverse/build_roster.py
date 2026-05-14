@@ -325,6 +325,17 @@ def build(season: int) -> dict[str, Any]:
             if jn is not None and 0 <= jn <= 99:
                 player["jerseyNumber"] = jn
             age = to_int(row.get("age", ""))
+            if age is None:
+                # nflverse rosters carry birth_date (YYYY-MM-DD), not age.
+                # Compute age as of NFL season opening week (~Sep 1 of season).
+                birth = row.get("birth_date", "").strip()
+                if birth and len(birth) >= 4:
+                    try:
+                        by, bm, bd = (int(x) for x in birth.split("-")[:3])
+                        # Player's age at NFL season start.
+                        age = season - by - (1 if (bm, bd) > (9, 1) else 0)
+                    except (ValueError, AttributeError):
+                        age = None
             if age is not None and 18 <= age <= 50:
                 player["age"] = age
             yp = to_int(row.get("years_exp", "")) or to_int(row.get("years_pro", ""))
