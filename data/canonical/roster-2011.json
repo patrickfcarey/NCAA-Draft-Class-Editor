@@ -44031,6 +44031,19 @@
           "measurables": {
             "heightIn": 71,
             "weightLb": 190
+          },
+          "ratings": {
+            "ovr": 67,
+            "spd": 89,
+            "acc": 93,
+            "agi": 93,
+            "str": 44,
+            "awr": 60,
+            "car": 54,
+            "thp": 86,
+            "tha": 70,
+            "inj": 88,
+            "sta": 90
           }
         },
         {
@@ -47238,6 +47251,19 @@
           "measurables": {
             "heightIn": 72,
             "weightLb": 209
+          },
+          "ratings": {
+            "ovr": 80,
+            "spd": 86,
+            "acc": 88,
+            "agi": 87,
+            "str": 64,
+            "awr": 68,
+            "car": 70,
+            "thp": 93,
+            "tha": 84,
+            "inj": 91,
+            "sta": 87
           }
         },
         {

@@ -13562,6 +13562,11 @@
           "measurables": {
             "heightIn": 71,
             "weightLb": 180
+          },
+          "ratings": {
+            "ovr": 78,
+            "spd": 97,
+            "acc": 98
           }
         },
         {

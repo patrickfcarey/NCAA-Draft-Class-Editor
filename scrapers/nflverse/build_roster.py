@@ -171,6 +171,27 @@ def normalize_team(code: str) -> str:
     return ABBREV_ALIASES.get(code.upper(), code.upper())
 
 
+_SUFFIX_TOKENS = ("jr", "sr", "ii", "iii", "iv", "v")
+
+
+def name_key(first: str, last: str) -> tuple[str, str]:
+    """Normalized lookup key for joining nflverse rosters to Madden ratings.
+
+    Madden ratings often store the name with a suffix ('Patrick Mahomes II'),
+    while nflverse stores the bare name ('Patrick Mahomes'). Strip trailing
+    suffix tokens from `last` so both sides hash to the same key. Also
+    lowercase and trim trailing periods so 'Jr.' == 'Jr' == 'JR'."""
+    f = (first or "").strip().lower()
+    l = (last or "").strip().lower()
+    # Strip a trailing suffix token (and its preceding space) if present.
+    for suffix in _SUFFIX_TOKENS:
+        for sep in (" " + suffix + ".", " " + suffix):
+            if l.endswith(sep):
+                l = l[: -len(sep)].strip()
+                break
+    return (f, l)
+
+
 def split_name(full: str, first: str, last: str) -> tuple[str, str]:
     """Prefer first_name/last_name columns when present, fall back to splitting full_name."""
     if first.strip() and last.strip():
@@ -243,7 +264,7 @@ def load_madden_ratings_index(season: int) -> dict[tuple[str, str], dict]:
             # the first/last fields contain "Position"/"Name" rather than real names)
             if first in ("Position", "Name") and last in ("Name", "Overall Rating"):
                 continue
-            key = (first.lower(), last.lower())
+            key = name_key(first, last)
             if key not in index:
                 index[key] = p
     return index
@@ -355,7 +376,7 @@ def build(season: int) -> dict[str, Any]:
                 player["measurables"] = measurables
 
             # Join with Madden ratings if we have them
-            madden_rec = madden_index.get((first.lower(), last.lower()))
+            madden_rec = madden_index.get(name_key(first, last))
             if madden_rec:
                 ratings = extract_ratings(madden_rec)
                 if ratings:

@@ -34900,6 +34900,28 @@
           "measurables": {
             "heightIn": 72,
             "weightLb": 202
+          },
+          "ratings": {
+            "ovr": 61,
+            "spd": 92,
+            "acc": 94,
+            "agi": 86,
+            "str": 43,
+            "awr": 44,
+            "cth": 76,
+            "car": 65,
+            "thp": 34,
+            "tha": 32,
+            "kpw": 30,
+            "kac": 30,
+            "btk": 81,
+            "tak": 35,
+            "pow": 12,
+            "pbk": 30,
+            "rbk": 33,
+            "jmp": 91,
+            "inj": 87,
+            "sta": 90
           }
         },
         {
@@ -38548,6 +38570,28 @@
           "measurables": {
             "heightIn": 77,
             "weightLb": 236
+          },
+          "ratings": {
+            "ovr": 99,
+            "spd": 95,
+            "acc": 94,
+            "agi": 96,
+            "str": 78,
+            "awr": 90,
+            "cth": 97,
+            "car": 69,
+            "thp": 35,
+            "tha": 33,
+            "kpw": 14,
+            "kac": 11,
+            "btk": 88,
+            "tak": 28,
+            "pow": 15,
+            "pbk": 35,
+            "rbk": 60,
+            "jmp": 98,
+            "inj": 97,
+            "sta": 98
           }
         },
         {
@@ -53546,6 +53590,28 @@
           "measurables": {
             "heightIn": 71,
             "weightLb": 215
+          },
+          "ratings": {
+            "ovr": 79,
+            "spd": 93,
+            "acc": 96,
+            "agi": 88,
+            "str": 64,
+            "awr": 68,
+            "cth": 78,
+            "car": 82,
+            "thp": 11,
+            "tha": 10,
+            "kpw": 11,
+            "kac": 10,
+            "btk": 85,
+            "tak": 25,
+            "pow": 20,
+            "pbk": 36,
+            "rbk": 35,
+            "jmp": 87,
+            "inj": 79,
+            "sta": 85
           }
         },
         {
@@ -61082,6 +61148,28 @@
           "measurables": {
             "heightIn": 72,
             "weightLb": 207
+          },
+          "ratings": {
+            "ovr": 79,
+            "spd": 85,
+            "acc": 87,
+            "agi": 85,
+            "str": 64,
+            "awr": 73,
+            "cth": 64,
+            "car": 56,
+            "thp": 18,
+            "tha": 30,
+            "kpw": 17,
+            "kac": 22,
+            "btk": 62,
+            "tak": 71,
+            "pow": 73,
+            "pbk": 45,
+            "rbk": 45,
+            "jmp": 92,
+            "inj": 84,
+            "sta": 91
           }
         },
         {
@@ -62933,6 +63021,28 @@
           "measurables": {
             "heightIn": 77,
             "weightLb": 248
+          },
+          "ratings": {
+            "ovr": 82,
+            "spd": 86,
+            "acc": 88,
+            "agi": 85,
+            "str": 69,
+            "awr": 76,
+            "cth": 84,
+            "car": 72,
+            "thp": 25,
+            "tha": 25,
+            "kpw": 15,
+            "kac": 19,
+            "btk": 60,
+            "tak": 44,
+            "pow": 12,
+            "pbk": 50,
+            "rbk": 56,
+            "jmp": 91,
+            "inj": 86,
+            "sta": 90
           }
         },
         {

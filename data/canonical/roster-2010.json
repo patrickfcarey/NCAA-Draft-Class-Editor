@@ -31187,6 +31187,22 @@
           "measurables": {
             "heightIn": 77,
             "weightLb": 236
+          },
+          "ratings": {
+            "spd": 95,
+            "agi": 94,
+            "str": 78,
+            "awr": 75,
+            "cth": 90,
+            "car": 75,
+            "btk": 88,
+            "tak": 22,
+            "pow": 15,
+            "pbk": 35,
+            "rbk": 50,
+            "jmp": 99,
+            "inj": 96,
+            "sta": 97
           }
         },
         {
@@ -46866,6 +46882,22 @@
           "measurables": {
             "heightIn": 71,
             "weightLb": 190
+          },
+          "ratings": {
+            "spd": 89,
+            "agi": 92,
+            "str": 43,
+            "awr": 38,
+            "cth": 68,
+            "car": 60,
+            "btk": 75,
+            "tak": 45,
+            "pow": 39,
+            "pbk": 24,
+            "rbk": 41,
+            "jmp": 85,
+            "inj": 75,
+            "sta": 85
           }
         },
         {
@@ -50035,6 +50067,22 @@
           "measurables": {
             "heightIn": 72,
             "weightLb": 205
+          },
+          "ratings": {
+            "spd": 86,
+            "agi": 87,
+            "str": 64,
+            "awr": 68,
+            "cth": 69,
+            "car": 56,
+            "btk": 62,
+            "tak": 70,
+            "pow": 77,
+            "pbk": 30,
+            "rbk": 33,
+            "jmp": 93,
+            "inj": 84,
+            "sta": 91
           }
         },
         {
@@ -51552,6 +51600,22 @@
           "measurables": {
             "heightIn": 77,
             "weightLb": 248
+          },
+          "ratings": {
+            "spd": 85,
+            "agi": 83,
+            "str": 65,
+            "awr": 55,
+            "cth": 75,
+            "car": 72,
+            "btk": 60,
+            "tak": 44,
+            "pow": 12,
+            "pbk": 49,
+            "rbk": 52,
+            "jmp": 86,
+            "inj": 84,
+            "sta": 86
           }
         },
         {
