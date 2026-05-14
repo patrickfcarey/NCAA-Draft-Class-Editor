@@ -76,7 +76,8 @@ public sealed class MaddenRosterCompiler
     public MaddenTdb Compile(
         CanonicalRoster canonical,
         MaddenTdb template,
-        CanonicalStats? stats = null)
+        CanonicalStats? stats = null,
+        int baseYear = 2007)
     {
         var play = template.FindTable("PLAY")
             ?? throw new InvalidOperationException("Template TDB missing PLAY table");
@@ -186,6 +187,7 @@ public sealed class MaddenRosterCompiler
         if (stats is not null)
         {
             WriteCareerStats(template, canonical, pgids, stats);
+            WriteSeasonStats(template, canonical, pgids, stats, baseYear);
         }
 
         return template;
@@ -212,6 +214,9 @@ public sealed class MaddenRosterCompiler
 
         var pcof = template.FindTable("PCOF");
         var pcde = template.FindTable("PCDE");
+        var pcki = template.FindTable("PCKI");
+        var pckp = template.FindTable("PCKP");
+        var pcng = template.FindTable("PCNG");
 
         foreach (var team in canonical.Teams)
         {
@@ -254,11 +259,190 @@ public sealed class MaddenRosterCompiler
                     rec.SetUInt("clfr", ClampUInt(c.Get("fumRecov"),       9));
                     pcde.Records.Add(rec);
                 }
+
+                // PCKI carries BOTH kicker and punter career stats per row.
+                // Kicker fields: ckfa/ckfm = FG att/made, ckea/ckem = XP att/made.
+                // Punter fields: cpat = punts, cpya = punt yards (gross).
+                // Decoded against Stover/Vinatieri (kickers) and Lechler (punter).
+                // Punter-specific stats (cptb, cpbl, cppt) aren't in
+                // nflverse stats_player_reg, so left blank.
+                if (pcki is not null && HasKickingStats(c) && pcki.Records.Count < pcki.Header.MaxRecords)
+                {
+                    var rec = NewRecordFor(pcki);
+                    rec.SetUInt("PGID", pgid);
+                    rec.SetUInt("ckfa", ClampUInt(c.Get("fgAtt"),   13));
+                    rec.SetUInt("ckfm", ClampUInt(c.Get("fgMade"),  13));
+                    rec.SetUInt("ckea", ClampUInt(c.Get("patAtt"),  11));
+                    rec.SetUInt("ckem", ClampUInt(c.Get("patMade"), 11));
+                    pcki.Records.Add(rec);
+                }
+
+                if (pckp is not null && HasReturnStats(c) && pckp.Records.Count < pckp.Header.MaxRecords)
+                {
+                    var rec = NewRecordFor(pckp);
+                    rec.SetUInt("PGID", pgid);
+                    rec.SetUInt("crka", ClampUInt(c.Get("kickReturns"),                  11));
+                    rec.SetUInt("crpa", ClampUInt(c.Get("puntReturns"),                  11));
+                    rec.SetUInt("crky", ClampUInt(Math.Max(0, c.Get("kickRetYds")),      17));
+                    rec.SetUInt("crpy", ClampUInt(Math.Max(0, c.Get("puntRetYds")),      17));
+                    // crkt / crpt (return TDs) aren't in nflverse stats_player_reg.
+                    pckp.Records.Add(rec);
+                }
+
+                // PCNG.cgmp = career games played. Other PCNG fields (cgdp,
+                // cgms) appear to be sim-populated; safe to leave 0.
+                if (pcng is not null && c.Get("games") > 0 && pcng.Records.Count < pcng.Header.MaxRecords)
+                {
+                    var rec = NewRecordFor(pcng);
+                    rec.SetUInt("PGID", pgid);
+                    rec.SetUInt("cgmp", ClampUInt(c.Get("games"), 9));
+                    pcng.Records.Add(rec);
+                }
             }
         }
 
         if (pcof is not null) pcof.Header.CurRecords = (ushort)pcof.Records.Count;
         if (pcde is not null) pcde.Header.CurRecords = (ushort)pcde.Records.Count;
+        if (pcki is not null) pcki.Header.CurRecords = (ushort)pcki.Records.Count;
+        if (pckp is not null) pckp.Header.CurRecords = (ushort)pckp.Records.Count;
+        if (pcng is not null) pcng.Header.CurRecords = (ushort)pcng.Records.Count;
+    }
+
+    private static bool HasKickingStats(StatBlock c) =>
+        c.Get("fgAtt") + c.Get("patAtt") > 0;
+
+    private static bool HasReturnStats(StatBlock c) =>
+        c.Get("kickReturns") + c.Get("puntReturns") > 0;
+
+    /// <summary>
+    /// Per-season stat tables (PSOF/PSDE/PSKI/PSKP/PSNG) mirror their PC*
+    /// counterparts but with an `s` prefix (saya/satd/... vs caya/catd/...).
+    /// Each row carries a SEYR field encoding the season year as offset from
+    /// the disc's base year (M08=2007, M09=2008, M12=2011), 6-bit signed
+    /// (range -32..+31).
+    ///
+    /// Capacity-aware: each table has a max-records ceiling. We write each
+    /// player's last-3 seasons worth of stats (the seasons the scraper
+    /// emits per player), in OVR-descending order across the league, until
+    /// the table fills.
+    /// </summary>
+    private void WriteSeasonStats(
+        MaddenTdb template,
+        CanonicalRoster canonical,
+        Dictionary<CanonicalRosterPlayer, uint> pgids,
+        CanonicalStats stats,
+        int baseYear)
+    {
+        var byGsis = new Dictionary<string, CanonicalPlayerStats>(StringComparer.OrdinalIgnoreCase);
+        foreach (var s in stats.Players)
+        {
+            if (!string.IsNullOrEmpty(s.GsisId)) byGsis[s.GsisId] = s;
+        }
+
+        var psof = template.FindTable("PSOF");
+        var psde = template.FindTable("PSDE");
+        var pski = template.FindTable("PSKI");
+        var pskp = template.FindTable("PSKP");
+        var psng = template.FindTable("PSNG");
+
+        // Enumerate canonical players in canonical-roster order (already
+        // sorted by team, but within team we want OVR descending so the
+        // most-visible players' stats land first if any table fills up).
+        var playerOrder = new List<CanonicalRosterPlayer>();
+        foreach (var team in canonical.Teams)
+        {
+            playerOrder.AddRange(team.Players.OrderByDescending(p => p.Ratings?.Ovr ?? 0));
+        }
+
+        foreach (var player in playerOrder)
+        {
+            if (string.IsNullOrEmpty(player.GsisId)) continue;
+            if (!byGsis.TryGetValue(player.GsisId, out var ps)) continue;
+            if (!pgids.TryGetValue(player, out var pgid)) continue;
+
+            // Walk most-recent season first so if a table fills mid-player
+            // they at least have their latest line.
+            foreach (var (season, sb) in ps.Seasons.OrderByDescending(kv => kv.Key))
+            {
+                int seyrSigned = season - baseYear;
+                if (seyrSigned < -32 || seyrSigned > 31) continue;
+                uint seyr = (uint)(seyrSigned & 0x3F);  // mask to 6 bits
+
+                if (psof is not null && HasOffensiveStats(sb) && psof.Records.Count < psof.Header.MaxRecords)
+                {
+                    var rec = NewRecordFor(psof);
+                    rec.SetUInt("PGID", pgid);
+                    rec.SetUInt("SEYR", seyr);
+                    rec.SetUInt("saya", ClampUInt(sb.Get("passYards"),  15));
+                    rec.SetUInt("satd", ClampUInt(sb.Get("passTDs"),     7));
+                    rec.SetUInt("sacm", ClampUInt(sb.Get("passComp"),   10));
+                    rec.SetUInt("saat", ClampUInt(sb.Get("passAtt"),    11));
+                    rec.SetUInt("sain", ClampUInt(sb.Get("passInts"),    6));
+                    rec.SetUInt("sufu", ClampUInt(sb.Get("fumbles"),     5));
+                    rec.SetUInt("suya", ClampUInt(sb.Get("rushYards"),  14));
+                    rec.SetUInt("sutd", ClampUInt(sb.Get("rushTDs"),     7));
+                    rec.SetUInt("suat", ClampUInt(sb.Get("rushAtt"),    10));
+                    rec.SetUInt("scca", ClampUInt(sb.Get("receptions"),  8));
+                    rec.SetUInt("scya", ClampUInt(Math.Max(0, sb.Get("recYards")), 14));
+                    rec.SetUInt("sctd", ClampUInt(sb.Get("recTDs"),      7));
+                    psof.Records.Add(rec);
+                }
+
+                if (psde is not null && HasDefensiveStats(sb) && psde.Records.Count < psde.Header.MaxRecords)
+                {
+                    var rec = NewRecordFor(psde);
+                    rec.SetUInt("PGID", pgid);
+                    rec.SetUInt("SEYR", seyr);
+                    rec.SetUInt("ssca", ClampUInt(sb.Get("tacklesSolo"), 8));
+                    rec.SetUInt("sdta", ClampUInt(sb.Get("tacklesAst"),  9));
+                    rec.SetUInt("slff", ClampUInt(sb.Get("forcedFum"),   6));
+                    rec.SetUInt("sdbh", ClampUInt(sb.Get("passDefended"),9));
+                    rec.SetUInt("slsk", ClampUInt(sb.Get("sacks"),       6));
+                    rec.SetUInt("ssin", ClampUInt(sb.Get("defInts"),     6));
+                    rec.SetUInt("slfr", ClampUInt(sb.Get("fumRecov"),    5));
+                    psde.Records.Add(rec);
+                }
+
+                if (pski is not null && HasKickingStats(sb) && pski.Records.Count < pski.Header.MaxRecords)
+                {
+                    var rec = NewRecordFor(pski);
+                    rec.SetUInt("PGID", pgid);
+                    rec.SetUInt("SEYR", seyr);
+                    rec.SetUInt("skfa", ClampUInt(sb.Get("fgAtt"),   8));
+                    rec.SetUInt("skfm", ClampUInt(sb.Get("fgMade"),  8));
+                    rec.SetUInt("skea", ClampUInt(sb.Get("patAtt"),  8));
+                    rec.SetUInt("skem", ClampUInt(sb.Get("patMade"), 8));
+                    pski.Records.Add(rec);
+                }
+
+                if (pskp is not null && HasReturnStats(sb) && pskp.Records.Count < pskp.Header.MaxRecords)
+                {
+                    var rec = NewRecordFor(pskp);
+                    rec.SetUInt("PGID", pgid);
+                    rec.SetUInt("SEYR", seyr);
+                    rec.SetUInt("srka", ClampUInt(sb.Get("kickReturns"),                  8));
+                    rec.SetUInt("srpa", ClampUInt(sb.Get("puntReturns"),                  8));
+                    rec.SetUInt("srky", ClampUInt(Math.Max(0, sb.Get("kickRetYds")),     13));
+                    rec.SetUInt("srpy", ClampUInt(Math.Max(0, sb.Get("puntRetYds")),     13));
+                    pskp.Records.Add(rec);
+                }
+
+                if (psng is not null && sb.Get("games") > 0 && psng.Records.Count < psng.Header.MaxRecords)
+                {
+                    var rec = NewRecordFor(psng);
+                    rec.SetUInt("PGID", pgid);
+                    rec.SetUInt("SEYR", seyr);
+                    rec.SetUInt("sgmp", ClampUInt(sb.Get("games"), 5));
+                    psng.Records.Add(rec);
+                }
+            }
+        }
+
+        if (psof is not null) psof.Header.CurRecords = (ushort)psof.Records.Count;
+        if (psde is not null) psde.Header.CurRecords = (ushort)psde.Records.Count;
+        if (pski is not null) pski.Header.CurRecords = (ushort)pski.Records.Count;
+        if (pskp is not null) pskp.Header.CurRecords = (ushort)pskp.Records.Count;
+        if (psng is not null) psng.Header.CurRecords = (ushort)psng.Records.Count;
     }
 
     private static bool HasOffensiveStats(StatBlock c) =>

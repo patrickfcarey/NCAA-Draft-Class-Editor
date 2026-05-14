@@ -84,6 +84,8 @@ STAT_COLUMNS = {
     "kickRetYds":   "kickoff_return_yards",
     "puntReturns":  "punt_returns",
     "puntRetYds":   "punt_return_yards",
+    # Generic
+    "games":   "games",
 }
 
 FUMBLE_SOURCES = ("sack_fumbles", "rushing_fumbles", "receiving_fumbles")

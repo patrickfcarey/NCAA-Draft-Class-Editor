@@ -353,8 +353,49 @@ Convention: 2nd-letter `a`=Arm (passing), `c`=Catch (receiving),
 
 PSDE mirrors with `s` prefix (per-season).
 
-**Other stat tables (PCKI/PCKP/PCNG, per-season PS*)**: structure parses
-fine but field encodings not yet decoded. Cleared but not populated.
+**PCKI (Career Kicking + Punting)** — decoded against Vinatieri / Stover
+/ Tucker / Gostkowski / Lechler:
+
+| Field | Meaning |
+|-------|---------|
+| `ckfa` / `ckfm` | Career FG attempts / made |
+| `ckea` / `ckem` | Career XP attempts / made |
+| `cpat` | Career punts attempted (punter stat) |
+| `cpya` | Career punt yards gross (punter stat) |
+| `cptb` | Career punt touchbacks |
+| `cpbl` | Career punts blocked |
+| `cppt` | Career punts pinned / inside-20 |
+
+(FG-by-distance fields `ckaa`/`ckma`/`ckac`/`ckmc`/`ckad`/`ckmd`/`ckae`/
+`ckme` — 5 buckets × {att, made}, all 0 for template kickers we sampled,
+undecoded.)
+
+**PCKP (Career Returns)** — decoded against Devin Hester:
+
+| Field | Meaning |
+|-------|---------|
+| `crka` | Career kickoff returns |
+| `crpa` | Career punt returns |
+| `crky` | Career kickoff return yards |
+| `crpy` | Career punt return yards |
+| `crkt` | Career kickoff return TDs |
+| `crpt` | Career punt return TDs |
+
+**PCNG (Career Generic / Games)** — decoded against Manning / Vinatieri /
+Tomlinson:
+
+| Field | Meaning |
+|-------|---------|
+| `cgmp` | Career games played |
+| `cgdp`, `cgms` | Sim-populated; 0 in fresh templates |
+
+**Per-season tables (PSOF/PSDE/PSKI/PSKP/PSNG)** mirror their PC*
+counterparts with `s` prefix instead of `c`, plus a `SEYR` field per row
+encoding `season_year - base_year` as 6-bit signed (-32..+31). Same
+field meanings (saya = season pass yards, satd = season pass TDs, ...).
+Stride / max-records / capacities vary; see `MaddenRosterCompiler.cs`
+for per-table writes. Brady's per-season passing line is byte-exact
+(2017: 4577/32/8 ✓, 2016: 3554/28/2 ✓, etc.).
 
 ## Pipelines
 

@@ -155,10 +155,11 @@ def compile_year(target: str, year: int, use_contracts: bool,
         dotnet, "run", "--project", w(REPO_ROOT / "NcaaDraftEditor.Cli"),
         "--", "compile-roster",
         w(roster_json), w(POSITIONS), w(cfg["template_bin"]), w(intermediate),
+        "--base-year", str(cfg["base_year"]),
     ]
     if stats_json.exists():
         cmd1.extend(["--stats", w(stats_json)])
-    print(f"  $ compile-roster {target} {year}" + (" (with career stats)" if stats_json.exists() else ""),
+    print(f"  $ compile-roster {target} {year}" + (" (with stats)" if stats_json.exists() else ""),
           file=sys.stderr)
     subprocess.run(cmd1, check=True)
 
