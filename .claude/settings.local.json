@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:maddenamp.sourceforge.net)",
+      "Bash(gh auth *)",
+      "Bash(python3 *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(rm /mnt/c/PCSX2/memcards/madden08_test.ps2)",
+      "Bash(mymcplus /mnt/c/PCSX2/memcards/madden08_test.ps2 format)",
+      "Bash(mymcplus /mnt/c/PCSX2/memcards/madden08_test.ps2 import out/draft-class-2018.max)",
+      "Bash(mymcplus /mnt/c/PCSX2/memcards/madden08_test.ps2 dir)",
+      "Bash(git push *)",
+      "Bash(curl -sL \"https://api.github.com/repos/nflverse/nflverse-data/releases/tags/rosters\")",
+      "Bash(curl -sL \"https://github.com/nflverse/nflverse-data/releases/download/rosters/roster_2017.csv\" -o /tmp/r2017.csv)",
+      "Read(//tmp/**)",
+      "Bash(awk -F, 'NR>1 {print $26}' /tmp/r2017.csv)",
+      "Bash(awk -F, 'NR>1 {print $14}' /tmp/r2017.csv)",
+      "Bash(awk -F, '{print \"  week=\"$26\" team=\"$2\" status=\"$6}')",
+      "Bash(GIT_COMMITTER_NAME='Patrick Carey' GIT_COMMITTER_EMAIL=patrickfcarey@gmail.com git commit '--author=Patrick Carey <patrickfcarey@gmail.com>' -m ' *)",
+      "Bash(curl -sL \"https://github.com/nflverse/nflverse-data/releases/download/rosters/roster_2010.csv\" -o /tmp/r2010.csv)",
+      "Bash(curl -sL \"https://github.com/nflverse/nflverse-data/releases/download/rosters/roster_2023.csv\" -o /tmp/r2023.csv)",
+      "Bash(gh api *)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(mkdir -p /mnt/c/GitHub/NCAA-Draft-Class-Editor/out/m25-research)",
+      "Bash(cp \"/mnt/c/GitHub/NCAA-Draft-Class-Editor/ALL 32 Franchise Week 1/PS3/SAVEDATA/BLUS30770-FRANCHISE-M25ALL32/USR-DATA\" .)",
+      "Bash(xxd USR-DATA)"
+    ]
+  }
+}
