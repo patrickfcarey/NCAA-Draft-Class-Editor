@@ -1,0 +1,555 @@
+{
+  "schema": "ncaa-madden-coaches/v1",
+  "year": 2018,
+  "source": "en.wikipedia.org team-season infoboxes",
+  "teams": [
+    {
+      "team": "Cardinals",
+      "headCoach": {
+        "first": "Steve",
+        "last": "Wilks"
+      },
+      "offensiveCoordinator": {
+        "first": "Mike",
+        "last": "McCoy"
+      },
+      "defensiveCoordinator": {
+        "first": "Al",
+        "last": "Holcomb"
+      },
+      "specialTeams": {
+        "first": "Jeff",
+        "last": "Rodgers"
+      }
+    },
+    {
+      "team": "Falcons",
+      "headCoach": {
+        "first": "Dan",
+        "last": "Quinn"
+      },
+      "offensiveCoordinator": {
+        "first": "Steve",
+        "last": "Sarkisian"
+      },
+      "defensiveCoordinator": {
+        "first": "Marquand",
+        "last": "Manuel"
+      },
+      "specialTeams": {
+        "first": "Keith",
+        "last": "Armstrong"
+      }
+    },
+    {
+      "team": "Ravens",
+      "headCoach": {
+        "first": "John",
+        "last": "Harbaugh"
+      },
+      "offensiveCoordinator": {
+        "first": "Marty",
+        "last": "Mornhinweg"
+      },
+      "defensiveCoordinator": {
+        "first": "Don",
+        "last": "Martindale"
+      }
+    },
+    {
+      "team": "Bills",
+      "headCoach": {
+        "first": "Sean",
+        "last": "McDermott"
+      },
+      "offensiveCoordinator": {
+        "first": "Brian",
+        "last": "Daboll"
+      },
+      "defensiveCoordinator": {
+        "first": "Leslie",
+        "last": "Frazier"
+      },
+      "specialTeams": {
+        "first": "Danny",
+        "last": "Crossman"
+      }
+    },
+    {
+      "team": "Panthers",
+      "headCoach": {
+        "first": "Ron",
+        "last": "Rivera"
+      },
+      "offensiveCoordinator": {
+        "first": "Norv",
+        "last": "Turner"
+      },
+      "defensiveCoordinator": {
+        "first": "Eric",
+        "last": "Washington"
+      },
+      "specialTeams": {
+        "first": "Chase",
+        "last": "Blackburn"
+      }
+    },
+    {
+      "team": "Bears",
+      "headCoach": {
+        "first": "Matt",
+        "last": "Nagy"
+      },
+      "offensiveCoordinator": {
+        "first": "Mark",
+        "last": "Helfrich"
+      },
+      "defensiveCoordinator": {
+        "first": "Vic",
+        "last": "Fangio"
+      },
+      "specialTeams": {
+        "first": "Chris",
+        "last": "Tabor"
+      }
+    },
+    {
+      "team": "Bengals",
+      "offensiveCoordinator": {
+        "first": "Bill",
+        "last": "Lazor"
+      },
+      "specialTeams": {
+        "first": "Darrin",
+        "last": "Simmons"
+      },
+      "headCoach": {
+        "first": "Marvin",
+        "last": "Lewis"
+      }
+    },
+    {
+      "team": "Browns",
+      "headCoach": {
+        "first": "Hue",
+        "last": "Jackson"
+      },
+      "offensiveCoordinator": {
+        "first": "Todd",
+        "last": "Haley"
+      },
+      "specialTeams": {
+        "first": "Amos",
+        "last": "Jones"
+      }
+    },
+    {
+      "team": "Cowboys",
+      "headCoach": {
+        "first": "Jason",
+        "last": "Garrett"
+      },
+      "offensiveCoordinator": {
+        "first": "Scott",
+        "last": "Linehan"
+      },
+      "specialTeams": {
+        "first": "Keith",
+        "last": "OQuinn"
+      },
+      "defensiveCoordinator": {
+        "first": "Rod",
+        "last": "Marinelli"
+      }
+    },
+    {
+      "team": "Broncos",
+      "headCoach": {
+        "first": "Vance",
+        "last": "Joseph"
+      },
+      "offensiveCoordinator": {
+        "first": "Bill",
+        "last": "Musgrave"
+      },
+      "defensiveCoordinator": {
+        "first": "Joe",
+        "last": "Woods"
+      },
+      "specialTeams": {
+        "first": "Tom",
+        "last": "McMahon"
+      }
+    },
+    {
+      "team": "Lions",
+      "headCoach": {
+        "first": "Matt",
+        "last": "Patricia"
+      },
+      "offensiveCoordinator": {
+        "first": "Jim",
+        "last": "Bob Cooter"
+      },
+      "defensiveCoordinator": {
+        "first": "Paul",
+        "last": "Pasqualoni"
+      },
+      "specialTeams": {
+        "first": "Joe",
+        "last": "Marciano"
+      }
+    },
+    {
+      "team": "Packers",
+      "defensiveCoordinator": {
+        "first": "Mike",
+        "last": "Pettine"
+      },
+      "specialTeams": {
+        "first": "Ron",
+        "last": "Zook"
+      },
+      "headCoach": {
+        "first": "Mike",
+        "last": "McCarthy"
+      }
+    },
+    {
+      "team": "Texans",
+      "headCoach": {
+        "first": "Bill",
+        "last": "OBrien"
+      },
+      "specialTeams": {
+        "first": "Brad",
+        "last": "Seely"
+      },
+      "defensiveCoordinator": {
+        "first": "Romeo",
+        "last": "Crennel"
+      }
+    },
+    {
+      "team": "Colts",
+      "headCoach": {
+        "first": "Frank",
+        "last": "Reich"
+      },
+      "offensiveCoordinator": {
+        "first": "Nick",
+        "last": "Sirianni"
+      },
+      "defensiveCoordinator": {
+        "first": "Matt",
+        "last": "Eberflus"
+      },
+      "specialTeams": {
+        "first": "Raymond",
+        "last": "Ventrone"
+      }
+    },
+    {
+      "team": "Jaguars",
+      "headCoach": {
+        "first": "Doug",
+        "last": "Marrone"
+      },
+      "offensiveCoordinator": {
+        "first": "Nathaniel",
+        "last": "Hackett"
+      },
+      "defensiveCoordinator": {
+        "first": "Todd",
+        "last": "Wash"
+      },
+      "specialTeams": {
+        "first": "Joe",
+        "last": "DeCamillis"
+      }
+    },
+    {
+      "team": "Chiefs",
+      "headCoach": {
+        "first": "Andy",
+        "last": "Reid"
+      },
+      "offensiveCoordinator": {
+        "first": "Eric",
+        "last": "Bieniemy"
+      },
+      "defensiveCoordinator": {
+        "first": "Bob",
+        "last": "Sutton"
+      }
+    },
+    {
+      "team": "Dolphins",
+      "headCoach": {
+        "first": "Adam",
+        "last": "Gase"
+      },
+      "offensiveCoordinator": {
+        "first": "Dowell",
+        "last": "Loggains"
+      },
+      "defensiveCoordinator": {
+        "first": "Matt",
+        "last": "Burke"
+      }
+    },
+    {
+      "team": "Vikings",
+      "headCoach": {
+        "first": "Mike",
+        "last": "Zimmer"
+      },
+      "defensiveCoordinator": {
+        "first": "George",
+        "last": "Edwards"
+      },
+      "specialTeams": {
+        "first": "Mike",
+        "last": "Priefer"
+      }
+    },
+    {
+      "team": "Patriots",
+      "headCoach": {
+        "first": "Bill",
+        "last": "Belichick"
+      },
+      "offensiveCoordinator": {
+        "first": "Josh",
+        "last": "McDaniels"
+      }
+    },
+    {
+      "team": "Saints",
+      "headCoach": {
+        "first": "Sean",
+        "last": "Payton"
+      },
+      "offensiveCoordinator": {
+        "first": "Pete",
+        "last": "Carmichael"
+      },
+      "defensiveCoordinator": {
+        "first": "Dennis",
+        "last": "Allen"
+      },
+      "specialTeams": {
+        "first": "Bradford",
+        "last": "Banta"
+      }
+    },
+    {
+      "team": "Giants",
+      "headCoach": {
+        "first": "Pat",
+        "last": "Shurmur"
+      },
+      "defensiveCoordinator": {
+        "first": "James",
+        "last": "Bettcher"
+      },
+      "specialTeams": {
+        "first": "Thomas",
+        "last": "McGaughey"
+      }
+    },
+    {
+      "team": "Jets",
+      "headCoach": {
+        "first": "Todd",
+        "last": "Bowles"
+      },
+      "defensiveCoordinator": {
+        "first": "Kacy",
+        "last": "Rodgers"
+      },
+      "specialTeams": {
+        "first": "Brant",
+        "last": "Boyer"
+      }
+    },
+    {
+      "team": "Eagles",
+      "headCoach": {
+        "first": "Doug",
+        "last": "Pederson"
+      },
+      "offensiveCoordinator": {
+        "first": "Mike",
+        "last": "Groh"
+      },
+      "defensiveCoordinator": {
+        "first": "Jim",
+        "last": "Schwartz"
+      },
+      "specialTeams": {
+        "first": "Dave",
+        "last": "Fipp"
+      }
+    },
+    {
+      "team": "Steelers",
+      "headCoach": {
+        "first": "Mike",
+        "last": "Tomlin"
+      },
+      "defensiveCoordinator": {
+        "first": "Keith",
+        "last": "Butler"
+      },
+      "specialTeams": {
+        "first": "Danny",
+        "last": "Smith"
+      },
+      "offensiveCoordinator": {
+        "first": "Randy",
+        "last": "Fichtner"
+      }
+    },
+    {
+      "team": "49ers",
+      "headCoach": {
+        "first": "Kyle",
+        "last": "Shanahan"
+      },
+      "defensiveCoordinator": {
+        "first": "Robert",
+        "last": "Saleh"
+      },
+      "specialTeams": {
+        "first": "Richard",
+        "last": "Hightower"
+      },
+      "offensiveCoordinator": {
+        "first": "Kyle",
+        "last": "Shanahan"
+      }
+    },
+    {
+      "team": "Seahawks",
+      "offensiveCoordinator": {
+        "first": "Brian",
+        "last": "Schottenheimer"
+      },
+      "defensiveCoordinator": {
+        "first": "Ken",
+        "last": "Norton Jr"
+      },
+      "specialTeams": {
+        "first": "Brian",
+        "last": "Schneider"
+      },
+      "headCoach": {
+        "first": "Pete",
+        "last": "Carroll"
+      }
+    },
+    {
+      "team": "Buccaneers",
+      "headCoach": {
+        "first": "Dirk",
+        "last": "Koetter"
+      },
+      "offensiveCoordinator": {
+        "first": "Todd",
+        "last": "Monken"
+      },
+      "specialTeams": {
+        "first": "Nate",
+        "last": "Kaczor"
+      }
+    },
+    {
+      "team": "Titans",
+      "headCoach": {
+        "first": "Mike",
+        "last": "Vrabel"
+      },
+      "offensiveCoordinator": {
+        "first": "Matt",
+        "last": "LaFleur"
+      },
+      "defensiveCoordinator": {
+        "first": "Dean",
+        "last": "Pees"
+      },
+      "specialTeams": {
+        "first": "Craig",
+        "last": "Aukerman"
+      }
+    },
+    {
+      "team": "Rams",
+      "headCoach": {
+        "first": "Sean",
+        "last": "McVay"
+      },
+      "defensiveCoordinator": {
+        "first": "Wade",
+        "last": "Phillips"
+      },
+      "specialTeams": {
+        "first": "John",
+        "last": "Fassel"
+      },
+      "offensiveCoordinator": {
+        "first": "Sean",
+        "last": "McVay"
+      }
+    },
+    {
+      "team": "Chargers",
+      "headCoach": {
+        "first": "Anthony",
+        "last": "Lynn"
+      },
+      "offensiveCoordinator": {
+        "first": "Ken",
+        "last": "Whisenhunt"
+      },
+      "defensiveCoordinator": {
+        "first": "Gus",
+        "last": "Bradley"
+      }
+    },
+    {
+      "team": "Raiders",
+      "headCoach": {
+        "first": "Jon",
+        "last": "Gruden"
+      },
+      "offensiveCoordinator": {
+        "first": "Greg",
+        "last": "Olson"
+      },
+      "defensiveCoordinator": {
+        "first": "Paul",
+        "last": "Guenther"
+      }
+    },
+    {
+      "team": "Redskins",
+      "headCoach": {
+        "first": "Jay",
+        "last": "Gruden"
+      },
+      "offensiveCoordinator": {
+        "first": "Matt",
+        "last": "Cavanaugh"
+      },
+      "defensiveCoordinator": {
+        "first": "Greg",
+        "last": "Manusky"
+      },
+      "specialTeams": {
+        "first": "Ben",
+        "last": "Kotwica"
+      }
+    }
+  ]
+}
