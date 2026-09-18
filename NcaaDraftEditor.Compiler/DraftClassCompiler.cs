@@ -16,19 +16,22 @@ public sealed class DraftClassCompiler
     private readonly MaddenRoster? _madden;
     private readonly DraftClassFile? _filler;
     private readonly bool _lockDraftOrder;
+    private readonly IReadOnlyList<CanonicalPlayer>? _fillerPool;
 
     public DraftClassCompiler(
         PositionMapper positions,
         CollegeMapper colleges,
         MaddenRoster? madden = null,
         DraftClassFile? filler = null,
-        bool lockDraftOrder = false)
+        bool lockDraftOrder = false,
+        IReadOnlyList<CanonicalPlayer>? fillerPool = null)
     {
         _positions = positions;
         _colleges = colleges;
         _madden = madden;
         _filler = filler;
         _lockDraftOrder = lockDraftOrder;
+        _fillerPool = fillerPool;
     }
 
     // Pick-anchored OVR. Linear from pick 1 (OVR 90) to pick 256 (OVR 50) so
@@ -70,10 +73,28 @@ public sealed class DraftClassCompiler
     /// If a filler file is provided we use its records for slots beyond our
     /// real picks; otherwise we fall back to zero padding and warn that
     /// Madden may reject the file.
+    ///
+    /// When a filler *pool* (real era-correct college players, e.g. from
+    /// cfbfastR) is also supplied, each filler slot keeps the template
+    /// record's structurally-valid bytes but has its stale 2006-era identity
+    /// (name / college / position / size) overwritten with a real college
+    /// player. That turns the draft-pool's ~1344 non-drafted prospects from
+    /// 2006 names at wrong schools into real names at real colleges, without
+    /// risking the empty-record hang (the skeleton stays intact).
     /// </summary>
     private void FillRemainingSlots(DraftClassFile dc)
     {
         int realCount = dc.Players.Count;
+
+        // Names already taken by real draft picks, so a college player who was
+        // actually drafted this year isn't also emitted as a low-OVR filler
+        // duplicate. Doubles as an intra-pool de-dupe (no two filler players
+        // share a name).
+        var usedNames = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+        for (int i = 0; i < realCount; i++)
+            usedNames.Add(NameKey(dc.Players[i].FirstName, dc.Players[i].LastName));
+
+        int poolIndex = 0;
         if (_filler is not null)
         {
             for (int i = realCount; i < DraftClassFile.MaxPlayers && i < _filler.Players.Count; i++)
@@ -82,12 +103,46 @@ public sealed class DraftClassCompiler
                 Buffer.BlockCopy(_filler.Players[i].Raw, 0, copy, 0, DraftClassFile.RecordSize);
                 var rec = new PlayerRecord(copy);
                 CapFillerAttributes(rec);
+                if (_fillerPool is not null)
+                    poolIndex = ApplyNextPoolIdentity(rec, poolIndex, usedNames);
                 dc.Players.Add(rec);
             }
         }
         while (dc.Players.Count < DraftClassFile.MaxPlayers)
             dc.Players.Add(new PlayerRecord(new byte[DraftClassFile.RecordSize]));
     }
+
+    /// <summary>
+    /// Advance through the filler pool to the next player whose college and
+    /// position both map and whose name isn't already used, then stamp that
+    /// identity onto <paramref name="rec"/> (leaving its skeleton bytes
+    /// otherwise intact). Returns the pool index to resume from. If the pool
+    /// is exhausted the record keeps its template identity.
+    /// </summary>
+    private int ApplyNextPoolIdentity(PlayerRecord rec, int poolIndex, HashSet<string> usedNames)
+    {
+        while (poolIndex < _fillerPool!.Count)
+        {
+            var cp = _fillerPool[poolIndex++];
+            if (!_positions.TryToPpos(cp.Position, out var ppos)) continue;
+            if (!_colleges.TryToTgid(cp.College, out var tgid)) continue;
+            if (!usedNames.Add(NameKey(cp.Name.First, cp.Name.Last))) continue;
+
+            rec.FirstName = cp.Name.First;
+            rec.LastName = cp.Name.Last;
+            rec.PPOS = ppos;
+            rec.TGID = tgid;
+            rec.PYER = EncodeCollegeYear(cp.CollegeYear);
+            rec.PRSD = (byte)(cp.Redshirt ? 1 : 0);
+            if (cp.Measurables?.HeightIn is double h) rec.PHGT = ClampToByte(h);
+            if (cp.Measurables?.WeightLb is int w) rec.PWGT = ClampToByte(w);
+            return poolIndex;
+        }
+        return poolIndex;
+    }
+
+    private static string NameKey(string? first, string? last) =>
+        (first ?? "").Trim() + "\u0001" + (last ?? "").Trim();
 
     private static void CapFillerAttributes(PlayerRecord rec)
     {

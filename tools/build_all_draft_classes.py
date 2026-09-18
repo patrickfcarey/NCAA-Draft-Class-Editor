@@ -102,11 +102,21 @@ def compile_year(year: int, dotnet: str, translate: bool) -> Path:
         "--", "compile", w(canonical), w(POSITIONS), w(COLLEGES), w(out_bin),
         "--filler", w(FILLER), "--lock-draft-order",
     ]
+    # Stamp the filler slots with real era-correct college players when a pool
+    # exists for this year (scrapers/cfbfastr/build_college_pool.py). Without
+    # it the filler keeps the 2007 sample.bin's 2006-era names/colleges.
+    college_pool = CANONICAL / f"college-pool-{year}.json"
+    if college_pool.exists():
+        cmd.extend(["--filler-pool", w(college_pool)])
+    else:
+        print(f"  (no college pool for {year}; filler keeps template names — "
+              f"run build_college_pool.py --year {year})", file=sys.stderr)
+    madden_args: list[str] = []
     madden_version = SEASON_TO_MADDEN_VERSION.get(year)
     if madden_version is not None:
         madden_path = MADDEN_DIR / f"madden{madden_version}-{year}.json"
         if madden_path.exists():
-            cmd.extend(["--madden", w(madden_path)])
+            madden_args = ["--madden", w(madden_path)]
         else:
             print(f"  WARNING: expected Madden file {madden_path.name} not found; "
                   f"using defaults for {year}", file=sys.stderr)
@@ -114,8 +124,22 @@ def compile_year(year: int, dotnet: str, translate: bool) -> Path:
         print(f"  (no Madden launch ratings available for {year}; using defaults + "
               "draft-order anchoring)", file=sys.stderr)
 
-    print(f"  $ {' '.join(cmd)}", file=sys.stderr)
-    subprocess.run(cmd, check=True)
+    full = cmd + madden_args
+    print(f"  $ {' '.join(full)}", file=sys.stderr)
+    try:
+        subprocess.run(full, check=True)
+    except subprocess.CalledProcessError:
+        if not madden_args:
+            raise
+        # Some Madden launch-ratings files (e.g. madden11-2010.json) have a
+        # different weebly schema the loader can't parse. Don't let that sink
+        # the whole year: retry without --madden so rookies still get default
+        # ratings + draft-order anchoring, and the real college-pool filler
+        # names are preserved regardless.
+        print(f"  WARNING: --madden parse failed for {year}; retrying without it "
+              f"(rookies get default ratings + draft-order anchoring)", file=sys.stderr)
+        print(f"  $ {' '.join(cmd)}", file=sys.stderr)
+        subprocess.run(cmd, check=True)
     return out_bin
 
 
