@@ -25,7 +25,10 @@
       "WebFetch(domain:raw.githubusercontent.com)",
       "Bash(mkdir -p /mnt/c/GitHub/NCAA-Draft-Class-Editor/out/m25-research)",
       "Bash(cp \"/mnt/c/GitHub/NCAA-Draft-Class-Editor/ALL 32 Franchise Week 1/PS3/SAVEDATA/BLUS30770-FRANCHISE-M25ALL32/USR-DATA\" .)",
-      "Bash(xxd USR-DATA)"
+      "Bash(xxd USR-DATA)",
+      "Bash(unzip -l ncaa-football-2003.31508.zip)",
+      "Bash(xxd \"4541001d/757669288DF2/Named03 \\(Roster\\)   \")",
+      "Bash(unzip -l ncaa-football-2003.26319.zip)"
     ]
   }
 }
